@@ -13,7 +13,7 @@ namespace DietAndFitness
         {
             InitializeComponent();
 
-            MainPage = new DietAndFitness.MainPage();
+            MainPage = new NavigationPage(new DietAndFitness.LogInPage());
         }
 
         protected override void OnStart()
