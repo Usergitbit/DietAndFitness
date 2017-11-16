@@ -8,10 +8,21 @@
         </OnPlatform>
     </ContentPage.Padding>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="PLACEHOLDER!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
+        <StackLayout VerticalOptions="Center">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Height" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Entry x:Name="HeightTextBox" Placeholder="000" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+
+
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,7 +19,8 @@
                    HorizontalOptions="CenterAndExpand"/>
             <Entry x:Name="PasswordTextBox"
                    Placeholder="Enter your password here"
-                   HorizontalOptions="CenterAndExpand"/>
+                   HorizontalOptions="CenterAndExpand"
+                   IsPassword="True"/>
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
