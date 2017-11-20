@@ -16,5 +16,16 @@ namespace DietAndFitness
         {
             InitializeComponent();
         }
+
+        async void OnBFHelpClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LogInPage());
+        }
+
+         async void OnActivityLevelHelpClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LogInPage());
+        }
+
     }
 }
