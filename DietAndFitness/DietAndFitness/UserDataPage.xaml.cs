@@ -27,5 +27,11 @@ namespace DietAndFitness
             await Navigation.PushAsync(new LogInPage());
         }
 
+        void OnCustomActivityLevelPicked(object sender, EventArgs e)
+        {
+            if(ActivityLevelPicker.SelectedIndex==4)
+                 CustomActivityLevelEntry.IsVisible = true;
+        }
+
     }
 }

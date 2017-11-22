@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
- 
+
                 <Label Text="Height" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 <Entry x:Name="HeightTextBox" Placeholder="000" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
                 <Picker x:Name="MetricPickerHeight" WidthRequest="30" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand">
@@ -58,7 +58,7 @@
                 <Button x:Name="BFHelpButton" Grid.Row="3" Grid.Column="3" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnBFHelpClicked"/>
 
                 <Label Text="Activity Level" Grid.Row="4" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Picker x:Name="ActivityLevelPicker" WidthRequest="90" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                <Picker x:Name="ActivityLevelPicker" WidthRequest="90" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" SelectedIndexChanged="OnCustomActivityLevelPicked">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Sedentary</x:String>
@@ -69,8 +69,10 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Button x:Name="ActivityHelpButton" Grid.Row="4" Grid.Column="2" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnActivityLevelHelpClicked"/>
+                <Entry x:Name="CustomActivityLevelEntry" Placeholder="1.00" Grid.Row="4" Grid.Column="2" HorizontalOptions="CenterAndExpand" IsVisible="False"/>
+                <Button x:Name="ActivityHelpButton" Grid.Row="4" Grid.Column="3" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnActivityLevelHelpClicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+   
