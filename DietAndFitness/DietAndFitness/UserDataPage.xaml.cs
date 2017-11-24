@@ -16,21 +16,29 @@ namespace DietAndFitness
         {
             InitializeComponent();
         }
-
-        async void OnBFHelpClicked(object sender, EventArgs e)
+    async void OnFormulaHelpClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LogInPage());
+            await DisplayAlert("Choosing a formula", "This field controls which formula for calculating your needed calories will be used.\n" +
+                                                     "The Mifflin-St Jeor Formula is the simplest and most accurate formula according to the American Dietetic Association.\n" +
+                                                     "Men:\n 10 x Weight (kg) + 6.25 x Height (cm) - 5 x Age (y) + 5\n" +
+                                                     "Women:\n 10 x Weight (kg) + 6.25 x Height (cm) - 5 x Age (y) -161\n" +
+                                                     "The Katch-McArdle Formula is a variation of the Mifflin-St Jeor that will figure in your body fat for extra accuracy.\n" +
+                                                     "The Harris-Benedict Formula was created in 1919 but it tends to overstate caloirc needs by 5% and tends to skew results towards obese and young people", "OK");
         }
-
-         async void OnActivityLevelHelpClicked(object sender, EventArgs e)
+    void OnFormulaKMSelected(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LogInPage());
-        }
-
-        void OnCustomActivityLevelPicked(object sender, EventArgs e)
-        {
-            if(ActivityLevelPicker.SelectedIndex==4)
-                 CustomActivityLevelEntry.IsVisible = true;
+            if (FormulaPicker.SelectedIndex == 1)
+            {
+                BodyFatLabel.IsVisible = true;
+                BodyFatTextBox.IsVisible = true;
+                BodyFatPercentageLabel.IsVisible = true;
+            }
+            else
+            {
+                BodyFatLabel.IsVisible = false;
+                BodyFatTextBox.IsVisible = false;
+                BodyFatPercentageLabel.IsVisible = false;
+            }
         }
 
     }

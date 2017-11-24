@@ -16,6 +16,8 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -26,7 +28,7 @@
 
                 <Label Text="Height" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 <Entry x:Name="HeightTextBox" Placeholder="000" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
-                <Picker x:Name="MetricPickerHeight" WidthRequest="30" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand">
+                <Picker x:Name="MetricPickerHeight" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>cm</x:String>
@@ -38,11 +40,11 @@
 
                 <Label Text="Weight" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 <Entry x:Name="WeightTextBox" Placeholder="000" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
-                <Picker x:Name="MetricPickerWeight" WidthRequest="30" Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand">
+                <Picker x:Name="MetricPickerWeight" Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>kg</x:String>
-                            <x:String>lbs</x:String>
+                            <x:String>lb</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                     <Picker.SelectedIndex>0</Picker.SelectedIndex>
@@ -52,25 +54,51 @@
                 <Entry x:Name="AgetTextBox" Placeholder="00" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
                 <Label Text="years" Grid.Row="2" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
 
-                <Label Text="Body Fat" Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="BodyFatTextBox" Placeholder="00" Grid.Row="3" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
-                <Label Text="%" Grid.Row="3" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Button x:Name="BFHelpButton" Grid.Row="3" Grid.Column="3" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnBFHelpClicked"/>
-
-                <Label Text="Activity Level" Grid.Row="4" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Picker x:Name="ActivityLevelPicker" WidthRequest="90" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" SelectedIndexChanged="OnCustomActivityLevelPicked">
+                <Label Text="Sex" Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Picker x:Name="SexPicker" Grid.Row="3" Grid.Column="1" HorizontalOptions="CenterAndExpand" >
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
-                            <x:String>Sedentary</x:String>
-                            <x:String>Low</x:String>
-                            <x:String>Medium</x:String>
-                            <x:String>High</x:String>
-                            <x:String>Custom</x:String>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                </Picker>
+
+                <Label Text="Formula" Grid.Row="4" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Picker x:Name="FormulaPicker" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" SelectedIndexChanged="OnFormulaKMSelected" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Mifflin-St Jeor</x:String>
+                            <x:String>Katch-McArdle</x:String>
+                            <x:String>Harris-Benedict</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+                <Button x:Name="FormulaHelpButton" Grid.Row="4" Grid.Column="2" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnFormulaHelpClicked"/>
+
+                <Label Text="Activity Level" Grid.Row="5" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Picker x:Name="ActivityLevelPicker" Grid.Row="5" Grid.Column="1" HorizontalOptions="CenterAndExpand" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>BMR</x:String>
+                            <x:String>Little</x:String>
+                            <x:String>3/Week</x:String>
+                            <x:String>4/Week</x:String>
+                            <x:String>5/Week</x:String>
+                            <x:String>Daily</x:String>
+                            <x:String>5/Week (intense)</x:String>
+                            <x:String>Daily intense or twice daily</x:String>
+                            <x:String>Daily and physical job</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Entry x:Name="CustomActivityLevelEntry" Placeholder="1.00" Grid.Row="4" Grid.Column="2" HorizontalOptions="CenterAndExpand" IsVisible="False"/>
-                <Button x:Name="ActivityHelpButton" Grid.Row="4" Grid.Column="3" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnActivityLevelHelpClicked"/>
+                <Button x:Name="ActivityHelpButton" Grid.Row="5" Grid.Column="2" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" />
+
+                <Label x:Name="BodyFatLabel" Text="Body Fat" Grid.Row="6" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+                <Entry x:Name="BodyFatTextBox" Grid.Row="6" Grid.Column="1" HorizontalOptions="CenterAndExpand" IsVisible="False"/>
+                <Label x:Name="BodyFatPercentageLabel" Text="%" Grid.Row="6" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
