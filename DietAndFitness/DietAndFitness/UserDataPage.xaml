@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietAndFitness.UserDataPage">
+             x:Class="DietAndFitness.UserDataPage"
+             Title="User Data Input">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS" Value="0,20,0,0"/>
@@ -83,7 +84,7 @@
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>BMR</x:String>
-                            <x:String>Little</x:String>
+                            <x:String>Little or none</x:String>
                             <x:String>3/Week</x:String>
                             <x:String>4/Week</x:String>
                             <x:String>5/Week</x:String>
@@ -94,12 +95,15 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Button x:Name="ActivityHelpButton" Grid.Row="5" Grid.Column="2" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" />
+                <Button x:Name="ActivityHelpButton" Grid.Row="5" Grid.Column="2" Text="Help!" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Clicked="OnActivityHelpClicked"/>
 
                 <Label x:Name="BodyFatLabel" Text="Body Fat" Grid.Row="6" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
                 <Entry x:Name="BodyFatTextBox" Grid.Row="6" Grid.Column="1" HorizontalOptions="CenterAndExpand" IsVisible="False"/>
                 <Label x:Name="BodyFatPercentageLabel" Text="%" Grid.Row="6" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+
             </Grid>
+            <Button x:Name="CalculateButton" Text="Calculate" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Clicked="OnCalculateClicked"/>
+            <Label x:Name="TotalCaloriesLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
