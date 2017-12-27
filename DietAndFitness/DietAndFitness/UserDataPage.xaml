@@ -28,7 +28,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Height" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="HeightTextBox" Placeholder="000" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                <Entry Keyboard="Numeric" x:Name="HeightTextBox" Placeholder="000" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
                 <Picker x:Name="MetricPickerHeight" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -40,7 +40,7 @@
                 </Picker>
 
                 <Label Text="Weight" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="WeightTextBox" Placeholder="000" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                <Entry Keyboard="Numeric" x:Name="WeightTextBox" Placeholder="000" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
                 <Picker x:Name="MetricPickerWeight" Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -52,7 +52,7 @@
                 </Picker>
 
                 <Label Text="Age" Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Entry x:Name="AgetTextBox" Placeholder="00" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                <Entry Keyboard="Numeric" x:Name="AgetTextBox" Placeholder="00" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
                 <Label Text="years" Grid.Row="2" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
 
                 <Label Text="Sex" Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>

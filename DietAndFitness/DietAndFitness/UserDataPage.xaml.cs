@@ -19,6 +19,7 @@ namespace DietAndFitness
         async void OnFormulaHelpClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FormulaHelpPage());
+           
         }
          void OnActivityHelpClicked(object sender, EventArgs e)
         {
