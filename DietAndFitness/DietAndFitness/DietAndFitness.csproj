@@ -38,6 +38,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoodItemViewModel.cs" />
+    <Compile Include="FoodListPage.xaml.cs">
+      <DependentUpon>FoodListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FoodListViewModel.cs" />
     <Compile Include="FormulaHelpPage.xaml.cs">
       <DependentUpon>FormulaHelpPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MealsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FoodListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

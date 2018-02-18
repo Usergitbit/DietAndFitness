@@ -40,10 +40,12 @@ namespace DietAndFitness
                 BodyFatPercentageLabel.IsVisible = false;
             }
         }
-    void OnCalculateClicked(object sender, EventArgs e)
+    async void OnCalculateClicked(object sender, EventArgs e)
     {
 
             TotalCaloriesLabel.Text = "Place holder text for calorie results";
+            FoodListViewModel F = new FoodListViewModel();
+            await Navigation.PushAsync(new FoodListPage());
     }
 
 
