@@ -16,5 +16,19 @@ namespace DietAndFitness
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void FoodItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if(e.SelectedItem == null)
+            {
+                EditFoodItemButton.IsVisible = false;
+                DeleteFoodItemButton.IsVisible = false;
+            }
+            else
+            {
+                EditFoodItemButton.IsVisible = true;
+                DeleteFoodItemButton.IsVisible = true;
+            }
+        }
+    }
 }

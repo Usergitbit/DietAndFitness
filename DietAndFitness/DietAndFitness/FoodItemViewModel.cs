@@ -12,6 +12,8 @@ namespace DietAndFitness
         private string proteins;
         private string carbohydrates;
         private string fats;
+        private string quantity;
+        private string calories;
         public string Name
         {
             get
@@ -25,12 +27,38 @@ namespace DietAndFitness
             }
 
         }
+        public string Calories
+        {
+            get
+            {
+                return calories + " Calories";
+            }
+
+            set
+            {
+                calories = value;
+            }
+
+        }
+        public string Quantity
+        {
+            get
+            {
+                return quantity;
+            }
+
+            set
+            {
+                quantity = value;
+            }
+
+        }
         public string Proteins
 
         {
             get
             {
-                return "Proteins " + proteins + " ";
+                return  proteins;
             }
 
             set
@@ -43,7 +71,7 @@ namespace DietAndFitness
         {
             get
             {
-                return "Carbohydrates " + carbohydrates + " ";
+                return carbohydrates;
             }
 
             set
@@ -56,7 +84,7 @@ namespace DietAndFitness
         {
             get
             {
-                return "Fats " + fats + " ";
+                return fats;
             }
 
             set
@@ -72,12 +100,14 @@ namespace DietAndFitness
                 return Carbohydrates + Proteins + Fats;
             }
         }
-        public FoodItemViewModel(string _name, string _proteins, string _carbohydrates, string _fats)
+        public FoodItemViewModel(string _name, string _proteins, string _carbohydrates, string _fats, string _quantity, string _calories)
         {
             name = _name;
             proteins = _proteins;
             carbohydrates = _carbohydrates;
             fats = _fats;
+            quantity = _quantity;
+            calories = _calories;
         }
 
         public override string ToString()

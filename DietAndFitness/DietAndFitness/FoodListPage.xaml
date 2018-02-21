@@ -5,14 +5,66 @@
              x:Class="DietAndFitness.FoodListPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{x:Static local:FoodListViewModel.FoodList}">
+            <ListView ItemsSource="{x:Static local:FoodListViewModel.FoodList}" RowHeight="120" ItemSelected="FoodItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}"
-                                  Detail="{Binding NutritionValues}"/>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="Accent" Padding="10">
+                                    <StackLayout>
+                                        <Grid HorizontalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Name}" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+                                            <Label Text="{Binding Calories}" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                                        </Grid>
+                                        
+                                        <Grid HorizontalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Quantity" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="Carbohydrates" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="Proteins" Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="Fats" Grid.Row="1" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+
+                                            <Label Text="{Binding Quantity}" Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="{Binding Carbohydrates}" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="{Binding Proteins}" Grid.Row="2" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="{Binding Fats}" Grid.Row="2" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AddFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Add" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="EditFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Edit" Grid.Row="0" Grid.Column="1" IsVisible="False"/>
+                <Button x:Name="DeleteFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Delete" Grid.Row="0" Grid.Column="2" IsVisible="False"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
