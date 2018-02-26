@@ -5,7 +5,7 @@
              x:Class="DietAndFitness.FoodListPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{x:Static local:FoodListViewModel.FoodList}" RowHeight="120" ItemSelected="FoodItemSelected">
+            <ListView ItemsSource="{x:Static local:FoodListViewModel.FoodList}" RowHeight="120">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -61,9 +61,9 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="AddFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Add" Grid.Row="0" Grid.Column="0"/>
-                <Button x:Name="EditFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Edit" Grid.Row="0" Grid.Column="1" IsVisible="False"/>
-                <Button x:Name="DeleteFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Delete" Grid.Row="0" Grid.Column="2" IsVisible="False"/>
+                <Button x:Name="AddFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Add" Grid.Row="0" Grid.Column="0" Clicked="AddFoodItemButton_Clicked"/>
+                <Button x:Name="EditFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Edit" Grid.Row="0" Grid.Column="1" />
+                <Button x:Name="DeleteFoodItemButton" BackgroundColor="LightGray" HorizontalOptions="CenterAndExpand" Text="Delete" Grid.Row="0" Grid.Column="2" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

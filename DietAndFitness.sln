@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietAndFitness.Android", "DietAndFitness\DietAndFitness.Android\DietAndFitness.Android.csproj", "{2DD0B6C4-4B9E-4FD6-886D-C575F91D6F97}"
 EndProject
@@ -239,7 +239,8 @@ Global
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.AppStore|x64.ActiveCfg = AppStore|iPhone
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.AppStore|x86.ActiveCfg = AppStore|iPhone
-		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{0EA1A634-0FE0-4C06-A7E0-B1832FA1B405}.Debug|iPhone.Build.0 = Debug|iPhone

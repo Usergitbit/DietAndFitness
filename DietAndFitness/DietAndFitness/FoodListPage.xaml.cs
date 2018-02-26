@@ -17,18 +17,9 @@ namespace DietAndFitness
 			InitializeComponent ();
 		}
 
-        private void FoodItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async private void AddFoodItemButton_Clicked(object sender, EventArgs e)
         {
-            if(e.SelectedItem == null)
-            {
-                EditFoodItemButton.IsVisible = false;
-                DeleteFoodItemButton.IsVisible = false;
-            }
-            else
-            {
-                EditFoodItemButton.IsVisible = true;
-                DeleteFoodItemButton.IsVisible = true;
-            }
+            await Navigation.PushAsync(new AddFoodItemPage());
         }
     }
 }
