@@ -21,5 +21,16 @@ namespace DietAndFitness
         {
             await Navigation.PushAsync(new AddFoodItemPage());
         }
+        async private void EditFoodItemButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditFoodItemPage());
+        }
+
+        private void DeleteFoodItemButton_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Delete", "Comfirm deletion?", "Ok", "Cancel");
+
+
+        }
     }
 }
