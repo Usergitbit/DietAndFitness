@@ -42,10 +42,10 @@ namespace DietAndFitness
         }
     async void OnCalculateClicked(object sender, EventArgs e)
     {
-
+            //TODO: Move VM initialization on foodpage appearance
             TotalCaloriesLabel.Text = "Place holder text for calorie results";
             FoodListViewModel F = new FoodListViewModel();
-            await Navigation.PushAsync(new FoodListPage());
+            await Navigation.PushAsync(new MainPage());
     }
 
 

@@ -35,29 +35,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AddFoodItemPage.xaml.cs">
+    <Compile Include="Views\AddFoodItemPage.xaml.cs">
       <DependentUpon>AddFoodItemPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditFoodItemPage.xaml.cs">
+    <Compile Include="Views\EditFoodItemPage.xaml.cs">
       <DependentUpon>EditFoodItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodItemViewModel.cs" />
-    <Compile Include="FoodListPage.xaml.cs">
+    <Compile Include="ViewModels\FoodItem.cs" />
+    <Compile Include="Views\FoodListPage.xaml.cs">
       <DependentUpon>FoodListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodListViewModel.cs" />
-    <Compile Include="FormulaHelpPage.xaml.cs">
+    <Compile Include="ViewModels\FoodListViewModel.cs" />
+    <Compile Include="Views\FormulaHelpPage.xaml.cs">
       <DependentUpon>FormulaHelpPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormulaHelpViewModel.cs" />
-    <Compile Include="LogInPage.xaml.cs">
+    <Compile Include="ViewModels\FormulaHelpViewModel.cs" />
+    <Compile Include="Views\LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPageDetail.xaml.cs">
+      <DependentUpon>MainPageDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPageMaster.xaml.cs">
+      <DependentUpon>MainPageMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainPageMenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDataPage.xaml.cs">
+    <Compile Include="Views\UserDataPage.xaml.cs">
       <DependentUpon>UserDataPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -68,31 +78,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserDataPage.xaml">
+    <EmbeddedResource Include="Views\UserDataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LogInPage.xaml">
+    <EmbeddedResource Include="Views\LogInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormulaHelpPage.xaml">
+    <EmbeddedResource Include="Views\FormulaHelpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FoodListPage.xaml">
+    <EmbeddedResource Include="Views\FoodListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddFoodItemPage.xaml">
+    <EmbeddedResource Include="Views\AddFoodItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -112,7 +122,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EditFoodItemPage.xaml">
+    <EmbeddedResource Include="Views\EditFoodItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPageDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

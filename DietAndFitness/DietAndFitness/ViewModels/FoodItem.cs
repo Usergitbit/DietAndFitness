@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietAndFitness
 {
-    class FoodItemViewModel
+    class FoodItem
     {
         private string name;
         private string proteins;
@@ -100,7 +100,7 @@ namespace DietAndFitness
                 return Carbohydrates + Proteins + Fats;
             }
         }
-        public FoodItemViewModel(string _name, string _proteins, string _carbohydrates, string _fats, string _quantity, string _calories)
+        public FoodItem(string _name, string _proteins, string _carbohydrates, string _fats, string _quantity, string _calories)
         {
             name = _name;
             proteins = _proteins;

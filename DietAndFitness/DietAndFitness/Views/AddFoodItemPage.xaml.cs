@@ -12,7 +12,7 @@ namespace DietAndFitness
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddFoodItemPage : ContentPage
     {
-        FoodItemViewModel content = null;
+        FoodItem content = null;
         public AddFoodItemPage()
         {
             InitializeComponent();
@@ -32,10 +32,10 @@ namespace DietAndFitness
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-           if(content == e.Item as FoodItemViewModel)
+           if(content == e.Item as FoodItem)
             content = null;
            else;
-            content = e.Item as FoodItemViewModel;
+            content = e.Item as FoodItem;
 
 
         }
@@ -49,7 +49,7 @@ namespace DietAndFitness
                     await DisplayAlert("Error", "No quantity entered", "Ok");
                 else
                 {
-                     FoodListViewModel.FoodList.Add(new FoodItemViewModel("Kek", "14", "88", "20", "20", "14"));
+                     FoodListViewModel.FoodList.Add(new FoodItem("Kek", "14", "88", "20", "20", "14"));
                      await Navigation.PopAsync();
                 }
         }

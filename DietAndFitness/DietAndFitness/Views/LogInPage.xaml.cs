@@ -15,15 +15,16 @@ namespace DietAndFitness
         public LogInPage()
         {
             InitializeComponent();
+            if(Device.RuntimePlatform.Equals(Device.Android))
+            {
+                ProfilePicker.WidthRequest = 75;
+            }
         }
 
-        async void OnLogInClicked(object sender, EventArgs e)
+        async void OnCreateProfileButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserDataPage());
         }
-        async void OnSignUpClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new UserDataPage());
-        }
+
     }
 }

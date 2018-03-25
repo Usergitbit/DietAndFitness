@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DietAndFitness"
+             x:Class="DietAndFitness.LogInPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Select a profile:"
+                HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+            <Picker x:Name="ProfilePicker" HorizontalOptions="CenterAndExpand" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Profile 1</x:String>
+                        <x:String>Profile 2</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="or"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Button x:Name="CreateProfileButton"
+                        Grid.Column="0"
+                        Text="Create Profile"
+                        HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                        Clicked="OnCreateProfileButtonClicked"/>
+         
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
