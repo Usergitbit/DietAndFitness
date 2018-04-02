@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +10,14 @@ using Xamarin.Forms;
 
 namespace DietAndFitness
 {
-    class FoodListViewModel
+    public class FoodListViewModel 
     {
-        public static List<FoodItem> FoodList;
+        public static ObservableCollection<FoodItem> FoodList;
+    
 
         public FoodListViewModel()
         {
-            FoodList = new List<FoodItem>();
+            FoodList = new ObservableCollection<FoodItem>();
             FoodList.Add(new FoodItem("Chocolate", "5", "40", "20", "100", "400"));
             FoodList.Add(new FoodItem("Candy", "5", "40", "20", "100", "400"));
             for (int i = 0; i < 20; i++)
@@ -22,8 +25,12 @@ namespace DietAndFitness
             FoodList.Add(new FoodItem("Chocolate", "5", "40", "20", "100", "400"));
             FoodList.Add(new FoodItem("Candy", "5", "40", "20", "100", "400"));
         }
+        
+        public void AddItem(FoodItem Item)
+        {
+            FoodList.Add(Item);
+        }
 
-
-
+        
     }
 }

@@ -12,6 +12,7 @@ namespace DietAndFitness
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserDataPage : ContentPage
     {
+
         public UserDataPage()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace DietAndFitness
     {
             //TODO: Move VM initialization on foodpage appearance
             TotalCaloriesLabel.Text = "Place holder text for calorie results";
-            FoodListViewModel F = new FoodListViewModel();
+            
             await Navigation.PushAsync(new MainPage());
     }
 

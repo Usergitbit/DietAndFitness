@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietAndFitness
 {
-    class FoodItem
+    public class FoodItem
     {
         private string name;
         private string proteins;
@@ -109,7 +109,10 @@ namespace DietAndFitness
             quantity = _quantity;
             calories = _calories;
         }
+        public FoodItem()
+        {
 
+        }
         public override string ToString()
         {
             return name;

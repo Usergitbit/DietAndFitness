@@ -49,7 +49,8 @@ namespace DietAndFitness
                     await DisplayAlert("Error", "No quantity entered", "Ok");
                 else
                 {
-                     FoodListViewModel.FoodList.Add(new FoodItem("Kek", "14", "88", "20", "20", "14"));
+                    FoodListViewModel.FoodList.Add(new FoodItem("Kek", "14", "88", "20", "20", "14"));
+                
                      await Navigation.PopAsync();
                 }
         }
