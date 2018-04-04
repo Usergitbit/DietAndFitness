@@ -99,6 +99,7 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="PathFinderiOS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
@@ -156,9 +157,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DietAndFitness\DietAndFitness.csproj">
-      <Project>{58c98b67-181e-41e5-a2b7-aae79f20abd6}</Project>
-      <Name>DietAndFitness</Name>
+    <ProjectReference Include="..\..\DietAndFitnessStd\DietAndFitnessStd.csproj">
+      <Project>{234f047b-f85b-41b3-9b03-0dd71b215a09}</Project>
+      <Name>DietAndFitnessStd</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

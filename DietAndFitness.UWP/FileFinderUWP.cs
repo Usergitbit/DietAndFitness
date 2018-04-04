@@ -12,7 +12,7 @@ using Windows.Storage;
 [assembly: Dependency(typeof(FileFinderUWP))]
 namespace DietAndFitness.UWP
 {
-    //TODO: POSSIBLE REGISTRATION OF DEPENDANCY SERVICE REQUIRED IN APP.XAML.CS FOR RELEASE BUILDS
+    //TODO: POSSIBLE REGISTRATION OF DEPENDENCY SERVICE REQUIRED IN APP.XAML.CS FOR RELEASE BUILDS
     public class FileFinderUWP : IFileFinder
     {
         public FileFinderUWP()

@@ -16,7 +16,6 @@ namespace DietAndFitness.Model
         public FoodItemDatabase(string DatabasePath)
         {
             database = new SQLiteAsyncConnection(DatabasePath);
-            database.CreateTableAsync<FoodItem>().Wait();
         }
     }
 }

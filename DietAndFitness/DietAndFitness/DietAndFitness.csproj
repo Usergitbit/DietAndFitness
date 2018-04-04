@@ -35,8 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Model\DatabaseCopyController.cs" />
     <Compile Include="Model\FoodItemDatabase.cs" />
     <Compile Include="Model\IFileFinder.cs" />
+    <Compile Include="Model\IPathFinder.cs" />
     <Compile Include="Views\AddFoodItemPage.xaml.cs">
       <DependentUpon>AddFoodItemPage.xaml</DependentUpon>
     </Compile>
@@ -137,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\FoodItemsGlobal.db" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\EditFoodItemPage.xaml">
