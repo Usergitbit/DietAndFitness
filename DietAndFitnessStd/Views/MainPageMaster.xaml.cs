@@ -36,7 +36,7 @@ namespace DietAndFitness
                 {
                     new MainPageMenuItem { Id = 0, Title = "Today's Food", TargetType = typeof(FoodListPage)},
                     new MainPageMenuItem { Id = 1, Title = "Calendar", TargetType = typeof(CalendarPage)},
-                    new MainPageMenuItem { Id = 2, Title = "Food Database" },
+                    new MainPageMenuItem { Id = 2, Title = "Food Database", TargetType = typeof(FoodDatabasePage) },
                     new MainPageMenuItem { Id = 3, Title = "Statistics" },
                     new MainPageMenuItem { Id = 4, Title = "Options" },
                 });

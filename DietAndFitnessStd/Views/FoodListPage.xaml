@@ -40,7 +40,7 @@
 
             </Grid>
 
-            <ListView ItemsSource="{x:Static local:FoodListViewModel.FoodList}" RowHeight="120">
+            <ListView RowHeight="120">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -55,8 +55,8 @@
                                                 <ColumnDefinition Width="Auto"/>
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <Label Text="{Binding Name}" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-                                            <Label Text="{Binding Calories}" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                                            <Label Text="" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+                                            <Label Text="" FontSize="22" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
                                         </Grid>
                                         
                                         <Grid HorizontalOptions="Center">
@@ -75,10 +75,10 @@
                                             <Label Text="Proteins" Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
                                             <Label Text="Fats" Grid.Row="1" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
 
-                                            <Label Text="{Binding Quantity}" Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
-                                            <Label Text="{Binding Carbohydrates}" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
-                                            <Label Text="{Binding Proteins}" Grid.Row="2" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
-                                            <Label Text="{Binding Fats}" Grid.Row="2" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="" Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="" Grid.Row="2" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
+                                            <Label Text="" Grid.Row="2" Grid.Column="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="16"/>
                                         </Grid>
                                     </StackLayout>
                                 </Frame>

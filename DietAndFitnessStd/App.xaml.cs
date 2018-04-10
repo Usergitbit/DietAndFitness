@@ -7,22 +7,30 @@ using System.IO;
 using Xamarin.Forms;
 using System.Reflection;
 using System.Diagnostics;
+using DietAndFitness.ViewModels;
+using DietAndFitness.Views;
 
 namespace DietAndFitness
 {
     public partial class App : Application
     {
-        FoodItemDatabase database;
+        // public FoodItemDatabase database;
+        //public FoodItemsViewModel FoodDatabase;
+        //public FoodItemsViewModel mymethod()
+        //{
+        //    return FoodDatabase;
+        //}
         public App()
         {
             InitializeComponent();
-
+         
+            string databasename = "LocalDatabase.db";
             //TODO Check if database already exists and whether it needs to be updated
             string DestinationPath = null;
             try
             {
-               DestinationPath = DependencyService.Get<IFileFinder>().GetLocalFilePath("Databasetest.db");
-               using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.Databasetest.db"))
+               DestinationPath = DependencyService.Get<IFileFinder>().GetLocalFilePath(databasename);
+               using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources." + databasename))
                {
                     using (var destination = File.Create(DestinationPath))
                     {
@@ -38,17 +46,16 @@ namespace DietAndFitness
         
             try
             {
-                database = new FoodItemDatabase(DependencyService.Get<IFileFinder>().GetLocalFilePath("Databasetest.db"));
+                 SQLiteConnection.ConnectAsync((DependencyService.Get<IFileFinder>().GetLocalFilePath(databasename)));
             }
             catch(Exception e)
             {
                 Debug.WriteLine(e.Message + "Error at accessing database file");
             }
 
-            FoodListViewModel F = new FoodListViewModel();
-            F.LoadList(database.Get());
 
-            MainPage = new NavigationPage(new DietAndFitness.LogInPage());
+   
+            MainPage = new NavigationPage(new LogInPage());
 
             
             

@@ -152,7 +152,6 @@
   <ItemGroup>
     <Compile Include="FileFinderAndroid.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="PathFinderAndroid.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
