@@ -18,7 +18,25 @@ namespace DietAndFitness.ViewModels
 
         private ObservableCollection<GlobalFoodItem> fooditems;
         private DataAccessLayer<GlobalFoodItem> DBAccess;
+        private GlobalFoodItem itemtoadd = new GlobalFoodItem();
 
+        public GlobalFoodItem ItemToAdd
+        {
+            get
+            {
+                return itemtoadd;
+            }
+
+            set
+            {
+                if (value == itemtoadd)
+                    return;
+                itemtoadd = value;
+                OnPropertyChanged(); 
+            }
+        }
+        
+            
         public ObservableCollection<GlobalFoodItem> FoodItems
         {
             get

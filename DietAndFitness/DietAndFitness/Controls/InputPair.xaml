@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DietAndFitness.Controls.InputPair"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="{Binding Source={x:Reference this}, Path=CaptionBackground}"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Source={x:Reference this}, Path=Caption}"
+            TextColor="{Binding Source={x:Reference this}, Path=CaptionForeground}" />
+        <Entry
+            Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="{Binding Source={x:Reference this}, Path=ValueBackGround}"
+            HorizontalOptions="CenterAndExpand"
+            Text="{Binding Source={x:Reference this}, Path=Value, Mode=TwoWay}"
+            TextColor="{Binding Source={x:Reference this}, Path=ValueForeground}"
+            VerticalOptions="CenterAndExpand" />
+
+    </Grid>
+</ContentView>

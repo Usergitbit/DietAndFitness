@@ -2,13 +2,61 @@
 <ContentPage
     x:Class="DietAndFitness.Views.AddFoodItemDB"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DietAndFitness.Controls">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    x:Name="NameLabel"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding ItemToAdd.Name}"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="NameTextBox"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding ItemToAdd.Name}"
+                    VerticalOptions="CenterAndExpand" />
+                <local:InputPair
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Caption="{Binding ItemToAdd.Name}"
+                    Value="{Binding ItemToAdd.Name}" />
+                <Label
+                    x:Name="NameLabel2"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding ItemToAdd.Name}"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="NameTextBox2"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding ItemToAdd.Name}"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -32,7 +32,7 @@ namespace DietAndFitness.Controls
             }
             catch(Exception e)
             {
-                Debug.WriteLine("wtf load list" + e.Message + e.Source + e.StackTrace);
+                Debug.WriteLine("Error at getting list from database" + e.Message + e.Source + e.StackTrace);
             }
             return null;
         }
@@ -47,7 +47,7 @@ namespace DietAndFitness.Controls
             }
             catch (Exception e)
             {
-                Debug.WriteLine("wtf at inserint" + e.Source + e.Message + e.StackTrace);
+                Debug.WriteLine("Error at inserting into database" + e.Source + e.Message + e.StackTrace);
             }
             return 0;
         }
