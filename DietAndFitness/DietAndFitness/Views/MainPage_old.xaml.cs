@@ -28,7 +28,7 @@ namespace DietAndFitness.Views
         }
         public void AddFoodItemButton_Clicked(object sender, EventArgs e)
         {
-            FoodDatabase.Add();
+            //FoodDatabase.Add();
         }
     }
 }

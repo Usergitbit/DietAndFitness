@@ -74,6 +74,9 @@ namespace DietAndFitness.Models
         {
             CreatedAt = DateTime.Now;
             ModifiedAt = DateTime.Now;
+            Deleted = false;
+            Name = String.Empty;
+
         }
     }
 }

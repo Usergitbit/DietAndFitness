@@ -103,11 +103,16 @@ namespace DietAndFitness.Models
             }
         }
 
-        public GlobalFoodItem()
+        public GlobalFoodItem() : base()
         {
-
+            Brand = String.Empty;
+            CookingMode = String.Empty;
+            Calories = String.Empty;
+            Carbohydrates = String.Empty;
+            Proteins = String.Empty;
+            Fats = String.Empty;
         }
-        public GlobalFoodItem(string _name, string _proteins, string _calories, string _carbs, string _fats, string _brand, string _cookingmode, bool _deleted ) : base()
+        public GlobalFoodItem(string _name, string _proteins, string _calories, string _carbs, string _fats, string _brand, string _cookingmode ) : base()
         {
             Name = _name;
             Calories = _calories;
@@ -115,9 +120,18 @@ namespace DietAndFitness.Models
             Fats = _fats;
             Brand = _brand;
             CookingMode = _cookingmode;
-            Deleted = _deleted;
-        
             Proteins = _proteins;
+        }
+
+        public void ResetValues()
+        {
+            Name = String.Empty;
+            Brand = String.Empty;
+            CookingMode = String.Empty;
+            Calories = String.Empty;
+            Carbohydrates = String.Empty;
+            Proteins = String.Empty;
+            Fats = String.Empty;
         }
     }
 }

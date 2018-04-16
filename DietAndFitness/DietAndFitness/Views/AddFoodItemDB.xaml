@@ -19,44 +19,85 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
                 <Label
-                    x:Name="NameLabel"
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding ItemToAdd.Name}"
-                    VerticalOptions="CenterAndExpand" />
+                    Text="Name"
+                    VerticalOptions="Center" />
                 <Entry
-                    x:Name="NameTextBox"
                     Grid.Row="0"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
                     Text="{Binding ItemToAdd.Name}"
-                    VerticalOptions="CenterAndExpand" />
-                <local:InputPair
+                    VerticalOptions="Center" />
+                <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Caption="{Binding ItemToAdd.Name}"
-                    Value="{Binding ItemToAdd.Name}" />
+                    Text="Name"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding ItemToAdd.Brand}"
+                    VerticalOptions="Center" />
                 <Label
-                    x:Name="NameLabel2"
                     Grid.Row="2"
                     Grid.Column="0"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding ItemToAdd.Name}"
-                    VerticalOptions="CenterAndExpand" />
+                    Text="Name"
+                    VerticalOptions="Center" />
                 <Entry
-                    x:Name="NameTextBox2"
                     Grid.Row="2"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding ItemToAdd.Name}"
-                    VerticalOptions="CenterAndExpand" />
+                    Text="{Binding ItemToAdd.CookingMode}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Calories"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding ItemToAdd.Calories}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Carbohydrates"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding ItemToAdd.Carbohydrates}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Proteins"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Text="{Binding ItemToAdd.Proteins}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Fats"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text="{Binding ItemToAdd.Fats}"
+                    VerticalOptions="Center" />
             </Grid>
-
+            <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
+            <Button
+                Command="{Binding AddCommand}"
+                CommandParameter="{Binding ItemToAdd}"
+                HorizontalOptions="Center"
+                Text="Ok" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

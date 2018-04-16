@@ -14,7 +14,7 @@ namespace DietAndFitness.Controls
 	public partial class InputPair : ContentView
 	{
         public static readonly BindableProperty CaptionProperty = BindableProperty.Create("Caption", typeof(string), typeof(InputPair), string.Empty);
-        public static readonly BindableProperty ValueProperty = BindableProperty.Create("Value", typeof(string), typeof(InputPair), string.Empty);
+        public static readonly BindableProperty ValueProperty = BindableProperty.Create(propertyName: "Value", returnType: typeof(string), declaringType: typeof(InputPair), defaultBindingMode:BindingMode.TwoWay, propertyChanged: HandleTextChanged);
 
         private static void HandleTextChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -68,7 +68,7 @@ namespace DietAndFitness.Controls
                 return (string)GetValue(ValueProperty);
             }
             set
-            {
+            {   
                 SetValue(ValueProperty, value);
             }
         }

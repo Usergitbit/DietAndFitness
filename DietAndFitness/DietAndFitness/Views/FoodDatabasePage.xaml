@@ -19,20 +19,25 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <Label
                                                 Grid.Row="0"
                                                 Grid.Column="0"
-                                                FontSize="22"
                                                 HorizontalOptions="Center"
                                                 Text="{Binding Name}"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="0"
                                                 Grid.Column="1"
-                                                FontSize="22"
                                                 HorizontalOptions="Center"
                                                 Text="{Binding Calories}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                HorizontalOptions="Center"
+                                                Text="Calories"
                                                 VerticalOptions="CenterAndExpand" />
                                         </Grid>
 
@@ -50,21 +55,18 @@
                                             <Label
                                                 Grid.Row="1"
                                                 Grid.Column="0"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="Carbohydrates"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="1"
                                                 Grid.Column="1"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="Proteins"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="1"
                                                 Grid.Column="2"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="Fats"
                                                 VerticalOptions="CenterAndExpand" />
@@ -72,21 +74,18 @@
                                             <Label
                                                 Grid.Row="2"
                                                 Grid.Column="0"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="{Binding Carbohydrates}"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="2"
                                                 Grid.Column="1"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="{Binding Proteins}"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="2"
                                                 Grid.Column="2"
-                                                FontSize="16"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Text="{Binding Fats}"
                                                 VerticalOptions="CenterAndExpand" />
