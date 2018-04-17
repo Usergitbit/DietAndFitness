@@ -37,6 +37,7 @@ namespace DietAndFitness.Controls
                 {
                     using (var destination = File.Create(DestinationPath))
                     {
+                        //TODO Check if database already exists
                         source.CopyTo(destination);
                     }
                 }

@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="DietAndFitness.Views.AddFoodItemDB"
+    x:Class="DietAndFitness.Views.EditFoodItemDB"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DietAndFitness.Controls">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
             <Grid HorizontalOptions="CenterAndExpand">
@@ -29,7 +28,7 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Name}"
+                    Text="{Binding SelectedItem.Name}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="1"
@@ -39,7 +38,7 @@
                 <Entry
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Brand}"
+                    Text="{Binding SelectedItem.Brand}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="2"
@@ -49,7 +48,7 @@
                 <Entry
                     Grid.Row="2"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.CookingMode}"
+                    Text="{Binding SelectedItem.CookingMode}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="3"
@@ -59,7 +58,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Calories}"
+                    Text="{Binding SelectedItem.Calories}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="4"
@@ -69,7 +68,7 @@
                 <Entry
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Carbohydrates}"
+                    Text="{Binding SelectedItem.Carbohydrates}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="5"
@@ -79,7 +78,7 @@
                 <Entry
                     Grid.Row="5"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Proteins}"
+                    Text="{Binding SelectedItem.Proteins}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="6"
@@ -89,7 +88,7 @@
                 <Entry
                     Grid.Row="6"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Fats}"
+                    Text="{Binding SelectedItem.Fats}"
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
@@ -97,7 +96,7 @@
                 Command="{Binding AddCommand}"
                 CommandParameter="{Binding ItemToAdd}"
                 HorizontalOptions="Center"
-                Text="Ok" />
+                Text="Confirm" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

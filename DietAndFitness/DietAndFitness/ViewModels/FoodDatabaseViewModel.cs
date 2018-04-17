@@ -20,12 +20,40 @@ namespace DietAndFitness.ViewModels
     public class FoodDatabaseViewModel : ViewModelBase
     {
         public ICommand AddCommand { get; private set; }
+        public ICommand EditCommand { get; private set; }
+        public ICommand DummyCommand { get; private set; }
+        public INavigation Navigation { get; set; }
+
+        #region
+        //Navigation should be implemented through a INavigationService that defines a navigation to each type of page
+        //Possible need to send VM as parameter to the navigation service call
+        //Popup display alert needs to be implemented through service that IDIalogService for possible future disable in settings
+        #endregion
 
         private ObservableCollection<GlobalFoodItem> fooditems;
         private DataAccessLayer<GlobalFoodItem> DBAccess;
         private GlobalFoodItem itemtoadd = new GlobalFoodItem();
+        private GlobalFoodItem selecteditem;
         private string progressindicator = "Waiting for input...";
 
+        async Task Navigate()
+        {
+            //await asdasdasdas.next();
+        }
+        public GlobalFoodItem SelectedItem
+        {
+            get
+            {
+                return selecteditem;
+            }
+            set
+            {
+                if (selecteditem == value)
+                    return;
+                selecteditem = value;
+                OnPropertyChanged();
+            }
+        }
         public string ProgressIndicator
         {
             get
@@ -79,6 +107,31 @@ namespace DietAndFitness.ViewModels
             DBAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.Database);
             AddCommand = new Command<GlobalFoodItem>(execute: Add, canExecute: ValidateAddButton);
             ItemToAdd.PropertyChanged += OnItemToAddPropertyChanged;
+            EditCommand = new Command<GlobalFoodItem>(execute: Edit, canExecute: ValidateEditButton);
+            DummyCommand = new Command<GlobalFoodItem>(execute: DummyMethod, canExecute: ValidateNavigationEditButton);
+        }
+
+        private bool ValidateNavigationEditButton(GlobalFoodItem Parameter)
+        {
+            if (SelectedItem == null)
+                return false;
+            else
+                return true;
+        }
+
+        private void DummyMethod(object obj)
+        {
+            //dummy
+        }
+
+        private bool ValidateEditButton(GlobalFoodItem arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Edit(GlobalFoodItem obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void OnItemToAddPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -129,7 +182,7 @@ namespace DietAndFitness.ViewModels
 
             //TODO VALIDATIONS!
             await DBAccess.Insert(Parameter);
-
+            
             ItemToAdd.ResetValues();
             ProgressIndicator = "Item added successfully!";
             await SwitchProgressIndicator();
@@ -142,7 +195,7 @@ namespace DietAndFitness.ViewModels
             await Task.Delay(2000);
             ProgressIndicator = "Waiting for input...";
         }
-
+      
 
     }
 }

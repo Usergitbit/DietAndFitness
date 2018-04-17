@@ -5,7 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding FoodItems}" RowHeight="120">
+            <ListView
+                ItemsSource="{Binding FoodItems}"
+                RowHeight="120"
+                SelectedItem="{Binding SelectedItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -117,6 +120,9 @@
                     x:Name="EditFoodItemButton"
                     Grid.Row="0"
                     Grid.Column="1"
+                    Clicked="EditFoodItemButton_Clicked"
+                    Command="{Binding DummyCommand}"
+                    CommandParameter="{Binding SelectedItem}"
                     HorizontalOptions="CenterAndExpand"
                     Text="Edit" />
                 <Button

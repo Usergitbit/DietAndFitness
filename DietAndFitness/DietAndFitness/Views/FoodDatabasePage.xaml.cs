@@ -31,5 +31,11 @@ namespace DietAndFitness.Views
             AddFoodItemDB.BindingContext = FoodDatabase;
             await Navigation.PushAsync(AddFoodItemDB);
         }
+        public async void EditFoodItemButton_Clicked(object sender, EventArgs e)
+        {
+            var EditFoodItemDB = new EditFoodItemDB();
+            EditFoodItemDB.BindingContext = FoodDatabase;
+            await Navigation.PushAsync(EditFoodItemDB);
+        }
     }
 }
