@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 /// <summary>
@@ -28,14 +29,12 @@ namespace DietAndFitness.Core
             {
                 if (isDirty == value)
                     return;
-                isDirty = true;
-                OnPropertyChanged();
+                isDirty = value;
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event NotifyCollectionChangedEventHandler CollectionChanged;
-
         public ModelBase()
         {
             //required for serialization
@@ -43,8 +42,8 @@ namespace DietAndFitness.Core
 
         public void Dispose()
         {
-            throw new NotImplementedException();
-            //possibly needed to free resources
+            //throw new NotImplementedException();
+           
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
@@ -53,6 +52,7 @@ namespace DietAndFitness.Core
             if (handler == null)
                 return;
             IsDirty = true;
+            Debug.WriteLine("PropertyChanged called from" + this.ToString() + " " + IsDirty);
             handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
         }
@@ -61,6 +61,12 @@ namespace DietAndFitness.Core
         {
             var handler = this.CollectionChanged;
             handler?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+        
+        public void Clean()
+        {
+            IsDirty = false;
+            Debug.WriteLine("I was cleaned");
         }
     }
 }

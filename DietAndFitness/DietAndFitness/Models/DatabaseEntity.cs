@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Core;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +10,7 @@ namespace DietAndFitness.Models
 {
     public class DatabaseEntity : ModelBase
     {
+        [PrimaryKey]
         public int? ID { get; set; }
         private string name;
         public string Name

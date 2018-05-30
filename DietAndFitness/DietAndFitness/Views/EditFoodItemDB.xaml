@@ -33,7 +33,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="Brand"
+                    Text="{Binding SelectedItem.IsDirty}"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="1"
@@ -43,7 +43,7 @@
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
-                    Text="Cooking Mode"
+                    Text="{Binding SelectedItem.Name}"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="2"
@@ -93,8 +93,8 @@
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
             <Button
-                Command="{Binding AddCommand}"
-                CommandParameter="{Binding ItemToAdd}"
+                Command="{Binding EditCommand}"
+                CommandParameter="{Binding SelectedItem}"
                 HorizontalOptions="Center"
                 Text="Confirm" />
         </StackLayout>

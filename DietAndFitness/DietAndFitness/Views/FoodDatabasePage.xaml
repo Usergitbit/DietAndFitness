@@ -121,7 +121,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Clicked="EditFoodItemButton_Clicked"
-                    Command="{Binding DummyCommand}"
+                    Command="{Binding PlaceHolderNavigationCommand}"
                     CommandParameter="{Binding SelectedItem}"
                     HorizontalOptions="CenterAndExpand"
                     Text="Edit" />
@@ -129,6 +129,7 @@
                     x:Name="DeleteFoodItemButton"
                     Grid.Row="0"
                     Grid.Column="2"
+                    Command="{Binding ConfirmCommand}"
                     HorizontalOptions="CenterAndExpand"
                     Text="Delete" />
             </Grid>

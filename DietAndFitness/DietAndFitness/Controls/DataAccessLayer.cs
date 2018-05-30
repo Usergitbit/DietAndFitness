@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 /// </summary>
 namespace DietAndFitness.Controls
 {
-    public class DataAccessLayer<T> : IDataAccess<T> where T : DatabaseEntity, new()
+    public class DataAccessLayer<T> : IDataAccess<T> where T : GlobalFoodItem, new()
     {
         private SQLiteAsyncConnection database;
 
@@ -21,7 +21,7 @@ namespace DietAndFitness.Controls
         }
         public async Task<int> Delete(T entity)
         {
-            throw new NotImplementedException();
+            return await database.DeleteAsync(entity);
         }
 
         public async Task<List<T>> Get()
@@ -41,8 +41,6 @@ namespace DietAndFitness.Controls
         {
             try
             {
-
-
                 return await database.InsertAsync(entity);
             }
             catch (Exception e)
@@ -54,7 +52,7 @@ namespace DietAndFitness.Controls
 
         public async Task<int> Update(T entity)
         {
-            throw new NotImplementedException();
+            return await database.UpdateAsync(entity);
         }
     }
 }
