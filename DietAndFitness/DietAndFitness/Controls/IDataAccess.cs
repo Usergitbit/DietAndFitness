@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-/// <summary>
-/// Interface for basic CRUD operations
-/// </summary>
+
 namespace DietAndFitness.Controls
 {
-    public interface IDataAccess <T> where T : DatabaseEntity, new()
+    /// <summary>
+    /// Interface for basic CRUD operations
+    /// </summary>
+    public interface IDataAccess <T> 
     {
         Task<List<T>> Get();
         Task<int> Insert(T entity);

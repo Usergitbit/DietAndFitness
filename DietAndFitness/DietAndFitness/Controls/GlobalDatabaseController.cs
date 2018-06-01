@@ -5,11 +5,11 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
-/// <summary>
-/// Class that controls the local copy of the database provided with the app
-/// </summary>
 namespace DietAndFitness.Controls
 {
+    /// <summary>
+    /// Class that controls the local copy of the database provided with the app
+    /// </summary>
     public class GlobalDatabaseController
     {
         private string DatabaseName { get; set; }

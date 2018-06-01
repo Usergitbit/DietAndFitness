@@ -11,7 +11,11 @@ using System.Threading.Tasks;
 /// </summary>
 namespace DietAndFitness.Controls
 {
-    public class DataAccessLayer<T> : IDataAccess<T> where T : GlobalFoodItem, new()
+    /// <summary>
+    /// Class that implements the interface for basic CRUD operations
+    /// Keeps the Model specific implementations separate from ViewModels for future database migrations
+    /// </summary>
+    public class DataAccessLayer<T> : IDataAccess<T> where T: new()
     {
         private SQLiteAsyncConnection database;
 

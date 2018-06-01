@@ -13,36 +13,27 @@ using DietAndFitness.Validators;
 using System.Timers;
 using System.Threading.Tasks;
 using DietAndFitness.Services;
-/// <summary>
-/// ViewModel for the Food Database Page
-/// </summary>
+using System.Runtime.CompilerServices;
+using DietAndFitness.Views;
 namespace DietAndFitness.ViewModels
 {
+    /// <summary>
+    /// ViewModel for the Food Database page
+    /// </summary>
     public class FoodDatabaseViewModel : ViewModelBase
     {
-        public ICommand AddCommand { get; private set; }
-        public ICommand EditCommand { get; private set; }
-        public ICommand PlaceHolderNavigationCommand { get; private set; }
-        public INavigation Navigation { get; set; }
-        private readonly IDialogService _dialogService;
-
-        #region TODO
-        //Navigation should be implemented through a INavigationService that defines a navigation to each type of page
-        //Possible need to send VM as parameter to the navigation service call
-        //Popup display alert needs to be implemented through service that IDIalogService for possible future disable in settings
-        //CLEAN items when navigating to a new page ?
-        #endregion
-
-        private ObservableCollection<GlobalFoodItem> fooditems;
+        #region Members
+        private readonly IDialogService dialogService;
+        private ObservableCollection<GlobalFoodItem> foodItems;
         private DataAccessLayer<GlobalFoodItem> DBAccess;
         private string progressindicator = "Waiting for input...";
         private GlobalFoodItem selectedItem;
-        private GlobalFoodItem itemToAdd;
-        private RelayCommand _confirmCommand;
-        async Task Navigate()
-        {
-            //await asdasdasdas.next();
-        }
+        private RelayCommand confirmDeleteCommand;
+        private NavigationService navigationService;
+        #endregion
+        #region Properties
+        public ICommand OpenAddPageCommand { get; private set; }
+        public ICommand OpenEditPageCommand { get; private set; }
         public GlobalFoodItem SelectedItem
         {
             get
@@ -72,180 +63,110 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        public GlobalFoodItem ItemToAdd
-        {
-            get
-            {
-                return itemToAdd;
-            }
-
-            set
-            {
-                if (value == itemToAdd)
-                    return;
-                itemToAdd = value;
-                OnPropertyChanged();
-                
-            }
-        }
-            
         public ObservableCollection<GlobalFoodItem> FoodItems
         {
             get
             {
-                return fooditems;
+                return foodItems;
             }
 
             set
             {
-                fooditems = value;
+                foodItems = value;
                 OnPropertyChanged();
-             
+
             }
         }
-        public FoodDatabaseViewModel()
+        public RelayCommand ConfirmDeleteCommand
         {
-            _dialogService = new DialogService();
-            ItemToAdd = new GlobalFoodItem();
+            get
+            {
+                return confirmDeleteCommand
+                       ?? (confirmDeleteCommand = new RelayCommand(
+                           async () =>
+                           {
+                               await dialogService.ShowMessage("Are you sure you want to delete this item?",
+                                  "Warning!",
+                                  "Yes",
+                                  "No",
+                                   async (r) => {
+                                       if (r == true)
+                                       {
+                                           if (SelectedItem != null)
+                                               try
+                                               {
+                                                   await DBAccess.Delete(SelectedItem);
+                                                   LoadList();
+                                                   SelectedItem = null;
+                                               }
+                                               catch (Exception ex)
+                                               {
+                                                   await dialogService.ShowError(ex, "Error", "Ok", null);
+                                               }
+                                       }
+                                   });
+                           }, ValidateDeleteButton));
+            }
+        }
+
+        #endregion
+        public FoodDatabaseViewModel(NavigationService navigationService)
+        {
+            this.navigationService = navigationService;
+            dialogService = new DialogService();
             SelectedItem = new GlobalFoodItem();
             DBAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.Database);
-            AddCommand = new Command<GlobalFoodItem>(execute: Add, canExecute: ValidateAddButton);
-            EditCommand = new Command<GlobalFoodItem>(execute: Edit, canExecute: ValidateEditButton);
-            PlaceHolderNavigationCommand = new Command(execute: PlaceHolderNavigationFunction);
-            ItemToAdd.PropertyChanged += OnItemToAddPropertyChanged;
+            OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
+            OpenEditPageCommand = new Command<GlobalFoodItem>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
+            this.PropertyChanged += OnSelectedItemChanged;
+        }
+        #region Methods
+        async void OpenAddPageFunction()
+        {
             
+            var addFoodItemPage = new AddFoodItemDB();
+            addFoodItemPage.BindingContext = new AddFoodItemDBViewModel(navigationService);
+            await navigationService.PushModal(addFoodItemPage);
+            SelectedItem = null;
         }
-
-        private bool ValidateEditButton(GlobalFoodItem arg)
-        {
-            if (arg == null)
-                Debug.WriteLine("parameter EDIT was null");
-            // return false;
-            else
-            {
-                Debug.WriteLine("I got here");
-                if (arg.IsDirty == true)
-                {
-                    Debug.WriteLine("Item is dirty");
-                    return true;
-                }
-                else
-                {
-                    Debug.WriteLine("Item is not dirty");
-                    return false;
-                }
-            }
-            return false;
-        }
-
-        private void PlaceHolderNavigationFunction(object obj)
-        {
-
-        }
-
-        public void OnItemToEditPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            Debug.WriteLine("I changed the can execute for edit");
-            (EditCommand as Command).ChangeCanExecute();
-
-        }
-        private void OnItemToAddPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            Debug.WriteLine("I cahnged the can execute for add ");
-            (AddCommand as Command).ChangeCanExecute();
-        }
-
-        public void BindSelectedItem()
-        {
-            SelectedItem.PropertyChanged += OnItemToEditPropertyChanged;
-        }
-        
-
-        private async void Edit(GlobalFoodItem parameter)
-        {
-            if (parameter != null)
-            {
-                await DBAccess.Update(parameter);
-                Debug.WriteLine(await DBAccess.Update(parameter));
-                ProgressIndicator = "Item edited successfully!";
-                await SwitchProgressIndicator();
-            }
-            else
-                Debug.WriteLine("parameter was null");
-
-        }
-
-      
-
-        private bool ValidateAddButton(GlobalFoodItem Parameter)
-        {
-           return GlobalFoodItemValidator.Check(Parameter);
-        }
-
         public async void LoadList()
         {
 
             FoodItems = new ObservableCollection<GlobalFoodItem>(await DBAccess.Get());
 
         }
-
-        public async void Add(GlobalFoodItem Parameter)
-        {
-
-            //TODO VALIDATIONS!
-            await DBAccess.Insert(Parameter);
-            
-            ItemToAdd.ResetValues();
-            ProgressIndicator = "Item added successfully!";
-            await SwitchProgressIndicator();
-            //1Debug.WriteLine("ive been executed with parameters" + Parameter.Name + " " + Parameter.Proteins+ " " + Parameter.Brand);
-           
-        }
-
         public async Task SwitchProgressIndicator()
         {
             await Task.Delay(2000);
             ProgressIndicator = "Waiting for input...";
         }
-        public RelayCommand ConfirmCommand
+        bool ValidateDeleteButton()
         {
-            get
-            {
-                return _confirmCommand
-                       ?? (_confirmCommand = new RelayCommand(
-                           async () =>
-                           {
-                               await _dialogService.ShowMessage("Are you sure you want to delete this item?",
-                                  "Warning!",
-                                  "Yes",
-                                  "No",
-                                   async (r) => { if (r == true)
-                                                    {
-                                                        await DBAccess.Delete(SelectedItem);
-                                                        LoadList();
-                                                    }
-                                                 });
-                           }));
-            }
+            if (SelectedItem == null)
+                return false;
+            return true;
         }
-        #region Command Dialog Service Example 
-        //public RelayCommand ConfirmCommand
-        //{
-        //    get
-        //    {
-        //        return _confirmCommand
-        //               ?? (_confirmCommand = new RelayCommand(
-        //                   async () =>
-        //                   {
-        //                       await _dialogService.ShowMessage("Does dialog callback work?",
-        //                          "Callback Test",
-        //                          "Yup",
-        //                          "Nope",
-        //                           (r) => { _dialogService.ShowMessage("Result: " + r.ToString(), "Result", "OK", null); });
-        //                   }));
-        //    }
-        //}
+        private async void OpenEditPageFunction(GlobalFoodItem parameter)
+        {
+            if (parameter != null)
+            {
+                var editFoodItemPage = new EditFoodItemDB();
+                editFoodItemPage.BindingContext = new EditFoodItemDBViewModel(parameter, navigationService);
+                await navigationService.PushModal(editFoodItemPage);
+            }
+            SelectedItem = null;
+        }
+        bool ValidateEditButton(GlobalFoodItem parameter)
+        {
+            if (parameter == null)
+                return false;
+            else
+                return true;
+        }
+        void OnSelectedItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            (ConfirmDeleteCommand as RelayCommand).RaiseCanExecuteChanged();
+        }
         #endregion
     }
 }

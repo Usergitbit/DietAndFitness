@@ -17,7 +17,7 @@ namespace DietAndFitness.Views
         public MainPage_old ()
 		{
 			InitializeComponent ();
-            FoodDatabase = new FoodDatabaseViewModel();
+            //FoodDatabase = new FoodDatabaseViewModel();
             BindingContext = FoodDatabase;
 		}
 

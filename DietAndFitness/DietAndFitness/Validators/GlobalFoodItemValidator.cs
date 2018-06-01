@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DietAndFitness.Validators
 {
+    /// <summary>
+    /// Static class for validating a GlobalFoodItem
+    /// </summary>
     public static class GlobalFoodItemValidator
     {
         public static bool Check(GlobalFoodItem Parameter)

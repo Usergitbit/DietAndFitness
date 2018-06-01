@@ -6,6 +6,9 @@ using Xamarin.Forms;
 
 namespace DietAndFitness.Services
 {
+    /// <summary>
+    /// Class that is used to display various dialog messages from the ViewModel
+    /// </summary>
     public class DialogService : IDialogService
     {
         public async Task ShowError(string message,
@@ -98,4 +101,23 @@ namespace DietAndFitness.Services
                 "OK");
         }
     }
+    #region Command Dialog Service Example 
+    //public RelayCommand ConfirmCommand
+    //{
+    //    get
+    //    {
+    //        return _confirmCommand
+    //               ?? (_confirmCommand = new RelayCommand(
+    //                   async () =>
+    //                   {
+    //                       await _dialogService.ShowMessage("Does dialog callback work?",
+    //                          "Callback Test",
+    //                          "Yup",
+    //                          "Nope",
+    //                           (r) => { _dialogService.ShowMessage("Result: " + r.ToString(), "Result", "OK", null); });
+    //                   }));
+    //    }
+    //}
+    #endregion
+
 }

@@ -7,6 +7,9 @@ using System.Text;
 /// </summary>
 namespace DietAndFitness.Models
 {
+    /// <summary>
+    /// Model class for food items from the table that comes with the app
+    /// </summary>
     [Table("GlobalFoodItem")]
     public class GlobalFoodItem : DatabaseEntity
     {

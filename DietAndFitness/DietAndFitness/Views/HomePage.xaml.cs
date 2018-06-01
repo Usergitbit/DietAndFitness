@@ -27,8 +27,9 @@ namespace DietAndFitness.Views
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
+            (Detail as NavigationPage).PushAsync(page);
+            //Detail = new NavigationPage(page);
+            //IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;
         }

@@ -10,6 +10,10 @@ using Xamarin.Forms;
 /// </summary>
 namespace DietAndFitness.Controls
 {
+    /// <summary>
+    /// Static class that provides access to the database from anywhere in the program
+    /// Should only be used to instantiate a DataAccessLayer
+    /// </summary>
     public static class GlobalSQLiteConnection
     {
         public static SQLiteAsyncConnection Database { get; private set; }

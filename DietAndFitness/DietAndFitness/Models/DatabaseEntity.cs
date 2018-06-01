@@ -3,13 +3,14 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
-/// <summary>
-/// Class for an entry in the local database
-/// </summary>
+
 namespace DietAndFitness.Models
 {
     public class DatabaseEntity : ModelBase
     {
+        /// <summary>
+        /// Class for an entry in the local database
+        /// </summary>
         [PrimaryKey]
         public int? ID { get; set; }
         private string name;

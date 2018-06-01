@@ -93,11 +93,28 @@
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
-            <Button
-                Command="{Binding AddCommand}"
-                CommandParameter="{Binding ItemToAdd}"
-                HorizontalOptions="Center"
-                Text="Ok" />
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding AddCommand}"
+                    CommandParameter="{Binding ItemToAdd}"
+                    HorizontalOptions="Center"
+                    Text="Add" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding CloseCommand}"
+                    HorizontalOptions="Center"
+                    Text="Close" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

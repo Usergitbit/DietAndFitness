@@ -28,27 +28,27 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Name}"
+                    Text="{Binding ItemToEdit.Name}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="{Binding SelectedItem.IsDirty}"
+                    Text="{Binding ItemToEdit.IsDirty}"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Brand}"
+                    Text="{Binding ItemToEdit.Brand}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
-                    Text="{Binding SelectedItem.Name}"
+                    Text="{Binding ItemToEdit.Name}"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="2"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.CookingMode}"
+                    Text="{Binding ItemToEdit.CookingMode}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="3"
@@ -58,7 +58,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Calories}"
+                    Text="{Binding ItemToEdit.Calories}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="4"
@@ -68,7 +68,7 @@
                 <Entry
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Carbohydrates}"
+                    Text="{Binding ItemToEdit.Carbohydrates}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="5"
@@ -78,7 +78,7 @@
                 <Entry
                     Grid.Row="5"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Proteins}"
+                    Text="{Binding ItemToEdit.Proteins}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="6"
@@ -88,15 +88,32 @@
                 <Entry
                     Grid.Row="6"
                     Grid.Column="1"
-                    Text="{Binding SelectedItem.Fats}"
+                    Text="{Binding ItemToEdit.Fats}"
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
-            <Button
-                Command="{Binding EditCommand}"
-                CommandParameter="{Binding SelectedItem}"
-                HorizontalOptions="Center"
-                Text="Confirm" />
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding ConfirmCommand}"
+                    CommandParameter="{Binding ItemToEdit}"
+                    HorizontalOptions="Center"
+                    Text="Confirm" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding CloseCommand}"
+                    HorizontalOptions="Center"
+                    Text="Close" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

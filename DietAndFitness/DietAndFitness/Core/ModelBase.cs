@@ -6,11 +6,12 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
-/// <summary>
-/// Base model class that others derive from
-/// </summary>
+
 namespace DietAndFitness.Core
 {
+    /// <summary>
+    /// Base model class that others derive from
+    /// </summary>
     [Serializable]
     public class ModelBase : INotifyPropertyChanged,
                              INotifyCollectionChanged,
@@ -65,7 +66,7 @@ namespace DietAndFitness.Core
         
         public void Clean()
         {
-            IsDirty = false;
+            isDirty = false;
             Debug.WriteLine("I was cleaned");
         }
     }

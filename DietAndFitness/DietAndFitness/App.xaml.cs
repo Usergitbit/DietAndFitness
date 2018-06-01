@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Controls;
+using DietAndFitness.Services;
 using DietAndFitness.Views;
 using System;
 using System.Collections.Generic;
@@ -14,13 +15,19 @@ namespace DietAndFitness
 	public partial class App : Application
 	{
         private string LocalDatabase = "LocalDatabase.db";
+        public static NavigationService NavigationService { get; private set; }
 		public App ()
 		{
-                InitializeComponent();
-                GlobalDatabaseController DBControl = new GlobalDatabaseController(LocalDatabase);
-                DBControl.CopyDatabase();
-                GlobalSQLiteConnection.ConnectToDatabaseAsync(DBControl.DestinationPath);
-                MainPage = new HomePage();
+            InitializeComponent();
+            GlobalDatabaseController DBControl = new GlobalDatabaseController(LocalDatabase);
+            DBControl.CopyDatabase();
+            GlobalSQLiteConnection.ConnectToDatabaseAsync(DBControl.DestinationPath);
+            var navigationPage = new NavigationPage(new HomePageDetail());
+            NavigationService = new NavigationService (navigationPage);
+            var homePage = new HomePage();
+            homePage.Detail = navigationPage;
+            MainPage = homePage;
+ 
 		}
 
 		protected override void OnStart ()

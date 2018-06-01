@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
-/// <summary>
-/// Base ViewModel class that the rest derive from
-/// </summary>
+
 namespace DietAndFitness.Core
 {
+    /// <summary>
+    /// Base ViewModel class that the rest derive from
+    /// </summary>
     [Serializable]
     public class ViewModelBase : INotifyPropertyChanged
     {

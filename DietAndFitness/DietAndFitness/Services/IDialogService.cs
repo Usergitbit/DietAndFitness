@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace DietAndFitness.Services
 {
+    /// <summary>
+    /// Interface for implementing a Dialog Service
+    /// </summary>
     public interface IDialogService
     {
         Task ShowError(string message, string title, string buttonText, Action afterHideCallback);

@@ -17,7 +17,7 @@ namespace DietAndFitness.Views
         public FoodDatabasePage ()
 		{
             InitializeComponent();
-            FoodDatabase = new FoodDatabaseViewModel();
+            FoodDatabase = new FoodDatabaseViewModel(App.NavigationService);
             BindingContext = FoodDatabase;
         }
         protected override void OnAppearing()
@@ -28,14 +28,13 @@ namespace DietAndFitness.Views
         public async void AddFoodItemButton_Clicked(object sender, EventArgs e)
         {
             var AddFoodItemDB = new AddFoodItemDB();
-            AddFoodItemDB.BindingContext = FoodDatabase;
+            AddFoodItemDB.BindingContext = new AddFoodItemDB();
             await Navigation.PushAsync(AddFoodItemDB);
         }
         public async void EditFoodItemButton_Clicked(object sender, EventArgs e)
         {
             var EditFoodItemDB = new EditFoodItemDB();
             EditFoodItemDB.BindingContext = FoodDatabase;
-            FoodDatabase.BindSelectedItem();
             await Navigation.PushAsync(EditFoodItemDB);
 
         }
