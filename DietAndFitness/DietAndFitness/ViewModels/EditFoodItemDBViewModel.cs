@@ -19,14 +19,14 @@ namespace DietAndFitness.ViewModels
     class EditFoodItemDBViewModel : ViewModelBase
     {
         #region Members
-        private GlobalFoodItem itemToEdit;
+        private LocalFoodItem itemToEdit;
         private readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
         private NavigationService navigationService;
-        private DataAccessLayer<GlobalFoodItem> DBAccess;
+        private DataAccessLayer<LocalFoodItem> DBLocalAccess;
         #endregion
         #region Properties
-        public GlobalFoodItem ItemToEdit
+        public LocalFoodItem ItemToEdit
         {
             get
             {
@@ -61,14 +61,14 @@ namespace DietAndFitness.ViewModels
         public ICommand CloseCommand { get; private set; }
         public ICommand ConfirmCommand { get; private set; }
         #endregion
-        public EditFoodItemDBViewModel(GlobalFoodItem selectedItem, NavigationService navigationService)
+        public EditFoodItemDBViewModel(DatabaseEntity selectedItem, NavigationService navigationService)
         {
             dialogService = new DialogService();
-            itemToEdit = selectedItem;
+            itemToEdit = (LocalFoodItem)selectedItem;
             this.navigationService = navigationService;
-            DBAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.Database);
+            DBLocalAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
             CloseCommand = new Command(execute: Close);
-            ConfirmCommand = new Command<GlobalFoodItem>(execute: Edit, canExecute: ValidateConfirmButton);
+            ConfirmCommand = new Command<LocalFoodItem>(execute: Edit, canExecute: ValidateConfirmButton);
             ItemToEdit.PropertyChanged += OnItemToEditPropertyChanged;
         }
         #region Methods
@@ -83,15 +83,15 @@ namespace DietAndFitness.ViewModels
             await navigationService.PopModal();
         }
 
-        private async void Edit(GlobalFoodItem parameter)
+        private async void Edit(LocalFoodItem parameter)
         {
             if (parameter != null)
             {
                 try
                 {
-                    await DBAccess.Update(parameter);
+                    await DBLocalAccess.Update(parameter);
                     parameter.Clean();
-                    Debug.WriteLine(await DBAccess.Update(parameter));
+                    Debug.WriteLine(await DBLocalAccess.Update(parameter));
                     ProgressIndicator = "Item edited successfully!";
                     OnItemToEditPropertyChanged(null, null);
                 }
@@ -103,7 +103,7 @@ namespace DietAndFitness.ViewModels
             else
                 Debug.WriteLine("parameter was null");
         }
-        private bool ValidateConfirmButton(GlobalFoodItem parameter)
+        private bool ValidateConfirmButton(LocalFoodItem parameter)
         {
             if (parameter == null)
                 Debug.WriteLine("parameter EDIT was null");

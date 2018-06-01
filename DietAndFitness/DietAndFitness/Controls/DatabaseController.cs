@@ -10,12 +10,12 @@ namespace DietAndFitness.Controls
     /// <summary>
     /// Class that controls the local copy of the database provided with the app
     /// </summary>
-    public class GlobalDatabaseController
+    public class DatabaseController
     {
         private string DatabaseName { get; set; }
         public string DestinationPath { get; set; }
 
-        public GlobalDatabaseController (string _DatabaseName)
+        public DatabaseController (string _DatabaseName)
         {
             DatabaseName = _DatabaseName;
             try
@@ -35,10 +35,14 @@ namespace DietAndFitness.Controls
                 
                 using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.Databases." + DatabaseName))
                 {
-                    using (var destination = File.Create(DestinationPath))
+                    if (!File.Exists(DestinationPath))
+                        return;
+                    else
                     {
-                        //TODO Check if database already exists
-                        source.CopyTo(destination);
+                        using (var destination = File.Create(DestinationPath))
+                        {
+                            source.CopyTo(destination);
+                        }
                     }
                 }
 

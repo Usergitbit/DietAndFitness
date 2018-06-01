@@ -59,7 +59,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Calories}"
+                    Text="{Binding ItemToAdd.Calories, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="4"
@@ -69,7 +69,7 @@
                 <Entry
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Carbohydrates}"
+                    Text="{Binding ItemToAdd.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="5"
@@ -79,7 +79,7 @@
                 <Entry
                     Grid.Row="5"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Proteins}"
+                    Text="{Binding ItemToAdd.Proteins, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="6"
@@ -89,7 +89,7 @@
                 <Entry
                     Grid.Row="6"
                     Grid.Column="1"
-                    Text="{Binding ItemToAdd.Fats}"
+                    Text="{Binding ItemToAdd.Fats, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />

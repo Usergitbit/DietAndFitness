@@ -14,14 +14,18 @@ namespace DietAndFitness
 {
 	public partial class App : Application
 	{
-        private string LocalDatabase = "LocalDatabase.db";
+        private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
+        private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";
         public static NavigationService NavigationService { get; private set; }
 		public App ()
 		{
             InitializeComponent();
-            GlobalDatabaseController DBControl = new GlobalDatabaseController(LocalDatabase);
-            DBControl.CopyDatabase();
-            GlobalSQLiteConnection.ConnectToDatabaseAsync(DBControl.DestinationPath);
+            DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
+            DBGlobalControl.CopyDatabase();
+            DatabaseController DBLocalControl = new DatabaseController(LOCALFOOD_ITEM_DATABASE);
+            DBLocalControl.CopyDatabase();
+            GlobalSQLiteConnection.ConnectToGlobalDatabaseAsync(DBGlobalControl.DestinationPath);
+            GlobalSQLiteConnection.ConnectToLocalDatabaseAsync(DBLocalControl.DestinationPath);
             var navigationPage = new NavigationPage(new HomePageDetail());
             NavigationService = new NavigationService (navigationPage);
             var homePage = new HomePage();

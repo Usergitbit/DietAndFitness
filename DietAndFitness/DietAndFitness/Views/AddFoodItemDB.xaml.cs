@@ -12,7 +12,6 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddFoodItemDB : ContentPage
 	{
-        private NavigationService navigationService;
 
         public AddFoodItemDB ()
 		{

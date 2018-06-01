@@ -2,9 +2,13 @@
 <Application
     x:Class="DietAndFitness.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Application.Resources>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DietAndFitness.Converters;assembly=DietAndFitness">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:StringToNullableDouble x:Key="StringToNullableDouble" />
+        </ResourceDictionary>
         <!--  Application resource dictionary  -->
 
     </Application.Resources>

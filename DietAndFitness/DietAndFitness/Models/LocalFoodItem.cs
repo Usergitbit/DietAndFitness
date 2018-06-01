@@ -8,10 +8,10 @@ using System.Text;
 namespace DietAndFitness.Models
 {
     /// <summary>
-    /// Model class for food items from the table that comes with the app
+    /// Model class for food items from the table that the user introduces
     /// </summary>
-    [Table("GlobalFoodItem")]
-    public class GlobalFoodItem : DatabaseEntity
+    [Table("LocalFoodItem")]
+    public class LocalFoodItem : DatabaseEntity
     {
 
         private double? calories;
@@ -84,7 +84,7 @@ namespace DietAndFitness.Models
             }
             set
             {
-                if(brand == null || value.Equals(brand))
+                if (brand == null || value.Equals(brand))
                     return;
                 brand = value;
                 OnPropertyChanged();
@@ -106,7 +106,7 @@ namespace DietAndFitness.Models
             }
         }
 
-        public GlobalFoodItem() : base()
+        public LocalFoodItem() : base()
         {
             Brand = String.Empty;
             CookingMode = String.Empty;
@@ -115,7 +115,7 @@ namespace DietAndFitness.Models
             Proteins = 0;
             Fats = 0;
         }
-        public GlobalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode ) : base()
+        public LocalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode) : base()
         {
             Name = _name;
             Calories = _calories;

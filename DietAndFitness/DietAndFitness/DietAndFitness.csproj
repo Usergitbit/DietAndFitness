@@ -19,10 +19,12 @@
 
   <ItemGroup>
     <None Remove="Resources\Databases\LocalDatabase.db" />
+    <None Remove="Resources\Databases\LocalFoodItemsDB.db" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Databases\LocalDatabase.db" />
+    <EmbeddedResource Include="Resources\Databases\LocalFoodItemsDB.db" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Styles\" />
     <Folder Include="Resources\Icons\" />
   </ItemGroup>

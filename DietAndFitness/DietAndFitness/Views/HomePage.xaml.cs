@@ -26,10 +26,10 @@ namespace DietAndFitness.Views
 
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
-
-            (Detail as NavigationPage).PushAsync(page);
-            //Detail = new NavigationPage(page);
-            //IsPresented = false;
+            var navigationPage = Detail as NavigationPage;
+            navigationPage.Navigation.InsertPageBefore(page, navigationPage.RootPage);
+            navigationPage.PopToRootAsync();
+            IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;
         }

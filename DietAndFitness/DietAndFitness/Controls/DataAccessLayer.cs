@@ -34,11 +34,12 @@ namespace DietAndFitness.Controls
             {
                 return await database.Table<T>().ToListAsync();
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
-                Debug.WriteLine("Error at getting list from database" + e.Message + e.Source + e.StackTrace);
+                Debug.WriteLine("Error at getting list from database" + ex.Message + ex.Source + ex.StackTrace);
+                throw ex;
             }
-            return null;
+            
         }
 
         public async Task<int> Insert(T entity)

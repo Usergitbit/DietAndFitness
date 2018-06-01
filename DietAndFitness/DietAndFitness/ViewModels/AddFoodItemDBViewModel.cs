@@ -20,14 +20,14 @@ namespace DietAndFitness.ViewModels
     public class AddFoodItemDBViewModel : ViewModelBase
     {
         #region Members
-        private GlobalFoodItem itemToAdd;
+        private LocalFoodItem itemToAdd;
         private readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
         private NavigationService navigationService;
-        private DataAccessLayer<GlobalFoodItem> DBAccess;
+        private DataAccessLayer<LocalFoodItem> DBLocalAccess;
         #endregion
         #region Properties
-        public GlobalFoodItem ItemToAdd
+        public LocalFoodItem ItemToAdd
         {
             get
             {
@@ -64,11 +64,11 @@ namespace DietAndFitness.ViewModels
         public AddFoodItemDBViewModel(NavigationService navigationService)
         {
             this.navigationService = navigationService;
-            ItemToAdd = new GlobalFoodItem();
+            ItemToAdd = new LocalFoodItem();
             ItemToAdd.PropertyChanged += OnItemToAddPropertyChanged;
-            AddCommand = new Command<GlobalFoodItem>(execute: Add, canExecute: ValidateAddButton);
+            AddCommand = new Command<LocalFoodItem>(execute: Add, canExecute: ValidateAddButton);
             CloseCommand = new Command(execute: Close);
-            DBAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.Database);
+            DBLocalAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
             dialogService = new DialogService();
 
 
@@ -78,14 +78,15 @@ namespace DietAndFitness.ViewModels
         {
             await navigationService.PopModal();
         }
-        private async void Add(GlobalFoodItem Parameter)
+        private async void Add(LocalFoodItem Parameter)
         {
 
             //TODO VALIDATIONS!
-            if (GlobalFoodItemValidator.Check(Parameter))
+            if (FoodItemValidator.Check(Parameter))
                 try
                 {
-                    await DBAccess.Insert(Parameter);
+                    await DBLocalAccess.Insert(Parameter);
+                    //if program stays here the insert date will be incorrect
                     ItemToAdd.ResetValues();
                     ProgressIndicator = "Item added successfully!";
                     await SwitchProgressIndicator();
@@ -95,9 +96,9 @@ namespace DietAndFitness.ViewModels
                     await dialogService.ShowError(ex, "Error", "Ok", null);
                 }
         }
-        private bool ValidateAddButton(GlobalFoodItem Parameter)
+        private bool ValidateAddButton(LocalFoodItem Parameter)
         {
-            return GlobalFoodItemValidator.Check(Parameter);
+            return FoodItemValidator.Check(Parameter);
         }
         public async Task SwitchProgressIndicator()
         {

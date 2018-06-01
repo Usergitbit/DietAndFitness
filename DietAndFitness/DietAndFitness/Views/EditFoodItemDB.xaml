@@ -33,7 +33,7 @@
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="{Binding ItemToEdit.IsDirty}"
+                    Text="Brand"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="1"
@@ -43,7 +43,7 @@
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
-                    Text="{Binding ItemToEdit.Name}"
+                    Text="Cooking Mode}"
                     VerticalOptions="Center" />
                 <Entry
                     Grid.Row="2"
@@ -58,7 +58,7 @@
                 <Entry
                     Grid.Row="3"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Calories}"
+                    Text="{Binding ItemToEdit.Calories, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="4"
@@ -68,7 +68,7 @@
                 <Entry
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Carbohydrates}"
+                    Text="{Binding ItemToEdit.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="5"
@@ -78,7 +78,7 @@
                 <Entry
                     Grid.Row="5"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Proteins}"
+                    Text="{Binding ItemToEdit.Proteins, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="6"
@@ -88,7 +88,7 @@
                 <Entry
                     Grid.Row="6"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Fats}"
+                    Text="{Binding ItemToEdit.Fats, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
