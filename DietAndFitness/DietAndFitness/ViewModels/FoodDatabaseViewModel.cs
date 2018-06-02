@@ -20,17 +20,17 @@ namespace DietAndFitness.ViewModels
     /// <summary>
     /// ViewModel for the Food Database page
     /// </summary>
-    public class FoodDatabaseViewModel : ViewModelBase
+    public class FoodDatabaseViewModel<T> : ViewModelBase where T: DatabaseEntity, new()
     {
         #region Members
         private readonly IDialogService dialogService;
         private ObservableCollection<DatabaseEntity> foodItems;
         private DataAccessLayer<GlobalFoodItem> DBGlobalAccess;
-        private DataAccessLayer<LocalFoodItem> DBLocalAccess;
+        protected DataAccessLayer<T> DBLocalAccess;
         private string progressindicator = "Waiting for input...";
         private DatabaseEntity selectedItem;
         private RelayCommand confirmDeleteCommand;
-        private NavigationService navigationService;
+        protected NavigationService navigationService;
         #endregion
         #region Properties
         public ICommand OpenAddPageCommand { get; private set; }
@@ -94,11 +94,10 @@ namespace DietAndFitness.ViewModels
                                        if (r == true)
                                        {
                                            if (SelectedItem != null)
-                                              if(SelectedItem.GetType() == typeof(LocalFoodItem))
                                                try
                                                {
                                                    
-                                                   await DBLocalAccess.Delete((LocalFoodItem)SelectedItem);
+                                                   await DBLocalAccess.Delete((T)SelectedItem);
                                                    LoadList();
                                                    SelectedItem = null;
                                                }
@@ -122,31 +121,31 @@ namespace DietAndFitness.ViewModels
         {
             this.navigationService = navigationService;
             dialogService = new DialogService();
-            SelectedItem = new DatabaseEntity();
+            //SelectedItem = new ModelBase();
             FoodItems = new ObservableCollection<DatabaseEntity>();
             DBGlobalAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.GlobalDatabase);
-            DBLocalAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
             OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
-            OpenEditPageCommand = new Command<LocalFoodItem>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
+            OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
             this.PropertyChanged += OnSelectedItemChanged;
             
         }
         #region Methods
-        async void OpenAddPageFunction()
+        protected virtual async void OpenAddPageFunction()
         {
             
             var addFoodItemPage = new AddFoodItemDB();
-            addFoodItemPage.BindingContext = new AddFoodItemDBViewModel(navigationService);
+            addFoodItemPage.BindingContext = new AddFoodItemDBViewModel<T>(navigationService);
             await navigationService.PushModal(addFoodItemPage);
             SelectedItem = null;
         }
-        public async void LoadList()
+        public virtual async void LoadList()
         {
-            List<LocalFoodItem> localFoodItems = new List<LocalFoodItem>();
+            List<T> localFoodItems = new List<T>();
             List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
             try
             {
-                globalFoodItems =  await DBGlobalAccess.Get();
+                globalFoodItems =  await DBGlobalAccess.GetAll();
             }
             catch(Exception ex)
             {
@@ -154,7 +153,7 @@ namespace DietAndFitness.ViewModels
             }
             try
             {
-                localFoodItems = await DBLocalAccess.Get();
+                localFoodItems = await DBLocalAccess.GetAll();
             }
             catch (Exception ex)
             {
@@ -178,17 +177,17 @@ namespace DietAndFitness.ViewModels
                 return false;
             return true;
         }
-        private async void OpenEditPageFunction(LocalFoodItem parameter)
+        protected virtual async void OpenEditPageFunction(T parameter)
         {
             if (parameter != null)
             {
                 var editFoodItemPage = new EditFoodItemDB();
-                editFoodItemPage.BindingContext = new EditFoodItemDBViewModel(parameter, navigationService);
+                editFoodItemPage.BindingContext = new EditFoodItemDBViewModel<T>(parameter, navigationService);
                 await navigationService.PushModal(editFoodItemPage);
             }
             SelectedItem = null;
         }
-        bool ValidateEditButton(LocalFoodItem parameter)
+        bool ValidateEditButton(T parameter)
         {
             if (parameter == null)
                 return false;

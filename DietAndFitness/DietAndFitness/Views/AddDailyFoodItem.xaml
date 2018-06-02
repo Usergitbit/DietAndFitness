@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="DietAndFitness.Views.FoodDatabasePage"
+    x:Class="DietAndFitness.Views.AddDailyFoodItem"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar
+                Placeholder="Find some food"
+                SearchCommand="{Binding SearchCommand}"
+                SearchCommandParameter="{Binding SearchBarText}"
+                Text="{Binding SearchBarText}" />
             <ListView
                 ItemsSource="{Binding FoodItems}"
                 RowHeight="120"
-                SelectedItem="{Binding SelectedItem}">
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -21,26 +26,12 @@
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <Label
                                                 Grid.Row="0"
                                                 Grid.Column="0"
                                                 HorizontalOptions="Center"
                                                 Text="{Binding Name}"
-                                                VerticalOptions="CenterAndExpand" />
-                                            <Label
-                                                Grid.Row="0"
-                                                Grid.Column="1"
-                                                HorizontalOptions="Center"
-                                                Text="{Binding Calories}"
-                                                VerticalOptions="CenterAndExpand" />
-                                            <Label
-                                                Grid.Row="0"
-                                                Grid.Column="2"
-                                                HorizontalOptions="Center"
-                                                Text="Calories"
                                                 VerticalOptions="CenterAndExpand" />
                                         </Grid>
 
@@ -100,38 +91,33 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Grid HorizontalOptions="Center">
+            <Entry
+                HorizontalOptions="Center"
+                Placeholder="Quantity"
+                Text="{Binding ItemToAdd.Quantity, Converter={StaticResource StringToNullableDouble}" />
+            <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Button
-                    x:Name="AddFoodItemButton"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Command="{Binding OpenAddPageCommand}"
-                    HorizontalOptions="CenterAndExpand"
+                    Command="{Binding AddCommand}"
+                    CommandParameter="{Binding ItemToAdd}"
+                    HorizontalOptions="Center"
                     Text="Add" />
                 <Button
-                    x:Name="EditFoodItemButton"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Command="{Binding OpenEditPageCommand}"
-                    CommandParameter="{Binding SelectedItem}"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Edit" />
-                <Button
-                    x:Name="DeleteFoodItemButton"
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    Command="{Binding ConfirmDeleteCommand}"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Delete" />
+                    Command="{Binding CloseCommand}"
+                    HorizontalOptions="Center"
+                    Text="Close" />
             </Grid>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

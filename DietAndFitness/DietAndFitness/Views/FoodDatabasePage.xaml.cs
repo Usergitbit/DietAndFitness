@@ -1,4 +1,5 @@
-﻿using DietAndFitness.ViewModels;
+﻿using DietAndFitness.Models;
+using DietAndFitness.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FoodDatabasePage : ContentPage
 	{
-        public FoodDatabaseViewModel FoodDatabase { get; set; }
+        public FoodDatabaseViewModel<LocalFoodItem> FoodDatabase { get; set; }
         public FoodDatabasePage ()
 		{
             InitializeComponent();
-            FoodDatabase = new FoodDatabaseViewModel(App.NavigationService);
+            FoodDatabase = new FoodDatabaseViewModel<LocalFoodItem>(App.NavigationService);
             BindingContext = FoodDatabase;
         }
         protected override void OnAppearing()

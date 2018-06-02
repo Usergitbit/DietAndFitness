@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DietAndFitness.Models
 {
-    public class DatabaseEntity : ModelBase
+    public abstract class DatabaseEntity : ModelBase, IValidation
     {
         /// <summary>
         /// Class for an entry in the local database
@@ -81,5 +81,10 @@ namespace DietAndFitness.Models
             Name = String.Empty;
 
         }
+
+        public abstract bool Check();
+
+        public abstract void ResetValues();
+
     }
 }

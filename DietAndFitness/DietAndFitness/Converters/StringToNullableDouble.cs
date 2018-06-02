@@ -21,8 +21,10 @@ namespace DietAndFitness.Converters
             string stringValue = value as string;
             if (string.IsNullOrWhiteSpace(stringValue))
                 return null;
-            double? myValue = double.Parse(stringValue);
-            return myValue;
+            if (Double.TryParse(stringValue, out double myValue))
+                return myValue;
+            else
+                return 0;
         }
     }
 }

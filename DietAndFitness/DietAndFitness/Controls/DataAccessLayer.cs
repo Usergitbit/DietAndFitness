@@ -28,7 +28,7 @@ namespace DietAndFitness.Controls
             return await database.DeleteAsync(entity);
         }
 
-        public async Task<List<T>> Get()
+        public async Task<List<T>> GetAll()
         {
             try
             {

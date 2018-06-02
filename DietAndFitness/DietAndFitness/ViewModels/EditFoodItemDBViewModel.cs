@@ -16,17 +16,17 @@ namespace DietAndFitness.ViewModels
     /// <summary>
     /// ViewModel for the EditFoodItemDB page
     /// </summary>
-    class EditFoodItemDBViewModel : ViewModelBase
+    public class EditFoodItemDBViewModel<T> : ViewModelBase where T: DatabaseEntity, new()
     {
         #region Members
-        private LocalFoodItem itemToEdit;
+        private T itemToEdit;
         private readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
         private NavigationService navigationService;
-        private DataAccessLayer<LocalFoodItem> DBLocalAccess;
+        private DataAccessLayer<T> DBLocalAccess;
         #endregion
         #region Properties
-        public LocalFoodItem ItemToEdit
+        public T ItemToEdit
         {
             get
             {
@@ -64,11 +64,11 @@ namespace DietAndFitness.ViewModels
         public EditFoodItemDBViewModel(DatabaseEntity selectedItem, NavigationService navigationService)
         {
             dialogService = new DialogService();
-            itemToEdit = (LocalFoodItem)selectedItem;
+            itemToEdit = (T)selectedItem;
             this.navigationService = navigationService;
-            DBLocalAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
             CloseCommand = new Command(execute: Close);
-            ConfirmCommand = new Command<LocalFoodItem>(execute: Edit, canExecute: ValidateConfirmButton);
+            ConfirmCommand = new Command<T>(execute: Edit, canExecute: ValidateConfirmButton);
             ItemToEdit.PropertyChanged += OnItemToEditPropertyChanged;
         }
         #region Methods
@@ -83,7 +83,7 @@ namespace DietAndFitness.ViewModels
             await navigationService.PopModal();
         }
 
-        private async void Edit(LocalFoodItem parameter)
+        private async void Edit(T parameter)
         {
             if (parameter != null)
             {
@@ -103,7 +103,7 @@ namespace DietAndFitness.ViewModels
             else
                 Debug.WriteLine("parameter was null");
         }
-        private bool ValidateConfirmButton(LocalFoodItem parameter)
+        private bool ValidateConfirmButton(T parameter)
         {
             if (parameter == null)
                 Debug.WriteLine("parameter EDIT was null");
@@ -113,7 +113,10 @@ namespace DietAndFitness.ViewModels
                 if (parameter.IsDirty == true)
                 {
                     Debug.WriteLine("Item is dirty");
-                    return true;
+                    if (parameter.Check())
+                        return true;
+                    else
+                        return false;
                 }
                 else
                 {

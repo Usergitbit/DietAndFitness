@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DietAndFitness.Views.EditDailyFoodItem"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Name"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Name}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Brand"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Brand}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Cooking Mode}"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.CookingMode}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Calories"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Calories, Converter={StaticResource StringToNullableDouble}}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Carbohydrates"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Proteins"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Proteins, Converter={StaticResource StringToNullableDouble}}"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Fats"
+                    VerticalOptions="Center" />
+                <Entry
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text="{Binding ItemToEdit.Fats, Converter={StaticResource StringToNullableDouble}}"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding ConfirmCommand}"
+                    CommandParameter="{Binding ItemToEdit}"
+                    HorizontalOptions="Center"
+                    Text="Confirm" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding CloseCommand}"
+                    HorizontalOptions="Center"
+                    Text="Close" />
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

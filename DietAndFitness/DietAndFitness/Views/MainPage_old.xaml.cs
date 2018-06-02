@@ -13,18 +13,18 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage_old : ContentPage
 	{
-        public FoodDatabaseViewModel FoodDatabase { get; set; }
+       // public FoodDatabaseViewModel FoodDatabase { get; set; }
         public MainPage_old ()
 		{
 			InitializeComponent ();
             //FoodDatabase = new FoodDatabaseViewModel();
-            BindingContext = FoodDatabase;
+            //BindingContext = FoodDatabase;
 		}
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            FoodDatabase.LoadList();
+           // FoodDatabase.LoadList();
         }
         public void AddFoodItemButton_Clicked(object sender, EventArgs e)
         {

@@ -126,7 +126,7 @@ namespace DietAndFitness.Models
             Proteins = _proteins;
         }
 
-        public void ResetValues()
+        public override void ResetValues()
         {
             Name = String.Empty;
             Brand = String.Empty;
@@ -138,6 +138,13 @@ namespace DietAndFitness.Models
             CreatedAt = DateTime.Now;
             ModifiedAt = DateTime.Now;
             Deleted = false;
+        }
+
+        public override bool Check()
+        {
+            if (Name.Equals(String.Empty) || Calories.ToString().Equals(String.Empty) || Carbohydrates.ToString().Equals(String.Empty) || Proteins.ToString().Equals(String.Empty) || Fats.ToString().Equals(String.Empty))
+                return false;
+            return true;
         }
     }
 }

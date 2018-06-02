@@ -17,17 +17,17 @@ namespace DietAndFitness.ViewModels
     /// <summary>
     /// ViewModel for the AddFoodItemDB page
     /// </summary>
-    public class AddFoodItemDBViewModel : ViewModelBase
+    public class AddFoodItemDBViewModel<T> : ViewModelBase where T : DatabaseEntity, new()
     {
         #region Members
-        private LocalFoodItem itemToAdd;
-        private readonly IDialogService dialogService;
+        private T itemToAdd;
+        protected readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
         private NavigationService navigationService;
-        private DataAccessLayer<LocalFoodItem> DBLocalAccess;
+        protected DataAccessLayer<T> DBLocalAccess;
         #endregion
         #region Properties
-        public LocalFoodItem ItemToAdd
+        public T ItemToAdd
         {
             get
             {
@@ -64,11 +64,11 @@ namespace DietAndFitness.ViewModels
         public AddFoodItemDBViewModel(NavigationService navigationService)
         {
             this.navigationService = navigationService;
-            ItemToAdd = new LocalFoodItem();
+            ItemToAdd = new T();
             ItemToAdd.PropertyChanged += OnItemToAddPropertyChanged;
-            AddCommand = new Command<LocalFoodItem>(execute: Add, canExecute: ValidateAddButton);
+            AddCommand = new Command<T>(execute: Add, canExecute: ValidateAddButton);
             CloseCommand = new Command(execute: Close);
-            DBLocalAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
             dialogService = new DialogService();
 
 
@@ -78,11 +78,10 @@ namespace DietAndFitness.ViewModels
         {
             await navigationService.PopModal();
         }
-        private async void Add(LocalFoodItem Parameter)
+        protected virtual async void Add(T Parameter)
         {
-
-            //TODO VALIDATIONS!
-            if (FoodItemValidator.Check(Parameter))
+            
+            if (Parameter.Check())
                 try
                 {
                     await DBLocalAccess.Insert(Parameter);
@@ -96,9 +95,11 @@ namespace DietAndFitness.ViewModels
                     await dialogService.ShowError(ex, "Error", "Ok", null);
                 }
         }
-        private bool ValidateAddButton(LocalFoodItem Parameter)
+        protected virtual bool ValidateAddButton(T Parameter)
         {
-            return FoodItemValidator.Check(Parameter);
+            if(Parameter != null)
+                return Parameter.Check();
+            return false;
         }
         public async Task SwitchProgressIndicator()
         {

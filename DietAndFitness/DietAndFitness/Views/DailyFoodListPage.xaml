@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DietAndFitness.Views.DailyFoodListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    Text="Calories"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    Text="{Binding CurrentValues.Calories}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    Text="/"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    FontSize="22"
+                    HorizontalOptions="Center"
+                    Text="{Binding MaximumValues.Calories}"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+            <!-->
+            <Grid
+                ColumnSpacing="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Carbohydrates"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Proteins"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Fats"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="10 / 100"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="150 / 150"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="80 / 100"
+                    VerticalOptions="CenterAndExpand" />
+
+            </Grid>
+            <!-->
+            <Grid
+                ColumnSpacing="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Carbohydrates"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="3"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Proteins"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    Grid.ColumnSpan="3"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Fats"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding CurrentValues.Carbohydrates}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="/"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding MaximumValues.Carbohydrates}"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding CurrentValues.Proteins}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="/"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding MaximumValues.Proteins}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="6"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding CurrentValues.Fats}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="7"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="/"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="8"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="{Binding MaximumValues.Fats}"
+                    VerticalOptions="CenterAndExpand" />
+
+            </Grid>
+            <ListView
+                ItemsSource="{Binding FoodItems}"
+                RowHeight="120"
+                SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame Padding="10" OutlineColor="Accent">
+                                    <StackLayout>
+                                        <Grid HorizontalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding Name}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding Calories}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="2"
+                                                HorizontalOptions="Center"
+                                                Text="Calories"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </Grid>
+
+                                        <Grid HorizontalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="Carbohydrates"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="Proteins"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="2"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="Fats"
+                                                VerticalOptions="CenterAndExpand" />
+
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="0"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding Carbohydrates}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding Proteins}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="2"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding Fats}"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="AddFoodItemButton"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding OpenAddPageCommand}"
+                    CommandParameter="{Binding ItemToAdd}"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Add" />
+                <Button
+                    x:Name="EditFoodItemButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding OpenEditPageCommand}"
+                    CommandParameter="{Binding SelectedItem}"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Edit" />
+                <Button
+                    x:Name="DeleteFoodItemButton"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Command="{Binding ConfirmDeleteCommand}"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Delete" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,7 +11,7 @@ namespace DietAndFitness.Controls
     /// </summary>
     public interface IDataAccess <T> 
     {
-        Task<List<T>> Get();
+        Task<List<T>> GetAll();
         Task<int> Insert(T entity);
         Task<int> Update(T entity);
         Task<int> Delete(T entity);
