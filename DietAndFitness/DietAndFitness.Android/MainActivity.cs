@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace DietAndFitness.Droid
 {
@@ -21,6 +22,8 @@ namespace DietAndFitness.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+            //Fixes keyboard covering the entries and making them unaccesible even in scrollview
+            App.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
     }
 }

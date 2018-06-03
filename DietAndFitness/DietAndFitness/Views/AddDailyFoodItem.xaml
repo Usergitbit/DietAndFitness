@@ -118,6 +118,5 @@
                     Text="Close" />
             </Grid>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
