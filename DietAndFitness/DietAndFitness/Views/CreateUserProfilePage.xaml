@@ -202,10 +202,11 @@
 
             </Grid>
             <Button
-                x:Name="CalculateButton"
                 BackgroundColor="LightGray"
+                Command="{Binding CreateProfileCommand}"
+                CommandParameter="{Binding UserProfile}"
                 HorizontalOptions="CenterAndExpand"
-                Text="Calculate"
+                Text="Create Profile"
                 VerticalOptions="Center" />
             <Label
                 x:Name="TotalCaloriesLabel"

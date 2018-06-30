@@ -28,7 +28,7 @@ namespace DietAndFitness.Controls
             return await database.DeleteAsync(entity);
         }
 
-        public async Task<List<T>> GetAll<T>() where T : DatabaseEntity, new()
+        public async Task<List<T>> GetAllAsync<T>() where T : DatabaseEntity, new()
         {
             try
             {
@@ -62,6 +62,11 @@ namespace DietAndFitness.Controls
         public async Task<int> Update<T>(T entity)
         {
             return await database.UpdateAsync(entity);
+        }
+
+        public async Task<List<T>> RawQuery<T>(string query) where T : DatabaseEntity, new()
+        {
+            return await database.QueryAsync<T>(query);
         }
     }
 }

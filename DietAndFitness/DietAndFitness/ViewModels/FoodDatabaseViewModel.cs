@@ -143,7 +143,7 @@ namespace DietAndFitness.ViewModels
             List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
             try
             {
-                globalFoodItems =  await DBGlobalAccess.GetAll<GlobalFoodItem>();
+                globalFoodItems =  await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
             }
             catch(Exception ex)
             {
@@ -151,7 +151,7 @@ namespace DietAndFitness.ViewModels
             }
             try
             {
-                localFoodItems = await DBLocalAccess.GetAll<T>();
+                localFoodItems = await DBLocalAccess.GetAllAsync<T>();
             }
             catch (Exception ex)
             {
