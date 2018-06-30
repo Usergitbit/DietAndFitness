@@ -219,9 +219,10 @@
 
             </Grid>
             <ListView
+                HasUnevenRows="True"
                 ItemsSource="{Binding FoodItems}"
-                RowHeight="120"
-                SelectedItem="{Binding SelectedItem}">
+                SelectedItem="{Binding SelectedItem}"
+                VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -247,13 +248,13 @@
                                                 Grid.Row="0"
                                                 Grid.Column="1"
                                                 HorizontalOptions="Center"
-                                                Text="{Binding Calories}"
+                                                Text="{Binding Quantity}"
                                                 VerticalOptions="CenterAndExpand" />
                                             <Label
                                                 Grid.Row="0"
                                                 Grid.Column="2"
                                                 HorizontalOptions="Center"
-                                                Text="Calories"
+                                                Text="g"
                                                 VerticalOptions="CenterAndExpand" />
                                         </Grid>
 

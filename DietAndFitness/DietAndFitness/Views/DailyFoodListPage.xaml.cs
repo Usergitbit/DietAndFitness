@@ -24,6 +24,7 @@ namespace DietAndFitness.Views
         {
             base.OnAppearing();
             DailyFoodDatabase.LoadList();
+           
         }
     }
 }

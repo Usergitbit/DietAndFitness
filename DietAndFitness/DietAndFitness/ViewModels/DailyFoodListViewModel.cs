@@ -28,15 +28,15 @@ namespace DietAndFitness.ViewModels
 
         public async override void LoadList()
         {
-            var allFoodItemsDB = await DBLocalAccess.GetAll();
+            var todayFoodItems = await DBLocalAccess.GetByDate(DateTime.Today);
             FoodItems.Clear();
             CurrentValues.Reset();
-            foreach (var item in allFoodItemsDB)
+            foreach (var item in todayFoodItems)
             {
                 FoodItems.Add(item);
                 CurrentValues.Add(item);
             }
-            
+           
 
         }
         protected override async void OpenAddPageFunction()

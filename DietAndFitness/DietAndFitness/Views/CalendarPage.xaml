@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DietAndFitness.Views.CalendarPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ContentPage.Content>
+        <StackLayout>
+            <DatePicker
+                Date="{x:Static sys:DateTime.Now}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+            <Button
+                HorizontalOptions="CenterAndExpand"
+                Text="View"
+                VerticalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

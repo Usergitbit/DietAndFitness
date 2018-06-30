@@ -117,11 +117,11 @@ namespace DietAndFitness.ViewModels
 
                 globalFoodItems = globalFoodItems.FindAll(delegate (GlobalFoodItem item)
                 {
-                    return item.Name.Contains(parameter);
+                    return item.Name.ToLower().Contains(parameter.ToLower());
                 });
                 localFoodItems = localFoodItems.FindAll(delegate (LocalFoodItem item)
                 {
-                    return item.Name.Contains(parameter);
+                    return item.Name.ToLower().Contains(parameter.ToLower());
                 });
                 foreach (var item in globalFoodItems)
                     FoodItems.Add(item);

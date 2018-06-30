@@ -124,8 +124,8 @@ namespace DietAndFitness.Models
             Carbohydrates = 0;
             Proteins = 0;
             Fats = 0;
-            CreatedAt = DateTime.Now;
-            ModifiedAt = DateTime.Now;
+            CreatedAt = DateTime.Today;
+            ModifiedAt = DateTime.Today;
             Deleted = false;
             FoodItemPK = 0;
         }

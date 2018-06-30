@@ -15,5 +15,6 @@ namespace DietAndFitness.Controls
         Task<int> Insert(T entity);
         Task<int> Update(T entity);
         Task<int> Delete(T entity);
+        Task<List<T>> GetByDate(DateTime date);
     }
 }
