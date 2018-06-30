@@ -23,8 +23,7 @@ namespace DietAndFitness.ViewModels
         private T itemToAdd;
         protected readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
-        private NavigationService navigationService;
-        protected DataAccessLayer<T> DBLocalAccess;
+        protected DataAccessLayer DBLocalAccess;
         #endregion
         #region Properties
         public T ItemToAdd
@@ -61,14 +60,13 @@ namespace DietAndFitness.ViewModels
             }
         }
         #endregion
-        public AddFoodItemDBViewModel(NavigationService navigationService)
+        public AddFoodItemDBViewModel(NavigationService navigationService) : base(navigationService)
         {
-            this.navigationService = navigationService;
             ItemToAdd = new T();
             ItemToAdd.PropertyChanged += OnItemToAddPropertyChanged;
             AddCommand = new Command<T>(execute: Add, canExecute: ValidateAddButton);
             CloseCommand = new Command(execute: Close);
-            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             dialogService = new DialogService();
 
 

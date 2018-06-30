@@ -15,7 +15,7 @@ namespace DietAndFitness.Controls
     /// Class that implements the interface for basic CRUD operations
     /// Keeps the Model specific implementations separate from ViewModels for future database migrations
     /// </summary>
-    public class DataAccessLayer<T> : IDataAccess<T> where T:DatabaseEntity, new()
+    public class DataAccessLayer : IDataAccess 
     {
         private SQLiteAsyncConnection database;
 
@@ -23,12 +23,12 @@ namespace DietAndFitness.Controls
         {
             database = _database;
         }
-        public async Task<int> Delete(T entity)
+        public async Task<int> Delete<T>(T entity)
         {
             return await database.DeleteAsync(entity);
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll<T>() where T : DatabaseEntity, new()
         {
             try
             {
@@ -41,12 +41,12 @@ namespace DietAndFitness.Controls
             }
             
         }
-        public Task<List<T>> GetByDate(DateTime date)
+        public Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new()
         {
             return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
         }
 
-        public async Task<int> Insert(T entity)
+        public async Task<int> Insert<T>(T entity)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace DietAndFitness.Controls
             return 0;
         }
 
-        public async Task<int> Update(T entity)
+        public async Task<int> Update<T>(T entity)
         {
             return await database.UpdateAsync(entity);
         }

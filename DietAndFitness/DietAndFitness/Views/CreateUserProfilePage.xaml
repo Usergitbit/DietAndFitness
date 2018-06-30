@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DietAndFitness.Views.CreateUserProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Height"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="HeightTextBox"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Keyboard="Numeric"
+                    Placeholder="000" />
+                <Picker
+                    x:Name="MetricPickerHeight"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>cm</x:String>
+                            <x:String>in</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Weight"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="WeightTextBox"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Keyboard="Numeric"
+                    Placeholder="000" />
+                <Picker
+                    x:Name="MetricPickerWeight"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>kg</x:String>
+                            <x:String>lb</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Age"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="AgetTextBox"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Keyboard="Numeric"
+                    Placeholder="00" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="years"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Sex"
+                    VerticalOptions="CenterAndExpand" />
+                <Picker
+                    x:Name="SexPicker"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                </Picker>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Formula"
+                    VerticalOptions="CenterAndExpand" />
+                <Picker
+                    x:Name="FormulaPicker"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Mifflin-St Jeor</x:String>
+                            <x:String>Katch-McArdle</x:String>
+                            <x:String>Harris-Benedict</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+                <Button
+                    x:Name="FormulaHelpButton"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Help!" />
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Activity Level"
+                    VerticalOptions="CenterAndExpand" />
+                <Picker
+                    x:Name="ActivityLevelPicker"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>BMR</x:String>
+                            <x:String>Little or none</x:String>
+                            <x:String>3/Week</x:String>
+                            <x:String>4/Week</x:String>
+                            <x:String>5/Week</x:String>
+                            <x:String>Daily</x:String>
+                            <x:String>5/Week (intense)</x:String>
+                            <x:String>Daily intense or twice daily</x:String>
+                            <x:String>Daily and physical job</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Button
+                    x:Name="ActivityHelpButton"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Help!" />
+
+                <Label
+                    x:Name="BodyFatLabel"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Text="Body Fat"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    x:Name="BodyFatTextBox"
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False" />
+                <Label
+                    x:Name="BodyFatPercentageLabel"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Text="%"
+                    VerticalOptions="CenterAndExpand" />
+
+            </Grid>
+            <Button
+                x:Name="CalculateButton"
+                BackgroundColor="LightGray"
+                HorizontalOptions="CenterAndExpand"
+                Text="Calculate"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="TotalCaloriesLabel"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

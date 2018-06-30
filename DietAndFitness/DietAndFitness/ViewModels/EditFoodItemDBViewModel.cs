@@ -22,8 +22,7 @@ namespace DietAndFitness.ViewModels
         private T itemToEdit;
         private readonly IDialogService dialogService;
         private string progressindicator = "Waiting for input...";
-        private NavigationService navigationService;
-        private DataAccessLayer<T> DBLocalAccess;
+        private DataAccessLayer DBLocalAccess;
         #endregion
         #region Properties
         public T ItemToEdit
@@ -61,12 +60,11 @@ namespace DietAndFitness.ViewModels
         public ICommand CloseCommand { get; private set; }
         public ICommand ConfirmCommand { get; private set; }
         #endregion
-        public EditFoodItemDBViewModel(DatabaseEntity selectedItem, NavigationService navigationService)
+        public EditFoodItemDBViewModel(DatabaseEntity selectedItem, NavigationService navigationService) : base(navigationService)
         {
             dialogService = new DialogService();
             itemToEdit = (T)selectedItem;
-            this.navigationService = navigationService;
-            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             CloseCommand = new Command(execute: Close);
             ConfirmCommand = new Command<T>(execute: Edit, canExecute: ValidateConfirmButton);
             ItemToEdit.PropertyChanged += OnItemToEditPropertyChanged;

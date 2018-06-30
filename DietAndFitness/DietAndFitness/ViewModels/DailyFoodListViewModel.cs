@@ -28,7 +28,7 @@ namespace DietAndFitness.ViewModels
 
         public async override void LoadList()
         {
-            var todayFoodItems = await DBLocalAccess.GetByDate(DateTime.Today);
+            var todayFoodItems = await DBLocalAccess.GetByDate<DailyFoodItem>(DateTime.Today);
             FoodItems.Clear();
             CurrentValues.Reset();
             foreach (var item in todayFoodItems)

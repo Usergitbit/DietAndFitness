@@ -9,12 +9,12 @@ namespace DietAndFitness.Controls
     /// <summary>
     /// Interface for basic CRUD operations
     /// </summary>
-    public interface IDataAccess <T> 
+    public interface IDataAccess 
     {
-        Task<List<T>> GetAll();
-        Task<int> Insert(T entity);
-        Task<int> Update(T entity);
-        Task<int> Delete(T entity);
-        Task<List<T>> GetByDate(DateTime date);
+        Task<List<T>> GetAll<T>() where T : DatabaseEntity, new();
+        Task<int> Insert<T>(T entity);
+        Task<int> Update<T>(T entity);
+        Task<int> Delete<T>(T entity);
+        Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new();
     }
 }

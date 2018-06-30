@@ -25,12 +25,11 @@ namespace DietAndFitness.ViewModels
         #region Members
         private readonly IDialogService dialogService;
         private ObservableCollection<DatabaseEntity> foodItems;
-        private DataAccessLayer<GlobalFoodItem> DBGlobalAccess;
-        protected DataAccessLayer<T> DBLocalAccess;
+        private DataAccessLayer DBGlobalAccess;
+        protected DataAccessLayer DBLocalAccess;
         private string progressindicator = "Waiting for input...";
         private DatabaseEntity selectedItem;
         private RelayCommand confirmDeleteCommand;
-        protected NavigationService navigationService;
         #endregion
         #region Properties
         public ICommand OpenAddPageCommand { get; private set; }
@@ -117,14 +116,13 @@ namespace DietAndFitness.ViewModels
 
 
         #endregion
-        public FoodDatabaseViewModel(NavigationService navigationService)
+        public FoodDatabaseViewModel(NavigationService navigationService) : base(navigationService)
         {
-            this.navigationService = navigationService;
             dialogService = new DialogService();
             //SelectedItem = new ModelBase();
             FoodItems = new ObservableCollection<DatabaseEntity>();
-            DBGlobalAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.GlobalDatabase);
-            DBLocalAccess = new DataAccessLayer<T>(GlobalSQLiteConnection.LocalDatabase);
+            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
             this.PropertyChanged += OnSelectedItemChanged;
@@ -145,7 +143,7 @@ namespace DietAndFitness.ViewModels
             List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
             try
             {
-                globalFoodItems =  await DBGlobalAccess.GetAll();
+                globalFoodItems =  await DBGlobalAccess.GetAll<GlobalFoodItem>();
             }
             catch(Exception ex)
             {
@@ -153,7 +151,7 @@ namespace DietAndFitness.ViewModels
             }
             try
             {
-                localFoodItems = await DBLocalAccess.GetAll();
+                localFoodItems = await DBLocalAccess.GetAll<T>();
             }
             catch (Exception ex)
             {

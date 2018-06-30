@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietAndFitness.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -13,9 +14,14 @@ namespace DietAndFitness.Core
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected NavigationService navigationService;
         public ViewModelBase()
         {
             //required for serialization
+        }
+        public ViewModelBase(NavigationService navigationService)
+        {
+            this.navigationService = navigationService;
         }
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
         {

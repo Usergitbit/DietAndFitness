@@ -15,8 +15,8 @@ namespace DietAndFitness.ViewModels
     {
         private ObservableCollection<DatabaseEntity> foodItems;
         private DatabaseEntity selectedItem;
-        private DataAccessLayer<GlobalFoodItem> DBGlobalAccess;
-        private DataAccessLayer<LocalFoodItem> DBFoodItemAccess;
+        private DataAccessLayer DBGlobalAccess;
+        private DataAccessLayer DBFoodItemAccess;
         private string searchBarText;
         public string SearchBarText
         {
@@ -64,9 +64,9 @@ namespace DietAndFitness.ViewModels
         public AddDailyFoodItemViewModel(NavigationService navigationService) : base(navigationService)
         {
             FoodItems = new ObservableCollection<DatabaseEntity>();
-            DBGlobalAccess = new DataAccessLayer<GlobalFoodItem>(GlobalSQLiteConnection.GlobalDatabase);
-            DBFoodItemAccess = new DataAccessLayer<LocalFoodItem>(GlobalSQLiteConnection.LocalDatabase);
-            DBLocalAccess = new DataAccessLayer<DailyFoodItem>(GlobalSQLiteConnection.LocalDatabase);
+            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            DBFoodItemAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             SearchCommand = new Command<string>(execute: RefreshListItems);
             this.PropertyChanged += OnSelectedItemChanged;
             
@@ -99,7 +99,7 @@ namespace DietAndFitness.ViewModels
                 List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
                 try
                 {
-                    globalFoodItems = await DBGlobalAccess.GetAll();
+                    globalFoodItems = await DBGlobalAccess.GetAll<GlobalFoodItem>();
                 }
                 catch (Exception ex)
                 {
@@ -107,7 +107,7 @@ namespace DietAndFitness.ViewModels
                 }
                 try
                 {
-                    localFoodItems = await DBFoodItemAccess.GetAll();
+                    localFoodItems = await DBFoodItemAccess.GetAll<LocalFoodItem>();
                 }
                 catch (Exception ex)
                 {
