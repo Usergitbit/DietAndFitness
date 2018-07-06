@@ -22,7 +22,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                GlobalDatabase = new SQLiteAsyncConnection(DatabasePath);
+                GlobalDatabase = new SQLiteAsyncConnection(DatabasePath,false);
             }
             catch (Exception e)
             {
@@ -33,7 +33,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                LocalDatabase = new SQLiteAsyncConnection(DatabasePath);
+                LocalDatabase = new SQLiteAsyncConnection(DatabasePath, false);
             }
             catch (Exception e)
             {

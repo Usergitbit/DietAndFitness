@@ -43,8 +43,8 @@ namespace DietAndFitness.Controls
         }
         public Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new()
         {
-            //return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
-            return database.QueryAsync<T>("select * from dailyfooditem where createdat = '"+date+"'");
+            return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
+            //return database.QueryAsync<T>("select * from dailyfooditem where createdat = '"+date+"'");
         }
 
         public async Task<int> Insert<T>(T entity)
