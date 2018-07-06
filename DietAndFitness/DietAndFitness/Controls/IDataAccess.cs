@@ -11,6 +11,7 @@ namespace DietAndFitness.Controls
     /// </summary>
     public interface IDataAccess 
     {
+    
         Task<List<T>> GetAllAsync<T>() where T : DatabaseEntity, new();
         Task<int> Insert<T>(T entity);
         Task<int> Update<T>(T entity);

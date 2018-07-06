@@ -22,6 +22,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
+                //False attribute indicates dates should be stored normally and NOT as integer values 
                 GlobalDatabase = new SQLiteAsyncConnection(DatabasePath,false);
             }
             catch (Exception e)

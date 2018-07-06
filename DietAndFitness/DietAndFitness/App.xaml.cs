@@ -72,7 +72,7 @@ namespace DietAndFitness
 		}
 
         /// <summary>
-        /// Merges the GlobalFoodItem database with the LocalFoodItemDatabase
+        /// Merges the GlobalFoodItem database with the LocalFoodItemDatabase.
         /// </summary>
         private async Task MergeDatabases()
         {
@@ -81,7 +81,7 @@ namespace DietAndFitness
             List<GlobalFoodItem> globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
             foreach (GlobalFoodItem item in globalFoodItems)
             {
-                //checks if the items are not already existent in the database
+                //check if the items are not already in the Local database and insert them if not
                 List<LocalFoodItem> searchResult = await DBLocalAccess.GetByGUID<LocalFoodItem>(item.GUID);
                 if (searchResult.Count == 0)
                 {
@@ -94,11 +94,11 @@ namespace DietAndFitness
                         Debug.WriteLine(ex.Message + " YOU DUN GOOFED");
                     }
                 }
+                //update the items if they already exist
                 else
                 {
                     try
                     {
-                        //UPDATE ON GUID
                         await DBLocalAccess.Update<LocalFoodItem>(item);
                         Debug.WriteLine("Updated a value!");
                     }
@@ -109,6 +109,10 @@ namespace DietAndFitness
                 }
             }
         }
+        /// <summary>
+        /// Determines whether the Local database is up to date
+        /// </summary>
+        /// <returns>True if up to date. False if not up to date.</returns>
         private async Task<bool> IsUpToDate()
         {
             DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
