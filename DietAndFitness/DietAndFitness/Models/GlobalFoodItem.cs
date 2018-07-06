@@ -13,7 +13,7 @@ namespace DietAndFitness.Models
     [Table("GlobalFoodItem")]
     public class GlobalFoodItem : DatabaseEntity
     {
-
+        public byte[] GUID { get; set; }
         private double? calories;
         public double? Calories
         {
@@ -140,7 +140,7 @@ namespace DietAndFitness.Models
             Deleted = false;
         }
 
-        public override bool Check()
+        public override bool IsValid()
         {
             if (Name.Equals(String.Empty) || Calories.ToString().Equals(String.Empty) || Carbohydrates.ToString().Equals(String.Empty) || Proteins.ToString().Equals(String.Empty) || Fats.ToString().Equals(String.Empty))
                 return false;

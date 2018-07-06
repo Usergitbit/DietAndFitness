@@ -43,7 +43,8 @@ namespace DietAndFitness.Controls
         }
         public Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new()
         {
-            return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
+            //return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
+            return database.QueryAsync<T>("select * from dailyfooditem where createdat = '"+date+"'");
         }
 
         public async Task<int> Insert<T>(T entity)
@@ -67,6 +68,45 @@ namespace DietAndFitness.Controls
         public async Task<List<T>> RawQuery<T>(string query) where T : DatabaseEntity, new()
         {
             return await database.QueryAsync<T>(query);
+        }
+
+        public async Task<List<T>> GetByGUID<T>(byte[] guid) where T : DatabaseEntity, new()
+        {
+            try
+            {
+               // return await database.Table<T>().Where(x => x.GUID == guid ).ToListAsync();
+               return await database.QueryAsync<T>("select * from LocalFoodItem");
+                
+            }
+            catch(InvalidOperationException ex)
+            {
+                Debug.WriteLine("Message: " + ex.Message + "Method: " + ex.TargetSite);
+                return null;
+            }
+            catch (ArgumentException ex)
+            {
+                Debug.WriteLine("Message: " + ex.Message + "Method: " + ex.TargetSite);
+                return null;
+            }
+
+        }
+
+        public async Task<List<Version>> GetVersion()
+        {
+            string query = "SELECT * FROM VERSION";
+            return await database.QueryAsync<Version>(query);
+        }
+
+        public async Task<int> Update<T>(GlobalFoodItem item) where T : DatabaseEntity, new()
+        {
+            // List<T> result = await database.Table<T>().Where(x => x.GUID == item.GUID).ToListAsync();
+            //return await database.UpdateAsync(result[0]);
+            return 0;
+        }
+
+        public class Version
+        {
+            public int Number { get; set; }
         }
     }
 }

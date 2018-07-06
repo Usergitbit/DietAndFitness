@@ -13,6 +13,7 @@ namespace DietAndFitness.Models
         /// </summary>
         [PrimaryKey]
         public int? ID { get; set; }
+       
         private string name;
         public string Name
         {
@@ -82,7 +83,7 @@ namespace DietAndFitness.Models
 
         }
 
-        public abstract bool Check();
+        public abstract bool IsValid();
 
         public abstract void ResetValues();
 

@@ -25,7 +25,7 @@ namespace DietAndFitness.ViewModels
         #region Members
         private readonly IDialogService dialogService;
         private ObservableCollection<DatabaseEntity> foodItems;
-        private DataAccessLayer DBGlobalAccess;
+        //private DataAccessLayer DBGlobalAccess;
         protected DataAccessLayer DBLocalAccess;
         private string progressindicator = "Waiting for input...";
         private DatabaseEntity selectedItem;
@@ -121,7 +121,7 @@ namespace DietAndFitness.ViewModels
             dialogService = new DialogService();
             //SelectedItem = new ModelBase();
             FoodItems = new ObservableCollection<DatabaseEntity>();
-            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            //DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
@@ -140,15 +140,15 @@ namespace DietAndFitness.ViewModels
         public virtual async void LoadList()
         {
             List<T> localFoodItems = new List<T>();
-            List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
-            try
-            {
-                globalFoodItems =  await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
-            }
-            catch(Exception ex)
-            {
-                await dialogService.ShowError(ex, "Error", "Ok",null);
-            }
+            //List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
+            //try
+            //{
+            //    globalFoodItems =  await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
+            //}
+            //catch(Exception ex)
+            //{
+            //    await dialogService.ShowError(ex, "Error", "Ok",null);
+            //}
             try
             {
                 localFoodItems = await DBLocalAccess.GetAllAsync<T>();
@@ -157,11 +157,9 @@ namespace DietAndFitness.ViewModels
             {
                 await dialogService.ShowError(ex, "Error", "Ok", null);
             }
-            FoodItems = new ObservableCollection<DatabaseEntity>();
-            foreach (var item in globalFoodItems)
-                FoodItems.Add(item);
-            foreach (var item in localFoodItems)
-                FoodItems.Add(item);
+            FoodItems = new ObservableCollection<DatabaseEntity>(localFoodItems);
+            //foreach (var item in localFoodItems)
+            //    FoodItems.Add(item);
 
         }
         public async Task SwitchProgressIndicator()

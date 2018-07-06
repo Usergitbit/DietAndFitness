@@ -109,7 +109,7 @@ namespace DietAndFitness.Models
 
         }
 
-        public override bool Check()
+        public override bool IsValid()
         {
             if (Name.Equals(String.Empty) || Calories.ToString().Equals(String.Empty) || Carbohydrates.ToString().Equals(String.Empty) || Proteins.ToString().Equals(String.Empty) || Fats.ToString().Equals(String.Empty) || Quantity.ToString().Equals(String.Empty) || FoodItemPK.ToString().Equals(String.Empty))
                 return false;

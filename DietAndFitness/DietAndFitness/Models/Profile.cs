@@ -93,7 +93,7 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        public override bool Check()
+        public override bool IsValid()
         {
             throw new NotImplementedException();
         }

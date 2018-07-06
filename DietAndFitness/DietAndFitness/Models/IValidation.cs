@@ -6,7 +6,7 @@ namespace DietAndFitness.Models
 {
     interface IValidation
     {
-        bool Check();
+        bool IsValid();
         void ResetValues();
     }
 }

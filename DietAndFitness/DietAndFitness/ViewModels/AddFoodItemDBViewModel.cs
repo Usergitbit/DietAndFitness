@@ -79,7 +79,7 @@ namespace DietAndFitness.ViewModels
         protected virtual async void Add(T Parameter)
         {
             
-            if (Parameter.Check())
+            if (Parameter.IsValid())
                 try
                 {
                     await DBLocalAccess.Insert(Parameter);
@@ -96,7 +96,7 @@ namespace DietAndFitness.ViewModels
         protected virtual bool ValidateAddButton(T Parameter)
         {
             if(Parameter != null)
-                return Parameter.Check();
+                return Parameter.IsValid();
             return false;
         }
         public async Task SwitchProgressIndicator()

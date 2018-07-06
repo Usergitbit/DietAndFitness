@@ -29,6 +29,7 @@ namespace DietAndFitness
             DBLocalControl.CopyDatabase();
             GlobalSQLiteConnection.ConnectToGlobalDatabaseAsync(DBGlobalControl.DestinationPath);
             GlobalSQLiteConnection.ConnectToLocalDatabaseAsync(DBLocalControl.DestinationPath);
+            //If there are no current profiles then open a CreateUserProfile page
             if (!Current.Properties.ContainsKey("HasProfiles"))
             {
                 var createUserProfilePage = new CreateUserProfilePage();
@@ -39,6 +40,7 @@ namespace DietAndFitness
                 
                 MainPage = navigationPage;
             }
+            //Else open the normal HomePage
             else
             {
                 var navigationPage = new NavigationPage(new HomePageDetail());
@@ -50,10 +52,13 @@ namespace DietAndFitness
 
         }
 
-		protected override void OnStart ()
+		protected override async void OnStart ()
 		{
             // Handle when your app starts
-           
+            Debug.WriteLine("App Started!");
+            bool result = await IsUpToDate();
+            if(!result)
+                await MergeDatabases();
         }
 
 		protected override void OnSleep ()
@@ -65,11 +70,53 @@ namespace DietAndFitness
 		{
 			// Handle when your app resumes
 		}
-        private async Task<bool> ProfileExists()
+
+        /// <summary>
+        /// Merges the GlobalFoodItem database with the LocalFoodItemDatabase
+        /// </summary>
+        private async Task MergeDatabases()
         {
-            var DBAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
-            List <Profile> profiles = await DBAccess.GetAllAsync<Profile>();
-            return profiles.Count != 0;
+            DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            List<GlobalFoodItem> globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
+            foreach (GlobalFoodItem item in globalFoodItems)
+            {
+                //checks if the items are not already existent in the database
+                List<LocalFoodItem> searchResult = await DBLocalAccess.GetByGUID<LocalFoodItem>(item.GUID);
+                if (searchResult.Count == 0)
+                {
+                    try
+                    {
+                        await DBLocalAccess.Insert<LocalFoodItem>((LocalFoodItem)item);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message + " YOU DUN GOOFED");
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        await DBLocalAccess.Update<LocalFoodItem>(item);
+                        Debug.WriteLine("Updated a value!");
+                    }
+                    catch(Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message + " YOU DUN GOOFED");
+                    }
+                }
+            }
+        }
+        private async Task<bool> IsUpToDate()
+        {
+            DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            List<DataAccessLayer.Version> versionLocal = await DBLocalAccess.GetVersion();
+            List<DataAccessLayer.Version> versionGlobal = await DBGlobalAccess.GetVersion();
+            if (versionLocal[0].Number < versionGlobal[0].Number)
+                return false;
+            return true;
         }
     }
 }

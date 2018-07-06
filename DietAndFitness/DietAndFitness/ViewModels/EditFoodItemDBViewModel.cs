@@ -111,7 +111,7 @@ namespace DietAndFitness.ViewModels
                 if (parameter.IsDirty == true)
                 {
                     Debug.WriteLine("Item is dirty");
-                    if (parameter.Check())
+                    if (parameter.IsValid())
                         return true;
                     else
                         return false;
