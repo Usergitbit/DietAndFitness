@@ -13,7 +13,6 @@ namespace DietAndFitness.Models
     [Table("LocalFoodItem")]
     public class LocalFoodItem : DatabaseEntity
     {
-       // public byte[] GUID { get; set; }
         private double? calories;
         public double? Calories
         {
@@ -109,7 +108,7 @@ namespace DietAndFitness.Models
         /// Cast operator implementation
         /// </summary>
         /// <param name="v"></param>
-        public static explicit operator LocalFoodItem(GlobalFoodItem v)
+        public static implicit operator LocalFoodItem(GlobalFoodItem v)
         {
             return new LocalFoodItem(v);
         }

@@ -13,7 +13,7 @@ namespace DietAndFitness.Models
     [Table("GlobalFoodItem")]
     public class GlobalFoodItem : DatabaseEntity
     {
-        public byte[] GUID { get; set; }
+        
         private double? calories;
         public double? Calories
         {

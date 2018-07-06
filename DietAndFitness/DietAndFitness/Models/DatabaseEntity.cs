@@ -13,7 +13,7 @@ namespace DietAndFitness.Models
         /// </summary>
         [PrimaryKey]
         public int? ID { get; set; }
-       
+        public string GUID { get; set; }
         private string name;
         public string Name
         {

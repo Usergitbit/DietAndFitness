@@ -87,7 +87,7 @@ namespace DietAndFitness
                 {
                     try
                     {
-                        await DBLocalAccess.Insert<LocalFoodItem>((LocalFoodItem)item);
+                        await DBLocalAccess.Insert<LocalFoodItem>(item);
                     }
                     catch (Exception ex)
                     {
@@ -98,6 +98,7 @@ namespace DietAndFitness
                 {
                     try
                     {
+                        //UPDATE ON GUID
                         await DBLocalAccess.Update<LocalFoodItem>(item);
                         Debug.WriteLine("Updated a value!");
                     }
@@ -112,8 +113,8 @@ namespace DietAndFitness
         {
             DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
             DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
-            List<DataAccessLayer.Version> versionLocal = await DBLocalAccess.GetVersion();
-            List<DataAccessLayer.Version> versionGlobal = await DBGlobalAccess.GetVersion();
+            List<VersionItem> versionLocal = await DBLocalAccess.GetVersion();
+            List<VersionItem> versionGlobal = await DBGlobalAccess.GetVersion();
             if (versionLocal[0].Number < versionGlobal[0].Number)
                 return false;
             return true;

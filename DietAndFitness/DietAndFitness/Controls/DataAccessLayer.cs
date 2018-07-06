@@ -70,11 +70,11 @@ namespace DietAndFitness.Controls
             return await database.QueryAsync<T>(query);
         }
 
-        public async Task<List<T>> GetByGUID<T>(byte[] guid) where T : DatabaseEntity, new()
+        public async Task<List<T>> GetByGUID<T>(string guid) where T : DatabaseEntity, new()
         {
             try
             {
-               // return await database.Table<T>().Where(x => x.GUID == guid ).ToListAsync();
+                return await database.Table<T>().Where(x => x.GUID == guid ).ToListAsync();
                return await database.QueryAsync<T>("select * from LocalFoodItem");
                 
             }
@@ -91,22 +91,20 @@ namespace DietAndFitness.Controls
 
         }
 
-        public async Task<List<Version>> GetVersion()
+        public async Task<List<VersionItem>> GetVersion()
         {
-            string query = "SELECT * FROM VERSION";
-            return await database.QueryAsync<Version>(query);
+            return await database.Table<VersionItem>().ToListAsync();
         }
 
         public async Task<int> Update<T>(GlobalFoodItem item) where T : DatabaseEntity, new()
         {
-            // List<T> result = await database.Table<T>().Where(x => x.GUID == item.GUID).ToListAsync();
-            //return await database.UpdateAsync(result[0]);
-            return 0;
+            List<T> result = await database.Table<T>().Where(x => x.GUID == item.GUID).ToListAsync();
+            LocalFoodItem castedFoodItem = item;
+            castedFoodItem.ID = result[0].ID;
+            return await database.UpdateAsync(castedFoodItem);
+           
         }
 
-        public class Version
-        {
-            public int Number { get; set; }
-        }
+       
     }
 }
