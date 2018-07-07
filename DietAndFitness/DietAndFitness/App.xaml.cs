@@ -22,6 +22,7 @@ namespace DietAndFitness
         public static NavigationService NavigationService { get; private set; }
 		public App ()
 		{
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTU4NEAzMTM2MmUzMjJlMzBaTHN0NDgrMGNOMlpMV2RvVW1uczFvQmFDOWVXZnlIVkxQMEVseWRyMDVnPQ==");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
@@ -30,7 +31,7 @@ namespace DietAndFitness
             GlobalSQLiteConnection.ConnectToGlobalDatabaseAsync(DBGlobalControl.DestinationPath);
             GlobalSQLiteConnection.ConnectToLocalDatabaseAsync(DBLocalControl.DestinationPath);
             //If there are no current profiles then open a CreateUserProfile page
-            if (!Current.Properties.ContainsKey("HasProfiles"))
+            if (Current.Properties.ContainsKey("HasProfiles"))
             {
                 var createUserProfilePage = new CreateUserProfilePage();
                 CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel(NavigationService);

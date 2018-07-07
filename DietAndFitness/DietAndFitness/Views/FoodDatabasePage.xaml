@@ -6,14 +6,14 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView
+                HasUnevenRows="True"
                 ItemsSource="{Binding FoodItems}"
-                RowHeight="120"
                 SelectedItem="{Binding SelectedItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ContentView Padding="5">
-                                <Frame Padding="10" OutlineColor="Accent">
+                                <Frame Padding="10" OutlineColor="DeepSkyBlue">
                                     <StackLayout>
                                         <Grid HorizontalOptions="Center">
                                             <Grid.RowDefinitions>

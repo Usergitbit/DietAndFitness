@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using DietAndFitness.Models.Secondary;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace DietAndFitness.Models
         private DateTime birthDate;
         private string sex;
         private int dietFormula;
-        private double activityLevel;
+        private ActivityLevel activityLevel;
         private double bodyFat;
 
         public double Height
@@ -71,7 +72,7 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        public double ActivityLevel
+        public ActivityLevel ActivityLevel
         {
             get { return activityLevel; }
             set
@@ -102,5 +103,11 @@ namespace DietAndFitness.Models
         {
             throw new NotImplementedException();
         }
+        public Profile()
+        {
+
+        }
+
+
     }
 }

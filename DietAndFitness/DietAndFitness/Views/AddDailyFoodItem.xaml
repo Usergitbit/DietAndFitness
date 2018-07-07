@@ -93,6 +93,7 @@
             </ListView>
             <Entry
                 HorizontalOptions="Center"
+                Keyboard="Numeric"
                 Placeholder="Quantity"
                 Text="{Binding ItemToAdd.Quantity, Converter={StaticResource StringToNullableDouble}" />
             <Grid HorizontalOptions="CenterAndExpand">

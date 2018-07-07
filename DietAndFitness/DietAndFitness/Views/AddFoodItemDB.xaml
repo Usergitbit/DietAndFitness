@@ -60,6 +60,7 @@
                     <Entry
                         Grid.Row="3"
                         Grid.Column="1"
+                        Keyboard="Numeric"
                         Text="{Binding ItemToAdd.Calories, Converter={StaticResource StringToNullableDouble}}"
                         VerticalOptions="Center" />
                     <Label
@@ -70,6 +71,7 @@
                     <Entry
                         Grid.Row="4"
                         Grid.Column="1"
+                        Keyboard="Numeric"
                         Text="{Binding ItemToAdd.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
                         VerticalOptions="Center" />
                     <Label
@@ -80,6 +82,7 @@
                     <Entry
                         Grid.Row="5"
                         Grid.Column="1"
+                        Keyboard="Numeric"
                         Text="{Binding ItemToAdd.Proteins, Converter={StaticResource StringToNullableDouble}}"
                         VerticalOptions="Center" />
                     <Label
@@ -90,6 +93,7 @@
                     <Entry
                         Grid.Row="6"
                         Grid.Column="1"
+                        Keyboard="Numeric"
                         Text="{Binding ItemToAdd.Fats, Converter={StaticResource StringToNullableDouble}}"
                         VerticalOptions="Center" />
                 </Grid>

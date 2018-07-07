@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="DietAndFitness.Views.CreateUserProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
             <Grid HorizontalOptions="Center">
@@ -29,12 +30,11 @@
                     Text="Height"
                     VerticalOptions="CenterAndExpand" />
                 <Entry
-                    x:Name="HeightTextBox"
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
                     Keyboard="Numeric"
-                    Placeholder="000" />
+                    Text="{Binding UserProfile.Height}" />
                 <Picker
                     x:Name="MetricPickerHeight"
                     Grid.Row="0"
@@ -56,12 +56,11 @@
                     Text="Weight"
                     VerticalOptions="CenterAndExpand" />
                 <Entry
-                    x:Name="WeightTextBox"
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
                     Keyboard="Numeric"
-                    Placeholder="000" />
+                    Text="{Binding Profile.Weight}" />
                 <Picker
                     x:Name="MetricPickerWeight"
                     Grid.Row="1"
@@ -80,22 +79,16 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Age"
+                    Text="Birth Date"
                     VerticalOptions="CenterAndExpand" />
-                <Entry
-                    x:Name="AgetTextBox"
+                <DatePicker
                     Grid.Row="2"
                     Grid.Column="1"
+                    Date="{Binding Profile.BirthDate}"
                     HorizontalOptions="CenterAndExpand"
-                    Keyboard="Numeric"
-                    Placeholder="00" />
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="years"
-                    VerticalOptions="CenterAndExpand" />
-
+                    VerticalOptions="CenterAndExpand">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                </DatePicker>
                 <Label
                     Grid.Row="3"
                     Grid.Column="0"
@@ -103,10 +96,10 @@
                     Text="Sex"
                     VerticalOptions="CenterAndExpand" />
                 <Picker
-                    x:Name="SexPicker"
                     Grid.Row="3"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand">
+                    HorizontalOptions="CenterAndExpand"
+                    SelectedItem="{Binding Profile.Sex}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Male</x:String>
@@ -123,10 +116,10 @@
                     Text="Formula"
                     VerticalOptions="CenterAndExpand" />
                 <Picker
-                    x:Name="FormulaPicker"
                     Grid.Row="4"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand">
+                    HorizontalOptions="CenterAndExpand"
+                    SelectedItem="{Binding Profile.DietFormula}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Mifflin-St Jeor</x:String>
@@ -137,13 +130,10 @@
                     <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
                 <Button
-                    x:Name="FormulaHelpButton"
                     Grid.Row="4"
                     Grid.Column="2"
-                    BackgroundColor="LightGray"
                     HorizontalOptions="CenterAndExpand"
                     Text="Help!" />
-
                 <Label
                     Grid.Row="5"
                     Grid.Column="0"
@@ -151,34 +141,19 @@
                     Text="Activity Level"
                     VerticalOptions="CenterAndExpand" />
                 <Picker
-                    x:Name="ActivityLevelPicker"
                     Grid.Row="5"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>BMR</x:String>
-                            <x:String>Little or none</x:String>
-                            <x:String>3/Week</x:String>
-                            <x:String>4/Week</x:String>
-                            <x:String>5/Week</x:String>
-                            <x:String>Daily</x:String>
-                            <x:String>5/Week (intense)</x:String>
-                            <x:String>Daily intense or twice daily</x:String>
-                            <x:String>Daily and physical job</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+                    HorizontalOptions="CenterAndExpand"
+                    ItemDisplayBinding="{Binding DisplayText}"
+                    ItemsSource="{Binding ActivityLevels}"
+                    SelectedItem="{Binding Profile.ActivityLevel}" />
                 <Button
-                    x:Name="ActivityHelpButton"
                     Grid.Row="5"
                     Grid.Column="2"
-                    BackgroundColor="LightGray"
                     HorizontalOptions="CenterAndExpand"
                     Text="Help!" />
 
                 <Label
-                    x:Name="BodyFatLabel"
                     Grid.Row="6"
                     Grid.Column="0"
                     HorizontalOptions="CenterAndExpand"
@@ -186,13 +161,12 @@
                     Text="Body Fat"
                     VerticalOptions="CenterAndExpand" />
                 <Entry
-                    x:Name="BodyFatTextBox"
                     Grid.Row="6"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
-                    IsVisible="False" />
+                    IsVisible="False"
+                    Text="{Binding Profile.BodyFat}" />
                 <Label
-                    x:Name="BodyFatPercentageLabel"
                     Grid.Row="6"
                     Grid.Column="2"
                     HorizontalOptions="CenterAndExpand"
@@ -202,7 +176,6 @@
 
             </Grid>
             <Button
-                BackgroundColor="LightGray"
                 Command="{Binding CreateProfileCommand}"
                 CommandParameter="{Binding UserProfile}"
                 HorizontalOptions="CenterAndExpand"

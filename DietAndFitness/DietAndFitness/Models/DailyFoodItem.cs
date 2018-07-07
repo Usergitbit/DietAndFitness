@@ -12,7 +12,7 @@ namespace DietAndFitness.Models
     public class DailyFoodItem : DatabaseEntity
     {
 
-        
+         
         private double quantity;
         public double Quantity
         {
