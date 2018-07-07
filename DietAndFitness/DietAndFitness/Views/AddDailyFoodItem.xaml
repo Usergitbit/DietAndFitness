@@ -6,13 +6,16 @@
     <ContentPage.Content>
         <StackLayout>
             <SearchBar
+                x:Name="searchBar"
                 Placeholder="Find some food"
                 SearchCommand="{Binding SearchCommand}"
                 SearchCommandParameter="{Binding SearchBarText}"
                 Text="{Binding SearchBarText}" />
             <ListView
+                x:Name="myLlistView"
+                HasUnevenRows="True"
+                ItemSelected="OnItemSelected"
                 ItemsSource="{Binding FoodItems}"
-                RowHeight="120"
                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -92,6 +95,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Entry
+                x:Name="entryQuantity"
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 Placeholder="Quantity"

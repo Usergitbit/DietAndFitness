@@ -16,5 +16,19 @@ namespace DietAndFitness.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //doesn't work on UWP
+            searchBar.Unfocus();
+            entryQuantity.Focus();
+            myLlistView.ScrollTo(e.SelectedItem,ScrollToPosition.Start,true);
+
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            searchBar.Focus();
+        }
+    }
 }
