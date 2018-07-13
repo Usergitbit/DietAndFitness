@@ -8,6 +8,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <local:StringToNullableDouble x:Key="StringToNullableDouble" />
+            <Style TargetType="Frame">
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="OutlineColor" Value="DeepSkyBlue" />
+            </Style>
+
         </ResourceDictionary>
         <!--  Application resource dictionary  -->
 

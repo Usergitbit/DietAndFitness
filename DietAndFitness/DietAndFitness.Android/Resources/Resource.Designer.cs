@@ -26,6 +26,16 @@ namespace DietAndFitness.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.label_font_size = global::DietAndFitness.Droid.Resource.Dimension.label_font_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.thumb_size = global::DietAndFitness.Droid.Resource.Dimension.thumb_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tick_size = global::DietAndFitness.Droid.Resource.Dimension.tick_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_bottom = global::DietAndFitness.Droid.Resource.Dimension.tool_bottom;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_left = global::DietAndFitness.Droid.Resource.Dimension.tool_left;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_right = global::DietAndFitness.Droid.Resource.Dimension.tool_right;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_top = global::DietAndFitness.Droid.Resource.Dimension.tool_top;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tooltip_textsize = global::DietAndFitness.Droid.Resource.Dimension.tooltip_textsize;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.track_size = global::DietAndFitness.Droid.Resource.Dimension.track_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.arrow_down = global::DietAndFitness.Droid.Resource.Drawable.arrow_down;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.arrow_up = global::DietAndFitness.Droid.Resource.Drawable.arrow_up;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.Recurrence = global::DietAndFitness.Droid.Resource.Drawable.Recurrence;
@@ -1984,6 +1994,9 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f070005
 			public const int item_touch_helper_swipe_escape_velocity = 2131165189;
 			
+			// aapt resource value: 0x7f0700a4
+			public const int label_font_size = 2131165348;
+			
 			// aapt resource value: 0x7f070006
 			public const int mr_controller_volume_group_list_item_height = 2131165190;
 			
@@ -2047,6 +2060,24 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f0700a3
 			public const int notification_top_pad_large_text = 2131165347;
 			
+			// aapt resource value: 0x7f0700a5
+			public const int thumb_size = 2131165349;
+			
+			// aapt resource value: 0x7f0700a7
+			public const int tick_size = 2131165351;
+			
+			// aapt resource value: 0x7f0700a9
+			public const int tool_bottom = 2131165353;
+			
+			// aapt resource value: 0x7f0700aa
+			public const int tool_left = 2131165354;
+			
+			// aapt resource value: 0x7f0700ab
+			public const int tool_right = 2131165355;
+			
+			// aapt resource value: 0x7f0700a8
+			public const int tool_top = 2131165352;
+			
 			// aapt resource value: 0x7f070062
 			public const int tooltip_corner_radius = 2131165282;
 			
@@ -2062,6 +2093,9 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f070066
 			public const int tooltip_precise_anchor_threshold = 2131165286;
 			
+			// aapt resource value: 0x7f0700ac
+			public const int tooltip_textsize = 2131165356;
+			
 			// aapt resource value: 0x7f070067
 			public const int tooltip_vertical_padding = 2131165287;
 			
@@ -2070,6 +2104,9 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f070069
 			public const int tooltip_y_offset_touch = 2131165289;
+			
+			// aapt resource value: 0x7f0700a6
+			public const int track_size = 2131165350;
 			
 			static Dimension()
 			{

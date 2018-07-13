@@ -1,4 +1,5 @@
-﻿using Syncfusion.SfSchedule.XForms.UWP;
+﻿using Syncfusion.SfNumericTextBox.XForms.UWP;
+using Syncfusion.SfSchedule.XForms.UWP;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -56,6 +57,7 @@ namespace DietAndFitness.UWP
                 List<Assembly> assembliesToInclude = new List<Assembly>();
                 //Now, add all the assemblies your app uses 
                 assembliesToInclude.Add(typeof(SfScheduleRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfNumericTextBoxRenderer).GetTypeInfo().Assembly);
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);
 

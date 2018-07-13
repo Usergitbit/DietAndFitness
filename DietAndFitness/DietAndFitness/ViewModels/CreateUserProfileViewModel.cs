@@ -17,7 +17,6 @@ namespace DietAndFitness.ViewModels
         private DataAccessLayer DBLocalAccess;
         public ICommand CreateProfileCommand { get; private set; }
         public Profile UserProfile { get; set; }
-        public List<ActivityLevel> ActivityLevels { get; set; }
         public CreateUserProfileViewModel(NavigationService navigationService) : base(navigationService)
         {
             UserProfile = new Profile();

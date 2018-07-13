@@ -13,7 +13,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <ContentView Padding="5">
-                                <Frame Padding="10" OutlineColor="DeepSkyBlue">
+                                <Frame>
                                     <StackLayout>
                                         <Grid HorizontalOptions="Center">
                                             <Grid.RowDefinitions>

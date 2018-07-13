@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.SfNumericTextBox.XForms.iOS;
+using Syncfusion.SfRangeSlider.XForms.iOS;
 using Syncfusion.SfSchedule.XForms.iOS;
 using UIKit;
 
@@ -25,6 +27,8 @@ namespace DietAndFitness.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             SfScheduleRenderer.Init();
+            SfRangeSliderRenderer.Init();
+            SfNumericTextBoxRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

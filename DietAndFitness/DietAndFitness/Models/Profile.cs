@@ -14,7 +14,7 @@ namespace DietAndFitness.Models
         private DateTime birthDate;
         private string sex;
         private int dietFormula;
-        private ActivityLevel activityLevel;
+        private double activityLevel;
         private double bodyFat;
 
         public double Height
@@ -72,7 +72,7 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        public ActivityLevel ActivityLevel
+        public double ActivityLevel
         {
             get { return activityLevel; }
             set

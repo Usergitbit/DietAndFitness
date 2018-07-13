@@ -3,18 +3,21 @@
     x:Class="DietAndFitness.Views.CreateUserProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -32,7 +35,7 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
                     Keyboard="Numeric"
                     Text="{Binding UserProfile.Height}" />
                 <Picker
@@ -58,9 +61,9 @@
                 <Entry
                     Grid.Row="1"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
                     Keyboard="Numeric"
-                    Text="{Binding Profile.Weight}" />
+                    Text="{Binding UserProfile.Weight}" />
                 <Picker
                     x:Name="MetricPickerWeight"
                     Grid.Row="1"
@@ -84,7 +87,7 @@
                 <DatePicker
                     Grid.Row="2"
                     Grid.Column="1"
-                    Date="{Binding Profile.BirthDate}"
+                    Date="{Binding UserProfile.BirthDate}"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand">
                     <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
@@ -99,7 +102,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
-                    SelectedItem="{Binding Profile.Sex}">
+                    SelectedItem="{Binding UserProfile.Sex}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Male</x:String>
@@ -116,10 +119,12 @@
                     Text="Formula"
                     VerticalOptions="CenterAndExpand" />
                 <Picker
+                    x:Name="formulaPicker"
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
-                    SelectedItem="{Binding Profile.DietFormula}">
+                    SelectedIndexChanged="OnFormulaPickerSelectedIndexChanged"
+                    SelectedItem="{Binding UserProfile.DietFormula}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Mifflin-St Jeor</x:String>
@@ -140,40 +145,47 @@
                     HorizontalOptions="CenterAndExpand"
                     Text="Activity Level"
                     VerticalOptions="CenterAndExpand" />
-                <Picker
+                <range:SfRangeSlider
                     Grid.Row="5"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
-                    ItemDisplayBinding="{Binding DisplayText}"
-                    ItemsSource="{Binding ActivityLevels}"
-                    SelectedItem="{Binding Profile.ActivityLevel}" />
+                    Maximum="2"
+                    Minimum="1.2"
+                    Orientation="Horizontal"
+                    ShowRange="False"
+                    ShowValueLabel="False"
+                    SnapsTo="StepValues"
+                    StepFrequency="0.1"
+                    TickFrequency="0.2"
+                    TickPlacement="BottomRight"
+                    ToolTipPlacement="TopLeft"
+                    ToolTipPrecision="1"
+                    VerticalOptions="Center"
+                    WidthRequest="75"
+                    Value="{Binding UserProfile.ActivityLevel}" />
                 <Button
                     Grid.Row="5"
                     Grid.Column="2"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Help!" />
+                    Text="Help!"
+                    VerticalOptions="Center" />
 
                 <Label
+                    x:Name="bodyFatNameLabel"
                     Grid.Row="6"
                     Grid.Column="0"
                     HorizontalOptions="CenterAndExpand"
                     IsVisible="False"
                     Text="Body Fat"
                     VerticalOptions="CenterAndExpand" />
-                <Entry
+                <syncfusion:SfNumericTextBox
+                    x:Name="bodyFatEntry"
                     Grid.Row="6"
                     Grid.Column="1"
-                    HorizontalOptions="CenterAndExpand"
+                    FormatString="0:p"
+                    HorizontalOptions="Center"
                     IsVisible="False"
-                    Text="{Binding Profile.BodyFat}" />
-                <Label
-                    Grid.Row="6"
-                    Grid.Column="2"
-                    HorizontalOptions="CenterAndExpand"
-                    IsVisible="False"
-                    Text="%"
-                    VerticalOptions="CenterAndExpand" />
-
+                    PercentDisplayMode="Value"
+                    WidthRequest="75"
+                    Value="{Binding UserProfile.BodyFat}" />
             </Grid>
             <Button
                 Command="{Binding CreateProfileCommand}"
