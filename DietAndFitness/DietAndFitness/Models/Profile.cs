@@ -13,7 +13,7 @@ namespace DietAndFitness.Models
         private double weight;
         private DateTime birthDate;
         private string sex;
-        private int dietFormula;
+        private int? dietFormula;
         private double activityLevel;
         private double bodyFat;
 
@@ -61,7 +61,7 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        public int DietFormula
+        public int? DietFormula
         {
             get { return dietFormula; }
             set
@@ -69,6 +69,8 @@ namespace DietAndFitness.Models
                 if (dietFormula == value)
                     return;
                 dietFormula = value;
+                //required because of 0 based indexed in picker but FK in database c
+                dietFormula++;
                 OnPropertyChanged();
             }
         }
@@ -96,12 +98,24 @@ namespace DietAndFitness.Models
         }
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0)
+                return false;
+            return true;
         }
 
         public override void ResetValues()
         {
-            throw new NotImplementedException();
+            Name = String.Empty;
+            CreatedAt = DateTime.Today;
+            ModifiedAt = DateTime.Today;
+            Height = 0;
+            Weight = 0;
+            BirthDate = DateTime.Today;
+            Sex = String.Empty;
+            DietFormula = 1;
+            ActivityLevel = 1.2;
+            BodyFat = 0;
+
         }
         public Profile()
         {

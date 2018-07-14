@@ -1,4 +1,5 @@
-﻿using Syncfusion.SfRangeSlider.XForms;
+﻿using DietAndFitness.ViewModels;
+using Syncfusion.SfRangeSlider.XForms;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,13 +15,21 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateUserProfilePage : ContentPage
 	{
-		public CreateUserProfilePage ()
+        CreateUserProfileViewModel userProfileViewModel { get; set; }
+
+        public CreateUserProfilePage ()
 		{
             
 			InitializeComponent ();
+            userProfileViewModel = new CreateUserProfileViewModel(App.NavigationService);
+            BindingContext = userProfileViewModel;
 
-		}
-
+        }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await userProfileViewModel.LoadData();
+        }
         private void OnFormulaPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             

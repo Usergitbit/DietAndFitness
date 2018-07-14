@@ -19,7 +19,7 @@ namespace DietAndFitness
 	{
         private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
         private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";
-        public static NavigationService NavigationService { get; private set; }
+        public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTU4NEAzMTM2MmUzMjJlMzBaTHN0NDgrMGNOMlpMV2RvVW1uczFvQmFDOWVXZnlIVkxQMEVseWRyMDVnPQ==");
@@ -34,10 +34,11 @@ namespace DietAndFitness
             if (Current.Properties.ContainsKey("HasProfiles"))
             {
                 var createUserProfilePage = new CreateUserProfilePage();
-                CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel(NavigationService);
-                createUserProfilePage.BindingContext = userProfileViewModel;
                 var navigationPage = new NavigationPage(createUserProfilePage);
                 NavigationService = new NavigationService(navigationPage);
+                
+                
+                
                 
                 MainPage = navigationPage;
             }

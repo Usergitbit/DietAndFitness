@@ -18,6 +18,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -32,12 +33,14 @@
                     HorizontalOptions="CenterAndExpand"
                     Text="Height"
                     VerticalOptions="CenterAndExpand" />
-                <Entry
+                <syncfusion:SfNumericTextBox
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="Center"
-                    Keyboard="Numeric"
-                    Text="{Binding UserProfile.Height}" />
+                    MaximumNumberDecimalDigits="2"
+                    ParserMode="Double"
+                    WidthRequest="75"
+                    Value="{Binding UserProfile.Height}" />
                 <Picker
                     x:Name="MetricPickerHeight"
                     Grid.Row="0"
@@ -58,12 +61,14 @@
                     HorizontalOptions="CenterAndExpand"
                     Text="Weight"
                     VerticalOptions="CenterAndExpand" />
-                <Entry
+                <syncfusion:SfNumericTextBox
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="Center"
-                    Keyboard="Numeric"
-                    Text="{Binding UserProfile.Weight}" />
+                    MaximumNumberDecimalDigits="2"
+                    ParserMode="Double"
+                    WidthRequest="75"
+                    Value="{Binding UserProfile.Weight}" />
                 <Picker
                     x:Name="MetricPickerWeight"
                     Grid.Row="1"
@@ -123,17 +128,12 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="CenterAndExpand"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding DietFormulas}"
+                    SelectedIndex="0"
                     SelectedIndexChanged="OnFormulaPickerSelectedIndexChanged"
-                    SelectedItem="{Binding UserProfile.DietFormula}">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Mifflin-St Jeor</x:String>
-                            <x:String>Katch-McArdle</x:String>
-                            <x:String>Harris-Benedict</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
-                </Picker>
+                    SelectedItem="{Binding SelectedDietFormula}" />
+
                 <Button
                     Grid.Row="4"
                     Grid.Column="2"
@@ -180,12 +180,24 @@
                     x:Name="bodyFatEntry"
                     Grid.Row="6"
                     Grid.Column="1"
-                    FormatString="0:p"
+                    FormatString="p"
                     HorizontalOptions="Center"
                     IsVisible="False"
                     PercentDisplayMode="Value"
                     WidthRequest="75"
                     Value="{Binding UserProfile.BodyFat}" />
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Name"
+                    VerticalOptions="CenterAndExpand" />
+                <Entry
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Keyboard="Numeric"
+                    Text="{Binding UserProfile.Name}" />
             </Grid>
             <Button
                 Command="{Binding CreateProfileCommand}"

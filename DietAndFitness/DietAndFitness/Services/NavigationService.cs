@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietAndFitness.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,18 @@ namespace DietAndFitness.Services
         public async Task PopModal()
         {
             await App.Current.MainPage.Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// Used to set the normal MasterDetailPage as MainPage when coming from the CreateUserProfilePage
+        /// </summary>
+        public void SetMainPage()
+        {
+            var navigationPage = new NavigationPage(new HomePageDetail());
+            App.NavigationService = new NavigationService(navigationPage);
+            var homePage = new HomePage();
+            homePage.Detail = navigationPage;
+            App.Current.MainPage = homePage;
         }
     }
 }

@@ -15,5 +15,6 @@ namespace DietAndFitness.Services
         Task GoBackAsync();
         Task PushModal(Page page);
         Task PopModal();
+        void SetMainPage();
     }
 }
