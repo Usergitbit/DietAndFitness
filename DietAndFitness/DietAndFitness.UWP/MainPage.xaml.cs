@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.SfPicker.XForms.UWP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace DietAndFitness.UWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            SfPickerRenderer.Init();
 
             LoadApplication(new DietAndFitness.App());
         }

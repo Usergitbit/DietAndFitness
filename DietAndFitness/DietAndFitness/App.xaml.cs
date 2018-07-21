@@ -36,10 +36,12 @@ namespace DietAndFitness
                 var createUserProfilePage = new CreateUserProfilePage();
                 var navigationPage = new NavigationPage(createUserProfilePage);
                 NavigationService = new NavigationService(navigationPage);
-                
-                
-                
-                
+
+                //Setting the VM must be done from outside as the navigation service root page is set to the page itself
+                //but the VM requires a reference to the navigation service in the constructor
+                CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel(NavigationService);
+                createUserProfilePage.BindingContext = userProfileViewModel;
+                createUserProfilePage.userProfileViewModel = userProfileViewModel;
                 MainPage = navigationPage;
             }
             //Else open the normal HomePage

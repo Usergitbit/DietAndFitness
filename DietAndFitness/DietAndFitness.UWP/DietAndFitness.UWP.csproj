@@ -152,6 +152,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
       <Version>16.2.0.42</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker">
+      <Version>16.2.0.42</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
       <Version>16.2.0.42</Version>
     </PackageReference>

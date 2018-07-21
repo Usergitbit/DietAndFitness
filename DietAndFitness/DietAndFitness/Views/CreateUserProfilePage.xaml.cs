@@ -15,14 +15,13 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateUserProfilePage : ContentPage
 	{
-        CreateUserProfileViewModel userProfileViewModel { get; set; }
+        public CreateUserProfileViewModel userProfileViewModel { get; set; }
 
         public CreateUserProfilePage ()
 		{
             
 			InitializeComponent ();
-            userProfileViewModel = new CreateUserProfileViewModel(App.NavigationService);
-            BindingContext = userProfileViewModel;
+          
 
         }
         protected override async void OnAppearing()

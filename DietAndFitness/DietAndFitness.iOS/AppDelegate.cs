@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using Syncfusion.SfNumericTextBox.XForms.iOS;
+using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.SfRangeSlider.XForms.iOS;
 using Syncfusion.SfSchedule.XForms.iOS;
 using UIKit;
@@ -29,6 +30,7 @@ namespace DietAndFitness.iOS
             SfScheduleRenderer.Init();
             SfRangeSliderRenderer.Init();
             SfNumericTextBoxRenderer.Init();
+            SfPickerRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
