@@ -104,6 +104,21 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
+        private int? profilePK;
+        public int? ProfilePK
+        {
+            get
+            {
+                return profilePK;
+            }
+            set
+            {
+                if (profilePK == value)
+                    return;
+                profilePK = value;
+                OnPropertyChanged();
+            }
+        }
         public DailyFoodItem()
         {
 

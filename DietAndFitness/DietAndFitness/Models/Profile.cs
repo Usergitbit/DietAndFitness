@@ -16,7 +16,8 @@ namespace DietAndFitness.Models
         private int? dietFormula;
         private double activityLevel;
         private double bodyFat;
-
+        private DateTime startDate;
+        private DateTime endDate;
         public double Height
         {
             get { return height; }
@@ -96,6 +97,34 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
+        public DateTime StartDate
+        {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                if (startDate == value)
+                    return;
+                startDate = value;
+                OnPropertyChanged();
+            }
+        }
+        public DateTime EndDate
+        {
+            get
+            {
+                return endDate;
+            }
+            set
+            {
+                if (endDate == value)
+                    return;
+                endDate = value;
+                OnPropertyChanged();
+            }
+        }
         public override bool IsValid()
         {
             if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0)
@@ -119,7 +148,7 @@ namespace DietAndFitness.Models
         }
         public Profile()
         {
-
+            ActivityLevel = 1.2;
         }
 
 

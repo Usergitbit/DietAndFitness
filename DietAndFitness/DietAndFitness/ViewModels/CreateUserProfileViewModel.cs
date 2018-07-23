@@ -76,6 +76,7 @@ namespace DietAndFitness.ViewModels
             try
             {
                await DBLocalAccess.Insert<Profile>(UserProfile);
+                SettingsViewModel.ActiveProfile = UserProfile;
             }
             catch(Exception ex)
             {

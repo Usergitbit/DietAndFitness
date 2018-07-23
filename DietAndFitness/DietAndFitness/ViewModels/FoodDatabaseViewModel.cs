@@ -126,7 +126,6 @@ namespace DietAndFitness.ViewModels
             OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
             this.PropertyChanged += OnSelectedItemChanged;
-            
         }
         #region Methods
         protected virtual async void OpenAddPageFunction()
