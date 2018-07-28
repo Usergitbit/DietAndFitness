@@ -122,6 +122,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge">
+      <Version>16.2.0.42</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
       <Version>16.2.0.42</Version>
     </PackageReference>

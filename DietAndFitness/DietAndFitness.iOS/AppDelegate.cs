@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.SfGauge.XForms.iOS;
 using Syncfusion.SfNumericTextBox.XForms.iOS;
 using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.SfRangeSlider.XForms.iOS;
@@ -31,6 +32,7 @@ namespace DietAndFitness.iOS
             SfRangeSliderRenderer.Init();
             SfNumericTextBoxRenderer.Init();
             SfPickerRenderer.Init();
+            SfGaugeRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

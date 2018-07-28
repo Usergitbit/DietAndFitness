@@ -1,4 +1,5 @@
 ﻿using Syncfusion.SfPicker.XForms.UWP;
+using Syncfusion.SfGauge.XForms.UWP;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,7 +24,7 @@ namespace DietAndFitness.UWP
             this.InitializeComponent();
 
             SfPickerRenderer.Init();
-
+            new Syncfusion.SfGauge.XForms.UWP.SfGaugeRenderer();
             LoadApplication(new DietAndFitness.App());
         }
     }

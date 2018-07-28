@@ -105,7 +105,7 @@ namespace DietAndFitness.Models
             }
         }
         private int? profilePK;
-        public int? ProfilePK
+        public int? Profile
         {
             get
             {

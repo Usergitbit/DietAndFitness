@@ -21,7 +21,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <ContentView Padding="5">
-                                <Frame Padding="10" OutlineColor="Accent">
+                                <Frame Padding="10">
                                     <StackLayout>
                                         <Grid HorizontalOptions="Center">
                                             <Grid.RowDefinitions>

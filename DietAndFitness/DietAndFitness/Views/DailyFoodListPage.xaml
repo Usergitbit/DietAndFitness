@@ -3,13 +3,12 @@
     x:Class="DietAndFitness.Views.DailyFoodListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
     xmlns:local="clr-namespace:DietAndFitness.ViewModels">
     <ContentPage.Content>
         <StackLayout Padding="5">
-            <Frame
-                Padding="10"
-                HasShadow="False"
-                OutlineColor="DeepSkyBlue">
+            <!--
+            <Frame Padding="10" HasShadow="True">
                 <ContentView Padding="5">
                     <StackLayout>
                         <Grid HorizontalOptions="Center">
@@ -153,6 +152,42 @@
                         </Grid>
                     </StackLayout>
                 </ContentView>
+            </Frame>
+            -->
+            <Frame HasShadow="True">
+                <gauge:SfLinearGauge Orientation="OrientationHorizontal" VerticalOptions="CenterAndExpand">
+                    <gauge:SfLinearGauge.Header>
+                        <gauge:LinearHeader Text="Today's calories" TextSize="20" />
+                    </gauge:SfLinearGauge.Header>
+                    <gauge:SfLinearGauge.Scales>
+                        <gauge:LinearScale
+                            Interval="500"
+                            LabelColor="#424242"
+                            LabelFontSize="12"
+                            MaximumValue="{Binding CurrentValues.Calories}"
+                            MinimumValue="0"
+                            MinorTicksPerInterval="4"
+                            ScaleBarColor="#e0e9f9"
+                            ScaleBarSize="25">
+                            <gauge:LinearScale.MajorTickSettings>
+                                <gauge:LinearTickSettings
+                                    Length="10"
+                                    Thickness="1"
+                                    Color="#9E9E9E" />
+                            </gauge:LinearScale.MajorTickSettings>
+                            <gauge:LinearScale.Pointers>
+                                <gauge:BarPointer
+                                    CornerRadius="10"
+                                    CornerRadiusType="End"
+                                    EnableAnimation="False"
+                                    Thickness="15"
+                                    Color="#36d1dc"
+                                    Value="{Binding CurrentValues.Calories}" />
+                            </gauge:LinearScale.Pointers>
+                        </gauge:LinearScale>
+                    </gauge:SfLinearGauge.Scales>
+
+                </gauge:SfLinearGauge>
             </Frame>
             <ListView
                 HasUnevenRows="True"
