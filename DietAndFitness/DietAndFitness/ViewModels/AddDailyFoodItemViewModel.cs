@@ -15,7 +15,7 @@ namespace DietAndFitness.ViewModels
     {
         private ObservableCollection<DatabaseEntity> foodItems;
         private DatabaseEntity selectedItem;
-        private DataAccessLayer DBGlobalAccess;
+       // private DataAccessLayer DBGlobalAccess;
         private DataAccessLayer DBFoodItemAccess;
         private string searchBarText;
         public string SearchBarText
@@ -64,7 +64,7 @@ namespace DietAndFitness.ViewModels
         public AddDailyFoodItemViewModel(NavigationService navigationService) : base(navigationService)
         {
             FoodItems = new ObservableCollection<DatabaseEntity>();
-            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+           // DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
             DBFoodItemAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             SearchCommand = new Command<string>(execute: RefreshListItems);
@@ -96,15 +96,15 @@ namespace DietAndFitness.ViewModels
             if (parameter != null)
             {
                 List<LocalFoodItem> localFoodItems = new List<LocalFoodItem>();
-                List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
-                try
-                {
-                    globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
-                }
-                catch (Exception ex)
-                {
-                    await dialogService.ShowError(ex, "Error", "Ok", null);
-                }
+                //List<GlobalFoodItem> globalFoodItems = new List<GlobalFoodItem>();
+                //try
+                //{
+                //    globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
+                //}
+                //catch (Exception ex)
+                //{
+                //    await dialogService.ShowError(ex, "Error", "Ok", null);
+                //}
                 try
                 {
                     localFoodItems = await DBFoodItemAccess.GetAllAsync<LocalFoodItem>();
@@ -115,16 +115,16 @@ namespace DietAndFitness.ViewModels
                 }
                 FoodItems = new ObservableCollection<DatabaseEntity>();
 
-                globalFoodItems = globalFoodItems.FindAll(delegate (GlobalFoodItem item)
-                {
-                    return item.Name.ToLower().Contains(parameter.ToLower());
-                });
+                //globalFoodItems = globalFoodItems.FindAll(delegate (GlobalFoodItem item)
+                //{
+                //    return item.Name.ToLower().Contains(parameter.ToLower());
+                //});
                 localFoodItems = localFoodItems.FindAll(delegate (LocalFoodItem item)
                 {
                     return item.Name.ToLower().Contains(parameter.ToLower());
                 });
-                foreach (var item in globalFoodItems)
-                    FoodItems.Add(item);
+                //foreach (var item in globalFoodItems)
+                //    FoodItems.Add(item);
                 foreach (var item in localFoodItems)
                     FoodItems.Add(item);
                 SelectedItem = null;

@@ -35,7 +35,7 @@ namespace DietAndFitness.Controls
                 
                 using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.Databases." + DatabaseName))
                 {
-                    if (!File.Exists(DestinationPath))
+                    if (File.Exists(DestinationPath))
                         return;
                     else
                     {

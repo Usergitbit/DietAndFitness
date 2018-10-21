@@ -26,17 +26,403 @@ namespace DietAndFitness.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerColor = global::DietAndFitness.Droid.Resource.Attribute.barPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerCornerRadius = global::DietAndFitness.Droid.Resource.Attribute.barPointerCornerRadius;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerCornerRadiusType = global::DietAndFitness.Droid.Resource.Attribute.barPointerCornerRadiusType;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.barPointerStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerValue = global::DietAndFitness.Droid.Resource.Attribute.barPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.characterHeight = global::DietAndFitness.Droid.Resource.Attribute.characterHeight;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.characterSpacing = global::DietAndFitness.Droid.Resource.Attribute.characterSpacing;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.characterStrokeColor = global::DietAndFitness.Droid.Resource.Attribute.characterStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.characterType = global::DietAndFitness.Droid.Resource.Attribute.characterType;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.characterWidth = global::DietAndFitness.Droid.Resource.Attribute.characterWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularGaugeScaleDirection = global::DietAndFitness.Droid.Resource.Attribute.circularGaugeScaleDirection;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleInterval = global::DietAndFitness.Droid.Resource.Attribute.circularScaleInterval;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleLabelOffset = global::DietAndFitness.Droid.Resource.Attribute.circularScaleLabelOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleLabelPostfix = global::DietAndFitness.Droid.Resource.Attribute.circularScaleLabelPostfix;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleLabelPrefix = global::DietAndFitness.Droid.Resource.Attribute.circularScaleLabelPrefix;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleLabelTextColor = global::DietAndFitness.Droid.Resource.Attribute.circularScaleLabelTextColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleLabelTextSize = global::DietAndFitness.Droid.Resource.Attribute.circularScaleLabelTextSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMajorTickColor = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMajorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMajorTickOffset = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMajorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMaximumLabels = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMaximumLabels;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMinorTickColor = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMinorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMinorTickOffset = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMinorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleMinorTicksPerInterval = global::DietAndFitness.Droid.Resource.Attribute.circularScaleMinorTicksPerInterval;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleRangeColor = global::DietAndFitness.Droid.Resource.Attribute.circularScaleRangeColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleRangeEndValue = global::DietAndFitness.Droid.Resource.Attribute.circularScaleRangeEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleRangeOffset = global::DietAndFitness.Droid.Resource.Attribute.circularScaleRangeOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleRangeStartValue = global::DietAndFitness.Droid.Resource.Attribute.circularScaleRangeStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleShowLabels = global::DietAndFitness.Droid.Resource.Attribute.circularScaleShowLabels;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.circularScaleShowTicks = global::DietAndFitness.Droid.Resource.Attribute.circularScaleShowTicks;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.dimmedSegmentAlpha = global::DietAndFitness.Droid.Resource.Attribute.dimmedSegmentAlpha;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.dimmedSegmentColor = global::DietAndFitness.Droid.Resource.Attribute.dimmedSegmentColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerPointerColor = global::DietAndFitness.Droid.Resource.Attribute.markerPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerPointerHeight = global::DietAndFitness.Droid.Resource.Attribute.markerPointerHeight;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerPointerOffset = global::DietAndFitness.Droid.Resource.Attribute.markerPointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerPointerValue = global::DietAndFitness.Droid.Resource.Attribute.markerPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerPointerWidth = global::DietAndFitness.Droid.Resource.Attribute.markerPointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.markerShape = global::DietAndFitness.Droid.Resource.Attribute.markerShape;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.maximumLabels = global::DietAndFitness.Droid.Resource.Attribute.maximumLabels;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerColor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerKnobColor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerKnobColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerKnobRadius = global::DietAndFitness.Droid.Resource.Attribute.needlePointerKnobRadius;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerKnobStrokeColor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerKnobStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerKnobStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.needlePointerKnobStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerLengthFactor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerLengthFactor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerTailColor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerTailColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerTailLengthFactor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerTailLengthFactor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerTailStrokeColor = global::DietAndFitness.Droid.Resource.Attribute.needlePointerTailStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerTailStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.needlePointerTailStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerType = global::DietAndFitness.Droid.Resource.Attribute.needlePointerType;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerValue = global::DietAndFitness.Droid.Resource.Attribute.needlePointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.needlePointerWidth = global::DietAndFitness.Droid.Resource.Attribute.needlePointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeColor = global::DietAndFitness.Droid.Resource.Attribute.rangeColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeEndValue = global::DietAndFitness.Droid.Resource.Attribute.rangeEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeEndWidth = global::DietAndFitness.Droid.Resource.Attribute.rangeEndWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeInnerEndOffset = global::DietAndFitness.Droid.Resource.Attribute.rangeInnerEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeInnerStartOffset = global::DietAndFitness.Droid.Resource.Attribute.rangeInnerStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeOffset = global::DietAndFitness.Droid.Resource.Attribute.rangeOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeOuterEndOffset = global::DietAndFitness.Droid.Resource.Attribute.rangeOuterEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeOuterStartOffset = global::DietAndFitness.Droid.Resource.Attribute.rangeOuterStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerCap = global::DietAndFitness.Droid.Resource.Attribute.rangePointerCap;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerColor = global::DietAndFitness.Droid.Resource.Attribute.rangePointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerEndOffset = global::DietAndFitness.Droid.Resource.Attribute.rangePointerEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerOffset = global::DietAndFitness.Droid.Resource.Attribute.rangePointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerStartOffset = global::DietAndFitness.Droid.Resource.Attribute.rangePointerStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerStartValue = global::DietAndFitness.Droid.Resource.Attribute.rangePointerStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerValue = global::DietAndFitness.Droid.Resource.Attribute.rangePointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangePointerWidth = global::DietAndFitness.Droid.Resource.Attribute.rangePointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeStartValue = global::DietAndFitness.Droid.Resource.Attribute.rangeStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeStartWidth = global::DietAndFitness.Droid.Resource.Attribute.rangeStartWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.rangeWidth = global::DietAndFitness.Droid.Resource.Attribute.rangeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleAutoAngle = global::DietAndFitness.Droid.Resource.Attribute.scaleAutoAngle;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleAutoInterval = global::DietAndFitness.Droid.Resource.Attribute.scaleAutoInterval;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleBarColor = global::DietAndFitness.Droid.Resource.Attribute.scaleBarColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleBarLength = global::DietAndFitness.Droid.Resource.Attribute.scaleBarLength;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleBarSize = global::DietAndFitness.Droid.Resource.Attribute.scaleBarSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleCornerRadius = global::DietAndFitness.Droid.Resource.Attribute.scaleCornerRadius;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleCornerRadiusType = global::DietAndFitness.Droid.Resource.Attribute.scaleCornerRadiusType;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleDirection = global::DietAndFitness.Droid.Resource.Attribute.scaleDirection;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleEndAngle = global::DietAndFitness.Droid.Resource.Attribute.scaleEndAngle;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleEndOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleEndValue = global::DietAndFitness.Droid.Resource.Attribute.scaleEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleInterval = global::DietAndFitness.Droid.Resource.Attribute.scaleInterval;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleLabelColor = global::DietAndFitness.Droid.Resource.Attribute.scaleLabelColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleLabelFontSize = global::DietAndFitness.Droid.Resource.Attribute.scaleLabelFontSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleLabelOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleLabelOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleLabelPostfix = global::DietAndFitness.Droid.Resource.Attribute.scaleLabelPostfix;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleLabelPrefix = global::DietAndFitness.Droid.Resource.Attribute.scaleLabelPrefix;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickColor = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickEndOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickLength = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickLength;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickSize = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickStartOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMajorTickWidth = global::DietAndFitness.Droid.Resource.Attribute.scaleMajorTickWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMaximum = global::DietAndFitness.Droid.Resource.Attribute.scaleMaximum;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinimum = global::DietAndFitness.Droid.Resource.Attribute.scaleMinimum;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickColor = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickEndOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickLength = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickLength;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickSize = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickStartOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickWidth = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTickWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTicksPerInterval = global::DietAndFitness.Droid.Resource.Attribute.scaleMinorTicksPerInterval;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleNumberofDecimalDigits = global::DietAndFitness.Droid.Resource.Attribute.scaleNumberofDecimalDigits;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleOpposedPosition = global::DietAndFitness.Droid.Resource.Attribute.scaleOpposedPosition;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleOrientation = global::DietAndFitness.Droid.Resource.Attribute.scaleOrientation;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleRadiusFactor = global::DietAndFitness.Droid.Resource.Attribute.scaleRadiusFactor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleRimColor = global::DietAndFitness.Droid.Resource.Attribute.scaleRimColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleRimWidth = global::DietAndFitness.Droid.Resource.Attribute.scaleRimWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleShowFirstLabel = global::DietAndFitness.Droid.Resource.Attribute.scaleShowFirstLabel;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleShowLabels = global::DietAndFitness.Droid.Resource.Attribute.scaleShowLabels;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleShowLastLabel = global::DietAndFitness.Droid.Resource.Attribute.scaleShowLastLabel;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleShowRim = global::DietAndFitness.Droid.Resource.Attribute.scaleShowRim;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleShowTicks = global::DietAndFitness.Droid.Resource.Attribute.scaleShowTicks;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleStartAngle = global::DietAndFitness.Droid.Resource.Attribute.scaleStartAngle;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleStartOffset = global::DietAndFitness.Droid.Resource.Attribute.scaleStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleStartValue = global::DietAndFitness.Droid.Resource.Attribute.scaleStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.segmentStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.segmentStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.symbolPointerColor = global::DietAndFitness.Droid.Resource.Attribute.symbolPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.symbolPointerOffset = global::DietAndFitness.Droid.Resource.Attribute.symbolPointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.symbolPointerStrokeWidth = global::DietAndFitness.Droid.Resource.Attribute.symbolPointerStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.symbolPointerValue = global::DietAndFitness.Droid.Resource.Attribute.symbolPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.symbolPosition = global::DietAndFitness.Droid.Resource.Attribute.symbolPosition;
 			global::Com.Syncfusion.Gauges.Resource.Dimension.pading_bottom = global::DietAndFitness.Droid.Resource.Dimension.pading_bottom;
 			global::Com.Syncfusion.Gauges.Resource.Dimension.pading_top = global::DietAndFitness.Droid.Resource.Dimension.pading_top;
+			global::Com.Syncfusion.Gauges.Resource.Id.anticlockwise = global::DietAndFitness.Droid.Resource.Id.anticlockwise;
+			global::Com.Syncfusion.Gauges.Resource.Id.away = global::DietAndFitness.Droid.Resource.Id.away;
+			global::Com.Syncfusion.Gauges.Resource.Id.backward = global::DietAndFitness.Droid.Resource.Id.backward;
+			global::Com.Syncfusion.Gauges.Resource.Id.bar = global::DietAndFitness.Droid.Resource.Id.bar;
+			global::Com.Syncfusion.Gauges.Resource.Id.both = global::DietAndFitness.Droid.Resource.Id.both;
+			global::Com.Syncfusion.Gauges.Resource.Id.circle = global::DietAndFitness.Droid.Resource.Id.circle;
+			global::Com.Syncfusion.Gauges.Resource.Id.clockwise = global::DietAndFitness.Droid.Resource.Id.clockwise;
+			global::Com.Syncfusion.Gauges.Resource.Id.diamond = global::DietAndFitness.Droid.Resource.Id.diamond;
+			global::Com.Syncfusion.Gauges.Resource.Id.eightCrossEightDotMatrix = global::DietAndFitness.Droid.Resource.Id.eightCrossEightDotMatrix;
 			global::Com.Syncfusion.Gauges.Resource.Id.eightsegment = global::DietAndFitness.Droid.Resource.Id.eightsegment;
+			global::Com.Syncfusion.Gauges.Resource.Id.end = global::DietAndFitness.Droid.Resource.Id.end;
+			global::Com.Syncfusion.Gauges.Resource.Id.far = global::DietAndFitness.Droid.Resource.Id.far;
+			global::Com.Syncfusion.Gauges.Resource.Id.forward = global::DietAndFitness.Droid.Resource.Id.forward;
 			global::Com.Syncfusion.Gauges.Resource.Id.fourteensegment = global::DietAndFitness.Droid.Resource.Id.fourteensegment;
+			global::Com.Syncfusion.Gauges.Resource.Id.horizontal = global::DietAndFitness.Droid.Resource.Id.horizontal;
+			global::Com.Syncfusion.Gauges.Resource.Id.image = global::DietAndFitness.Droid.Resource.Id.image;
+			global::Com.Syncfusion.Gauges.Resource.Id.invertedTriangle = global::DietAndFitness.Droid.Resource.Id.invertedTriangle;
+			global::Com.Syncfusion.Gauges.Resource.Id.none = global::DietAndFitness.Droid.Resource.Id.none;
+			global::Com.Syncfusion.Gauges.Resource.Id.rectangle = global::DietAndFitness.Droid.Resource.Id.rectangle;
 			global::Com.Syncfusion.Gauges.Resource.Id.rootLayout = global::DietAndFitness.Droid.Resource.Id.rootLayout;
+			global::Com.Syncfusion.Gauges.Resource.Id.segmentFourteen = global::DietAndFitness.Droid.Resource.Id.segmentFourteen;
+			global::Com.Syncfusion.Gauges.Resource.Id.segmentSeven = global::DietAndFitness.Droid.Resource.Id.segmentSeven;
+			global::Com.Syncfusion.Gauges.Resource.Id.segmentSixteen = global::DietAndFitness.Droid.Resource.Id.segmentSixteen;
 			global::Com.Syncfusion.Gauges.Resource.Id.sevensegment = global::DietAndFitness.Droid.Resource.Id.sevensegment;
 			global::Com.Syncfusion.Gauges.Resource.Id.sixteensegment = global::DietAndFitness.Droid.Resource.Id.sixteensegment;
+			global::Com.Syncfusion.Gauges.Resource.Id.start = global::DietAndFitness.Droid.Resource.Id.start;
+			global::Com.Syncfusion.Gauges.Resource.Id.triangle = global::DietAndFitness.Droid.Resource.Id.triangle;
+			global::Com.Syncfusion.Gauges.Resource.Id.vertical = global::DietAndFitness.Droid.Resource.Id.vertical;
 			global::Com.Syncfusion.Gauges.Resource.Layout.circulargauge_layout = global::DietAndFitness.Droid.Resource.Layout.circulargauge_layout;
 			global::Com.Syncfusion.Gauges.Resource.Layout.digitalgauge_layout = global::DietAndFitness.Droid.Resource.Layout.digitalgauge_layout;
 			global::Com.Syncfusion.Gauges.Resource.String.ApplicationName = global::DietAndFitness.Droid.Resource.String.ApplicationName;
 			global::Com.Syncfusion.Gauges.Resource.String.Hello = global::DietAndFitness.Droid.Resource.String.Hello;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularGaugeScaleDirection = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularGaugeScaleDirection;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleInterval = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleLabelOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleLabelOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleLabelPostfix = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleLabelPostfix;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleLabelPrefix = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleLabelPrefix;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleLabelTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleLabelTextColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleLabelTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleLabelTextSize;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMajorTickColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMajorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMajorTickOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMajorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMaximumLabels = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMaximumLabels;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMinorTickColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMinorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMinorTickOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMinorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleMinorTicksPerInterval = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleMinorTicksPerInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleRangeColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleRangeColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleRangeEndValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleRangeEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleRangeOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleRangeOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleRangeStartValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleRangeStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleShowLabels = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleShowLabels;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_circularScaleShowTicks = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_circularScaleShowTicks;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerPointerColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerPointerHeight = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerPointerHeight;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerPointerOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerPointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerPointerValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerPointerWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerPointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_markerShape = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_markerShape;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerKnobColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerKnobColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerKnobRadius = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerKnobRadius;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerKnobStrokeColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerKnobStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerKnobStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerKnobStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerLengthFactor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerLengthFactor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerTailColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerTailColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerTailLengthFactor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerTailLengthFactor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerTailStrokeColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerTailStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerTailStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerTailStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerType = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerType;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_needlePointerWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_needlePointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangeInnerEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangeInnerEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangeInnerStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangeInnerStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangeOuterEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangeOuterEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangeOuterStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangeOuterStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerCap = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerCap;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerStartValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangePointerWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangePointerWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_rangeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_rangeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleAutoAngle = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleAutoAngle;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleAutoInterval = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleAutoInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleEndAngle = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleEndAngle;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleEndValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMajorTickEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMajorTickEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMajorTickSize = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMajorTickSize;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMajorTickStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMajorTickStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMajorTickWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMajorTickWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMinorTickEndOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMinorTickEndOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMinorTickSize = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMinorTickSize;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMinorTickStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMinorTickStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleMinorTickWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleMinorTickWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleNumberofDecimalDigits = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleNumberofDecimalDigits;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleRadiusFactor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleRadiusFactor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleRimColor = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleRimColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleRimWidth = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleRimWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleShowFirstLabel = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleShowFirstLabel;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleShowLastLabel = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleShowLastLabel;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleShowRim = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleShowRim;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleStartAngle = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleStartAngle;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleStartOffset = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleStartOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfCircularGauge_scaleStartValue = global::DietAndFitness.Droid.Resource.Styleable.SfCircularGauge_scaleStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_characterHeight = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_characterHeight;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_characterSpacing = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_characterSpacing;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_characterStrokeColor = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_characterStrokeColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_characterType = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_characterType;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_characterWidth = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_characterWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_dimmedSegmentAlpha = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_dimmedSegmentAlpha;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_dimmedSegmentColor = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_dimmedSegmentColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfDigitalGauge_segmentStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfDigitalGauge_segmentStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_barPointerColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_barPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_barPointerCornerRadius = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_barPointerCornerRadius;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_barPointerCornerRadiusType = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_barPointerCornerRadiusType;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_barPointerStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_barPointerStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_barPointerValue = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_barPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_maximumLabels = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_maximumLabels;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeEndValue = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeEndValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeEndWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeEndWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeStartValue = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeStartValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_rangeStartWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_rangeStartWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleBarColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleBarColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleBarLength = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleBarLength;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleBarSize = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleBarSize;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleCornerRadius = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleCornerRadius;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleCornerRadiusType = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleCornerRadiusType;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleDirection = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleDirection;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleInterval = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleLabelColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleLabelColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleLabelFontSize = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleLabelFontSize;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleLabelOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleLabelOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleLabelPostfix = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleLabelPostfix;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleLabelPrefix = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleLabelPrefix;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMajorTickColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMajorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMajorTickLength = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMajorTickLength;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMajorTickOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMajorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMajorTickStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMajorTickStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMaximum = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMaximum;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinimum = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinimum;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickLength = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickLength;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTicksPerInterval = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTicksPerInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOpposedPosition = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleOpposedPosition;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOrientation = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleOrientation;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleShowLabels = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleShowLabels;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleShowTicks = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_scaleShowTicks;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPointerColor = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_symbolPointerColor;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPointerOffset = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_symbolPointerOffset;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPointerStrokeWidth = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_symbolPointerStrokeWidth;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPointerValue = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_symbolPointerValue;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPosition = global::DietAndFitness.Droid.Resource.Styleable.SfLinearGauge_symbolPosition;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.allowNull = global::DietAndFitness.Droid.Resource.Attribute.allowNull;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.borderColor = global::DietAndFitness.Droid.Resource.Attribute.borderColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.culture = global::DietAndFitness.Droid.Resource.Attribute.culture;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.enableGroupSeparator = global::DietAndFitness.Droid.Resource.Attribute.enableGroupSeparator;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.fontSize = global::DietAndFitness.Droid.Resource.Attribute.fontSize;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.maximumDecimalDigits = global::DietAndFitness.Droid.Resource.Attribute.maximumDecimalDigits;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.numberFormat = global::DietAndFitness.Droid.Resource.Attribute.numberFormat;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.numericTextBoxValue = global::DietAndFitness.Droid.Resource.Attribute.numericTextBoxValue;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.parsingMode = global::DietAndFitness.Droid.Resource.Attribute.parsingMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.percentDisplayMode = global::DietAndFitness.Droid.Resource.Attribute.percentDisplayMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.selectAllOnFocus = global::DietAndFitness.Droid.Resource.Attribute.selectAllOnFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.valueChangeMode = global::DietAndFitness.Droid.Resource.Attribute.valueChangeMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.watermark = global::DietAndFitness.Droid.Resource.Attribute.watermark;
+			global::Com.Syncfusion.Numerictextbox.Resource.Attribute.watermarkColor = global::DietAndFitness.Droid.Resource.Attribute.watermarkColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.compute = global::DietAndFitness.Droid.Resource.Id.compute;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.decimalMode = global::DietAndFitness.Droid.Resource.Id.decimalMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.doubleMode = global::DietAndFitness.Droid.Resource.Id.doubleMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.onKeyFocus = global::DietAndFitness.Droid.Resource.Id.onKeyFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.onLostFocus = global::DietAndFitness.Droid.Resource.Id.onLostFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Id.value = global::DietAndFitness.Droid.Resource.Id.value;
+			global::Com.Syncfusion.Numerictextbox.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_allowNull = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_allowNull;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_borderColor = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_borderColor;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_culture = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_culture;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_enableGroupSeparator = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_enableGroupSeparator;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_fontSize = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_fontSize;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_maximumDecimalDigits;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_numberFormat = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_numberFormat;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_numericTextBoxValue = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_numericTextBoxValue;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_parsingMode = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_parsingMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_percentDisplayMode = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_percentDisplayMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_selectAllOnFocus = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_selectAllOnFocus;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_valueChangeMode = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_valueChangeMode;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermark = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_watermark;
+			global::Com.Syncfusion.Numerictextbox.Resource.Styleable.SfNumericTextBox_watermarkColor = global::DietAndFitness.Droid.Resource.Styleable.SfNumericTextBox_watermarkColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBackgroundColor = global::DietAndFitness.Droid.Resource.Attribute.pickerBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBorderColor = global::DietAndFitness.Droid.Resource.Attribute.pickerBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderBackgroundColor = global::DietAndFitness.Droid.Resource.Attribute.pickerColumnHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderHeight = global::DietAndFitness.Droid.Resource.Attribute.pickerColumnHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderTextColor = global::DietAndFitness.Droid.Resource.Attribute.pickerColumnHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderTextSize = global::DietAndFitness.Droid.Resource.Attribute.pickerColumnHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerEnableLooping = global::DietAndFitness.Droid.Resource.Attribute.pickerEnableLooping;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerFooterHeight = global::DietAndFitness.Droid.Resource.Attribute.pickerFooterHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderBackgroundColor = global::DietAndFitness.Droid.Resource.Attribute.pickerHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderHeight = global::DietAndFitness.Droid.Resource.Attribute.pickerHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderText = global::DietAndFitness.Droid.Resource.Attribute.pickerHeaderText;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderTextColor = global::DietAndFitness.Droid.Resource.Attribute.pickerHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderTextSize = global::DietAndFitness.Droid.Resource.Attribute.pickerHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeight = global::DietAndFitness.Droid.Resource.Attribute.pickerHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerIsOpen = global::DietAndFitness.Droid.Resource.Attribute.pickerIsOpen;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerItemHeight = global::DietAndFitness.Droid.Resource.Attribute.pickerItemHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerMode = global::DietAndFitness.Droid.Resource.Attribute.pickerMode;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectedItemTextSize = global::DietAndFitness.Droid.Resource.Attribute.pickerSelectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectedItemTextcolor = global::DietAndFitness.Droid.Resource.Attribute.pickerSelectedItemTextcolor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectionBorderColor = global::DietAndFitness.Droid.Resource.Attribute.pickerSelectionBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowColumnHeader = global::DietAndFitness.Droid.Resource.Attribute.pickerShowColumnHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowFooter = global::DietAndFitness.Droid.Resource.Attribute.pickerShowFooter;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowHeader = global::DietAndFitness.Droid.Resource.Attribute.pickerShowHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerUnselectedItemTextColor = global::DietAndFitness.Droid.Resource.Attribute.pickerUnselectedItemTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerUnselectedItemTextSize = global::DietAndFitness.Droid.Resource.Attribute.pickerUnselectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerWidth = global::DietAndFitness.Droid.Resource.Attribute.pickerWidth;
+			global::Com.Syncfusion.SfPicker.Resource.Id.Default = global::DietAndFitness.Droid.Resource.Id.Default;
+			global::Com.Syncfusion.SfPicker.Resource.Id.Dialog = global::DietAndFitness.Droid.Resource.Id.Dialog;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker = global::DietAndFitness.Droid.Resource.Styleable.SfPicker;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerBackgroundColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerBorderColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderBackgroundColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderHeight = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerEnableLooping = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerEnableLooping;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerFooterHeight = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerFooterHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderBackgroundColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderHeight = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderText = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeaderText;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeight = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerIsOpen = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerIsOpen;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerItemHeight = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerItemHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerMode = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerMode;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectedItemTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerSelectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectedItemTextcolor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerSelectedItemTextcolor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectionBorderColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerSelectionBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowColumnHeader = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerShowColumnHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowFooter = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerShowFooter;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowHeader = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerShowHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerWidth = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerWidth;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderDirectionReversed = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderDirectionReversed;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderEndValue = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderEndValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderKnobColor = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderKnobColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderMaximum = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderMaximum;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderMinimum = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderMinimum;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderOrientation = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderOrientation;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderShowRange = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderShowRange;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderShowValueLabel = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderShowValueLabel;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderStartValue = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderStartValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderThumbSize = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderThumbSize;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderTickPlacement = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderTickPlacement;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderTrackColor = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderTrackColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderTrackSelectionColor = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderTrackSelectionColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderValue = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Attribute.rangeSliderValuePlacement = global::DietAndFitness.Droid.Resource.Attribute.rangeSliderValuePlacement;
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.label_font_size = global::DietAndFitness.Droid.Resource.Dimension.label_font_size;
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.thumb_size = global::DietAndFitness.Droid.Resource.Dimension.thumb_size;
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tick_size = global::DietAndFitness.Droid.Resource.Dimension.tick_size;
@@ -46,13 +432,62 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_top = global::DietAndFitness.Droid.Resource.Dimension.tool_top;
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tooltip_textsize = global::DietAndFitness.Droid.Resource.Dimension.tooltip_textsize;
 			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.track_size = global::DietAndFitness.Droid.Resource.Dimension.track_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.bottomRight = global::DietAndFitness.Droid.Resource.Id.bottomRight;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.horizontal = global::DietAndFitness.Droid.Resource.Id.horizontal;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.inline = global::DietAndFitness.Droid.Resource.Id.inline;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.none = global::DietAndFitness.Droid.Resource.Id.none;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.outside = global::DietAndFitness.Droid.Resource.Id.outside;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.topLeft = global::DietAndFitness.Droid.Resource.Id.topLeft;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Id.vertical = global::DietAndFitness.Droid.Resource.Id.vertical;
 			global::Com.Syncfusion.Sfrangeslider.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderDirectionReversed = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderDirectionReversed;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderEndValue = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderEndValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderKnobColor = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderKnobColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderMaximum = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderMaximum;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderMinimum = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderMinimum;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderOrientation = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderOrientation;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderShowRange = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderShowRange;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderShowValueLabel = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderShowValueLabel;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderStartValue = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderStartValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderThumbSize = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderThumbSize;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderTickPlacement = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderTickPlacement;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderTrackColor = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderTrackColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderTrackSelectionColor = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderTrackSelectionColor;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderValue = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderValue;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Styleable.SfRangeSlider_rangeSliderValuePlacement = global::DietAndFitness.Droid.Resource.Styleable.SfRangeSlider_rangeSliderValuePlacement;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.allowAppointmentDrag = global::DietAndFitness.Droid.Resource.Attribute.allowAppointmentDrag;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.enableNavigation = global::DietAndFitness.Droid.Resource.Attribute.enableNavigation;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.scheduleDateHeaderFormat = global::DietAndFitness.Droid.Resource.Attribute.scheduleDateHeaderFormat;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.scheduleFirstDayOfWeek = global::DietAndFitness.Droid.Resource.Attribute.scheduleFirstDayOfWeek;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.scheduleHeaderHeight = global::DietAndFitness.Droid.Resource.Attribute.scheduleHeaderHeight;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.scheduleView = global::DietAndFitness.Droid.Resource.Attribute.scheduleView;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.timeInterval = global::DietAndFitness.Droid.Resource.Attribute.timeInterval;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.timeIntervalHeight = global::DietAndFitness.Droid.Resource.Attribute.timeIntervalHeight;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.timeZone = global::DietAndFitness.Droid.Resource.Attribute.timeZone;
+			global::Com.Syncfusion.Schedule.Resource.Attribute.viewHeaderHeight = global::DietAndFitness.Droid.Resource.Attribute.viewHeaderHeight;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.arrow_down = global::DietAndFitness.Droid.Resource.Drawable.arrow_down;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.arrow_up = global::DietAndFitness.Droid.Resource.Drawable.arrow_up;
 			global::Com.Syncfusion.Schedule.Resource.Drawable.Recurrence = global::DietAndFitness.Droid.Resource.Drawable.Recurrence;
+			global::Com.Syncfusion.Schedule.Resource.Id.dayView = global::DietAndFitness.Droid.Resource.Id.dayView;
+			global::Com.Syncfusion.Schedule.Resource.Id.monthView = global::DietAndFitness.Droid.Resource.Id.monthView;
+			global::Com.Syncfusion.Schedule.Resource.Id.weekView = global::DietAndFitness.Droid.Resource.Id.weekView;
+			global::Com.Syncfusion.Schedule.Resource.Id.workWeekView = global::DietAndFitness.Droid.Resource.Id.workWeekView;
+			global::Com.Syncfusion.Schedule.Resource.String.NoSelectedDate = global::DietAndFitness.Droid.Resource.String.NoSelectedDate;
 			global::Com.Syncfusion.Schedule.Resource.String.No_Appointments = global::DietAndFitness.Droid.Resource.String.No_Appointments;
 			global::Com.Syncfusion.Schedule.Resource.String.all_day = global::DietAndFitness.Droid.Resource.String.all_day;
 			global::Com.Syncfusion.Schedule.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_allowAppointmentDrag = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_allowAppointmentDrag;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_enableNavigation = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_enableNavigation;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_scheduleDateHeaderFormat = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_scheduleDateHeaderFormat;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_scheduleFirstDayOfWeek = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_scheduleFirstDayOfWeek;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_scheduleHeaderHeight = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_scheduleHeaderHeight;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_scheduleView = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_scheduleView;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_timeInterval = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_timeInterval;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_timeIntervalHeight = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_timeIntervalHeight;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_timeZone = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_timeZone;
+			global::Com.Syncfusion.Schedule.Resource.Styleable.SfSchedule_viewHeaderHeight = global::DietAndFitness.Droid.Resource.Styleable.SfSchedule_viewHeaderHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::DietAndFitness.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -250,6 +685,12 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f0100b5
 			public const int alertDialogTheme = 2130772149;
 			
+			// aapt resource value: 0x7f01017a
+			public const int allowAppointmentDrag = 2130772346;
+			
+			// aapt resource value: 0x7f0101af
+			public const int allowNull = 2130772399;
+			
 			// aapt resource value: 0x7f0100cb
 			public const int allowStacking = 2130772171;
 			
@@ -301,6 +742,21 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f0100d5
 			public const int barLength = 2130772181;
 			
+			// aapt resource value: 0x7f010221
+			public const int barPointerColor = 2130772513;
+			
+			// aapt resource value: 0x7f010224
+			public const int barPointerCornerRadius = 2130772516;
+			
+			// aapt resource value: 0x7f010223
+			public const int barPointerCornerRadiusType = 2130772515;
+			
+			// aapt resource value: 0x7f010222
+			public const int barPointerStrokeWidth = 2130772514;
+			
+			// aapt resource value: 0x7f010220
+			public const int barPointerValue = 2130772512;
+			
 			// aapt resource value: 0x7f010141
 			public const int behavior_autoHide = 2130772289;
 			
@@ -315,6 +771,9 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f01011f
 			public const int behavior_skipCollapsed = 2130772255;
+			
+			// aapt resource value: 0x7f0101b0
+			public const int borderColor = 2130772400;
 			
 			// aapt resource value: 0x7f01013f
 			public const int borderWidth = 2130772287;
@@ -379,11 +838,83 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f01001b
 			public const int cardUseCompatPadding = 2130771995;
 			
+			// aapt resource value: 0x7f01022c
+			public const int characterHeight = 2130772524;
+			
+			// aapt resource value: 0x7f01022d
+			public const int characterSpacing = 2130772525;
+			
+			// aapt resource value: 0x7f01022b
+			public const int characterStrokeColor = 2130772523;
+			
+			// aapt resource value: 0x7f010232
+			public const int characterType = 2130772530;
+			
+			// aapt resource value: 0x7f01022e
+			public const int characterWidth = 2130772526;
+			
 			// aapt resource value: 0x7f0100bd
 			public const int checkboxStyle = 2130772157;
 			
 			// aapt resource value: 0x7f0100be
 			public const int checkedTextViewStyle = 2130772158;
+			
+			// aapt resource value: 0x7f0101ba
+			public const int circularGaugeScaleDirection = 2130772410;
+			
+			// aapt resource value: 0x7f0101b8
+			public const int circularScaleInterval = 2130772408;
+			
+			// aapt resource value: 0x7f0101c3
+			public const int circularScaleLabelOffset = 2130772419;
+			
+			// aapt resource value: 0x7f0101c1
+			public const int circularScaleLabelPostfix = 2130772417;
+			
+			// aapt resource value: 0x7f0101c0
+			public const int circularScaleLabelPrefix = 2130772416;
+			
+			// aapt resource value: 0x7f0101c4
+			public const int circularScaleLabelTextColor = 2130772420;
+			
+			// aapt resource value: 0x7f0101c2
+			public const int circularScaleLabelTextSize = 2130772418;
+			
+			// aapt resource value: 0x7f0101c6
+			public const int circularScaleMajorTickColor = 2130772422;
+			
+			// aapt resource value: 0x7f0101c8
+			public const int circularScaleMajorTickOffset = 2130772424;
+			
+			// aapt resource value: 0x7f0101d4
+			public const int circularScaleMaximumLabels = 2130772436;
+			
+			// aapt resource value: 0x7f0101cc
+			public const int circularScaleMinorTickColor = 2130772428;
+			
+			// aapt resource value: 0x7f0101ce
+			public const int circularScaleMinorTickOffset = 2130772430;
+			
+			// aapt resource value: 0x7f0101d3
+			public const int circularScaleMinorTicksPerInterval = 2130772435;
+			
+			// aapt resource value: 0x7f0101de
+			public const int circularScaleRangeColor = 2130772446;
+			
+			// aapt resource value: 0x7f0101db
+			public const int circularScaleRangeEndValue = 2130772443;
+			
+			// aapt resource value: 0x7f0101dd
+			public const int circularScaleRangeOffset = 2130772445;
+			
+			// aapt resource value: 0x7f0101da
+			public const int circularScaleRangeStartValue = 2130772442;
+			
+			// aapt resource value: 0x7f0101d5
+			public const int circularScaleShowLabels = 2130772437;
+			
+			// aapt resource value: 0x7f0101d6
+			public const int circularScaleShowTicks = 2130772438;
 			
 			// aapt resource value: 0x7f0100ee
 			public const int closeIcon = 2130772206;
@@ -493,6 +1024,9 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f010162
 			public const int counterTextAppearance = 2130772322;
 			
+			// aapt resource value: 0x7f0101b2
+			public const int culture = 2130772402;
+			
 			// aapt resource value: 0x7f010031
 			public const int customNavigationLayout = 2130772017;
 			
@@ -504,6 +1038,12 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f01007f
 			public const int dialogTheme = 2130772095;
+			
+			// aapt resource value: 0x7f010231
+			public const int dimmedSegmentAlpha = 2130772529;
+			
+			// aapt resource value: 0x7f010230
+			public const int dimmedSegmentColor = 2130772528;
 			
 			// aapt resource value: 0x7f010027
 			public const int displayOptions = 2130772007;
@@ -543,6 +1083,12 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f01003e
 			public const int elevation = 2130772030;
+			
+			// aapt resource value: 0x7f0101a9
+			public const int enableGroupSeparator = 2130772393;
+			
+			// aapt resource value: 0x7f010178
+			public const int enableNavigation = 2130772344;
 			
 			// aapt resource value: 0x7f01015e
 			public const int errorEnabled = 2130772318;
@@ -621,6 +1167,9 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f01016c
 			public const int fontProviderQuery = 2130772332;
+			
+			// aapt resource value: 0x7f0101ae
+			public const int fontSize = 2130772398;
 			
 			// aapt resource value: 0x7f010170
 			public const int fontStyle = 2130772336;
@@ -781,11 +1330,35 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f010110
 			public const int logoDescription = 2130772240;
 			
+			// aapt resource value: 0x7f0101fa
+			public const int markerPointerColor = 2130772474;
+			
+			// aapt resource value: 0x7f0101fb
+			public const int markerPointerHeight = 2130772475;
+			
+			// aapt resource value: 0x7f0101fd
+			public const int markerPointerOffset = 2130772477;
+			
+			// aapt resource value: 0x7f0101f8
+			public const int markerPointerValue = 2130772472;
+			
+			// aapt resource value: 0x7f0101fc
+			public const int markerPointerWidth = 2130772476;
+			
+			// aapt resource value: 0x7f0101f9
+			public const int markerShape = 2130772473;
+			
 			// aapt resource value: 0x7f01014b
 			public const int maxActionInlineWidth = 2130772299;
 			
 			// aapt resource value: 0x7f01010a
 			public const int maxButtonHeight = 2130772234;
+			
+			// aapt resource value: 0x7f0101ac
+			public const int maximumDecimalDigits = 2130772396;
+			
+			// aapt resource value: 0x7f010214
+			public const int maximumLabels = 2130772500;
 			
 			// aapt resource value: 0x7f0100d7
 			public const int measureWithLargestChild = 2130772183;
@@ -844,8 +1417,53 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f010026
 			public const int navigationMode = 2130772006;
 			
+			// aapt resource value: 0x7f0101e5
+			public const int needlePointerColor = 2130772453;
+			
+			// aapt resource value: 0x7f0101ea
+			public const int needlePointerKnobColor = 2130772458;
+			
+			// aapt resource value: 0x7f0101e8
+			public const int needlePointerKnobRadius = 2130772456;
+			
+			// aapt resource value: 0x7f0101e9
+			public const int needlePointerKnobStrokeColor = 2130772457;
+			
+			// aapt resource value: 0x7f0101eb
+			public const int needlePointerKnobStrokeWidth = 2130772459;
+			
+			// aapt resource value: 0x7f0101e7
+			public const int needlePointerLengthFactor = 2130772455;
+			
+			// aapt resource value: 0x7f0101ec
+			public const int needlePointerTailColor = 2130772460;
+			
+			// aapt resource value: 0x7f0101ed
+			public const int needlePointerTailLengthFactor = 2130772461;
+			
+			// aapt resource value: 0x7f0101ef
+			public const int needlePointerTailStrokeColor = 2130772463;
+			
+			// aapt resource value: 0x7f0101ee
+			public const int needlePointerTailStrokeWidth = 2130772462;
+			
+			// aapt resource value: 0x7f0101e4
+			public const int needlePointerType = 2130772452;
+			
+			// aapt resource value: 0x7f0101e3
+			public const int needlePointerValue = 2130772451;
+			
+			// aapt resource value: 0x7f0101e6
+			public const int needlePointerWidth = 2130772454;
+			
+			// aapt resource value: 0x7f0101aa
+			public const int numberFormat = 2130772394;
+			
 			// aapt resource value: 0x7f0100db
 			public const int numericModifiers = 2130772187;
+			
+			// aapt resource value: 0x7f0101b3
+			public const int numericTextBoxValue = 2130772403;
 			
 			// aapt resource value: 0x7f0100e6
 			public const int overlapAnchor = 2130772198;
@@ -871,6 +1489,9 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f0100a5
 			public const int panelMenuListWidth = 2130772133;
 			
+			// aapt resource value: 0x7f0101a6
+			public const int parsingMode = 2130772390;
+			
 			// aapt resource value: 0x7f010167
 			public const int passwordToggleContentDescription = 2130772327;
 			
@@ -885,6 +1506,87 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f010169
 			public const int passwordToggleTintMode = 2130772329;
+			
+			// aapt resource value: 0x7f0101a7
+			public const int percentDisplayMode = 2130772391;
+			
+			// aapt resource value: 0x7f01018d
+			public const int pickerBackgroundColor = 2130772365;
+			
+			// aapt resource value: 0x7f01019d
+			public const int pickerBorderColor = 2130772381;
+			
+			// aapt resource value: 0x7f01019a
+			public const int pickerColumnHeaderBackgroundColor = 2130772378;
+			
+			// aapt resource value: 0x7f010196
+			public const int pickerColumnHeaderHeight = 2130772374;
+			
+			// aapt resource value: 0x7f0101a5
+			public const int pickerColumnHeaderTextColor = 2130772389;
+			
+			// aapt resource value: 0x7f0101a1
+			public const int pickerColumnHeaderTextSize = 2130772385;
+			
+			// aapt resource value: 0x7f010192
+			public const int pickerEnableLooping = 2130772370;
+			
+			// aapt resource value: 0x7f01018f
+			public const int pickerFooterHeight = 2130772367;
+			
+			// aapt resource value: 0x7f010199
+			public const int pickerHeaderBackgroundColor = 2130772377;
+			
+			// aapt resource value: 0x7f01018e
+			public const int pickerHeaderHeight = 2130772366;
+			
+			// aapt resource value: 0x7f01019e
+			public const int pickerHeaderText = 2130772382;
+			
+			// aapt resource value: 0x7f0101a4
+			public const int pickerHeaderTextColor = 2130772388;
+			
+			// aapt resource value: 0x7f0101a0
+			public const int pickerHeaderTextSize = 2130772384;
+			
+			// aapt resource value: 0x7f010190
+			public const int pickerHeight = 2130772368;
+			
+			// aapt resource value: 0x7f010191
+			public const int pickerIsOpen = 2130772369;
+			
+			// aapt resource value: 0x7f010197
+			public const int pickerItemHeight = 2130772375;
+			
+			// aapt resource value: 0x7f01018c
+			public const int pickerMode = 2130772364;
+			
+			// aapt resource value: 0x7f0101a3
+			public const int pickerSelectedItemTextSize = 2130772387;
+			
+			// aapt resource value: 0x7f010198
+			public const int pickerSelectedItemTextcolor = 2130772376;
+			
+			// aapt resource value: 0x7f01019c
+			public const int pickerSelectionBorderColor = 2130772380;
+			
+			// aapt resource value: 0x7f010195
+			public const int pickerShowColumnHeader = 2130772373;
+			
+			// aapt resource value: 0x7f010194
+			public const int pickerShowFooter = 2130772372;
+			
+			// aapt resource value: 0x7f010193
+			public const int pickerShowHeader = 2130772371;
+			
+			// aapt resource value: 0x7f01019b
+			public const int pickerUnselectedItemTextColor = 2130772379;
+			
+			// aapt resource value: 0x7f0101a2
+			public const int pickerUnselectedItemTextSize = 2130772386;
+			
+			// aapt resource value: 0x7f01019f
+			public const int pickerWidth = 2130772383;
 			
 			// aapt resource value: 0x7f010091
 			public const int popupMenuStyle = 2130772113;
@@ -916,6 +1618,108 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f0100c0
 			public const int radioButtonStyle = 2130772160;
 			
+			// aapt resource value: 0x7f01021f
+			public const int rangeColor = 2130772511;
+			
+			// aapt resource value: 0x7f01021b
+			public const int rangeEndValue = 2130772507;
+			
+			// aapt resource value: 0x7f01021d
+			public const int rangeEndWidth = 2130772509;
+			
+			// aapt resource value: 0x7f0101e0
+			public const int rangeInnerEndOffset = 2130772448;
+			
+			// aapt resource value: 0x7f0101df
+			public const int rangeInnerStartOffset = 2130772447;
+			
+			// aapt resource value: 0x7f01021e
+			public const int rangeOffset = 2130772510;
+			
+			// aapt resource value: 0x7f0101e2
+			public const int rangeOuterEndOffset = 2130772450;
+			
+			// aapt resource value: 0x7f0101e1
+			public const int rangeOuterStartOffset = 2130772449;
+			
+			// aapt resource value: 0x7f0101f7
+			public const int rangePointerCap = 2130772471;
+			
+			// aapt resource value: 0x7f0101f2
+			public const int rangePointerColor = 2130772466;
+			
+			// aapt resource value: 0x7f0101f6
+			public const int rangePointerEndOffset = 2130772470;
+			
+			// aapt resource value: 0x7f0101f4
+			public const int rangePointerOffset = 2130772468;
+			
+			// aapt resource value: 0x7f0101f5
+			public const int rangePointerStartOffset = 2130772469;
+			
+			// aapt resource value: 0x7f0101f0
+			public const int rangePointerStartValue = 2130772464;
+			
+			// aapt resource value: 0x7f0101f1
+			public const int rangePointerValue = 2130772465;
+			
+			// aapt resource value: 0x7f0101f3
+			public const int rangePointerWidth = 2130772467;
+			
+			// aapt resource value: 0x7f010184
+			public const int rangeSliderDirectionReversed = 2130772356;
+			
+			// aapt resource value: 0x7f01018a
+			public const int rangeSliderEndValue = 2130772362;
+			
+			// aapt resource value: 0x7f01017d
+			public const int rangeSliderKnobColor = 2130772349;
+			
+			// aapt resource value: 0x7f010188
+			public const int rangeSliderMaximum = 2130772360;
+			
+			// aapt resource value: 0x7f010187
+			public const int rangeSliderMinimum = 2130772359;
+			
+			// aapt resource value: 0x7f010183
+			public const int rangeSliderOrientation = 2130772355;
+			
+			// aapt resource value: 0x7f010181
+			public const int rangeSliderShowRange = 2130772353;
+			
+			// aapt resource value: 0x7f010180
+			public const int rangeSliderShowValueLabel = 2130772352;
+			
+			// aapt resource value: 0x7f010189
+			public const int rangeSliderStartValue = 2130772361;
+			
+			// aapt resource value: 0x7f01018b
+			public const int rangeSliderThumbSize = 2130772363;
+			
+			// aapt resource value: 0x7f010185
+			public const int rangeSliderTickPlacement = 2130772357;
+			
+			// aapt resource value: 0x7f01017e
+			public const int rangeSliderTrackColor = 2130772350;
+			
+			// aapt resource value: 0x7f01017f
+			public const int rangeSliderTrackSelectionColor = 2130772351;
+			
+			// aapt resource value: 0x7f010182
+			public const int rangeSliderValue = 2130772354;
+			
+			// aapt resource value: 0x7f010186
+			public const int rangeSliderValuePlacement = 2130772358;
+			
+			// aapt resource value: 0x7f01021a
+			public const int rangeStartValue = 2130772506;
+			
+			// aapt resource value: 0x7f01021c
+			public const int rangeStartWidth = 2130772508;
+			
+			// aapt resource value: 0x7f0101dc
+			public const int rangeWidth = 2130772444;
+			
 			// aapt resource value: 0x7f0100c1
 			public const int ratingBarStyle = 2130772161;
 			
@@ -930,6 +1734,171 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f01013c
 			public const int rippleColor = 2130772284;
+			
+			// aapt resource value: 0x7f0101bf
+			public const int scaleAutoAngle = 2130772415;
+			
+			// aapt resource value: 0x7f0101b9
+			public const int scaleAutoInterval = 2130772409;
+			
+			// aapt resource value: 0x7f010209
+			public const int scaleBarColor = 2130772489;
+			
+			// aapt resource value: 0x7f01020b
+			public const int scaleBarLength = 2130772491;
+			
+			// aapt resource value: 0x7f01020a
+			public const int scaleBarSize = 2130772490;
+			
+			// aapt resource value: 0x7f010218
+			public const int scaleCornerRadius = 2130772504;
+			
+			// aapt resource value: 0x7f010217
+			public const int scaleCornerRadiusType = 2130772503;
+			
+			// aapt resource value: 0x7f010216
+			public const int scaleDirection = 2130772502;
+			
+			// aapt resource value: 0x7f0101b5
+			public const int scaleEndAngle = 2130772405;
+			
+			// aapt resource value: 0x7f0101be
+			public const int scaleEndOffset = 2130772414;
+			
+			// aapt resource value: 0x7f0101b7
+			public const int scaleEndValue = 2130772407;
+			
+			// aapt resource value: 0x7f010200
+			public const int scaleInterval = 2130772480;
+			
+			// aapt resource value: 0x7f01020c
+			public const int scaleLabelColor = 2130772492;
+			
+			// aapt resource value: 0x7f01020f
+			public const int scaleLabelFontSize = 2130772495;
+			
+			// aapt resource value: 0x7f010210
+			public const int scaleLabelOffset = 2130772496;
+			
+			// aapt resource value: 0x7f01020e
+			public const int scaleLabelPostfix = 2130772494;
+			
+			// aapt resource value: 0x7f01020d
+			public const int scaleLabelPrefix = 2130772493;
+			
+			// aapt resource value: 0x7f010202
+			public const int scaleMajorTickColor = 2130772482;
+			
+			// aapt resource value: 0x7f0101ca
+			public const int scaleMajorTickEndOffset = 2130772426;
+			
+			// aapt resource value: 0x7f010201
+			public const int scaleMajorTickLength = 2130772481;
+			
+			// aapt resource value: 0x7f010204
+			public const int scaleMajorTickOffset = 2130772484;
+			
+			// aapt resource value: 0x7f0101c5
+			public const int scaleMajorTickSize = 2130772421;
+			
+			// aapt resource value: 0x7f0101c9
+			public const int scaleMajorTickStartOffset = 2130772425;
+			
+			// aapt resource value: 0x7f010203
+			public const int scaleMajorTickStrokeWidth = 2130772483;
+			
+			// aapt resource value: 0x7f0101c7
+			public const int scaleMajorTickWidth = 2130772423;
+			
+			// aapt resource value: 0x7f0101ff
+			public const int scaleMaximum = 2130772479;
+			
+			// aapt resource value: 0x7f0101fe
+			public const int scaleMinimum = 2130772478;
+			
+			// aapt resource value: 0x7f010206
+			public const int scaleMinorTickColor = 2130772486;
+			
+			// aapt resource value: 0x7f0101d0
+			public const int scaleMinorTickEndOffset = 2130772432;
+			
+			// aapt resource value: 0x7f010205
+			public const int scaleMinorTickLength = 2130772485;
+			
+			// aapt resource value: 0x7f010208
+			public const int scaleMinorTickOffset = 2130772488;
+			
+			// aapt resource value: 0x7f0101cb
+			public const int scaleMinorTickSize = 2130772427;
+			
+			// aapt resource value: 0x7f0101cf
+			public const int scaleMinorTickStartOffset = 2130772431;
+			
+			// aapt resource value: 0x7f010207
+			public const int scaleMinorTickStrokeWidth = 2130772487;
+			
+			// aapt resource value: 0x7f0101cd
+			public const int scaleMinorTickWidth = 2130772429;
+			
+			// aapt resource value: 0x7f010213
+			public const int scaleMinorTicksPerInterval = 2130772499;
+			
+			// aapt resource value: 0x7f0101d9
+			public const int scaleNumberofDecimalDigits = 2130772441;
+			
+			// aapt resource value: 0x7f010219
+			public const int scaleOffset = 2130772505;
+			
+			// aapt resource value: 0x7f010215
+			public const int scaleOpposedPosition = 2130772501;
+			
+			// aapt resource value: 0x7f01022a
+			public const int scaleOrientation = 2130772522;
+			
+			// aapt resource value: 0x7f0101d8
+			public const int scaleRadiusFactor = 2130772440;
+			
+			// aapt resource value: 0x7f0101d1
+			public const int scaleRimColor = 2130772433;
+			
+			// aapt resource value: 0x7f0101d2
+			public const int scaleRimWidth = 2130772434;
+			
+			// aapt resource value: 0x7f0101bb
+			public const int scaleShowFirstLabel = 2130772411;
+			
+			// aapt resource value: 0x7f010211
+			public const int scaleShowLabels = 2130772497;
+			
+			// aapt resource value: 0x7f0101bc
+			public const int scaleShowLastLabel = 2130772412;
+			
+			// aapt resource value: 0x7f0101d7
+			public const int scaleShowRim = 2130772439;
+			
+			// aapt resource value: 0x7f010212
+			public const int scaleShowTicks = 2130772498;
+			
+			// aapt resource value: 0x7f0101b4
+			public const int scaleStartAngle = 2130772404;
+			
+			// aapt resource value: 0x7f0101bd
+			public const int scaleStartOffset = 2130772413;
+			
+			// aapt resource value: 0x7f0101b6
+			public const int scaleStartValue = 2130772406;
+			
+			// aapt resource value: 0x7f010179
+			public const int scheduleDateHeaderFormat = 2130772345;
+			
+			// aapt resource value: 0x7f01017b
+			public const int scheduleFirstDayOfWeek = 2130772347;
+			
+			// aapt resource value: 0x7f010176
+			public const int scheduleHeaderHeight = 2130772342;
+			
+			// aapt resource value: 0x7f010173
+			public const int scheduleView = 2130772339;
 			
 			// aapt resource value: 0x7f01012b
 			public const int scrimAnimationDuration = 2130772267;
@@ -948,6 +1917,12 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f0100c4
 			public const int seekBarStyle = 2130772164;
+			
+			// aapt resource value: 0x7f01022f
+			public const int segmentStrokeWidth = 2130772527;
+			
+			// aapt resource value: 0x7f0101ad
+			public const int selectAllOnFocus = 2130772397;
 			
 			// aapt resource value: 0x7f010089
 			public const int selectableItemBackground = 2130772105;
@@ -1038,6 +2013,21 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f0100fd
 			public const int switchTextAppearance = 2130772221;
+			
+			// aapt resource value: 0x7f010226
+			public const int symbolPointerColor = 2130772518;
+			
+			// aapt resource value: 0x7f010228
+			public const int symbolPointerOffset = 2130772520;
+			
+			// aapt resource value: 0x7f010227
+			public const int symbolPointerStrokeWidth = 2130772519;
+			
+			// aapt resource value: 0x7f010225
+			public const int symbolPointerValue = 2130772517;
+			
+			// aapt resource value: 0x7f010229
+			public const int symbolPosition = 2130772521;
 			
 			// aapt resource value: 0x7f01014f
 			public const int tabBackground = 2130772303;
@@ -1147,6 +2137,15 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f01004e
 			public const int tickMarkTintMode = 2130772046;
 			
+			// aapt resource value: 0x7f010174
+			public const int timeInterval = 2130772340;
+			
+			// aapt resource value: 0x7f010175
+			public const int timeIntervalHeight = 2130772341;
+			
+			// aapt resource value: 0x7f01017c
+			public const int timeZone = 2130772348;
+			
 			// aapt resource value: 0x7f01004a
 			public const int tint = 2130772042;
 			
@@ -1216,8 +2215,20 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f010140
 			public const int useCompatPadding = 2130772288;
 			
+			// aapt resource value: 0x7f0101a8
+			public const int valueChangeMode = 2130772392;
+			
+			// aapt resource value: 0x7f010177
+			public const int viewHeaderHeight = 2130772343;
+			
 			// aapt resource value: 0x7f0100f2
 			public const int voiceIcon = 2130772210;
+			
+			// aapt resource value: 0x7f0101ab
+			public const int watermark = 2130772395;
+			
+			// aapt resource value: 0x7f0101b1
+			public const int watermarkColor = 2130772401;
 			
 			// aapt resource value: 0x7f010056
 			public const int windowActionBar = 2130772054;
@@ -3096,6 +4107,12 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
 			
+			// aapt resource value: 0x7f080064
+			public const int Default = 2131230820;
+			
+			// aapt resource value: 0x7f080065
+			public const int Dialog = 2131230821;
+			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
 			
@@ -3108,41 +4125,41 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int action0 = 2131230907;
+			// aapt resource value: 0x7f0800de
+			public const int action0 = 2131230942;
 			
-			// aapt resource value: 0x7f08007c
-			public const int action_bar = 2131230844;
+			// aapt resource value: 0x7f08009f
+			public const int action_bar = 2131230879;
 			
 			// aapt resource value: 0x7f080001
 			public const int action_bar_activity_content = 2131230721;
 			
-			// aapt resource value: 0x7f08007b
-			public const int action_bar_container = 2131230843;
+			// aapt resource value: 0x7f08009e
+			public const int action_bar_container = 2131230878;
 			
-			// aapt resource value: 0x7f080077
-			public const int action_bar_root = 2131230839;
+			// aapt resource value: 0x7f08009a
+			public const int action_bar_root = 2131230874;
 			
 			// aapt resource value: 0x7f080002
 			public const int action_bar_spinner = 2131230722;
 			
-			// aapt resource value: 0x7f08005b
-			public const int action_bar_subtitle = 2131230811;
+			// aapt resource value: 0x7f08007f
+			public const int action_bar_subtitle = 2131230847;
 			
-			// aapt resource value: 0x7f08005a
-			public const int action_bar_title = 2131230810;
+			// aapt resource value: 0x7f08007e
+			public const int action_bar_title = 2131230846;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int action_container = 2131230904;
+			// aapt resource value: 0x7f0800db
+			public const int action_container = 2131230939;
 			
-			// aapt resource value: 0x7f08007d
-			public const int action_context_bar = 2131230845;
+			// aapt resource value: 0x7f0800a0
+			public const int action_context_bar = 2131230880;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int action_divider = 2131230911;
+			// aapt resource value: 0x7f0800e2
+			public const int action_divider = 2131230946;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int action_image = 2131230905;
+			// aapt resource value: 0x7f0800dc
+			public const int action_image = 2131230940;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -3150,29 +4167,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080004
 			public const int action_menu_presenter = 2131230724;
 			
-			// aapt resource value: 0x7f080079
-			public const int action_mode_bar = 2131230841;
+			// aapt resource value: 0x7f08009c
+			public const int action_mode_bar = 2131230876;
 			
-			// aapt resource value: 0x7f080078
-			public const int action_mode_bar_stub = 2131230840;
+			// aapt resource value: 0x7f08009b
+			public const int action_mode_bar_stub = 2131230875;
 			
-			// aapt resource value: 0x7f08005c
-			public const int action_mode_close_button = 2131230812;
+			// aapt resource value: 0x7f080080
+			public const int action_mode_close_button = 2131230848;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int action_text = 2131230906;
+			// aapt resource value: 0x7f0800dd
+			public const int action_text = 2131230941;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int actions = 2131230920;
+			// aapt resource value: 0x7f0800eb
+			public const int actions = 2131230955;
 			
-			// aapt resource value: 0x7f08005d
-			public const int activity_chooser_view_content = 2131230813;
+			// aapt resource value: 0x7f080081
+			public const int activity_chooser_view_content = 2131230849;
 			
 			// aapt resource value: 0x7f080027
 			public const int add = 2131230759;
 			
-			// aapt resource value: 0x7f080070
-			public const int alertTitle = 2131230832;
+			// aapt resource value: 0x7f080093
+			public const int alertTitle = 2131230867;
 			
 			// aapt resource value: 0x7f080052
 			public const int all = 2131230802;
@@ -3180,11 +4197,23 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080038
 			public const int always = 2131230776;
 			
+			// aapt resource value: 0x7f08006c
+			public const int anticlockwise = 2131230828;
+			
 			// aapt resource value: 0x7f080056
 			public const int async = 2131230806;
 			
 			// aapt resource value: 0x7f080044
 			public const int auto = 2131230788;
+			
+			// aapt resource value: 0x7f080078
+			public const int away = 2131230840;
+			
+			// aapt resource value: 0x7f080076
+			public const int backward = 2131230838;
+			
+			// aapt resource value: 0x7f08006e
+			public const int bar = 2131230830;
 			
 			// aapt resource value: 0x7f08002f
 			public const int beginning = 2131230767;
@@ -3192,14 +4221,20 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080057
 			public const int blocking = 2131230807;
 			
+			// aapt resource value: 0x7f080070
+			public const int both = 2131230832;
+			
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f080063
-			public const int buttonPanel = 2131230819;
+			// aapt resource value: 0x7f080060
+			public const int bottomRight = 2131230816;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int cancel_action = 2131230908;
+			// aapt resource value: 0x7f080086
+			public const int buttonPanel = 2131230854;
+			
+			// aapt resource value: 0x7f0800df
+			public const int cancel_action = 2131230943;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -3210,11 +4245,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080047
 			public const int center_vertical = 2131230791;
 			
-			// aapt resource value: 0x7f080073
-			public const int checkbox = 2131230835;
+			// aapt resource value: 0x7f080096
+			public const int checkbox = 2131230870;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int chronometer = 2131230916;
+			// aapt resource value: 0x7f0800e7
+			public const int chronometer = 2131230951;
+			
+			// aapt resource value: 0x7f080071
+			public const int circle = 2131230833;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -3222,59 +4260,80 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08004f
 			public const int clip_vertical = 2131230799;
 			
+			// aapt resource value: 0x7f08006d
+			public const int clockwise = 2131230829;
+			
 			// aapt resource value: 0x7f080039
 			public const int collapseActionView = 2131230777;
 			
-			// aapt resource value: 0x7f08008e
-			public const int container = 2131230862;
+			// aapt resource value: 0x7f080068
+			public const int compute = 2131230824;
 			
-			// aapt resource value: 0x7f080066
-			public const int contentPanel = 2131230822;
+			// aapt resource value: 0x7f0800b1
+			public const int container = 2131230897;
+			
+			// aapt resource value: 0x7f080089
+			public const int contentPanel = 2131230857;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int coordinator = 2131230898;
+			
+			// aapt resource value: 0x7f080090
+			public const int custom = 2131230864;
 			
 			// aapt resource value: 0x7f08008f
-			public const int coordinator = 2131230863;
+			public const int customPanel = 2131230863;
 			
-			// aapt resource value: 0x7f08006d
-			public const int custom = 2131230829;
+			// aapt resource value: 0x7f08005a
+			public const int dayView = 2131230810;
 			
-			// aapt resource value: 0x7f08006c
-			public const int customPanel = 2131230828;
+			// aapt resource value: 0x7f080066
+			public const int decimalMode = 2131230822;
 			
-			// aapt resource value: 0x7f08007a
-			public const int decor_content_parent = 2131230842;
+			// aapt resource value: 0x7f08009d
+			public const int decor_content_parent = 2131230877;
 			
-			// aapt resource value: 0x7f080060
-			public const int default_activity_button = 2131230816;
+			// aapt resource value: 0x7f080083
+			public const int default_activity_button = 2131230851;
 			
-			// aapt resource value: 0x7f080091
-			public const int design_bottom_sheet = 2131230865;
+			// aapt resource value: 0x7f0800b4
+			public const int design_bottom_sheet = 2131230900;
 			
-			// aapt resource value: 0x7f080098
-			public const int design_menu_item_action_area = 2131230872;
+			// aapt resource value: 0x7f0800bb
+			public const int design_menu_item_action_area = 2131230907;
 			
-			// aapt resource value: 0x7f080097
-			public const int design_menu_item_action_area_stub = 2131230871;
+			// aapt resource value: 0x7f0800ba
+			public const int design_menu_item_action_area_stub = 2131230906;
 			
-			// aapt resource value: 0x7f080096
-			public const int design_menu_item_text = 2131230870;
+			// aapt resource value: 0x7f0800b9
+			public const int design_menu_item_text = 2131230905;
 			
-			// aapt resource value: 0x7f080095
-			public const int design_navigation_view = 2131230869;
+			// aapt resource value: 0x7f0800b8
+			public const int design_navigation_view = 2131230904;
+			
+			// aapt resource value: 0x7f080072
+			public const int diamond = 2131230834;
 			
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f08007e
-			public const int edit_query = 2131230846;
+			// aapt resource value: 0x7f080067
+			public const int doubleMode = 2131230823;
 			
-			// aapt resource value: 0x7f08009b
-			public const int eightsegment = 2131230875;
+			// aapt resource value: 0x7f0800a1
+			public const int edit_query = 2131230881;
+			
+			// aapt resource value: 0x7f08007a
+			public const int eightCrossEightDotMatrix = 2131230842;
+			
+			// aapt resource value: 0x7f0800be
+			public const int eightsegment = 2131230910;
 			
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int end_padder = 2131230922;
+			// aapt resource value: 0x7f0800ed
+			public const int end_padder = 2131230957;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -3285,11 +4344,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080041
 			public const int exitUntilCollapsed = 2131230785;
 			
-			// aapt resource value: 0x7f08005e
-			public const int expand_activities_button = 2131230814;
+			// aapt resource value: 0x7f080082
+			public const int expand_activities_button = 2131230850;
 			
-			// aapt resource value: 0x7f080072
-			public const int expanded_menu = 2131230834;
+			// aapt resource value: 0x7f080095
+			public const int expanded_menu = 2131230869;
+			
+			// aapt resource value: 0x7f080079
+			public const int far = 2131230841;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -3306,8 +4368,11 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080058
 			public const int forever = 2131230808;
 			
-			// aapt resource value: 0x7f08009c
-			public const int fourteensegment = 2131230876;
+			// aapt resource value: 0x7f080077
+			public const int forward = 2131230839;
+			
+			// aapt resource value: 0x7f0800bf
+			public const int fourteensegment = 2131230911;
 			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
@@ -3318,20 +4383,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080021
 			public const int homeAsUp = 2131230753;
 			
-			// aapt resource value: 0x7f080062
-			public const int icon = 2131230818;
+			// aapt resource value: 0x7f08005e
+			public const int horizontal = 2131230814;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int icon_group = 2131230921;
+			// aapt resource value: 0x7f080085
+			public const int icon = 2131230853;
+			
+			// aapt resource value: 0x7f0800ec
+			public const int icon_group = 2131230956;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
 			
-			// aapt resource value: 0x7f08005f
-			public const int image = 2131230815;
+			// aapt resource value: 0x7f080073
+			public const int image = 2131230835;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int info = 2131230917;
+			// aapt resource value: 0x7f0800e8
+			public const int info = 2131230952;
+			
+			// aapt resource value: 0x7f080061
+			public const int inline = 2131230817;
+			
+			// aapt resource value: 0x7f080074
+			public const int invertedTriangle = 2131230836;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -3339,8 +4413,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f08008d
-			public const int largeLabel = 2131230861;
+			// aapt resource value: 0x7f0800b0
+			public const int largeLabel = 2131230896;
 			
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
@@ -3354,17 +4428,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08001d
 			public const int listMode = 2131230749;
 			
-			// aapt resource value: 0x7f080061
-			public const int list_item = 2131230817;
+			// aapt resource value: 0x7f080084
+			public const int list_item = 2131230852;
 			
-			// aapt resource value: 0x7f0800cf
-			public const int masked = 2131230927;
+			// aapt resource value: 0x7f0800f2
+			public const int masked = 2131230962;
 			
-			// aapt resource value: 0x7f0800be
-			public const int media_actions = 2131230910;
+			// aapt resource value: 0x7f0800e1
+			public const int media_actions = 2131230945;
 			
-			// aapt resource value: 0x7f0800cd
-			public const int message = 2131230925;
+			// aapt resource value: 0x7f0800f0
+			public const int message = 2131230960;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -3372,86 +4446,89 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080053
 			public const int mini = 2131230803;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int mr_art = 2131230890;
+			// aapt resource value: 0x7f08005b
+			public const int monthView = 2131230811;
 			
-			// aapt resource value: 0x7f08009f
-			public const int mr_chooser_list = 2131230879;
+			// aapt resource value: 0x7f0800cd
+			public const int mr_art = 2131230925;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int mr_chooser_route_desc = 2131230882;
+			// aapt resource value: 0x7f0800c2
+			public const int mr_chooser_list = 2131230914;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int mr_chooser_route_icon = 2131230880;
+			// aapt resource value: 0x7f0800c5
+			public const int mr_chooser_route_desc = 2131230917;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int mr_chooser_route_name = 2131230881;
+			// aapt resource value: 0x7f0800c3
+			public const int mr_chooser_route_icon = 2131230915;
 			
-			// aapt resource value: 0x7f08009e
-			public const int mr_chooser_title = 2131230878;
+			// aapt resource value: 0x7f0800c4
+			public const int mr_chooser_route_name = 2131230916;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int mr_close = 2131230887;
+			// aapt resource value: 0x7f0800c1
+			public const int mr_chooser_title = 2131230913;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int mr_control_divider = 2131230893;
+			// aapt resource value: 0x7f0800ca
+			public const int mr_close = 2131230922;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int mr_control_playback_ctrl = 2131230899;
+			// aapt resource value: 0x7f0800d0
+			public const int mr_control_divider = 2131230928;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int mr_control_subtitle = 2131230902;
+			// aapt resource value: 0x7f0800d6
+			public const int mr_control_playback_ctrl = 2131230934;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int mr_control_title = 2131230901;
+			// aapt resource value: 0x7f0800d9
+			public const int mr_control_subtitle = 2131230937;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int mr_control_title_container = 2131230900;
+			// aapt resource value: 0x7f0800d8
+			public const int mr_control_title = 2131230936;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int mr_custom_control = 2131230888;
+			// aapt resource value: 0x7f0800d7
+			public const int mr_control_title_container = 2131230935;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int mr_default_control = 2131230889;
+			// aapt resource value: 0x7f0800cb
+			public const int mr_custom_control = 2131230923;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int mr_dialog_area = 2131230884;
+			// aapt resource value: 0x7f0800cc
+			public const int mr_default_control = 2131230924;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int mr_expandable_area = 2131230883;
+			// aapt resource value: 0x7f0800c7
+			public const int mr_dialog_area = 2131230919;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int mr_group_expand_collapse = 2131230903;
+			// aapt resource value: 0x7f0800c6
+			public const int mr_expandable_area = 2131230918;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int mr_media_main_control = 2131230891;
+			// aapt resource value: 0x7f0800da
+			public const int mr_group_expand_collapse = 2131230938;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int mr_name = 2131230886;
+			// aapt resource value: 0x7f0800ce
+			public const int mr_media_main_control = 2131230926;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int mr_playback_control = 2131230892;
+			// aapt resource value: 0x7f0800c9
+			public const int mr_name = 2131230921;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int mr_title_bar = 2131230885;
+			// aapt resource value: 0x7f0800cf
+			public const int mr_playback_control = 2131230927;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int mr_volume_control = 2131230894;
+			// aapt resource value: 0x7f0800c8
+			public const int mr_title_bar = 2131230920;
 			
-			// aapt resource value: 0x7f0800af
-			public const int mr_volume_group_list = 2131230895;
+			// aapt resource value: 0x7f0800d1
+			public const int mr_volume_control = 2131230929;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int mr_volume_item_icon = 2131230897;
+			// aapt resource value: 0x7f0800d2
+			public const int mr_volume_group_list = 2131230930;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int mr_volume_slider = 2131230898;
+			// aapt resource value: 0x7f0800d4
+			public const int mr_volume_item_icon = 2131230932;
+			
+			// aapt resource value: 0x7f0800d5
+			public const int mr_volume_slider = 2131230933;
 			
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f080094
-			public const int navigation_header_container = 2131230868;
+			// aapt resource value: 0x7f0800b7
+			public const int navigation_header_container = 2131230903;
 			
 			// aapt resource value: 0x7f08003b
 			public const int never = 2131230779;
@@ -3462,20 +4539,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int notification_background = 2131230919;
+			// aapt resource value: 0x7f0800ea
+			public const int notification_background = 2131230954;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int notification_main_column = 2131230913;
+			// aapt resource value: 0x7f0800e4
+			public const int notification_main_column = 2131230948;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int notification_main_column_container = 2131230912;
+			// aapt resource value: 0x7f0800e3
+			public const int notification_main_column_container = 2131230947;
+			
+			// aapt resource value: 0x7f08006a
+			public const int onKeyFocus = 2131230826;
+			
+			// aapt resource value: 0x7f08006b
+			public const int onLostFocus = 2131230827;
+			
+			// aapt resource value: 0x7f080062
+			public const int outside = 2131230818;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
 			
-			// aapt resource value: 0x7f080065
-			public const int parentPanel = 2131230821;
+			// aapt resource value: 0x7f080088
+			public const int parentPanel = 2131230856;
 			
 			// aapt resource value: 0x7f08000b
 			public const int parent_matrix = 2131230731;
@@ -3489,20 +4575,23 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080007
 			public const int progress_horizontal = 2131230727;
 			
+			// aapt resource value: 0x7f080098
+			public const int radio = 2131230872;
+			
 			// aapt resource value: 0x7f080075
-			public const int radio = 2131230837;
+			public const int rectangle = 2131230837;
 			
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800c6
-			public const int right_icon = 2131230918;
+			// aapt resource value: 0x7f0800e9
+			public const int right_icon = 2131230953;
 			
-			// aapt resource value: 0x7f0800c2
-			public const int right_side = 2131230914;
+			// aapt resource value: 0x7f0800e5
+			public const int right_side = 2131230949;
 			
-			// aapt resource value: 0x7f08008b
-			public const int rootLayout = 2131230859;
+			// aapt resource value: 0x7f0800ae
+			public const int rootLayout = 2131230894;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -3519,56 +4608,65 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080042
 			public const int scroll = 2131230786;
 			
-			// aapt resource value: 0x7f08006b
-			public const int scrollIndicatorDown = 2131230827;
+			// aapt resource value: 0x7f08008e
+			public const int scrollIndicatorDown = 2131230862;
 			
-			// aapt resource value: 0x7f080067
-			public const int scrollIndicatorUp = 2131230823;
+			// aapt resource value: 0x7f08008a
+			public const int scrollIndicatorUp = 2131230858;
 			
-			// aapt resource value: 0x7f080068
-			public const int scrollView = 2131230824;
+			// aapt resource value: 0x7f08008b
+			public const int scrollView = 2131230859;
 			
 			// aapt resource value: 0x7f080055
 			public const int scrollable = 2131230805;
 			
-			// aapt resource value: 0x7f080080
-			public const int search_badge = 2131230848;
+			// aapt resource value: 0x7f0800a3
+			public const int search_badge = 2131230883;
 			
-			// aapt resource value: 0x7f08007f
-			public const int search_bar = 2131230847;
+			// aapt resource value: 0x7f0800a2
+			public const int search_bar = 2131230882;
 			
-			// aapt resource value: 0x7f080081
-			public const int search_button = 2131230849;
+			// aapt resource value: 0x7f0800a4
+			public const int search_button = 2131230884;
 			
-			// aapt resource value: 0x7f080086
-			public const int search_close_btn = 2131230854;
+			// aapt resource value: 0x7f0800a9
+			public const int search_close_btn = 2131230889;
 			
-			// aapt resource value: 0x7f080082
-			public const int search_edit_frame = 2131230850;
+			// aapt resource value: 0x7f0800a5
+			public const int search_edit_frame = 2131230885;
 			
-			// aapt resource value: 0x7f080088
-			public const int search_go_btn = 2131230856;
+			// aapt resource value: 0x7f0800ab
+			public const int search_go_btn = 2131230891;
 			
-			// aapt resource value: 0x7f080083
-			public const int search_mag_icon = 2131230851;
+			// aapt resource value: 0x7f0800a6
+			public const int search_mag_icon = 2131230886;
 			
-			// aapt resource value: 0x7f080084
-			public const int search_plate = 2131230852;
+			// aapt resource value: 0x7f0800a7
+			public const int search_plate = 2131230887;
 			
-			// aapt resource value: 0x7f080085
-			public const int search_src_text = 2131230853;
+			// aapt resource value: 0x7f0800a8
+			public const int search_src_text = 2131230888;
 			
-			// aapt resource value: 0x7f080089
-			public const int search_voice_btn = 2131230857;
+			// aapt resource value: 0x7f0800ac
+			public const int search_voice_btn = 2131230892;
 			
-			// aapt resource value: 0x7f08008a
-			public const int select_dialog_listview = 2131230858;
+			// aapt resource value: 0x7f08007b
+			public const int segmentFourteen = 2131230843;
 			
-			// aapt resource value: 0x7f08009a
-			public const int sevensegment = 2131230874;
+			// aapt resource value: 0x7f08007c
+			public const int segmentSeven = 2131230844;
 			
-			// aapt resource value: 0x7f080074
-			public const int shortcut = 2131230836;
+			// aapt resource value: 0x7f08007d
+			public const int segmentSixteen = 2131230845;
+			
+			// aapt resource value: 0x7f0800ad
+			public const int select_dialog_listview = 2131230893;
+			
+			// aapt resource value: 0x7f0800bd
+			public const int sevensegment = 2131230909;
+			
+			// aapt resource value: 0x7f080097
+			public const int shortcut = 2131230871;
 			
 			// aapt resource value: 0x7f080023
 			public const int showCustom = 2131230755;
@@ -3579,26 +4677,26 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080025
 			public const int showTitle = 2131230757;
 			
-			// aapt resource value: 0x7f08009d
-			public const int sixteensegment = 2131230877;
+			// aapt resource value: 0x7f0800c0
+			public const int sixteensegment = 2131230912;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int sliding_tabs = 2131230923;
+			// aapt resource value: 0x7f0800ee
+			public const int sliding_tabs = 2131230958;
 			
-			// aapt resource value: 0x7f08008c
-			public const int smallLabel = 2131230860;
+			// aapt resource value: 0x7f0800af
+			public const int smallLabel = 2131230895;
 			
-			// aapt resource value: 0x7f080093
-			public const int snackbar_action = 2131230867;
+			// aapt resource value: 0x7f0800b6
+			public const int snackbar_action = 2131230902;
 			
-			// aapt resource value: 0x7f080092
-			public const int snackbar_text = 2131230866;
+			// aapt resource value: 0x7f0800b5
+			public const int snackbar_text = 2131230901;
 			
 			// aapt resource value: 0x7f080043
 			public const int snap = 2131230787;
 			
-			// aapt resource value: 0x7f080064
-			public const int spacer = 2131230820;
+			// aapt resource value: 0x7f080087
+			public const int spacer = 2131230855;
 			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
@@ -3615,14 +4713,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int status_bar_latest_event_content = 2131230909;
+			// aapt resource value: 0x7f0800e0
+			public const int status_bar_latest_event_content = 2131230944;
 			
-			// aapt resource value: 0x7f080076
-			public const int submenuarrow = 2131230838;
+			// aapt resource value: 0x7f080099
+			public const int submenuarrow = 2131230873;
 			
-			// aapt resource value: 0x7f080087
-			public const int submit_area = 2131230855;
+			// aapt resource value: 0x7f0800aa
+			public const int submit_area = 2131230890;
 			
 			// aapt resource value: 0x7f08001f
 			public const int tabMode = 2131230751;
@@ -3636,14 +4734,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
-			// aapt resource value: 0x7f08006a
-			public const int textSpacerNoButtons = 2131230826;
+			// aapt resource value: 0x7f08008d
+			public const int textSpacerNoButtons = 2131230861;
 			
-			// aapt resource value: 0x7f080069
-			public const int textSpacerNoTitle = 2131230825;
+			// aapt resource value: 0x7f08008c
+			public const int textSpacerNoTitle = 2131230860;
 			
-			// aapt resource value: 0x7f080099
-			public const int text_input_password_toggle = 2131230873;
+			// aapt resource value: 0x7f0800bc
+			public const int text_input_password_toggle = 2131230908;
 			
 			// aapt resource value: 0x7f080014
 			public const int textinput_counter = 2131230740;
@@ -3651,29 +4749,32 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int time = 2131230915;
+			// aapt resource value: 0x7f0800e6
+			public const int time = 2131230950;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
 			
-			// aapt resource value: 0x7f080071
-			public const int titleDividerNoCustom = 2131230833;
+			// aapt resource value: 0x7f080094
+			public const int titleDividerNoCustom = 2131230868;
 			
-			// aapt resource value: 0x7f08006f
-			public const int title_template = 2131230831;
+			// aapt resource value: 0x7f080092
+			public const int title_template = 2131230866;
 			
-			// aapt resource value: 0x7f0800cc
-			public const int toolbar = 2131230924;
+			// aapt resource value: 0x7f0800ef
+			public const int toolbar = 2131230959;
 			
 			// aapt resource value: 0x7f08003e
 			public const int top = 2131230782;
 			
-			// aapt resource value: 0x7f08006e
-			public const int topPanel = 2131230830;
+			// aapt resource value: 0x7f080063
+			public const int topLeft = 2131230819;
 			
-			// aapt resource value: 0x7f080090
-			public const int touch_outside = 2131230864;
+			// aapt resource value: 0x7f080091
+			public const int topPanel = 2131230865;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int touch_outside = 2131230899;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -3690,6 +4791,9 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080013
 			public const int transition_transform = 2131230739;
 			
+			// aapt resource value: 0x7f08006f
+			public const int triangle = 2131230831;
+			
 			// aapt resource value: 0x7f08002d
 			public const int uniform = 2131230765;
 			
@@ -3699,17 +4803,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080026
 			public const int useLogo = 2131230758;
 			
+			// aapt resource value: 0x7f080069
+			public const int value = 2131230825;
+			
+			// aapt resource value: 0x7f08005f
+			public const int vertical = 2131230815;
+			
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800ce
-			public const int visible = 2131230926;
+			// aapt resource value: 0x7f0800f1
+			public const int visible = 2131230961;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int volume_item_container = 2131230896;
+			// aapt resource value: 0x7f0800d3
+			public const int volume_item_container = 2131230931;
+			
+			// aapt resource value: 0x7f08005c
+			public const int weekView = 2131230812;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
+			
+			// aapt resource value: 0x7f08005d
+			public const int workWeekView = 2131230813;
 			
 			// aapt resource value: 0x7f08002e
 			public const int wrap_content = 2131230766;
@@ -4021,11 +5137,14 @@ namespace DietAndFitness.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f090041
+			public const int ApplicationName = 2131296321;
+			
 			// aapt resource value: 0x7f090040
-			public const int ApplicationName = 2131296320;
+			public const int Hello = 2131296320;
 			
 			// aapt resource value: 0x7f09003f
-			public const int Hello = 2131296319;
+			public const int NoSelectedDate = 2131296319;
 			
 			// aapt resource value: 0x7f09003d
 			public const int No_Appointments = 2131296317;
@@ -7101,6 +8220,788 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 12
 			public const int SearchView_voiceIcon = 12;
+			
+			public static int[] SfCircularGauge = new int[] {
+					2130772404,
+					2130772405,
+					2130772406,
+					2130772407,
+					2130772408,
+					2130772409,
+					2130772410,
+					2130772411,
+					2130772412,
+					2130772413,
+					2130772414,
+					2130772415,
+					2130772416,
+					2130772417,
+					2130772418,
+					2130772419,
+					2130772420,
+					2130772421,
+					2130772422,
+					2130772423,
+					2130772424,
+					2130772425,
+					2130772426,
+					2130772427,
+					2130772428,
+					2130772429,
+					2130772430,
+					2130772431,
+					2130772432,
+					2130772433,
+					2130772434,
+					2130772435,
+					2130772436,
+					2130772437,
+					2130772438,
+					2130772439,
+					2130772440,
+					2130772441,
+					2130772442,
+					2130772443,
+					2130772444,
+					2130772445,
+					2130772446,
+					2130772447,
+					2130772448,
+					2130772449,
+					2130772450,
+					2130772451,
+					2130772452,
+					2130772453,
+					2130772454,
+					2130772455,
+					2130772456,
+					2130772457,
+					2130772458,
+					2130772459,
+					2130772460,
+					2130772461,
+					2130772462,
+					2130772463,
+					2130772464,
+					2130772465,
+					2130772466,
+					2130772467,
+					2130772468,
+					2130772469,
+					2130772470,
+					2130772471,
+					2130772472,
+					2130772473,
+					2130772474,
+					2130772475,
+					2130772476,
+					2130772477};
+			
+			// aapt resource value: 6
+			public const int SfCircularGauge_circularGaugeScaleDirection = 6;
+			
+			// aapt resource value: 4
+			public const int SfCircularGauge_circularScaleInterval = 4;
+			
+			// aapt resource value: 15
+			public const int SfCircularGauge_circularScaleLabelOffset = 15;
+			
+			// aapt resource value: 13
+			public const int SfCircularGauge_circularScaleLabelPostfix = 13;
+			
+			// aapt resource value: 12
+			public const int SfCircularGauge_circularScaleLabelPrefix = 12;
+			
+			// aapt resource value: 16
+			public const int SfCircularGauge_circularScaleLabelTextColor = 16;
+			
+			// aapt resource value: 14
+			public const int SfCircularGauge_circularScaleLabelTextSize = 14;
+			
+			// aapt resource value: 18
+			public const int SfCircularGauge_circularScaleMajorTickColor = 18;
+			
+			// aapt resource value: 20
+			public const int SfCircularGauge_circularScaleMajorTickOffset = 20;
+			
+			// aapt resource value: 32
+			public const int SfCircularGauge_circularScaleMaximumLabels = 32;
+			
+			// aapt resource value: 24
+			public const int SfCircularGauge_circularScaleMinorTickColor = 24;
+			
+			// aapt resource value: 26
+			public const int SfCircularGauge_circularScaleMinorTickOffset = 26;
+			
+			// aapt resource value: 31
+			public const int SfCircularGauge_circularScaleMinorTicksPerInterval = 31;
+			
+			// aapt resource value: 42
+			public const int SfCircularGauge_circularScaleRangeColor = 42;
+			
+			// aapt resource value: 39
+			public const int SfCircularGauge_circularScaleRangeEndValue = 39;
+			
+			// aapt resource value: 41
+			public const int SfCircularGauge_circularScaleRangeOffset = 41;
+			
+			// aapt resource value: 38
+			public const int SfCircularGauge_circularScaleRangeStartValue = 38;
+			
+			// aapt resource value: 33
+			public const int SfCircularGauge_circularScaleShowLabels = 33;
+			
+			// aapt resource value: 34
+			public const int SfCircularGauge_circularScaleShowTicks = 34;
+			
+			// aapt resource value: 70
+			public const int SfCircularGauge_markerPointerColor = 70;
+			
+			// aapt resource value: 71
+			public const int SfCircularGauge_markerPointerHeight = 71;
+			
+			// aapt resource value: 73
+			public const int SfCircularGauge_markerPointerOffset = 73;
+			
+			// aapt resource value: 68
+			public const int SfCircularGauge_markerPointerValue = 68;
+			
+			// aapt resource value: 72
+			public const int SfCircularGauge_markerPointerWidth = 72;
+			
+			// aapt resource value: 69
+			public const int SfCircularGauge_markerShape = 69;
+			
+			// aapt resource value: 49
+			public const int SfCircularGauge_needlePointerColor = 49;
+			
+			// aapt resource value: 54
+			public const int SfCircularGauge_needlePointerKnobColor = 54;
+			
+			// aapt resource value: 52
+			public const int SfCircularGauge_needlePointerKnobRadius = 52;
+			
+			// aapt resource value: 53
+			public const int SfCircularGauge_needlePointerKnobStrokeColor = 53;
+			
+			// aapt resource value: 55
+			public const int SfCircularGauge_needlePointerKnobStrokeWidth = 55;
+			
+			// aapt resource value: 51
+			public const int SfCircularGauge_needlePointerLengthFactor = 51;
+			
+			// aapt resource value: 56
+			public const int SfCircularGauge_needlePointerTailColor = 56;
+			
+			// aapt resource value: 57
+			public const int SfCircularGauge_needlePointerTailLengthFactor = 57;
+			
+			// aapt resource value: 59
+			public const int SfCircularGauge_needlePointerTailStrokeColor = 59;
+			
+			// aapt resource value: 58
+			public const int SfCircularGauge_needlePointerTailStrokeWidth = 58;
+			
+			// aapt resource value: 48
+			public const int SfCircularGauge_needlePointerType = 48;
+			
+			// aapt resource value: 47
+			public const int SfCircularGauge_needlePointerValue = 47;
+			
+			// aapt resource value: 50
+			public const int SfCircularGauge_needlePointerWidth = 50;
+			
+			// aapt resource value: 44
+			public const int SfCircularGauge_rangeInnerEndOffset = 44;
+			
+			// aapt resource value: 43
+			public const int SfCircularGauge_rangeInnerStartOffset = 43;
+			
+			// aapt resource value: 46
+			public const int SfCircularGauge_rangeOuterEndOffset = 46;
+			
+			// aapt resource value: 45
+			public const int SfCircularGauge_rangeOuterStartOffset = 45;
+			
+			// aapt resource value: 67
+			public const int SfCircularGauge_rangePointerCap = 67;
+			
+			// aapt resource value: 62
+			public const int SfCircularGauge_rangePointerColor = 62;
+			
+			// aapt resource value: 66
+			public const int SfCircularGauge_rangePointerEndOffset = 66;
+			
+			// aapt resource value: 64
+			public const int SfCircularGauge_rangePointerOffset = 64;
+			
+			// aapt resource value: 65
+			public const int SfCircularGauge_rangePointerStartOffset = 65;
+			
+			// aapt resource value: 60
+			public const int SfCircularGauge_rangePointerStartValue = 60;
+			
+			// aapt resource value: 61
+			public const int SfCircularGauge_rangePointerValue = 61;
+			
+			// aapt resource value: 63
+			public const int SfCircularGauge_rangePointerWidth = 63;
+			
+			// aapt resource value: 40
+			public const int SfCircularGauge_rangeWidth = 40;
+			
+			// aapt resource value: 11
+			public const int SfCircularGauge_scaleAutoAngle = 11;
+			
+			// aapt resource value: 5
+			public const int SfCircularGauge_scaleAutoInterval = 5;
+			
+			// aapt resource value: 1
+			public const int SfCircularGauge_scaleEndAngle = 1;
+			
+			// aapt resource value: 10
+			public const int SfCircularGauge_scaleEndOffset = 10;
+			
+			// aapt resource value: 3
+			public const int SfCircularGauge_scaleEndValue = 3;
+			
+			// aapt resource value: 22
+			public const int SfCircularGauge_scaleMajorTickEndOffset = 22;
+			
+			// aapt resource value: 17
+			public const int SfCircularGauge_scaleMajorTickSize = 17;
+			
+			// aapt resource value: 21
+			public const int SfCircularGauge_scaleMajorTickStartOffset = 21;
+			
+			// aapt resource value: 19
+			public const int SfCircularGauge_scaleMajorTickWidth = 19;
+			
+			// aapt resource value: 28
+			public const int SfCircularGauge_scaleMinorTickEndOffset = 28;
+			
+			// aapt resource value: 23
+			public const int SfCircularGauge_scaleMinorTickSize = 23;
+			
+			// aapt resource value: 27
+			public const int SfCircularGauge_scaleMinorTickStartOffset = 27;
+			
+			// aapt resource value: 25
+			public const int SfCircularGauge_scaleMinorTickWidth = 25;
+			
+			// aapt resource value: 37
+			public const int SfCircularGauge_scaleNumberofDecimalDigits = 37;
+			
+			// aapt resource value: 36
+			public const int SfCircularGauge_scaleRadiusFactor = 36;
+			
+			// aapt resource value: 29
+			public const int SfCircularGauge_scaleRimColor = 29;
+			
+			// aapt resource value: 30
+			public const int SfCircularGauge_scaleRimWidth = 30;
+			
+			// aapt resource value: 7
+			public const int SfCircularGauge_scaleShowFirstLabel = 7;
+			
+			// aapt resource value: 8
+			public const int SfCircularGauge_scaleShowLastLabel = 8;
+			
+			// aapt resource value: 35
+			public const int SfCircularGauge_scaleShowRim = 35;
+			
+			// aapt resource value: 0
+			public const int SfCircularGauge_scaleStartAngle = 0;
+			
+			// aapt resource value: 9
+			public const int SfCircularGauge_scaleStartOffset = 9;
+			
+			// aapt resource value: 2
+			public const int SfCircularGauge_scaleStartValue = 2;
+			
+			public static int[] SfDigitalGauge = new int[] {
+					2130772523,
+					2130772524,
+					2130772525,
+					2130772526,
+					2130772527,
+					2130772528,
+					2130772529,
+					2130772530};
+			
+			// aapt resource value: 1
+			public const int SfDigitalGauge_characterHeight = 1;
+			
+			// aapt resource value: 2
+			public const int SfDigitalGauge_characterSpacing = 2;
+			
+			// aapt resource value: 0
+			public const int SfDigitalGauge_characterStrokeColor = 0;
+			
+			// aapt resource value: 7
+			public const int SfDigitalGauge_characterType = 7;
+			
+			// aapt resource value: 3
+			public const int SfDigitalGauge_characterWidth = 3;
+			
+			// aapt resource value: 6
+			public const int SfDigitalGauge_dimmedSegmentAlpha = 6;
+			
+			// aapt resource value: 5
+			public const int SfDigitalGauge_dimmedSegmentColor = 5;
+			
+			// aapt resource value: 4
+			public const int SfDigitalGauge_segmentStrokeWidth = 4;
+			
+			public static int[] SfLinearGauge = new int[] {
+					2130772478,
+					2130772479,
+					2130772480,
+					2130772481,
+					2130772482,
+					2130772483,
+					2130772484,
+					2130772485,
+					2130772486,
+					2130772487,
+					2130772488,
+					2130772489,
+					2130772490,
+					2130772491,
+					2130772492,
+					2130772493,
+					2130772494,
+					2130772495,
+					2130772496,
+					2130772497,
+					2130772498,
+					2130772499,
+					2130772500,
+					2130772501,
+					2130772502,
+					2130772503,
+					2130772504,
+					2130772505,
+					2130772506,
+					2130772507,
+					2130772508,
+					2130772509,
+					2130772510,
+					2130772511,
+					2130772512,
+					2130772513,
+					2130772514,
+					2130772515,
+					2130772516,
+					2130772517,
+					2130772518,
+					2130772519,
+					2130772520,
+					2130772521,
+					2130772522};
+			
+			// aapt resource value: 35
+			public const int SfLinearGauge_barPointerColor = 35;
+			
+			// aapt resource value: 38
+			public const int SfLinearGauge_barPointerCornerRadius = 38;
+			
+			// aapt resource value: 37
+			public const int SfLinearGauge_barPointerCornerRadiusType = 37;
+			
+			// aapt resource value: 36
+			public const int SfLinearGauge_barPointerStrokeWidth = 36;
+			
+			// aapt resource value: 34
+			public const int SfLinearGauge_barPointerValue = 34;
+			
+			// aapt resource value: 22
+			public const int SfLinearGauge_maximumLabels = 22;
+			
+			// aapt resource value: 33
+			public const int SfLinearGauge_rangeColor = 33;
+			
+			// aapt resource value: 29
+			public const int SfLinearGauge_rangeEndValue = 29;
+			
+			// aapt resource value: 31
+			public const int SfLinearGauge_rangeEndWidth = 31;
+			
+			// aapt resource value: 32
+			public const int SfLinearGauge_rangeOffset = 32;
+			
+			// aapt resource value: 28
+			public const int SfLinearGauge_rangeStartValue = 28;
+			
+			// aapt resource value: 30
+			public const int SfLinearGauge_rangeStartWidth = 30;
+			
+			// aapt resource value: 11
+			public const int SfLinearGauge_scaleBarColor = 11;
+			
+			// aapt resource value: 13
+			public const int SfLinearGauge_scaleBarLength = 13;
+			
+			// aapt resource value: 12
+			public const int SfLinearGauge_scaleBarSize = 12;
+			
+			// aapt resource value: 26
+			public const int SfLinearGauge_scaleCornerRadius = 26;
+			
+			// aapt resource value: 25
+			public const int SfLinearGauge_scaleCornerRadiusType = 25;
+			
+			// aapt resource value: 24
+			public const int SfLinearGauge_scaleDirection = 24;
+			
+			// aapt resource value: 2
+			public const int SfLinearGauge_scaleInterval = 2;
+			
+			// aapt resource value: 14
+			public const int SfLinearGauge_scaleLabelColor = 14;
+			
+			// aapt resource value: 17
+			public const int SfLinearGauge_scaleLabelFontSize = 17;
+			
+			// aapt resource value: 18
+			public const int SfLinearGauge_scaleLabelOffset = 18;
+			
+			// aapt resource value: 16
+			public const int SfLinearGauge_scaleLabelPostfix = 16;
+			
+			// aapt resource value: 15
+			public const int SfLinearGauge_scaleLabelPrefix = 15;
+			
+			// aapt resource value: 4
+			public const int SfLinearGauge_scaleMajorTickColor = 4;
+			
+			// aapt resource value: 3
+			public const int SfLinearGauge_scaleMajorTickLength = 3;
+			
+			// aapt resource value: 6
+			public const int SfLinearGauge_scaleMajorTickOffset = 6;
+			
+			// aapt resource value: 5
+			public const int SfLinearGauge_scaleMajorTickStrokeWidth = 5;
+			
+			// aapt resource value: 1
+			public const int SfLinearGauge_scaleMaximum = 1;
+			
+			// aapt resource value: 0
+			public const int SfLinearGauge_scaleMinimum = 0;
+			
+			// aapt resource value: 8
+			public const int SfLinearGauge_scaleMinorTickColor = 8;
+			
+			// aapt resource value: 7
+			public const int SfLinearGauge_scaleMinorTickLength = 7;
+			
+			// aapt resource value: 10
+			public const int SfLinearGauge_scaleMinorTickOffset = 10;
+			
+			// aapt resource value: 9
+			public const int SfLinearGauge_scaleMinorTickStrokeWidth = 9;
+			
+			// aapt resource value: 21
+			public const int SfLinearGauge_scaleMinorTicksPerInterval = 21;
+			
+			// aapt resource value: 27
+			public const int SfLinearGauge_scaleOffset = 27;
+			
+			// aapt resource value: 23
+			public const int SfLinearGauge_scaleOpposedPosition = 23;
+			
+			// aapt resource value: 44
+			public const int SfLinearGauge_scaleOrientation = 44;
+			
+			// aapt resource value: 19
+			public const int SfLinearGauge_scaleShowLabels = 19;
+			
+			// aapt resource value: 20
+			public const int SfLinearGauge_scaleShowTicks = 20;
+			
+			// aapt resource value: 40
+			public const int SfLinearGauge_symbolPointerColor = 40;
+			
+			// aapt resource value: 42
+			public const int SfLinearGauge_symbolPointerOffset = 42;
+			
+			// aapt resource value: 41
+			public const int SfLinearGauge_symbolPointerStrokeWidth = 41;
+			
+			// aapt resource value: 39
+			public const int SfLinearGauge_symbolPointerValue = 39;
+			
+			// aapt resource value: 43
+			public const int SfLinearGauge_symbolPosition = 43;
+			
+			public static int[] SfNumericTextBox = new int[] {
+					2130772390,
+					2130772391,
+					2130772392,
+					2130772393,
+					2130772394,
+					2130772395,
+					2130772396,
+					2130772397,
+					2130772398,
+					2130772399,
+					2130772400,
+					2130772401,
+					2130772402,
+					2130772403};
+			
+			// aapt resource value: 9
+			public const int SfNumericTextBox_allowNull = 9;
+			
+			// aapt resource value: 10
+			public const int SfNumericTextBox_borderColor = 10;
+			
+			// aapt resource value: 12
+			public const int SfNumericTextBox_culture = 12;
+			
+			// aapt resource value: 3
+			public const int SfNumericTextBox_enableGroupSeparator = 3;
+			
+			// aapt resource value: 8
+			public const int SfNumericTextBox_fontSize = 8;
+			
+			// aapt resource value: 6
+			public const int SfNumericTextBox_maximumDecimalDigits = 6;
+			
+			// aapt resource value: 4
+			public const int SfNumericTextBox_numberFormat = 4;
+			
+			// aapt resource value: 13
+			public const int SfNumericTextBox_numericTextBoxValue = 13;
+			
+			// aapt resource value: 0
+			public const int SfNumericTextBox_parsingMode = 0;
+			
+			// aapt resource value: 1
+			public const int SfNumericTextBox_percentDisplayMode = 1;
+			
+			// aapt resource value: 7
+			public const int SfNumericTextBox_selectAllOnFocus = 7;
+			
+			// aapt resource value: 2
+			public const int SfNumericTextBox_valueChangeMode = 2;
+			
+			// aapt resource value: 5
+			public const int SfNumericTextBox_watermark = 5;
+			
+			// aapt resource value: 11
+			public const int SfNumericTextBox_watermarkColor = 11;
+			
+			public static int[] SfPicker = new int[] {
+					2130772364,
+					2130772365,
+					2130772366,
+					2130772367,
+					2130772368,
+					2130772369,
+					2130772370,
+					2130772371,
+					2130772372,
+					2130772373,
+					2130772374,
+					2130772375,
+					2130772376,
+					2130772377,
+					2130772378,
+					2130772379,
+					2130772380,
+					2130772381,
+					2130772382,
+					2130772383,
+					2130772384,
+					2130772385,
+					2130772386,
+					2130772387,
+					2130772388,
+					2130772389};
+			
+			// aapt resource value: 1
+			public const int SfPicker_pickerBackgroundColor = 1;
+			
+			// aapt resource value: 17
+			public const int SfPicker_pickerBorderColor = 17;
+			
+			// aapt resource value: 14
+			public const int SfPicker_pickerColumnHeaderBackgroundColor = 14;
+			
+			// aapt resource value: 10
+			public const int SfPicker_pickerColumnHeaderHeight = 10;
+			
+			// aapt resource value: 25
+			public const int SfPicker_pickerColumnHeaderTextColor = 25;
+			
+			// aapt resource value: 21
+			public const int SfPicker_pickerColumnHeaderTextSize = 21;
+			
+			// aapt resource value: 6
+			public const int SfPicker_pickerEnableLooping = 6;
+			
+			// aapt resource value: 3
+			public const int SfPicker_pickerFooterHeight = 3;
+			
+			// aapt resource value: 13
+			public const int SfPicker_pickerHeaderBackgroundColor = 13;
+			
+			// aapt resource value: 2
+			public const int SfPicker_pickerHeaderHeight = 2;
+			
+			// aapt resource value: 18
+			public const int SfPicker_pickerHeaderText = 18;
+			
+			// aapt resource value: 24
+			public const int SfPicker_pickerHeaderTextColor = 24;
+			
+			// aapt resource value: 20
+			public const int SfPicker_pickerHeaderTextSize = 20;
+			
+			// aapt resource value: 4
+			public const int SfPicker_pickerHeight = 4;
+			
+			// aapt resource value: 5
+			public const int SfPicker_pickerIsOpen = 5;
+			
+			// aapt resource value: 11
+			public const int SfPicker_pickerItemHeight = 11;
+			
+			// aapt resource value: 0
+			public const int SfPicker_pickerMode = 0;
+			
+			// aapt resource value: 23
+			public const int SfPicker_pickerSelectedItemTextSize = 23;
+			
+			// aapt resource value: 12
+			public const int SfPicker_pickerSelectedItemTextcolor = 12;
+			
+			// aapt resource value: 16
+			public const int SfPicker_pickerSelectionBorderColor = 16;
+			
+			// aapt resource value: 9
+			public const int SfPicker_pickerShowColumnHeader = 9;
+			
+			// aapt resource value: 8
+			public const int SfPicker_pickerShowFooter = 8;
+			
+			// aapt resource value: 7
+			public const int SfPicker_pickerShowHeader = 7;
+			
+			// aapt resource value: 15
+			public const int SfPicker_pickerUnselectedItemTextColor = 15;
+			
+			// aapt resource value: 22
+			public const int SfPicker_pickerUnselectedItemTextSize = 22;
+			
+			// aapt resource value: 19
+			public const int SfPicker_pickerWidth = 19;
+			
+			public static int[] SfRangeSlider = new int[] {
+					2130772349,
+					2130772350,
+					2130772351,
+					2130772352,
+					2130772353,
+					2130772354,
+					2130772355,
+					2130772356,
+					2130772357,
+					2130772358,
+					2130772359,
+					2130772360,
+					2130772361,
+					2130772362,
+					2130772363};
+			
+			// aapt resource value: 7
+			public const int SfRangeSlider_rangeSliderDirectionReversed = 7;
+			
+			// aapt resource value: 13
+			public const int SfRangeSlider_rangeSliderEndValue = 13;
+			
+			// aapt resource value: 0
+			public const int SfRangeSlider_rangeSliderKnobColor = 0;
+			
+			// aapt resource value: 11
+			public const int SfRangeSlider_rangeSliderMaximum = 11;
+			
+			// aapt resource value: 10
+			public const int SfRangeSlider_rangeSliderMinimum = 10;
+			
+			// aapt resource value: 6
+			public const int SfRangeSlider_rangeSliderOrientation = 6;
+			
+			// aapt resource value: 4
+			public const int SfRangeSlider_rangeSliderShowRange = 4;
+			
+			// aapt resource value: 3
+			public const int SfRangeSlider_rangeSliderShowValueLabel = 3;
+			
+			// aapt resource value: 12
+			public const int SfRangeSlider_rangeSliderStartValue = 12;
+			
+			// aapt resource value: 14
+			public const int SfRangeSlider_rangeSliderThumbSize = 14;
+			
+			// aapt resource value: 8
+			public const int SfRangeSlider_rangeSliderTickPlacement = 8;
+			
+			// aapt resource value: 1
+			public const int SfRangeSlider_rangeSliderTrackColor = 1;
+			
+			// aapt resource value: 2
+			public const int SfRangeSlider_rangeSliderTrackSelectionColor = 2;
+			
+			// aapt resource value: 5
+			public const int SfRangeSlider_rangeSliderValue = 5;
+			
+			// aapt resource value: 9
+			public const int SfRangeSlider_rangeSliderValuePlacement = 9;
+			
+			public static int[] SfSchedule = new int[] {
+					2130772339,
+					2130772340,
+					2130772341,
+					2130772342,
+					2130772343,
+					2130772344,
+					2130772345,
+					2130772346,
+					2130772347,
+					2130772348};
+			
+			// aapt resource value: 7
+			public const int SfSchedule_allowAppointmentDrag = 7;
+			
+			// aapt resource value: 5
+			public const int SfSchedule_enableNavigation = 5;
+			
+			// aapt resource value: 6
+			public const int SfSchedule_scheduleDateHeaderFormat = 6;
+			
+			// aapt resource value: 8
+			public const int SfSchedule_scheduleFirstDayOfWeek = 8;
+			
+			// aapt resource value: 3
+			public const int SfSchedule_scheduleHeaderHeight = 3;
+			
+			// aapt resource value: 0
+			public const int SfSchedule_scheduleView = 0;
+			
+			// aapt resource value: 1
+			public const int SfSchedule_timeInterval = 1;
+			
+			// aapt resource value: 2
+			public const int SfSchedule_timeIntervalHeight = 2;
+			
+			// aapt resource value: 9
+			public const int SfSchedule_timeZone = 9;
+			
+			// aapt resource value: 4
+			public const int SfSchedule_viewHeaderHeight = 4;
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,

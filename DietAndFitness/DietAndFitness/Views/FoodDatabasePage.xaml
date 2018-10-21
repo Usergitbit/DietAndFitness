@@ -6,6 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView
+                CachingStrategy ="RecycleElementAndDataTemplate"
                 HasUnevenRows="True"
                 ItemsSource="{Binding FoodItems}"
                 SelectedItem="{Binding SelectedItem}">

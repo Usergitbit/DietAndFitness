@@ -1,8 +1,10 @@
 ﻿using DietAndFitness.Models;
+using DietAndFitness.ViewModels.Secondary;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
@@ -18,7 +20,12 @@ namespace DietAndFitness.Controls
     public class DataAccessLayer : IDataAccess 
     {
         private SQLiteAsyncConnection database;
+        private SQLiteConnection databaseSync;
 
+        public DataAccessLayer(SQLiteConnection _database)
+        {
+            databaseSync = _database;
+        }
         public DataAccessLayer(SQLiteAsyncConnection _database)
         {
             database = _database;
@@ -79,7 +86,7 @@ namespace DietAndFitness.Controls
             return 0;
         }
         /// <summary>
-        /// Updates and entity in the table associated with the parameter class. Uses PrimaryKey property to find the item.
+        /// Updates an entity in the table associated with the parameter class. Uses PrimaryKey property to find the item.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
@@ -147,7 +154,38 @@ namespace DietAndFitness.Controls
             return await database.UpdateAsync(castedFoodItem);
            
         }
-
-       
+        /// <summary>
+        /// Checks if the current day belongs to a profile.
+        /// </summary>
+        /// <returns>True if there is it belongs to an interval false if it doesn't</returns>
+        public bool HasProfiles()
+        {
+            List<Profile> result = databaseSync.Table<Profile>().Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today).ToList();
+            if (result.Count != 0)
+                return true;
+            else
+                return false;
+        }
+        /// <summary>
+        /// Gets the complete food item by joining DailyFoodItem with LocalFoodItem
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<CompleteFoodItem>> GetCompleteItemAsync()
+        {
+           var result = from dailyFoodItem in await database.Table<DailyFoodItem>().Where(x => x.CreatedAt == DateTime.Today).ToListAsync()
+                        join localFoodItem in await database.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
+                        select new CompleteFoodItem() {DailyFoodItem = dailyFoodItem, LocalFoodItem = localFoodItem };
+            return result.ToList();
+            
+        }
+        /// <summary>
+        /// Gets the current Active profile.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Profile> GetCurrentProfile()
+        {
+            var result = await database.Table<Profile>().Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today).ToListAsync();
+            return result.FirstOrDefault();
+        }
     }
 }

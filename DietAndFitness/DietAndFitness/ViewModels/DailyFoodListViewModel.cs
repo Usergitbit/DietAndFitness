@@ -10,10 +10,38 @@ using System.Text;
 
 namespace DietAndFitness.ViewModels
 {
-    public class DailyFoodListViewModel : FoodDatabaseViewModel<DailyFoodItem>
+    public class DailyFoodListViewModel : FoodDatabaseViewModel<CompleteFoodItem>
     {
-        public Sum CurrentValues { get; set; }
-        public Sum MaximumValues { get; set; }
+        private Sum currentValues;
+        private Sum maximumValues;
+        public Sum CurrentValues
+        {
+            get
+            {
+                return currentValues;
+            }
+            set
+            {
+                if (currentValues == value)
+                    return;
+                currentValues = value;
+                OnPropertyChanged();
+            }
+        }
+        public Sum MaximumValues
+        {
+            get
+            {
+                return maximumValues;
+            }
+            set
+            {
+                if (maximumValues == value)
+                    return;
+                maximumValues = value;
+                OnPropertyChanged();
+            }
+        }
         public DailyFoodListViewModel(NavigationService navigationService) : base(navigationService)
         {
             CurrentValues = new Sum();
@@ -29,7 +57,7 @@ namespace DietAndFitness.ViewModels
 
         public async override void LoadList()
         {
-            var todayFoodItems = await DBLocalAccess.GetByDate<DailyFoodItem>(DateTime.Today);
+            var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync();
             FoodItems.Clear();
             CurrentValues.Reset();
             foreach (var item in todayFoodItems)
@@ -37,8 +65,9 @@ namespace DietAndFitness.ViewModels
                 FoodItems.Add(item);
                 CurrentValues.Add(item);
             }
-           
-
+            var currentProfile = await DBLocalAccess.GetCurrentProfile();
+            MaximumValues = currentProfile.GetMaximumValues();
+            MaximumValues.Calories += 200;
         }
         protected override async void OpenAddPageFunction()
         {
@@ -48,12 +77,49 @@ namespace DietAndFitness.ViewModels
             SelectedItem = null;
         }
 
-        protected override async void OpenEditPageFunction(DailyFoodItem parameter)
+        protected override async void OpenEditPageFunction(CompleteFoodItem parameter)
         {
             var editDailyFoodItemPage = new EditDailyFoodItem();
-            editDailyFoodItemPage.BindingContext = new EditDailyFoodItemViewModel(parameter, navigationService);
+            editDailyFoodItemPage.BindingContext = new EditDailyFoodItemViewModel(parameter.DailyFoodItem, navigationService);
             await navigationService.PushModal(editDailyFoodItemPage);
             SelectedItem = null;
+        }
+
+        public override RelayCommand ConfirmDeleteCommand
+        {
+            get
+            {
+                return confirmDeleteCommand
+                       ?? (confirmDeleteCommand = new RelayCommand(
+                           async () =>
+                           {
+                               await dialogService.ShowMessage("Are you sure you want to delete this item?",
+                                  "Warning!",
+                                  "Yes",
+                                  "No",
+                                   async (r) => {
+                                       if (r == true)
+                                       {
+                                           if (SelectedItem != null)
+                                               try
+                                               {
+
+                                                   await DBLocalAccess.Delete((SelectedItem as CompleteFoodItem).DailyFoodItem);
+                                                   LoadList();
+                                                   SelectedItem = null;
+                                               }
+                                               catch (Exception ex)
+                                               {
+                                                   await dialogService.ShowError(ex, "Error", "Ok", null);
+                                               }
+                                           else
+                                           {
+                                               await dialogService.ShowMessage("Preset food items cannot be deleted", "Error");
+                                           }
+                                       }
+                                   });
+                           }, ValidateDeleteButton));
+            }
         }
     }
 }

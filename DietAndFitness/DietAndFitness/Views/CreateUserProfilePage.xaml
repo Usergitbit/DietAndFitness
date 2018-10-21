@@ -5,13 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
     xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms">
     <ContentPage.Content>
-        <StackLayout>
-            <ScrollView>
-                <StackLayout VerticalOptions="Center">
+        
+        <StackLayout HorizontalOptions="FillAndExpand">
 
-                    <Grid HorizontalOptions="Center">
+            <ScrollView HorizontalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+                    <Grid HorizontalOptions="CenterAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -29,7 +31,6 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
                         <Label
@@ -41,24 +42,12 @@
                         <syncfusion:SfNumericTextBox
                             Grid.Row="0"
                             Grid.Column="1"
-                            HorizontalOptions="Center"
+                            HorizontalOptions="CenterAndExpand"
                             MaximumNumberDecimalDigits="2"
                             ParserMode="Double"
                             WidthRequest="75"
-                            Value="{Binding UserProfile.Height}" />
-                        <Picker
-                            x:Name="MetricPickerHeight"
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            HorizontalOptions="CenterAndExpand">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>cm</x:String>
-                                    <x:String>in</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
-                        </Picker>
+                            Value="{Binding UserProfile.Height}"
+                            TextAlignment="Center"/>
 
                         <Label
                             Grid.Row="1"
@@ -69,25 +58,13 @@
                         <syncfusion:SfNumericTextBox
                             Grid.Row="1"
                             Grid.Column="1"
-                            HorizontalOptions="Center"
+                            HorizontalOptions="CenterAndExpand"
                             MaximumNumberDecimalDigits="2"
                             ParserMode="Double"
                             WidthRequest="75"
-                            Value="{Binding UserProfile.Weight}" />
-                        <Picker
-                            x:Name="MetricPickerWeight"
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            HorizontalOptions="CenterAndExpand">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>kg</x:String>
-                                    <x:String>lb</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
-                        </Picker>
-
+                            Value="{Binding UserProfile.Weight}" 
+                            TextAlignment="Center"/>
+                        
                         <Label
                             Grid.Row="2"
                             Grid.Column="0"
@@ -109,9 +86,10 @@
                             Text="Sex"
                             VerticalOptions="CenterAndExpand" />
                         <Picker
+                            x:Name="sexPicker"
                             Grid.Row="3"
                             Grid.Column="1"
-                            HorizontalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand"
                             SelectedItem="{Binding UserProfile.Sex}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
@@ -119,9 +97,7 @@
                                     <x:String>Female</x:String>
                                 </x:Array>
                             </Picker.ItemsSource>
-                            <Picker.SelectedIndex>1</Picker.SelectedIndex>
                         </Picker>
-
                         <Label
                             Grid.Row="4"
                             Grid.Column="0"
@@ -132,12 +108,13 @@
                             x:Name="formulaPicker"
                             Grid.Row="4"
                             Grid.Column="1"
-                            HorizontalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand"
                             ItemDisplayBinding="{Binding Name}"
                             ItemsSource="{Binding DietFormulas}"
-                            SelectedIndex="0"
+                            SelectedIndex="1"
                             SelectedIndexChanged="OnFormulaPickerSelectedIndexChanged"
-                            SelectedItem="{Binding SelectedDietFormula}" />
+                            SelectedItem="{Binding SelectedDietFormula}"
+                            WidthRequest="150"/>
 
                         <Button
                             Grid.Row="4"
@@ -191,7 +168,8 @@
                             IsVisible="False"
                             PercentDisplayMode="Value"
                             WidthRequest="75"
-                            Value="{Binding UserProfile.BodyFat}" />
+                            Value="{Binding UserProfile.BodyFat}"
+                            TextAlignment="Center"/>
                         <Label
                             Grid.Row="7"
                             Grid.Column="0"
@@ -201,9 +179,10 @@
                         <Entry
                             Grid.Row="7"
                             Grid.Column="1"
-                            HorizontalOptions="Center"
-                            Keyboard="Numeric"
-                            Text="{Binding UserProfile.Name}" />
+                            HorizontalOptions="FillAndExpand"
+                            Text="{Binding UserProfile.Name}"  
+                            Placeholder="Profile Name"
+                            HorizontalTextAlignment="Center"/>
                         <Label
                             Grid.Row="8"
                             Grid.Column="0"
@@ -232,6 +211,21 @@
                             VerticalOptions="CenterAndExpand">
                             <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
                         </DatePicker>
+                        <Label
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Profile Type"
+                            VerticalOptions="CenterAndExpand" />
+                        <Picker
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding ProfileTypes}"
+                            ItemDisplayBinding="{Binding Name}"
+                            SelectedItem="{Binding SelectedProfileType}"
+                            VerticalOptions="CenterAndExpand">
+                        </Picker>
                     </Grid>
 
                     <Label

@@ -18,6 +18,7 @@ namespace DietAndFitness.Controls
     {
         public static SQLiteAsyncConnection GlobalDatabase { get; private set; }
         public static SQLiteAsyncConnection LocalDatabase { get; private set; }
+        public static SQLiteConnection LocaDataBaseSync { get; private set; }
         public static void ConnectToGlobalDatabaseAsync(string DatabasePath)
         {
             try
@@ -35,6 +36,17 @@ namespace DietAndFitness.Controls
             try
             {
                 LocalDatabase = new SQLiteAsyncConnection(DatabasePath, false);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Error at accessing database file" + e.Message);
+            }
+        }
+        public static void ConnectToLocalDatabase(string DatabasePath)
+        {
+            try
+            {
+                LocaDataBaseSync = new SQLiteConnection(DatabasePath, false);
             }
             catch (Exception e)
             {

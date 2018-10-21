@@ -19,10 +19,13 @@ namespace DietAndFitness
 	{
         private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
         private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";
+        private DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+        private DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTU4NEAzMTM2MmUzMjJlMzBaTHN0NDgrMGNOMlpMV2RvVW1uczFvQmFDOWVXZnlIVkxQMEVseWRyMDVnPQ==");
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzU5ODNAMzEzNjJlMzMyZTMwZk9HNDdmQlBzczVLa0p0b05Xem5oYitIZWg4NGlqOGlQWGRPZERpdHQ4az0=");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
@@ -30,8 +33,21 @@ namespace DietAndFitness
             DBLocalControl.CopyDatabase();
             GlobalSQLiteConnection.ConnectToGlobalDatabaseAsync(DBGlobalControl.DestinationPath);
             GlobalSQLiteConnection.ConnectToLocalDatabaseAsync(DBLocalControl.DestinationPath);
-            //If there are no current profiles then open a CreateUserProfile page
-            if (Current.Properties.ContainsKey("HasProfiles"))
+            GlobalSQLiteConnection.ConnectToLocalDatabase(DBLocalControl.DestinationPath);
+            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            //If there are profiles open the normal HomePage
+            if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())//Current.Properties.ContainsKey("HasProfiles"))
+            {
+
+                var navigationPage = new NavigationPage(new HomePageDetail());
+                NavigationService = new NavigationService(navigationPage);
+                var homePage = new HomePage();
+                homePage.Detail = navigationPage;
+                MainPage = homePage;
+            }
+            //Else open a CreateUserProfile page
+            else
             {
                 var createUserProfilePage = new CreateUserProfilePage();
                 var navigationPage = new NavigationPage(createUserProfilePage);
@@ -43,15 +59,7 @@ namespace DietAndFitness
                 createUserProfilePage.BindingContext = userProfileViewModel;
                 createUserProfilePage.userProfileViewModel = userProfileViewModel;
                 MainPage = navigationPage;
-            }
-            //Else open the normal HomePage
-            else
-            {
-                var navigationPage = new NavigationPage(new HomePageDetail());
-                NavigationService = new NavigationService(navigationPage);
-                var homePage = new HomePage();
-                homePage.Detail = navigationPage;
-                MainPage = homePage;
+
             }
 
         }
@@ -80,8 +88,7 @@ namespace DietAndFitness
         /// </summary>
         private async Task MergeDatabases()
         {
-            DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
-            DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+
             List<GlobalFoodItem> globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
             foreach (GlobalFoodItem item in globalFoodItems)
             {

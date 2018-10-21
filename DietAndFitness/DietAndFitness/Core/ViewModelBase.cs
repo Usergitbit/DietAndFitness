@@ -11,7 +11,7 @@ namespace DietAndFitness.Core
     /// Base ViewModel class that the rest derive from
     /// </summary>
     [Serializable]
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected NavigationService navigationService;
@@ -30,6 +30,11 @@ namespace DietAndFitness.Core
                 return;
             handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
+        }
+
+        public virtual void Dispose()
+        {
+            
         }
     }
 }

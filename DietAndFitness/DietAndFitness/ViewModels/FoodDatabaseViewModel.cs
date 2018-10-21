@@ -23,13 +23,13 @@ namespace DietAndFitness.ViewModels
     public class FoodDatabaseViewModel<T> : ViewModelBase where T: DatabaseEntity, new()
     {
         #region Members
-        private readonly IDialogService dialogService;
+        protected readonly IDialogService dialogService;
         private ObservableCollection<DatabaseEntity> foodItems;
         //private DataAccessLayer DBGlobalAccess;
         protected DataAccessLayer DBLocalAccess;
         private string progressindicator = "Waiting for input...";
         private DatabaseEntity selectedItem;
-        private RelayCommand confirmDeleteCommand;
+        protected RelayCommand confirmDeleteCommand;
         #endregion
         #region Properties
         public ICommand OpenAddPageCommand { get; private set; }
@@ -77,7 +77,7 @@ namespace DietAndFitness.ViewModels
 
             }
         }
-        public RelayCommand ConfirmDeleteCommand
+        public virtual RelayCommand ConfirmDeleteCommand
         {
             get
             {
@@ -125,7 +125,12 @@ namespace DietAndFitness.ViewModels
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
-            this.PropertyChanged += OnSelectedItemChanged;
+            PropertyChanged += OnSelectedItemChanged;
+        }
+        public override void Dispose()
+        {
+            PropertyChanged -= OnSelectedItemChanged;
+            base.Dispose();
         }
         #region Methods
         protected virtual async void OpenAddPageFunction()
@@ -166,7 +171,7 @@ namespace DietAndFitness.ViewModels
             await Task.Delay(2000);
             ProgressIndicator = "Waiting for input...";
         }
-        bool ValidateDeleteButton()
+        protected bool ValidateDeleteButton()
         {
             if (SelectedItem == null || SelectedItem.GetType() == typeof(GlobalFoodItem))
                 return false;

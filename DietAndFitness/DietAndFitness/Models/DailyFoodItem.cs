@@ -11,8 +11,6 @@ namespace DietAndFitness.Models
     [Table("DailyFoodItem")]
     public class DailyFoodItem : DatabaseEntity
     {
-
-         
         private double quantity;
         public double Quantity
         {
@@ -28,94 +26,33 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        private double? calories;
-        public double? Calories
+        int? foodItemID;
+        public int? FoodItemID
         {
             get
             {
-                return calories;
+                return foodItemID;
             }
             set
             {
-                if (value.Equals(calories))
+                if (foodItemID == value)
                     return;
-                calories = value;
+                foodItemID = value;
                 OnPropertyChanged();
             }
         }
-        private double? carbohydrates;
-        public double? Carbohydrates
+        private int? profileID;
+        public int? ProfileID
         {
             get
             {
-                return carbohydrates;
-            }
-
-            set
-            {
-                if (value.Equals(carbohydrates))
-                    return;
-                carbohydrates = value;
-                OnPropertyChanged();
-            }
-        }
-        private double? proteins;
-        public double? Proteins
-        {
-            get
-            {
-                return proteins;
+                return profileID;
             }
             set
             {
-                if (value.Equals(proteins))
+                if (profileID == value)
                     return;
-                proteins = value;
-                OnPropertyChanged();
-            }
-        }
-        private double? fats;
-        int? foodItemPK;
-        public double? Fats
-        {
-            get
-            {
-                return fats;
-            }
-            set
-            {
-                if (value == fats)
-                    return;
-                fats = value;
-                OnPropertyChanged();
-            }
-        }
-        public int? FoodItemPK
-        {
-            get
-            {
-                return foodItemPK;
-            }
-            set
-            {
-                if (foodItemPK == value)
-                    return;
-                foodItemPK = value;
-                OnPropertyChanged();
-            }
-        }
-        private int? profilePK;
-        public int? Profile
-        {
-            get
-            {
-                return profilePK;
-            }
-            set
-            {
-                if (profilePK == value)
-                    return;
-                profilePK = value;
+                profileID = value;
                 OnPropertyChanged();
             }
         }
@@ -126,7 +63,7 @@ namespace DietAndFitness.Models
 
         public override bool IsValid()
         {
-            if (Name.Equals(String.Empty) || Calories.ToString().Equals(String.Empty) || Carbohydrates.ToString().Equals(String.Empty) || Proteins.ToString().Equals(String.Empty) || Fats.ToString().Equals(String.Empty) || Quantity.ToString().Equals(String.Empty) || FoodItemPK.ToString().Equals(String.Empty))
+            if (Name.Equals(String.Empty) || Quantity.ToString().Equals(String.Empty) || FoodItemID.ToString().Equals(String.Empty))
                 return false;
             return true;
         }
@@ -135,14 +72,10 @@ namespace DietAndFitness.Models
         {
             Quantity = 0;
             Name = String.Empty;
-            Calories = 0;
-            Carbohydrates = 0;
-            Proteins = 0;
-            Fats = 0;
             CreatedAt = DateTime.Today;
             ModifiedAt = DateTime.Today;
             Deleted = false;
-            FoodItemPK = 0;
+            FoodItemID = 0;
         }
 
         public void SetValues(DatabaseEntity selectedItem)
@@ -151,21 +84,13 @@ namespace DietAndFitness.Models
             {
                 GlobalFoodItem convertedSelectedItem = (GlobalFoodItem)selectedItem;
                 Name = convertedSelectedItem.Name;
-                FoodItemPK = convertedSelectedItem.ID;
-                Calories = (Quantity * convertedSelectedItem.Calories) / 100;
-                Proteins = (Quantity * convertedSelectedItem.Proteins) / 100;
-                Carbohydrates = (Quantity * convertedSelectedItem.Carbohydrates) / 100;
-                Fats = (Quantity * convertedSelectedItem.Fats) / 100;
+                FoodItemID = convertedSelectedItem.ID;
             }
             else
             {
                 LocalFoodItem convertedSelectedItem = (LocalFoodItem)selectedItem;
                 Name = convertedSelectedItem.Name;
-                FoodItemPK = convertedSelectedItem.ID;
-                Calories = (Quantity * convertedSelectedItem.Calories) / 100;
-                Proteins = (Quantity * convertedSelectedItem.Proteins) / 100;
-                Carbohydrates = (Quantity * convertedSelectedItem.Carbohydrates) / 100;
-                Fats = (Quantity * convertedSelectedItem.Fats) / 100;
+                FoodItemID = convertedSelectedItem.ID;
             }
 
         }

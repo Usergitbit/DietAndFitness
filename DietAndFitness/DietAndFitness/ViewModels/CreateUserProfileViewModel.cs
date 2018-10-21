@@ -18,12 +18,14 @@ namespace DietAndFitness.ViewModels
 {
     public class CreateUserProfileViewModel : ViewModelBase
     {
-        DialogService dialogService;
+        private DialogService dialogService;
         private DietFormula dietFormula;
+        private ProfileType profileType;
         private DataAccessLayer DBLocalAccess;
         public ICommand CreateProfileCommand { get; private set; }
         public Profile UserProfile { get; set; }
         public ObservableCollection<DietFormula> DietFormulas { get; set; }
+        public ObservableCollection<ProfileType> ProfileTypes { get; set; }
         public DietFormula SelectedDietFormula
         {
             get
@@ -38,16 +40,33 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
+        public ProfileType SelectedProfileType
+        {
+            get
+            {
+                return profileType;
+            }
+            set
+            {
+                if (profileType == value)
+                    return;
+                profileType = value;
+                OnPropertyChanged();
+            }
+        }
+
         public CreateUserProfileViewModel(NavigationService navigationService) : base(navigationService)
         {
             DietFormulas = new ObservableCollection<DietFormula>();
+            ProfileTypes = new ObservableCollection<ProfileType>();
             UserProfile = new Profile();
             SelectedDietFormula = new DietFormula();
+            SelectedProfileType = new ProfileType();
             dialogService = new DialogService();
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             CreateProfileCommand = new Command<Profile>(execute: CreateUserProfile, canExecute: ValidateCreateButon);
-            this.PropertyChanged += OnSelectedDietFormulaChanged;
-            this.UserProfile.PropertyChanged += OnUserProfileChanged;
+            PropertyChanged += OnSelectionChangedIDSolver;
+            UserProfile.PropertyChanged += OnUserProfileChanged;
         }
 
         private void OnUserProfileChanged(object sender, PropertyChangedEventArgs e)
@@ -55,30 +74,31 @@ namespace DietAndFitness.ViewModels
             (CreateProfileCommand as Command).ChangeCanExecute();
         }
 
-        private void OnSelectedDietFormulaChanged(object sender, PropertyChangedEventArgs e)
+        private void OnSelectionChangedIDSolver(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula))
                 UserProfile.DietFormula = SelectedDietFormula?.ID;
+            if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType))
+                UserProfile.ProfileTypesId = SelectedProfileType?.ID;
         }
-
         public async Task LoadData()
         {
             List<DietFormula> dietFormulas = await DBLocalAccess.GetAllAsync<DietFormula>();
             dietFormulas.ForEach(x => DietFormulas.Add(x));
+            List<ProfileType> profileTypes = await DBLocalAccess.GetAllAsync<ProfileType>();
+            profileTypes.ForEach(x => ProfileTypes.Add(x));
         }
 
-       
+
 
         async void CreateUserProfile(Profile parameter)
         {
-            if (!Application.Current.Properties.ContainsKey("HasProfiles"))
-                Application.Current.Properties.Add("HasProfiles", "True");
             try
             {
-               await DBLocalAccess.Insert<Profile>(UserProfile);
+                await DBLocalAccess.Insert<Profile>(UserProfile);
                 SettingsViewModel.ActiveProfile = UserProfile;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message + ex.InnerException + ex.Source + ex.StackTrace);
             }

@@ -81,10 +81,9 @@ namespace DietAndFitness.ViewModels.Secondary
 
         public Sum(Profile activeProfile)
         {
-            Calories = activeProfile.Height + activeProfile.Weight * activeProfile.ActivityLevel;
         }
 
-        public void Add(DailyFoodItem item)
+        public void Add(CompleteFoodItem item)
         {
             Calories += item.Calories;
             Proteins += item.Proteins;

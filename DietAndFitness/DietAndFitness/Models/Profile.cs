@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Models.Secondary;
+using DietAndFitness.ViewModels.Secondary;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace DietAndFitness.Models
         private double bodyFat;
         private DateTime startDate;
         private DateTime endDate;
+        private int? profileTypesId;
         public double Height
         {
             get { return height; }
@@ -71,7 +73,6 @@ namespace DietAndFitness.Models
                     return;
                 dietFormula = value;
                 //required because of 0 based indexed in picker but FK in database c
-                dietFormula++;
                 OnPropertyChanged();
             }
         }
@@ -125,9 +126,23 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        public override bool IsValid()
+        public int? ProfileTypesId
         {
-            if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0)
+            get
+            {
+                return profileTypesId;
+            }
+            set
+            {
+                if (profileTypesId == value)
+                    return;
+                profileTypesId = value;
+                OnPropertyChanged();
+            }
+        }
+        public override bool IsValid()
+       {
+            if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0 || StartDate > EndDate || ProfileTypesId == null || DietFormula == null)
                 return false;
             return true;
         }
@@ -144,13 +159,58 @@ namespace DietAndFitness.Models
             DietFormula = 1;
             ActivityLevel = 1.2;
             BodyFat = 0;
+            ProfileTypesId = 1;
 
         }
         public Profile()
         {
             ActivityLevel = 1.2;
+            StartDate = DateTime.Today;
+            EndDate = DateTime.Today;
+            BirthDate = new DateTime(1990,1,1);
         }
-
+        public Sum GetMaximumValues()
+        {
+            
+            double bmr = 0;
+            switch(DietFormula.Value)
+            {
+                case 1:
+                    bmr = Sex == "Male" ? (10 * Weight) + (6.25 * Height) - (5 * (DateTime.Today.Year - BirthDate.Year)) + 5
+                                        : (10 * Weight) + (6.25 * Height) - (5 * (DateTime.Today.Year - BirthDate.Year)) - 161;
+                    break;
+                case 2:
+                    //Fat Free Mass = Weight – (Body Fat Percentage * Weight)
+                    double ffm = Weight - (BodyFat / 100 * Weight);
+                    bmr = 21.6 * ffm + 370;
+                    break;
+                case 3:
+                    bmr = Sex == "Male" ? 66.5 + (13.75 * Weight) + (5.003 * Height) - (6.775 * (DateTime.Today.Year - BirthDate.Year))
+                                        : 655.1 + (9.563 * Weight) + (1.85 * Height) - (4.676 * (DateTime.Today.Year - BirthDate.Year));
+                    break;
+            }
+            bmr *= ActivityLevel;
+            switch (ProfileTypesId)
+            {
+                case 1:
+                    return new Sum()
+                    {
+                        Calories = bmr
+                    };
+                case 2:
+                    return new Sum()
+                    {
+                        Calories = bmr / 1.2
+                    };
+                case 3:
+                    return new Sum()
+                    {
+                        Calories = bmr * 1.1
+                    };
+                default:
+                    return new Sum();
+            }
+        }
 
     }
 }

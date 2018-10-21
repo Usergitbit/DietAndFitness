@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,13 +29,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="16.2.0.42" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="16.3.0.21" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
   </ItemGroup>
 
   <ItemGroup>

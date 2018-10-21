@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Models;
+using DietAndFitness.ViewModels.Secondary;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,8 @@ namespace DietAndFitness.Controls
         Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new();
         Task<List<T>> GetByGUID<T>(string guid) where T : DatabaseEntity, new();
         Task<List<VersionItem>> GetVersion();
-
+        bool HasProfiles();
+        Task<List<CompleteFoodItem>> GetCompleteItemAsync();
+        Task<Profile> GetCurrentProfile();
     }
 }
