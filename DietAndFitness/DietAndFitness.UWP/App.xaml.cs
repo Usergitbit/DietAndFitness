@@ -1,6 +1,8 @@
 ﻿using Syncfusion.SfGauge.XForms.UWP;
 using Syncfusion.SfNumericTextBox.XForms.UWP;
 using Syncfusion.SfPicker.XForms.UWP;
+using Syncfusion.SfRangeSlider.XForms;
+using Syncfusion.SfRangeSlider.XForms.UWP;
 using Syncfusion.SfSchedule.XForms.UWP;
 using System;
 using System.Collections.Generic;
@@ -62,6 +64,7 @@ namespace DietAndFitness.UWP
                 assembliesToInclude.Add(typeof(SfNumericTextBoxRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfPickerRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfGaugeRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfRangeSliderRenderer).GetTypeInfo().Assembly);
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);
 

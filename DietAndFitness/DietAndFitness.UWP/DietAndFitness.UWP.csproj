@@ -20,10 +20,10 @@
     <PackageCertificateKeyFile>DietAndFitness.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\TGeorge\Desktop\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\TGeorge\Desktop\DAF UWP</AppxPackageDir>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>4131506C914D94AA1DEE70BDEBBA19E9F04CAD21</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>3421190BAEBB3AE9D2E7E46E8E005937441822E8</PackageCertificateThumbprint>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>

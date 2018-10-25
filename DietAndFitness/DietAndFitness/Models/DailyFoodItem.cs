@@ -92,7 +92,6 @@ namespace DietAndFitness.Models
                 Name = convertedSelectedItem.Name;
                 FoodItemID = convertedSelectedItem.ID;
             }
-
         }
     }
 }
