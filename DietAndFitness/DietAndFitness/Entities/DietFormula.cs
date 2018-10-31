@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     [Table("DietFormulas")]
     public class DietFormula : DatabaseEntity

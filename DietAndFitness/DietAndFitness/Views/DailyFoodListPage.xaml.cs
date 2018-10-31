@@ -17,7 +17,7 @@ namespace DietAndFitness.Views
 		public DailyFoodListPage ()
 		{
 			InitializeComponent ();
-            DailyFoodDatabase = new DailyFoodListViewModel(App.NavigationService);
+            DailyFoodDatabase = new DailyFoodListViewModel();
             BindingContext = DailyFoodDatabase;
 		}
         protected override void OnAppearing()

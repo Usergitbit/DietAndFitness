@@ -1,5 +1,5 @@
 ﻿using DietAndFitness.Controls;
-using DietAndFitness.Models;
+using DietAndFitness.Entities;
 using DietAndFitness.Services;
 using DietAndFitness.ViewModels;
 using DietAndFitness.Views;
@@ -39,7 +39,6 @@ namespace DietAndFitness
             //If there are profiles open the normal HomePage
             if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())//Current.Properties.ContainsKey("HasProfiles"))
             {
-
                 var navigationPage = new NavigationPage(new HomePageDetail());
                 NavigationService = new NavigationService(navigationPage);
                 var homePage = new HomePage();
@@ -55,9 +54,9 @@ namespace DietAndFitness
 
                 //Setting the VM must be done from outside as the navigation service root page is set to the page itself
                 //but the VM requires a reference to the navigation service in the constructor
-                CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel(NavigationService);
+                CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel();
                 createUserProfilePage.BindingContext = userProfileViewModel;
-                createUserProfilePage.userProfileViewModel = userProfileViewModel;
+                createUserProfilePage.UserProfileViewModel = userProfileViewModel;
                 MainPage = navigationPage;
 
             }

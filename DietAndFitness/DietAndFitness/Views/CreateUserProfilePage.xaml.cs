@@ -15,19 +15,16 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CreateUserProfilePage : ContentPage
 	{
-        public CreateUserProfileViewModel userProfileViewModel { get; set; }
+        public CreateUserProfileViewModel UserProfileViewModel { get; set; }
 
         public CreateUserProfilePage ()
 		{
-            
 			InitializeComponent ();
-          
-
         }
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await userProfileViewModel.LoadData();
+            await UserProfileViewModel.LoadData();
         }
         private void OnFormulaPickerSelectedIndexChanged(object sender, EventArgs e)
         {

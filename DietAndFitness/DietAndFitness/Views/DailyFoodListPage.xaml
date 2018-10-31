@@ -44,7 +44,7 @@
             </Frame>
             <ListView
                 HasUnevenRows="True"
-                ItemsSource="{Binding FoodItems}"
+                ItemsSource="{Binding Items}"
                 SelectedItem="{Binding SelectedItem}"
                 VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>

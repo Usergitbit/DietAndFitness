@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace DietAndFitness.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddFoodItemDB : ContentPage
+	public partial class ChangeFoodItemDB : ContentPage
 	{
 
-        public AddFoodItemDB ()
+        public ChangeFoodItemDB ()
 		{
 			InitializeComponent ();
 		}

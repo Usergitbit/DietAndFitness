@@ -1,4 +1,4 @@
-﻿using DietAndFitness.Models;
+﻿using DietAndFitness.Entities;
 using DietAndFitness.ViewModels.Secondary;
 using System;
 using System.Collections.Generic;

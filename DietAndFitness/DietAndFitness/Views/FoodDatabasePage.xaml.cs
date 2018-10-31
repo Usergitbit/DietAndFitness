@@ -1,4 +1,4 @@
-﻿using DietAndFitness.Models;
+﻿using DietAndFitness.Entities;
 using DietAndFitness.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,11 +14,11 @@ namespace DietAndFitness.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FoodDatabasePage : ContentPage
 	{
-        public FoodDatabaseViewModel<LocalFoodItem> FoodDatabase { get; set; }
+        public FoodDatabaseViewModel FoodDatabase { get; set; }
         public FoodDatabasePage ()
 		{
             InitializeComponent();
-            FoodDatabase = new FoodDatabaseViewModel<LocalFoodItem>(App.NavigationService);
+            FoodDatabase = new FoodDatabaseViewModel();
             BindingContext = FoodDatabase;
         }
         protected override void OnAppearing()
@@ -26,18 +26,9 @@ namespace DietAndFitness.Views
             base.OnAppearing();
             FoodDatabase.LoadList();
         }
-        public async void AddFoodItemButton_Clicked(object sender, EventArgs e)
+        protected override void OnDisappearing()
         {
-            var AddFoodItemDB = new AddFoodItemDB();
-            AddFoodItemDB.BindingContext = new AddFoodItemDB();
-            await Navigation.PushAsync(AddFoodItemDB);
-        }
-        public async void EditFoodItemButton_Clicked(object sender, EventArgs e)
-        {
-            var EditFoodItemDB = new EditFoodItemDB();
-            EditFoodItemDB.BindingContext = FoodDatabase;
-            await Navigation.PushAsync(EditFoodItemDB);
-
+            base.OnDisappearing();
         }
     }
 }

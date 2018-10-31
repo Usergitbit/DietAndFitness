@@ -5,15 +5,14 @@ using System.Text;
 /// <summary>
 /// Class for an entry in the GlobalFoodItem table
 /// </summary>
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     /// <summary>
-    /// Model class for food items from the table that comes with the app
+    /// Model class for food items from the table that the user introduces
     /// </summary>
-    [Table("GlobalFoodItem")]
-    public class GlobalFoodItem : DatabaseEntity
+    [Table("LocalFoodItem")]
+    public class LocalFoodItem : DatabaseEntity
     {
-        
         private double? calories;
         public double? Calories
         {
@@ -84,7 +83,8 @@ namespace DietAndFitness.Models
             }
             set
             {
-                if(brand == null || value.Equals(brand))
+                //if the new string is null trying to call Equals on it will throw an Exception
+                if (value?.Equals(brand) ?? true)
                     return;
                 brand = value;
                 OnPropertyChanged();
@@ -99,14 +99,23 @@ namespace DietAndFitness.Models
             }
             set
             {
-                if (cooking_mode == null || value.Equals(cooking_mode))
+                //if the new string is null trying to call Equals on it will throw an Exception
+                if (value?.Equals(cooking_mode) ?? true)
                     return;
                 cooking_mode = value;
                 OnPropertyChanged();
             }
         }
+        /// <summary>
+        /// Cast operator implementation
+        /// </summary>
+        /// <param name="v"></param>
+        public static implicit operator LocalFoodItem(GlobalFoodItem v)
+        {
+            return new LocalFoodItem(v);
+        }
 
-        public GlobalFoodItem() : base()
+        public LocalFoodItem() : base()
         {
             Brand = String.Empty;
             CookingMode = String.Empty;
@@ -115,7 +124,7 @@ namespace DietAndFitness.Models
             Proteins = 0;
             Fats = 0;
         }
-        public GlobalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode ) : base()
+        public LocalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode) : base()
         {
             Name = _name;
             Calories = _calories;
@@ -125,7 +134,19 @@ namespace DietAndFitness.Models
             CookingMode = _cookingmode;
             Proteins = _proteins;
         }
-
+        /// <summary>
+        /// Copies each property from globalFoodItem into a new LocalFoodItem and sets the ID to null
+        /// </summary>
+        /// <param name="globalFoodItem"></param>
+        public LocalFoodItem(GlobalFoodItem globalFoodItem)
+        {
+            foreach(var property in this.GetType().GetProperties())
+            {
+                property.SetValue(this, globalFoodItem.GetType().GetProperty(property.Name).GetValue(globalFoodItem));
+            }
+            //required otherwise insert will fail Primary Key constraint
+            ID = null;
+        }
         public override void ResetValues()
         {
             Name = String.Empty;
@@ -135,8 +156,8 @@ namespace DietAndFitness.Models
             Carbohydrates = 0;
             Proteins = 0;
             Fats = 0;
-            CreatedAt = DateTime.Today;
-            ModifiedAt = DateTime.Today;
+            CreatedAt = DateTime.Now;
+            ModifiedAt = DateTime.Now;
             Deleted = false;
         }
 

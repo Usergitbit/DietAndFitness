@@ -1,4 +1,4 @@
-﻿using DietAndFitness.Models;
+﻿using DietAndFitness.Entities;
 using DietAndFitness.ViewModels.Secondary;
 using SQLite;
 using System;
@@ -186,6 +186,13 @@ namespace DietAndFitness.Controls
         {
             var result = await database.Table<Profile>().Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today).ToListAsync();
             return result.FirstOrDefault();
+        }
+
+
+        public List<CompleteFoodItem> TestView()
+        {
+            var result = databaseSync.Table<CompleteFoodItem>().ToList();
+            return result;
         }
     }
 }

@@ -11,10 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModels\EditDailyFoodItemViewModel.cs" />
+    <Compile Remove="ViewModels\EditFoodItemDBViewModel.cs" />
+    <Compile Remove="Views\EditDailyFoodItem.xaml.cs" />
+    <Compile Remove="Views\EditFoodItemDB.xaml.cs" />
     <Compile Remove="Views\Page1.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Views\EditDailyFoodItem.xaml" />
+    <EmbeddedResource Remove="Views\EditFoodItemDB.xaml" />
     <EmbeddedResource Remove="Views\Page1.xaml" />
   </ItemGroup>
 
@@ -42,6 +48,12 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ChangeDailyFoodItem.xaml.cs">
+      <DependentUpon>ChangeDailyFoodItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ChangeFoodItemDB.xaml.cs">
+      <DependentUpon>ChangeFoodItemDB.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePageMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -59,10 +71,10 @@
     <EmbeddedResource Update="Controls\InputPair.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddDailyFoodItem.xaml">
+    <EmbeddedResource Update="Views\ChangeDailyFoodItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddFoodItemDB.xaml">
+    <EmbeddedResource Update="Views\ChangeFoodItemDB.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CalendarPage.xaml">
@@ -72,12 +84,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DailyFoodListPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditDailyFoodItem.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditFoodItemDB.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\FoodDatabasePage.xaml">

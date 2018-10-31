@@ -5,14 +5,15 @@ using System.Text;
 /// <summary>
 /// Class for an entry in the GlobalFoodItem table
 /// </summary>
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     /// <summary>
-    /// Model class for food items from the table that the user introduces
+    /// Model class for food items from the table that comes with the app
     /// </summary>
-    [Table("LocalFoodItem")]
-    public class LocalFoodItem : DatabaseEntity
+    [Table("GlobalFoodItem")]
+    public class GlobalFoodItem : DatabaseEntity
     {
+        
         private double? calories;
         public double? Calories
         {
@@ -83,7 +84,7 @@ namespace DietAndFitness.Models
             }
             set
             {
-                if (brand == null || value.Equals(brand))
+                if(brand == null || value.Equals(brand))
                     return;
                 brand = value;
                 OnPropertyChanged();
@@ -104,16 +105,8 @@ namespace DietAndFitness.Models
                 OnPropertyChanged();
             }
         }
-        /// <summary>
-        /// Cast operator implementation
-        /// </summary>
-        /// <param name="v"></param>
-        public static implicit operator LocalFoodItem(GlobalFoodItem v)
-        {
-            return new LocalFoodItem(v);
-        }
 
-        public LocalFoodItem() : base()
+        public GlobalFoodItem() : base()
         {
             Brand = String.Empty;
             CookingMode = String.Empty;
@@ -122,7 +115,7 @@ namespace DietAndFitness.Models
             Proteins = 0;
             Fats = 0;
         }
-        public LocalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode) : base()
+        public GlobalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode ) : base()
         {
             Name = _name;
             Calories = _calories;
@@ -132,19 +125,7 @@ namespace DietAndFitness.Models
             CookingMode = _cookingmode;
             Proteins = _proteins;
         }
-        /// <summary>
-        /// Copies each property from globalFoodItem into a new LocalFoodItem and sets the ID to null
-        /// </summary>
-        /// <param name="globalFoodItem"></param>
-        public LocalFoodItem(GlobalFoodItem globalFoodItem)
-        {
-            foreach(var property in this.GetType().GetProperties())
-            {
-                property.SetValue(this, globalFoodItem.GetType().GetProperty(property.Name).GetValue(globalFoodItem));
-            }
-            //required otherwise insert will fail Primary Key constraint
-            ID = null;
-        }
+
         public override void ResetValues()
         {
             Name = String.Empty;
@@ -154,8 +135,8 @@ namespace DietAndFitness.Models
             Carbohydrates = 0;
             Proteins = 0;
             Fats = 0;
-            CreatedAt = DateTime.Now;
-            ModifiedAt = DateTime.Now;
+            CreatedAt = DateTime.Today;
+            ModifiedAt = DateTime.Today;
             Deleted = false;
         }
 

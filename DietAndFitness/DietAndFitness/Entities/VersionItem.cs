@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     public class VersionItem : DatabaseEntity
     {

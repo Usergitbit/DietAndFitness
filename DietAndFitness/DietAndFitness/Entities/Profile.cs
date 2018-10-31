@@ -1,11 +1,10 @@
-﻿using DietAndFitness.Models.Secondary;
-using DietAndFitness.ViewModels.Secondary;
+﻿using DietAndFitness.ViewModels.Secondary;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     [Table("Profiles")]
     public class Profile : DatabaseEntity

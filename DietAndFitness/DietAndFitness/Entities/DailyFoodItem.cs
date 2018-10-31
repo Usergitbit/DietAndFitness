@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     /// <summary>
     /// Model class for meals eaten during the day
@@ -75,7 +75,7 @@ namespace DietAndFitness.Models
             CreatedAt = DateTime.Today;
             ModifiedAt = DateTime.Today;
             Deleted = false;
-            FoodItemID = 0;
+            FoodItemID = null;
         }
 
         public void SetValues(DatabaseEntity selectedItem)

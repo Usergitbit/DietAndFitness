@@ -1,4 +1,5 @@
-﻿using DietAndFitness.Services;
+﻿using DietAndFitness.Controls;
+using DietAndFitness.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,16 @@ namespace DietAndFitness.Core
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected NavigationService navigationService;
+        protected readonly IDialogService dialogService;
+        protected DataAccessLayer DBLocalAccess { get; set; }
+
+
         public ViewModelBase()
         {
-            //required for serialization
-        }
-        public ViewModelBase(NavigationService navigationService)
-        {
-            this.navigationService = navigationService;
+            //this.navigationService = navigationService;
+            this.navigationService = App.NavigationService;
+            dialogService = new DialogService();
+            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
         }
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
         {

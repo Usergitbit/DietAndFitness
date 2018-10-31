@@ -1,8 +1,7 @@
 ﻿using DietAndFitness.Controls;
 using DietAndFitness.Core;
 using DietAndFitness.Extensions;
-using DietAndFitness.Models;
-using DietAndFitness.Models.Secondary;
+using DietAndFitness.Entities;
 using DietAndFitness.Services;
 using System;
 using System.Collections.Generic;
@@ -55,7 +54,7 @@ namespace DietAndFitness.ViewModels
             }
         }
 
-        public CreateUserProfileViewModel(NavigationService navigationService) : base(navigationService)
+        public CreateUserProfileViewModel() : base()
         {
             DietFormulas = new ObservableCollection<DietFormula>();
             ProfileTypes = new ObservableCollection<ProfileType>();
@@ -96,7 +95,6 @@ namespace DietAndFitness.ViewModels
             try
             {
                 await DBLocalAccess.Insert<Profile>(UserProfile);
-                SettingsViewModel.ActiveProfile = UserProfile;
             }
             catch (Exception ex)
             {

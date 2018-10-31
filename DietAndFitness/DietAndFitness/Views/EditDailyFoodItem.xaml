@@ -28,7 +28,7 @@
                 <Entry
                     Grid.Row="0"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Name}"
+                    Text="{Binding CurrentItem.Name}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="1"
@@ -38,7 +38,7 @@
                 <Entry
                     Grid.Row="1"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.Brand}"
+                    Text="{Binding CurrentItem.Brand}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="2"
@@ -48,7 +48,7 @@
                 <Entry
                     Grid.Row="2"
                     Grid.Column="1"
-                    Text="{Binding ItemToEdit.CookingMode}"
+                    Text="{Binding CurrentItem.CookingMode}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="3"
@@ -59,7 +59,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     Keyboard="Numeric"
-                    Text="{Binding ItemToEdit.Calories, Converter={StaticResource StringToNullableDouble}}"
+                    Text="{Binding CurrentItem.Calories, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="4"
@@ -70,7 +70,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     Keyboard="Numeric"
-                    Text="{Binding ItemToEdit.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
+                    Text="{Binding CurrentItem.Carbohydrates, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="5"
@@ -81,7 +81,7 @@
                     Grid.Row="5"
                     Grid.Column="1"
                     Keyboard="Numeric"
-                    Text="{Binding ItemToEdit.Proteins, Converter={StaticResource StringToNullableDouble}}"
+                    Text="{Binding CurrentItem.Proteins, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="6"
@@ -92,7 +92,7 @@
                     Grid.Row="6"
                     Grid.Column="1"
                     Keyboard="Numeric"
-                    Text="{Binding ItemToEdit.Fats, Converter={StaticResource StringToNullableDouble}}"
+                    Text="{Binding CurrentItem.Fats, Converter={StaticResource StringToNullableDouble}}"
                     VerticalOptions="Center" />
             </Grid>
             <Label HorizontalOptions="Center" Text="{Binding ProgressIndicator}" />
@@ -107,8 +107,8 @@
                 <Button
                     Grid.Row="0"
                     Grid.Column="0"
-                    Command="{Binding ConfirmCommand}"
-                    CommandParameter="{Binding ItemToEdit}"
+                    Command="{Binding ExecuteOperationCommand}"
+                    CommandParameter="{Binding CurrentItem}"
                     HorizontalOptions="Center"
                     Text="Confirm" />
                 <Button

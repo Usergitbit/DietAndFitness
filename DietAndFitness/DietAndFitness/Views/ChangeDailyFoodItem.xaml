@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="DietAndFitness.Views.AddDailyFoodItem"
+    x:Class="DietAndFitness.Views.ChangeDailyFoodItem"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
@@ -16,7 +16,7 @@
                 HasUnevenRows="True"
                 ItemSelected="OnItemSelected"
                 ItemsSource="{Binding FoodItems}"
-                SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                SelectedItem="{Binding SelectedFoodItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -99,7 +99,7 @@
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 Placeholder="Quantity"
-                Text="{Binding ItemToAdd.Quantity, Converter={StaticResource StringToNullableDouble}" />
+                Text="{Binding CurrentItem.Quantity, Converter={StaticResource StringToNullableDouble}" />
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -111,10 +111,10 @@
                 <Button
                     Grid.Row="0"
                     Grid.Column="0"
-                    Command="{Binding AddCommand}"
-                    CommandParameter="{Binding ItemToAdd}"
+                    Command="{Binding ExecuteOperationCommand}"
+                    CommandParameter="{Binding CurrentItem}"
                     HorizontalOptions="Center"
-                    Text="Add" />
+                    Text="{Binding OperationInfo}" />
                 <Button
                     Grid.Row="0"
                     Grid.Column="1"

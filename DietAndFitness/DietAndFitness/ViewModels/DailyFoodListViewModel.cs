@@ -1,6 +1,7 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Models;
+using DietAndFitness.Entities;
 using DietAndFitness.Services;
+using DietAndFitness.ViewModels.Base;
 using DietAndFitness.ViewModels.Secondary;
 using DietAndFitness.Views;
 using System;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace DietAndFitness.ViewModels
 {
-    public class DailyFoodListViewModel : FoodDatabaseViewModel<CompleteFoodItem>
+    public class DailyFoodListViewModel : ListBaseViewModel<CompleteFoodItem, ChangeDailyFoodItem>
     {
         private Sum currentValues;
         private Sum maximumValues;
@@ -42,7 +43,7 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-        public DailyFoodListViewModel(NavigationService navigationService) : base(navigationService)
+        public DailyFoodListViewModel() : base()
         {
             CurrentValues = new Sum();
             MaximumValues = new Sum();
@@ -51,75 +52,54 @@ namespace DietAndFitness.ViewModels
             MaximumValues.Fats = 100;
             MaximumValues.Carbohydrates = 100;
             MaximumValues.Proteins = 150;
-            
-
         }
 
         public async override void LoadList()
         {
             var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync();
-            FoodItems.Clear();
+            Items.Clear();
             CurrentValues.Reset();
             foreach (var item in todayFoodItems)
             {
-                FoodItems.Add(item);
+                Items.Add(item);
                 CurrentValues.Add(item);
             }
             var currentProfile = await DBLocalAccess.GetCurrentProfile();
             MaximumValues = currentProfile.GetMaximumValues();
             MaximumValues.Calories += 200;
         }
-        protected override async void OpenAddPageFunction()
+        protected async override void ExecuteDelete(bool result)
         {
-            var addDailyFoodItemPage = new AddDailyFoodItem();
-            addDailyFoodItemPage.BindingContext = new AddDailyFoodItemViewModel(navigationService);
-            await navigationService.PushModal(addDailyFoodItemPage);
-            SelectedItem = null;
-        }
-
-        protected override async void OpenEditPageFunction(CompleteFoodItem parameter)
-        {
-            var editDailyFoodItemPage = new EditDailyFoodItem();
-            editDailyFoodItemPage.BindingContext = new EditDailyFoodItemViewModel(parameter.DailyFoodItem, navigationService);
-            await navigationService.PushModal(editDailyFoodItemPage);
-            SelectedItem = null;
-        }
-
-        public override RelayCommand ConfirmDeleteCommand
-        {
-            get
+            if (result == true)
             {
-                return confirmDeleteCommand
-                       ?? (confirmDeleteCommand = new RelayCommand(
-                           async () =>
-                           {
-                               await dialogService.ShowMessage("Are you sure you want to delete this item?",
-                                  "Warning!",
-                                  "Yes",
-                                  "No",
-                                   async (r) => {
-                                       if (r == true)
-                                       {
-                                           if (SelectedItem != null)
-                                               try
-                                               {
-
-                                                   await DBLocalAccess.Delete((SelectedItem as CompleteFoodItem).DailyFoodItem);
-                                                   LoadList();
-                                                   SelectedItem = null;
-                                               }
-                                               catch (Exception ex)
-                                               {
-                                                   await dialogService.ShowError(ex, "Error", "Ok", null);
-                                               }
-                                           else
-                                           {
-                                               await dialogService.ShowMessage("Preset food items cannot be deleted", "Error");
-                                           }
-                                       }
-                                   });
-                           }, ValidateDeleteButton));
-            }
+                try
+                {
+                    await DBLocalAccess.Delete(SelectedItem.DailyFoodItem);
+                    LoadList();
+                    SelectedItem = null;
+                }
+                catch (Exception ex)
+                {
+                    await dialogService.ShowError(ex, "Error", "Ok", null);
+                }
+            };
         }
+        //protected override async void OpenAddPageFunction()
+        //{
+        //    var addDailyFoodItemPage = new AddDailyFoodItem();
+        //    addDailyFoodItemPage.BindingContext = new ChangeDailyFoodItemViewModel(navigationService);
+        //    await navigationService.PushModal(addDailyFoodItemPage);
+        //    SelectedItem = null;
+        //}
+
+        //protected override async void OpenEditPageFunction(CompleteFoodItem parameter)
+        //{
+        //    var editDailyFoodItemPage = new EditDailyFoodItem();
+        //    editDailyFoodItemPage.BindingContext = new EditDailyFoodItemViewModel(parameter.DailyFoodItem, navigationService);
+        //    await navigationService.PushModal(editDailyFoodItemPage);
+        //    SelectedItem = null;
+        //}
+
+
     }
 }

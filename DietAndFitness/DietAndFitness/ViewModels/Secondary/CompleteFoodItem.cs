@@ -1,5 +1,5 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Models;
+using DietAndFitness.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +10,7 @@ namespace DietAndFitness.ViewModels.Secondary
     {
         private DailyFoodItem dailyFoodItem;
         private LocalFoodItem localFoodItem;
+        public double? Quantity { get; set; }
         public double Calories
         {
             get
@@ -38,11 +39,13 @@ namespace DietAndFitness.ViewModels.Secondary
                 return (DailyFoodItem.Quantity * LocalFoodItem.Fats.Value) / 100;
             }
         }
-
+        public string RandomString { get; set; }
         public DailyFoodItem DailyFoodItem
         {
             get
             {
+                if (dailyFoodItem == null)
+                    return new DailyFoodItem();
                 return dailyFoodItem;
             }
             set

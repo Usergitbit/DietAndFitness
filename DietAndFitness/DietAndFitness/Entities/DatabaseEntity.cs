@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Models
+namespace DietAndFitness.Entities
 {
     public abstract class DatabaseEntity : ModelBase, IValidation
     {
@@ -23,7 +23,7 @@ namespace DietAndFitness.Models
             }
             set
             {
-                if (value.Equals(name))
+                if (value?.Equals(name) ?? true)
                     return;
                 name = value;
                 OnPropertyChanged();

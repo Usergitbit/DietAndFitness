@@ -8,7 +8,7 @@
             <ListView
                 CachingStrategy ="RecycleElementAndDataTemplate"
                 HasUnevenRows="True"
-                ItemsSource="{Binding FoodItems}"
+                ItemsSource="{Binding Items}"
                 SelectedItem="{Binding SelectedItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
