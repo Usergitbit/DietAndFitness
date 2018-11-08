@@ -89,7 +89,7 @@ namespace DietAndFitness.ViewModels.Base
         {
             SelectedItem = new T();
             Items = new ObservableCollection<T>();
-            OpenAddPageCommand = new Command(execute: OpenAddPageFunction);
+            OpenAddPageCommand = new Command(execute: () => OpenAddPageFunction(null));
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
             PropertyChanged += OnSelectedItemChanged;
         }
@@ -99,10 +99,10 @@ namespace DietAndFitness.ViewModels.Base
             base.Dispose();
         }
         #region Methods
-        protected async virtual void OpenAddPageFunction()
+        protected async virtual void OpenAddPageFunction(object[] arguments)
         {
             var addFoodItemPage = (P)Activator.CreateInstance(typeof(P));
-            (addFoodItemPage as ContentPage).BindingContext = Activator.CreateInstance(ViewModelLocator.ViewVM[typeof(P)]);
+            (addFoodItemPage as ContentPage).BindingContext = Activator.CreateInstance(ViewModelLocator.ViewVM[typeof(P)], arguments);
             await navigationService.PushModal(addFoodItemPage as ContentPage);
             SelectedItem = null;
         }
@@ -117,7 +117,14 @@ namespace DietAndFitness.ViewModels.Base
             {
                 await dialogService.ShowError(ex, "Error", "Ok", null);
             }
-            Items = new ObservableCollection<T>(localFoodItems);
+            Items.Clear();
+            foreach (var item in localFoodItems)
+            {
+                Items.Add(item);
+                await Task.Delay(10);
+            }
+
+            //Items = new ObservableCollection<T>(localFoodItems);
         }
         protected virtual bool ValidateDeleteButton()
         {

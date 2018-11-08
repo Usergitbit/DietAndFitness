@@ -64,6 +64,7 @@ namespace DietAndFitness.UWP
                 assembliesToInclude.Add(typeof(SfNumericTextBoxRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfPickerRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfGaugeRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfLinearGaugeRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfRangeSliderRenderer).GetTypeInfo().Assembly);
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);

@@ -64,6 +64,10 @@ namespace DietAndFitness.ViewModels
         {
             Initialize();
         }
+        public ChangeDailyFoodItemViewModel(DateTime date) : base(date)
+        {
+            Initialize();
+        }
         public ChangeDailyFoodItemViewModel(CompleteFoodItem selectedItem) : base(selectedItem.DailyFoodItem)
         {
             Initialize();

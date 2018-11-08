@@ -168,7 +168,7 @@ namespace DietAndFitness.Entities
             EndDate = DateTime.Today;
             BirthDate = new DateTime(1990,1,1);
         }
-        public Sum GetMaximumValues()
+        public Sum GetTargetValues()
         {
             
             double bmr = 0;
@@ -191,24 +191,35 @@ namespace DietAndFitness.Entities
             bmr *= ActivityLevel;
             switch (ProfileTypesId)
             {
+                //maintaince
                 case 1:
-                    return new Sum()
+                    return new Sum("Target: ")
                     {
                         Calories = bmr
                     };
+                //cut
                 case 2:
-                    return new Sum()
+                    return new Sum("Target: ")
                     {
                         Calories = bmr / 1.2
                     };
+                //bulk
                 case 3:
-                    return new Sum()
+                    return new Sum("Target: ")
                     {
                         Calories = bmr * 1.1
                     };
                 default:
-                    return new Sum();
+                    return new Sum("Target: ");
             }
+        }
+
+        public Sum GetMaximumValues()
+        {
+            var targeValues = GetTargetValues();
+            targeValues.Prefix = "Maximum: ";
+            targeValues.Calories += 100;
+            return targeValues;
         }
 
     }

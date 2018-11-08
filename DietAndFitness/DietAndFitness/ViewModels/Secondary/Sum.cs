@@ -6,12 +6,29 @@ using System.Text;
 
 namespace DietAndFitness.ViewModels.Secondary
 {
-    public class Sum : ModelBase
+    public class Sum : ViewModelBase
     {
         private double? calories;
         private double? proteins;
         private double? carbohydrates;
         private double? fats;
+        private string caloriesText;
+        public string CaloriesText
+        {
+            get
+            {
+                return caloriesText;
+            }
+            set
+            {
+                if (caloriesText == value)
+                    return;
+                caloriesText = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Prefix { get; set; }
+      
         #region Properties
         public double? Calories
         {
@@ -25,6 +42,7 @@ namespace DietAndFitness.ViewModels.Secondary
                     return;
                 calories = value;
                 OnPropertyChanged();
+                CaloriesText = Prefix + (int)calories;
             }
         }
         public double? Proteins
@@ -71,12 +89,14 @@ namespace DietAndFitness.ViewModels.Secondary
             }
         }
         #endregion
-        public Sum()
+        public Sum(string prefix = "")
         {
-            Calories = 0;
+            //WARNING: must be > 0 else LinearGauge will crash
+            Calories = 1;
             Proteins = 0;
             Carbohydrates = 0;
             Fats = 0;
+            Prefix = prefix;
         }
 
         public Sum(Profile activeProfile)

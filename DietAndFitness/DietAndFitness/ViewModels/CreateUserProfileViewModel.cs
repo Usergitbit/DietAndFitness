@@ -17,12 +17,39 @@ namespace DietAndFitness.ViewModels
 {
     public class CreateUserProfileViewModel : ViewModelBase
     {
-        private DialogService dialogService;
         private DietFormula dietFormula;
         private ProfileType profileType;
-        private DataAccessLayer DBLocalAccess;
+        private Profile userProfile;
+        private string buttonText;
+        public string ButtonText
+        {
+            get
+            {
+                return buttonText;
+            }
+            set
+            {
+                if (buttonText == value)
+                    return;
+                buttonText = value;
+                OnPropertyChanged();
+            }
+        }
         public ICommand CreateProfileCommand { get; private set; }
-        public Profile UserProfile { get; set; }
+        public Profile UserProfile
+        {
+            get
+            {
+                return userProfile;
+            }
+            set
+            {
+                if (userProfile == value)
+                    return;
+                userProfile = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<DietFormula> DietFormulas { get; set; }
         public ObservableCollection<ProfileType> ProfileTypes { get; set; }
         public DietFormula SelectedDietFormula
@@ -61,11 +88,11 @@ namespace DietAndFitness.ViewModels
             UserProfile = new Profile();
             SelectedDietFormula = new DietFormula();
             SelectedProfileType = new ProfileType();
-            dialogService = new DialogService();
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             CreateProfileCommand = new Command<Profile>(execute: CreateUserProfile, canExecute: ValidateCreateButon);
             PropertyChanged += OnSelectionChangedIDSolver;
             UserProfile.PropertyChanged += OnUserProfileChanged;
+            ButtonText = "Create Profile";
         }
 
         private void OnUserProfileChanged(object sender, PropertyChangedEventArgs e)
@@ -86,21 +113,44 @@ namespace DietAndFitness.ViewModels
             dietFormulas.ForEach(x => DietFormulas.Add(x));
             List<ProfileType> profileTypes = await DBLocalAccess.GetAllAsync<ProfileType>();
             profileTypes.ForEach(x => ProfileTypes.Add(x));
+            if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())
+            {
+                UserProfile = await DBLocalAccess.GetCurrentProfile();
+                SelectedDietFormula = dietFormulas.Find(x => x.ID == UserProfile.DietFormula);
+                SelectedProfileType = profileTypes.Find(x => x.ID == UserProfile.ProfileTypesId);
+                ButtonText = "Edit Profile";
+            }
+
         }
 
 
 
         async void CreateUserProfile(Profile parameter)
         {
-            try
+            if (parameter.ID == null)
             {
-                await DBLocalAccess.Insert<Profile>(UserProfile);
+                try
+                {
+                    await DBLocalAccess.Insert<Profile>(UserProfile);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message + ex.InnerException + ex.Source + ex.StackTrace);
+                }
+                navigationService.SetMainPage();
             }
-            catch (Exception ex)
+            else
             {
-                Debug.WriteLine(ex.Message + ex.InnerException + ex.Source + ex.StackTrace);
+                try
+                {
+                    await DBLocalAccess.Update<Profile>(UserProfile);
+                    await dialogService.ShowMessage("Profile updated successfully", "Success");
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message + ex.InnerException + ex.Source + ex.StackTrace);
+                }
             }
-            navigationService.SetMainPage();
         }
         bool ValidateCreateButon(Profile parameter)
         {

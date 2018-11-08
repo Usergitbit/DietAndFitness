@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace DietAndFitness.Entities
@@ -82,10 +83,21 @@ namespace DietAndFitness.Entities
             Name = String.Empty;
 
         }
+        public DatabaseEntity(DateTime date)
+        {
+            CreatedAt = date;
+            ModifiedAt = date;
+            Deleted = false;
+            Name = string.Empty;
 
+        }
         public abstract bool IsValid();
 
         public abstract void ResetValues();
-
+        protected override void OnPropertyChanged([CallerMemberName] string PropertyName = null)
+        {
+            base.OnPropertyChanged(PropertyName);
+            ModifiedAt = DateTime.Today;
+        }
     }
 }

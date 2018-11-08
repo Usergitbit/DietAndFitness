@@ -10,7 +10,7 @@
             <Frame HasShadow="True">
                 <gauge:SfLinearGauge Orientation="OrientationHorizontal" VerticalOptions="CenterAndExpand">
                     <gauge:SfLinearGauge.Header>
-                        <gauge:LinearHeader Text="Today's calories" TextSize="20" />
+                        <gauge:LinearHeader Text="{Binding DateText}" TextSize="20" />
                     </gauge:SfLinearGauge.Header>
                     <gauge:SfLinearGauge.Scales>
                         <gauge:LinearScale
@@ -29,17 +29,31 @@
                                     Color="#9E9E9E" />
                             </gauge:LinearScale.MajorTickSettings>
                             <gauge:LinearScale.Pointers>
-                                <gauge:SymbolPointer Value ="{Binding CurrentValues.Calories}" EnableAnimation ="False" Color= "#5b86e5" MarkerShape="InvertedTriangle" Offset="-25" />
+                                <gauge:SymbolPointer Value="{Binding CurrentValues.Calories}" EnableAnimation ="False" Color= "#5b86e5" MarkerShape="Triangle" Offset="0" />
+                                <gauge:SymbolPointer Value="{Binding TargetValues.Calories}" EnableAnimation ="False" Color= "#5b86e5" MarkerShape="InvertedTriangle" Offset="-30" />
                                 <gauge:BarPointer
+                                    x:Name="barPointer"
+                                    Value ="{Binding CurrentValues.Calories}"
                                     CornerRadius="10"
                                     CornerRadiusType="End"
-                                    EnableAnimation="False"
+                                    EnableAnimation="True"
                                     Thickness="15"
-                                    Color="#36d1dc"
-                                    Value="{Binding CurrentValues.Calories}" />
+                                    Color="{Binding ColorIndicator}"/>
                             </gauge:LinearScale.Pointers>
                         </gauge:LinearScale>
                     </gauge:SfLinearGauge.Scales>
+                    <gauge:SfLinearGauge.Annotations>
+                        <gauge:LinearGaugeAnnotation ScaleValue="{Binding TargetValues.Calories}" ViewMargin="0,-50">
+                            <gauge:LinearGaugeAnnotation.View>
+                                <Label Text="{Binding TargetValues.CaloriesText}" WidthRequest="100"/>
+                            </gauge:LinearGaugeAnnotation.View>
+                        </gauge:LinearGaugeAnnotation>
+                        <gauge:LinearGaugeAnnotation ScaleValue="{Binding CurrentValues.Calories}" ViewMargin="0,35" x:Name="annotationCurrentValues">
+                            <gauge:LinearGaugeAnnotation.View>
+                                <Label Text="{Binding CurrentValues.CaloriesText}" WidthRequest="100"/>
+                            </gauge:LinearGaugeAnnotation.View>
+                        </gauge:LinearGaugeAnnotation>
+                    </gauge:SfLinearGauge.Annotations>
                 </gauge:SfLinearGauge>
             </Frame>
             <ListView
@@ -165,7 +179,6 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Command="{Binding OpenAddPageCommand}"
-                    CommandParameter="{Binding ItemToAdd}"
                     HorizontalOptions="CenterAndExpand"
                     Text="Add" />
                 <Button

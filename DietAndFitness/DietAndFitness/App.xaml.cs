@@ -12,10 +12,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace DietAndFitness
 {
-	public partial class App : Application
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class App : Application
 	{
         private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
         private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";

@@ -75,6 +75,11 @@ namespace DietAndFitness.ViewModels.Base
             CurrentItem = new T();
             Initialize();
         }
+        public ChangeBaseViewModel(DateTime date) : base()
+        {
+            CurrentItem = Activator.CreateInstance(typeof(T), date) as T;
+            Initialize();
+        }
         public ChangeBaseViewModel(T selectedItem) : base()
         {
             CurrentItem = selectedItem;        

@@ -7,9 +7,7 @@
     xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
     xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms">
     <ContentPage.Content>
-        
         <StackLayout HorizontalOptions="FillAndExpand">
-
             <ScrollView HorizontalOptions="FillAndExpand">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
 
@@ -239,7 +237,7 @@
                 Command="{Binding CreateProfileCommand}"
                 CommandParameter="{Binding UserProfile}"
                 HorizontalOptions="CenterAndExpand"
-                Text="Create Profile"
+                Text="{Binding ButtonText}"
                 VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>

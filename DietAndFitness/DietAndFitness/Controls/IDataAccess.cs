@@ -22,7 +22,7 @@ namespace DietAndFitness.Controls
         Task<List<T>> GetByGUID<T>(string guid) where T : DatabaseEntity, new();
         Task<List<VersionItem>> GetVersion();
         bool HasProfiles();
-        Task<List<CompleteFoodItem>> GetCompleteItemAsync();
+        Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime date);
         Task<Profile> GetCurrentProfile();
     }
 }

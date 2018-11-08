@@ -60,7 +60,10 @@ namespace DietAndFitness.Entities
         {
 
         }
+        public DailyFoodItem(DateTime date) : base(date)
+        {
 
+        }
         public override bool IsValid()
         {
             if (Name.Equals(String.Empty) || Quantity.ToString().Equals(String.Empty) || FoodItemID.ToString().Equals(String.Empty))

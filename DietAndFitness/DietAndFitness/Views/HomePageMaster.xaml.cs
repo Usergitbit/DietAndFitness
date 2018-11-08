@@ -37,7 +37,7 @@ namespace DietAndFitness.Views
                     new HomePageMenuItem { Id = 1, Title = "Calendar", TargetType = typeof(CalendarPage)},
                     new HomePageMenuItem { Id = 2, Title = "Food Database", TargetType = typeof(FoodDatabasePage) },
                     new HomePageMenuItem { Id = 3, Title = "Statistics" },
-                    new HomePageMenuItem { Id = 4, Title = "Options" },
+                    new HomePageMenuItem { Id = 4, Title = "Options" , TargetType = typeof(OptionsPage)},
                 });
             }
             

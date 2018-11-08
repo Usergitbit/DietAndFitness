@@ -7,14 +7,14 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <ContentPage.Content>
         <StackLayout>
-            <DatePicker
+            <!--<DatePicker
                 Date="{x:Static sys:DateTime.Now}"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand">
                 <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-            </DatePicker>
-            <syncfusion:SfSchedule x:Name="schedule" ScheduleView="MonthView" />
-            <Grid
+            </DatePicker>-->
+            <syncfusion:SfSchedule ScheduleView="MonthView" SelectedDate="{Binding SelectedDate, Mode = TwoWay}" CellTapped="SfSchedule_CellTapped"/>
+            <!--<Grid
                 ColumnSpacing="0"
                 HorizontalOptions="Center"
                 IsVisible="False"
@@ -126,8 +126,8 @@
                     Text="{Binding MaximumValues.Fats}"
                     VerticalOptions="CenterAndExpand" />
 
-            </Grid>
-            <ListView
+            </Grid>-->
+            <!--<ListView
                 HasUnevenRows="True"
                 IsVisible="False"
                 ItemsSource="{Binding FoodItems}"
@@ -223,11 +223,12 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
             <Button
                 HorizontalOptions="CenterAndExpand"
                 Text="View"
-                VerticalOptions="Center" />
+                VerticalOptions="Center" 
+                Command="{Binding ViewCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

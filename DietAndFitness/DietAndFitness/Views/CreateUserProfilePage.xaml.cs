@@ -24,7 +24,16 @@ namespace DietAndFitness.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await UserProfileViewModel.LoadData();
+            if (UserProfileViewModel == null)
+            {
+                UserProfileViewModel = new CreateUserProfileViewModel();
+                BindingContext = UserProfileViewModel;
+                await UserProfileViewModel.LoadData();
+            }
+            else
+            {
+                await UserProfileViewModel.LoadData();
+            }
         }
         private void OnFormulaPickerSelectedIndexChanged(object sender, EventArgs e)
         {

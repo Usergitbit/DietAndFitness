@@ -21,7 +21,7 @@ namespace DietAndFitness.Views
             FoodDatabase = new FoodDatabaseViewModel();
             BindingContext = FoodDatabase;
         }
-        protected override void OnAppearing()
+        protected  override void OnAppearing()
         {
             base.OnAppearing();
             FoodDatabase.LoadList();

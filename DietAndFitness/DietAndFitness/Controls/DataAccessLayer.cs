@@ -170,11 +170,19 @@ namespace DietAndFitness.Controls
         /// Gets the complete food item by joining DailyFoodItem with LocalFoodItem
         /// </summary>
         /// <returns></returns>
-        public async Task<List<CompleteFoodItem>> GetCompleteItemAsync()
+        public async Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime date)
         {
-           var result = from dailyFoodItem in await database.Table<DailyFoodItem>().Where(x => x.CreatedAt == DateTime.Today).ToListAsync()
-                        join localFoodItem in await database.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
-                        select new CompleteFoodItem() {DailyFoodItem = dailyFoodItem, LocalFoodItem = localFoodItem };
+            IEnumerable <CompleteFoodItem> result = null;
+            try
+            {
+                 result = from dailyFoodItem in await database.Table<DailyFoodItem>().Where(x => x.CreatedAt == date).ToListAsync()
+                             join localFoodItem in await database.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
+                             select new CompleteFoodItem() { DailyFoodItem = dailyFoodItem, LocalFoodItem = localFoodItem };
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
             return result.ToList();
             
         }
