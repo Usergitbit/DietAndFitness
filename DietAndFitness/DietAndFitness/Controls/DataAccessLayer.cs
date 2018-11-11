@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Entities;
+using DietAndFitness.Interfaces;
 using DietAndFitness.ViewModels.Secondary;
 using SQLite;
 using System;

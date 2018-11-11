@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Controls
+namespace DietAndFitness.Interfaces
 {
     /// <summary>
     /// Interface for implementing local file path discovery through dependency

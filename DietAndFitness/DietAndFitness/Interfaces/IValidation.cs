@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Entities
+namespace DietAndFitness.Interfaces
 {
     interface IValidation
     {

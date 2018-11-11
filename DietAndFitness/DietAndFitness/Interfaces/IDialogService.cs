@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietAndFitness.Services
+namespace DietAndFitness.Interfaces
 {
     /// <summary>
     /// Interface for implementing a Dialog Service

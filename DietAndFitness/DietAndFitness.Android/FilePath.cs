@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using DietAndFitness.Controls;
 using DietAndFitness.Droid;
+using DietAndFitness.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FilePathAndroid))]

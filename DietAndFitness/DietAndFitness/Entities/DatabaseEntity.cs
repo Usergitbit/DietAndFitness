@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Core;
+using DietAndFitness.Interfaces;
 using SQLite;
 using System;
 using System.Collections.Generic;

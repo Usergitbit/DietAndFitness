@@ -1,4 +1,5 @@
 ﻿using DietAndFitness.Controls;
+using DietAndFitness.Interfaces;
 using DietAndFitness.UWP;
 using System;
 using System.Collections.Generic;

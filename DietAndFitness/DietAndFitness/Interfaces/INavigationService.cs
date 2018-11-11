@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace DietAndFitness.Services
+namespace DietAndFitness.Interfaces
 {
     /// <summary>
     /// Interface for implementing navigation methods

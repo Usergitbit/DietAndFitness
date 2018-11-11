@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietAndFitness.Controls
+namespace DietAndFitness.Interfaces
 {
     /// <summary>
     /// Interface for basic CRUD operations
