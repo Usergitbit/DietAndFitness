@@ -123,8 +123,6 @@ namespace DietAndFitness.ViewModels.Base
                 Items.Add(item);
                 await Task.Delay(10);
             }
-
-            //Items = new ObservableCollection<T>(localFoodItems);
         }
         protected virtual bool ValidateDeleteButton()
         {

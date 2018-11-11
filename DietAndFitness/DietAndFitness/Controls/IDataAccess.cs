@@ -23,6 +23,7 @@ namespace DietAndFitness.Controls
         Task<List<VersionItem>> GetVersion();
         bool HasProfiles();
         Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime date);
+        Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime startDate, DateTime endDate);
         Task<Profile> GetCurrentProfile();
     }
 }

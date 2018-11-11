@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietAndFitness.Views.CaloriesStatisticsPage"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:sys="clr-namespace:System;assembly=netstandard">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Period" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="0" Date="{Binding StartDate}" DateSelected="OnStartDateChanged"/>
+                <DatePicker x:Name="endDatePicker" Grid.Column="2" Grid.Row="0" Date="{Binding EndDate}" DateSelected="OnEndDateChanged" MaximumDate="{Binding sys:DateTime.Today}"/>
+            </Grid>
+                <chart:SfChart VerticalOptions="FillAndExpand" Title="Monthly Calories">
+                <chart:SfChart.PrimaryAxis >
+                    <chart:DateTimeAxis EdgeLabelsDrawingMode="Shift">
+                        <chart:DateTimeAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="dd-MMM-yyyy"/>
+                        </chart:DateTimeAxis.LabelStyle>
+                    </chart:DateTimeAxis>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis Maximum="5000" Minimum="0">
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:SfChart.ChartBehaviors>
+                    <chart:ChartZoomPanBehavior EnableSelectionZooming="False" ZoomMode="X" MaximumZoomLevel="200" />
+                </chart:SfChart.ChartBehaviors>
+                <chart:LineSeries EnableAnimation="True" ItemsSource ="{Binding MonthlyCalories}" XBindingPath="DailyFoodItem.CreatedAt"	YBindingPath="Calories"/>
+            </chart:SfChart>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

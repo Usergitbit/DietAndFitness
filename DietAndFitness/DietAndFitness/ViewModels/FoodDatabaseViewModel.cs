@@ -51,28 +51,11 @@ namespace DietAndFitness.ViewModels
 
         }
         #region Methods
-        //protected override async void OpenAddPageFunction()
-        //{
-        //    var addFoodItemPage = new AddFoodItemDB();
-        //    addFoodItemPage.BindingContext = new AddFoodItemDBViewModel<LocalFoodItem>(navigationService);
-        //    await navigationService.PushModal(addFoodItemPage);
-        //    SelectedItem = null;
-        //}
         public async Task SwitchProgressIndicator()
         {
             await Task.Delay(2000);
             ProgressIndicator = "Waiting for input...";
         }
-        //protected override async void OpenEditPageFunction(LocalFoodItem parameter)
-        //{
-        //    if (parameter != null)
-        //    {
-        //        var editFoodItemPage = new EditFoodItemDB();
-        //        editFoodItemPage.BindingContext = new EditFoodItemDBViewModel<LocalFoodItem>(parameter, navigationService);
-        //        await navigationService.PushModal(editFoodItemPage);
-        //    }
-        //    SelectedItem = null;
-        //}
         #endregion
     }
 }

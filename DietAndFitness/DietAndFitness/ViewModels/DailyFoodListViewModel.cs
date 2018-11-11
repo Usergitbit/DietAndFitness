@@ -21,21 +21,6 @@ namespace DietAndFitness.ViewModels
         private Sum maximumValues;
         private double errorMargin;
         private Profile currentProfile;
-        private string dateText;
-        public string DateText
-        {
-            get
-            {
-                return dateText;
-            }
-            set
-            {
-                if (dateText == value)
-                    return;
-                dateText = value;
-                OnPropertyChanged();
-            }
-        }
         public Profile CurrentProfile
         {
             get
@@ -121,7 +106,6 @@ namespace DietAndFitness.ViewModels
                 if (value == date)
                     return;
                 date = value;
-                DateText = (date == DateTime.Today ? "Today's" : date.ToString("dd-MMM-yyyy"))  + " Calories";
                 OnPropertyChanged();
             }
         }

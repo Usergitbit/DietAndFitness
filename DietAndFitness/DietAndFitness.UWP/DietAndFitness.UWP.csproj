@@ -157,6 +157,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfChart">
+      <Version>16.3.0.29</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
       <Version>16.3.0.29</Version>
     </PackageReference>

@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="16.3.0.29" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.3.0.29" />
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="16.3.0.29" />
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.3.0.29" />
@@ -57,11 +58,14 @@
     <Compile Update="Views\HomePageMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\MainPage_old.xaml.cs">
-      <DependentUpon>MainPage_old.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CaloriesStatisticsPage.xaml.cs">
+      <DependentUpon>CaloriesStatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -101,10 +105,16 @@
     <EmbeddedResource Update="Views\HomePageMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainPage_old.xaml">
+    <EmbeddedResource Update="Views\MacrosStatisticsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\OptionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CaloriesStatisticsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StatisticsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

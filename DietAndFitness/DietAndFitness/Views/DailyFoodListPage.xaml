@@ -10,7 +10,7 @@
             <Frame HasShadow="True">
                 <gauge:SfLinearGauge Orientation="OrientationHorizontal" VerticalOptions="CenterAndExpand">
                     <gauge:SfLinearGauge.Header>
-                        <gauge:LinearHeader Text="{Binding DateText}" TextSize="20" />
+                        <gauge:LinearHeader Text="{Binding Date, Converter={StaticResource DateToStringForCalories}}" TextSize="20" />
                     </gauge:SfLinearGauge.Header>
                     <gauge:SfLinearGauge.Scales>
                         <gauge:LinearScale

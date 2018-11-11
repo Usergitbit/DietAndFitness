@@ -19,7 +19,7 @@ namespace DietAndFitness.Controls
     /// </summary>
     public class DataAccessLayer : IDataAccess 
     {
-        private SQLiteAsyncConnection database;
+        private SQLiteAsyncConnection databaseAsync;
         private SQLiteConnection databaseSync;
 
         public DataAccessLayer(SQLiteConnection _database)
@@ -28,7 +28,7 @@ namespace DietAndFitness.Controls
         }
         public DataAccessLayer(SQLiteAsyncConnection _database)
         {
-            database = _database;
+            databaseAsync = _database;
         }
         /// <summary>
         /// Deletes item from table associated with the parameter class. Uses PrimaryKey property to find the item.
@@ -38,7 +38,7 @@ namespace DietAndFitness.Controls
         /// <returns></returns>
         public async Task<int> Delete<T>(T entity)
         {
-            return await database.DeleteAsync(entity);
+            return await databaseAsync.DeleteAsync(entity);
         }
         /// <summary>
         /// Gets all items from the table associated with the parameter class.
@@ -49,7 +49,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                return await database.Table<T>().ToListAsync();
+                return await databaseAsync.Table<T>().ToListAsync();
             }
             catch(Exception ex)
             {
@@ -58,6 +58,16 @@ namespace DietAndFitness.Controls
             }
             
         }
+
+        public async Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime startDate, DateTime endDate)
+        {
+            var result = from dailyFoodItem in await databaseAsync.Table<DailyFoodItem>().Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToListAsync()
+                              join localFoodItem in await databaseAsync.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
+                              orderby dailyFoodItem.CreatedAt
+                              select new CompleteFoodItem() { DailyFoodItem = dailyFoodItem, LocalFoodItem = localFoodItem };
+            return result.ToList();
+        }
+
         /// <summary>
         /// Gets all items from the table associated with the parameter class by date.
         /// </summary>
@@ -65,7 +75,7 @@ namespace DietAndFitness.Controls
         /// <returns>List of items</returns>
         public Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new()
         {
-            return database.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
+            return databaseAsync.Table<T>().Where( x => x.CreatedAt == date).ToListAsync();  
         }
         /// <summary>
         /// Inserts into the table associated with the parameter class. ID should be null so it will be autoincremented.
@@ -77,7 +87,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                return await database.InsertAsync(entity);
+                return await databaseAsync.InsertAsync(entity);
             }
             catch (Exception e)
             {
@@ -93,7 +103,7 @@ namespace DietAndFitness.Controls
         /// <returns></returns>
         public async Task<int> Update<T>(T entity)
         {
-            return await database.UpdateAsync(entity);
+            return await databaseAsync.UpdateAsync(entity);
         }
         /// <summary>
         /// Executes a raw query and returns a list of the parameter class.
@@ -103,7 +113,7 @@ namespace DietAndFitness.Controls
         /// <returns></returns>
         public async Task<List<T>> RawQuery<T>(string query) where T : DatabaseEntity, new()
         {
-            return await database.QueryAsync<T>(query);
+            return await databaseAsync.QueryAsync<T>(query);
         }
         /// <summary>
         /// Gets an item from the table associated with the parameter class by GUID.
@@ -115,7 +125,7 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                return await database.Table<T>().Where(x => x.GUID == guid ).ToListAsync();
+                return await databaseAsync.Table<T>().Where(x => x.GUID == guid ).ToListAsync();
             }
             catch(InvalidOperationException ex)
             {
@@ -135,7 +145,7 @@ namespace DietAndFitness.Controls
         /// <returns>List of items</returns>
         public async Task<List<VersionItem>> GetVersion()
         {
-            return await database.Table<VersionItem>().ToListAsync();
+            return await databaseAsync.Table<VersionItem>().ToListAsync();
         }
         /// <summary>
         /// Updates a LocalFoodItem with values from a GlobalFoodItem.
@@ -146,12 +156,12 @@ namespace DietAndFitness.Controls
         /// <returns></returns>
         public async Task<int> Update<T>(GlobalFoodItem item) where T : DatabaseEntity, new()
         {
-            List<T> result = await database.Table<T>().Where(x => x.GUID == item.GUID).ToListAsync();
+            List<T> result = await databaseAsync.Table<T>().Where(x => x.GUID == item.GUID).ToListAsync();
             //implicit cast
             //needed as table are selected based on class attribute
             LocalFoodItem castedFoodItem = item;
             castedFoodItem.ID = result[0].ID;
-            return await database.UpdateAsync(castedFoodItem);
+            return await databaseAsync.UpdateAsync(castedFoodItem);
            
         }
         /// <summary>
@@ -175,8 +185,8 @@ namespace DietAndFitness.Controls
             IEnumerable <CompleteFoodItem> result = null;
             try
             {
-                 result = from dailyFoodItem in await database.Table<DailyFoodItem>().Where(x => x.CreatedAt == date).ToListAsync()
-                             join localFoodItem in await database.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
+                 result = from dailyFoodItem in await databaseAsync.Table<DailyFoodItem>().Where(x => x.CreatedAt == date).ToListAsync()
+                             join localFoodItem in await databaseAsync.Table<LocalFoodItem>().ToListAsync() on dailyFoodItem.FoodItemID equals localFoodItem.ID
                              select new CompleteFoodItem() { DailyFoodItem = dailyFoodItem, LocalFoodItem = localFoodItem };
             }
             catch(Exception ex)
@@ -192,7 +202,7 @@ namespace DietAndFitness.Controls
         /// <returns></returns>
         public async Task<Profile> GetCurrentProfile()
         {
-            var result = await database.Table<Profile>().Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today).ToListAsync();
+            var result = await databaseAsync.Table<Profile>().Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today).ToListAsync();
             return result.FirstOrDefault();
         }
 
