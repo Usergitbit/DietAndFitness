@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DietAndFitness.Services;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace DietAndFitness.Views
@@ -16,7 +17,8 @@ namespace DietAndFitness.Views
         public ChangeFoodItemDB ()
 		{
 			InitializeComponent ();
-		}
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+        }
 
     }
 }

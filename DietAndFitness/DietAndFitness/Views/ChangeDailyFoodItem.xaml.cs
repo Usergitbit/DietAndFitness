@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace DietAndFitness.Views
@@ -15,6 +16,7 @@ namespace DietAndFitness.Views
         public ChangeDailyFoodItem()
         {
             InitializeComponent();
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
