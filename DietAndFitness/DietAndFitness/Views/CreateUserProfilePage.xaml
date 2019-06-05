@@ -168,6 +168,14 @@
                             WidthRequest="75"
                             Value="{Binding UserProfile.BodyFat}"
                             TextAlignment="Center"/>
+                        <Button
+                            x:Name="bodyFatCalculateButton"
+                            Grid.Row="6"
+                            Grid.Column="2"
+                            IsVisible="False"
+                            Text="Help"
+                            Command="{Binding CalculateBodyFatCommand}"
+                            />
                         <Label
                             Grid.Row="7"
                             Grid.Column="0"

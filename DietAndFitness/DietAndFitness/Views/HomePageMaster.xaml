@@ -11,7 +11,8 @@
             ItemsSource="{Binding MenuItems}"
             SeparatorVisibility="None">
             <ListView.Header>
-                <Grid BackgroundColor="#03A9F4">
+                <Frame BackgroundColor="#03A9F4" Margin="1">
+                <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10" />
                         <ColumnDefinition Width="*" />
@@ -27,12 +28,15 @@
                         Grid.Column="1"
                         FontSize="30"
                         Style="{DynamicResource SubtitleStyle}"
-                        Text="Diet and Fitness" />
+                        Text="Diet and Fitness" 
+                        HorizontalTextAlignment="Center"/>
                 </Grid>
+                </Frame>
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <Frame HasShadow="False" Margin="3">
                         <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
                             <Label
                                 FontSize="24"
@@ -40,6 +44,7 @@
                                 VerticalOptions="FillAndExpand"
                                 VerticalTextAlignment="Center" />
                         </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

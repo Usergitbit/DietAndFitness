@@ -170,6 +170,9 @@ namespace DietAndFitness.ViewModels
                 CurrentValues.Add(item);
                 OnPropertyChanged(this.GetPropertyName(x => x.ColorIndicator));
             }
+            //increase gauge size so the current values don't go outside the page
+            if (CurrentValues.Calories > MaximumValues.Calories)
+                MaximumValues.Calories = CurrentValues.Calories + 100;
         }
         protected override void OpenAddPageFunction(object[] date)
         {

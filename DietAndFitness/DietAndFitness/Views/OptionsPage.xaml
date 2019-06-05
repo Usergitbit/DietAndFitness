@@ -5,5 +5,5 @@
              xmlns:local="clr-namespace:DietAndFitness.Views">
   <!--Pages can be added as references or inline-->
     <local:CreateUserProfilePage Title="Profile"/>
-    <ContentPage Title="Placeholder"/>
+    <local:UploadDbPage Title="Backup"/>
 </TabbedPage>

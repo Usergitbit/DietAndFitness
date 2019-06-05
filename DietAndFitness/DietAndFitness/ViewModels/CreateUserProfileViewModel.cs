@@ -36,6 +36,7 @@ namespace DietAndFitness.ViewModels
             }
         }
         public ICommand CreateProfileCommand { get; private set; }
+        public ICommand CalculateBodyFatCommand { get; private set; }
         public Profile UserProfile
         {
             get
@@ -90,9 +91,15 @@ namespace DietAndFitness.ViewModels
             SelectedProfileType = new ProfileType();
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
             CreateProfileCommand = new Command<Profile>(execute: CreateUserProfile, canExecute: ValidateCreateButon);
+            CalculateBodyFatCommand = new Command(execute: OpenCalculateBodyFatDialog);
             PropertyChanged += OnSelectionChangedIDSolver;
             UserProfile.PropertyChanged += OnUserProfileChanged;
             ButtonText = "Create Profile";
+        }
+
+        private void OpenCalculateBodyFatDialog()
+        {
+            throw new NotImplementedException();
         }
 
         private void OnUserProfileChanged(object sender, PropertyChangedEventArgs e)

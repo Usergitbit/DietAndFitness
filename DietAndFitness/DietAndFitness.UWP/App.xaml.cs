@@ -1,4 +1,4 @@
-﻿using Syncfusion.SfChart.XForms.UWP;
+using Syncfusion.SfChart.XForms.UWP;
 using Syncfusion.SfGauge.XForms.UWP;
 using Syncfusion.SfNumericTextBox.XForms.UWP;
 using Syncfusion.SfPicker.XForms.UWP;
@@ -115,5 +115,6 @@ namespace DietAndFitness.UWP
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
     }
 }

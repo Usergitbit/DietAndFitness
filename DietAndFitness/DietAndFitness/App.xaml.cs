@@ -27,7 +27,7 @@ namespace DietAndFitness
 		public App ()
 		{
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzU5ODNAMzEzNjJlMzMyZTMwZk9HNDdmQlBzczVLa0p0b05Xem5oYitIZWg4NGlqOGlQWGRPZERpdHQ4az0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("OTc4NjJAMzEzNzJlMzEyZTMwaHNXMVlYNkllK0psbWU4SmFQSjRieWFRWlNxSjJxekpkTXYwLytNaXdVST0=;OTc4NjNAMzEzNzJlMzEyZTMwaUphNlg5RDNySXJwTjlYSmtaeHF4VGlCWFZUckdodGJZTklRSExxNStnST0=;OTc4NjRAMzEzNzJlMzEyZTMwQ0k4dGxoaHpQSlFiRE9NL2lPR2NHOWQzREEvL2VRUkhnM2xTQU0zeUM2ST0=;OTc4NjVAMzEzNzJlMzEyZTMwSFVTYllQVmF5N3lWc0VsSjlwRGVwSXQrTExXd3NHd2hvdUdyKzNsbmUybz0=;OTc4NjZAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=;OTc4NjdAMzEzNzJlMzEyZTMwUXZUbEVKSnBoSVFsSFFWaXlJckdVSGxGZUgxcWc5K1VzaWJjUTc3MWlBaz0=;OTc4NjhAMzEzNzJlMzEyZTMwRGlZbEdhaTMyQU1EV1RWazhTU2tkbk5BdmVNTHFXMmdSZVJWMjZ5MVlzND0=;OTc4NjlAMzEzNzJlMzEyZTMwWWlpLy9DdkZHQ0lHUGtKQW1JMkcwMVRBVnNsakkyS01MN0VLWWxUeDZ0Yz0=;OTc4NzBAMzEzNzJlMzEyZTMwbndDZW56NWM0Q3A0U3JyOFNVa21oOThOdWgvWUZ3QTFmZEdlRW9CKzVURT0=;OTc4NzFAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
@@ -41,8 +41,12 @@ namespace DietAndFitness
             //If there are profiles open the normal HomePage
             if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())//Current.Properties.ContainsKey("HasProfiles"))
             {
-                var navigationPage = new NavigationPage(new HomePageDetail());
+                var daily = new DailyFoodListPage();
+                var navigationPage = new NavigationPage(daily);
                 NavigationService = new NavigationService(navigationPage);
+                var vm = new DailyFoodListViewModel();
+                daily.BindingContext = vm;
+                vm.LoadList();
                 var homePage = new HomePage();
                 homePage.Detail = navigationPage;
                 MainPage = homePage;

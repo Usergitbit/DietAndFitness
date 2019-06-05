@@ -42,7 +42,7 @@ namespace DietAndFitness.Services
         /// </summary>
         public void SetMainPage()
         {
-            var navigationPage = new NavigationPage(new HomePageDetail());
+            var navigationPage = new NavigationPage(new DailyFoodListPage());
             App.NavigationService = new NavigationService(navigationPage);
             var homePage = new HomePage();
             homePage.Detail = navigationPage;

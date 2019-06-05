@@ -22,20 +22,20 @@ namespace DietAndFitness.Views
             BindingContext = StatisticsViewModel;
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            StatisticsViewModel.LoadData();
+            await StatisticsViewModel.LoadData();
         }
 
-        private void OnStartDateChanged(object sender, DateChangedEventArgs e)
+        private async void OnStartDateChanged(object sender, DateChangedEventArgs e)
         {
-            StatisticsViewModel.LoadData();
+            await StatisticsViewModel.LoadData();
         }
 
-        private void OnEndDateChanged(object sender, DateChangedEventArgs e)
+        private async void OnEndDateChanged(object sender, DateChangedEventArgs e)
         {
-            StatisticsViewModel.LoadData();
+            await StatisticsViewModel.LoadData();
         }
     }
 }

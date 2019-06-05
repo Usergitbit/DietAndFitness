@@ -42,11 +42,13 @@ namespace DietAndFitness.Views
             {
                 bodyFatNameLabel.IsVisible = true;
                 bodyFatEntry.IsVisible = true;
+                bodyFatCalculateButton.IsVisible = true;
             }
             else
             {
                 bodyFatNameLabel.IsVisible = false;
                 bodyFatEntry.IsVisible = false;
+                bodyFatCalculateButton.IsVisible = false;
             }
         }
 
