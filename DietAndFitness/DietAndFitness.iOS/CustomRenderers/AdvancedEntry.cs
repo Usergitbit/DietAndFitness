@@ -7,6 +7,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
+[assembly: ExportRenderer(typeof(Entry), typeof(DietAndFitness.iOS.CustomRenderers.AdvancedEntry))]
 namespace DietAndFitness.iOS.CustomRenderers
 {
     public class AdvancedEntry : EntryRenderer, IUITextFieldDelegate
@@ -20,20 +21,14 @@ namespace DietAndFitness.iOS.CustomRenderers
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
-
             if (Control != null)
             {
-                Control.WeakDelegate = this;
-
+                var nativeTextField = (UITextField)Control;
+                nativeTextField.EditingDidBegin += (object sender, EventArgs eIos) =>
+                {
+                    nativeTextField.PerformSelector(new ObjCRuntime.Selector("selectAll"), null, 0.0f);
+                };
             }
-
-        }
-
-
-        [Export("textFieldDidBeginEditing:")]
-        public void EditingStarted(UITextField textField)
-        {
-            textField.PerformSelector(new ObjCRuntime.Selector("selectAll:"), null, 0.0f);
         }
 
     }
