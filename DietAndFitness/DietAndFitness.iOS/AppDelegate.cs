@@ -10,6 +10,7 @@ using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.SfRangeSlider.XForms.iOS;
 using Syncfusion.SfSchedule.XForms.iOS;
 using UIKit;
+using Xamarin;
 
 namespace DietAndFitness.iOS
 {
@@ -36,8 +37,8 @@ namespace DietAndFitness.iOS
             SfGaugeRenderer.Init();
             SfChartRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            IQKeyboardManager.SharedManager.Enable = true;
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }
