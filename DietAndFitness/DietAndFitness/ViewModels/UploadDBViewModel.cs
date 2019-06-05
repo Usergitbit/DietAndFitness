@@ -19,10 +19,7 @@ namespace DietAndFitness.ViewModels
 
         private async void UploadDb()
         {
-            string text = "random text";
-            string APIKey = "kety";
-            Stream stream = new MemoryStream();
-            await DependencyService.Get<IUploadDB>().UploadDB(stream, APIKey);
+            await dialogService.ShowError("Not implemented yet.", "Error", "OK", null);
         }
     }
 }

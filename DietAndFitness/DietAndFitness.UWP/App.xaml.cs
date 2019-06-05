@@ -5,6 +5,7 @@ using Syncfusion.SfPicker.XForms.UWP;
 using Syncfusion.SfRangeSlider.XForms;
 using Syncfusion.SfRangeSlider.XForms.UWP;
 using Syncfusion.SfSchedule.XForms.UWP;
+using Syncfusion.XForms.UWP.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -68,6 +69,7 @@ namespace DietAndFitness.UWP
                 assembliesToInclude.Add(typeof(SfLinearGaugeRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfRangeSliderRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfChartRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfPopupLayoutRenderer).GetTypeInfo().Assembly);
 
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);

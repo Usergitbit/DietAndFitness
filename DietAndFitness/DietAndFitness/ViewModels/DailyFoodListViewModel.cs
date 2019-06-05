@@ -36,6 +36,17 @@ namespace DietAndFitness.ViewModels
             }
         }
 
+        public string CaloriesValuesInfo
+        {
+            get { return "Left "
+                    + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy"))) 
+                    + ": " 
+                    + Math.Round((TargetValues?.Calories - CurrentValues?.Calories) ?? 0); }
+            set
+            { 
+
+            }
+        }
         public Sum MaximumValues
         {
             get
@@ -155,7 +166,15 @@ namespace DietAndFitness.ViewModels
             TargetValues = new Sum("Target: ");
             MaximumValues = new Sum("Maximum: ");
             ErrorMargin = 200;
+            CurrentValues.PropertyChanged += UpdateCaloriesValuesInfo;
+            TargetValues.PropertyChanged += UpdateCaloriesValuesInfo;
         }
+
+        private void UpdateCaloriesValuesInfo(object sender, PropertyChangedEventArgs e)
+        {
+            
+        }
+
         public async override void LoadList()
         {
             var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync(Date);
@@ -168,8 +187,9 @@ namespace DietAndFitness.ViewModels
             {
                 Items.Add(item);
                 CurrentValues.Add(item);
-                OnPropertyChanged(this.GetPropertyName(x => x.ColorIndicator));
             }
+            OnPropertyChanged(nameof(ColorIndicator));
+            OnPropertyChanged(nameof(CaloriesValuesInfo));
             //increase gauge size so the current values don't go outside the page
             if (CurrentValues.Calories > MaximumValues.Calories)
                 MaximumValues.Calories = CurrentValues.Calories + 100;

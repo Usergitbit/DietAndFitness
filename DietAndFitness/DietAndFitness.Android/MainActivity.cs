@@ -20,6 +20,7 @@ namespace DietAndFitness.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
             LoadApplication(new App());
             //Fixes keyboard covering the entries and making them unaccesible even in scrollview
             App.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);

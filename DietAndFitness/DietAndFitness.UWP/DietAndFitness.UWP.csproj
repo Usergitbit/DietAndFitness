@@ -170,6 +170,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfPicker">
       <Version>17.1.0.49</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
+      <Version>17.1.0.50</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
       <Version>17.1.0.49</Version>
     </PackageReference>

@@ -35,7 +35,7 @@ namespace DietAndFitness.iOS
             SfPickerRenderer.Init();
             SfGaugeRenderer.Init();
             SfChartRenderer.Init();
-
+            Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
