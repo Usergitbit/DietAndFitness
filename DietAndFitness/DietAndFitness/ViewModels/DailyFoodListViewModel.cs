@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietAndFitness.ViewModels
@@ -38,7 +39,7 @@ namespace DietAndFitness.ViewModels
 
         public string CaloriesValuesInfo
         {
-            get { return "Left "
+            get { return "Calories Left "
                     + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy"))) 
                     + ": " 
                     + Math.Round((TargetValues?.Calories - CurrentValues?.Calories) ?? 0); }
@@ -175,11 +176,12 @@ namespace DietAndFitness.ViewModels
             
         }
 
-        public async override void LoadList()
+        public async override Task LoadList()
         {
             var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync(Date);
             Items.Clear();
             CurrentValues.Reset();
+            //TODO: GET PROFILE BY DATE
             currentProfile = await DBLocalAccess.GetCurrentProfile();
             TargetValues = currentProfile.GetTargetValues();
             MaximumValues = currentProfile.GetMaximumValues();
@@ -198,14 +200,18 @@ namespace DietAndFitness.ViewModels
         {
             base.OpenAddPageFunction(new object[] { Date });
         }
-        protected async override void ExecuteDelete(bool result)
+        protected async override Task ExecuteDelete(bool result)
         {
             if (result == true)
             {
                 try
                 {
                     await DBLocalAccess.Delete(SelectedItem.DailyFoodItem);
-                    LoadList();
+                    //await LoadList();
+                    Items.Remove(SelectedItem);
+                    CurrentValues.Remove(SelectedItem);
+                    OnPropertyChanged(nameof(ColorIndicator));
+                    OnPropertyChanged(nameof(CaloriesValuesInfo));
                     SelectedItem = null;
                 }
                 catch (Exception ex)

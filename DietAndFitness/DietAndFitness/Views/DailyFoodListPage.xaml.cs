@@ -54,12 +54,12 @@ namespace DietAndFitness.Views
                 Debug.WriteLine("from on 2nd ctr");
             }
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             try
             {
                 base.OnAppearing();
-                DailyFoodDatabase.LoadList();
+                await DailyFoodDatabase.LoadList();
             }
             catch (Exception ex)
             {

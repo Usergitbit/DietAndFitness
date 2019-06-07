@@ -45,6 +45,7 @@ namespace DietAndFitness
                 var navigationPage = new NavigationPage(daily);
                 NavigationService = new NavigationService(navigationPage);
                 var vm = new DailyFoodListViewModel();
+                daily.DailyFoodDatabase = vm;
                 daily.BindingContext = vm;
                 vm.LoadList();
                 var homePage = new HomePage();

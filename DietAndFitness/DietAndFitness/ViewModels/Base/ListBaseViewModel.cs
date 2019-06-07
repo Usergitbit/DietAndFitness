@@ -68,14 +68,14 @@ namespace DietAndFitness.ViewModels.Base
             }
         }
 
-        protected async virtual void ExecuteDelete(bool result)
+        protected async virtual Task ExecuteDelete(bool result)
         {
             if (result == true)
             {
                 try
                 {
                     await DBLocalAccess.Delete((T)SelectedItem);
-                    LoadList();
+                    await LoadList();
                     SelectedItem = null;
                 }
                 catch (Exception ex)
@@ -92,6 +92,7 @@ namespace DietAndFitness.ViewModels.Base
             OpenAddPageCommand = new Command(execute: () => OpenAddPageFunction(null));
             OpenEditPageCommand = new Command<T>(execute: OpenEditPageFunction, canExecute: ValidateEditButton);
             PropertyChanged += OnSelectedItemChanged;
+            
         }
         public override void Dispose()
         {
@@ -106,7 +107,7 @@ namespace DietAndFitness.ViewModels.Base
             await navigationService.PushModal(addFoodItemPage as ContentPage);
             SelectedItem = null;
         }
-        public virtual async void LoadList()
+        public virtual async Task LoadList()
         {
             List<T> localFoodItems = new List<T>();
             try

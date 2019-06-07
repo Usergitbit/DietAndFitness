@@ -11,39 +11,40 @@
             ItemsSource="{Binding MenuItems}"
             SeparatorVisibility="None">
             <ListView.Header>
-                <Frame BackgroundColor="#03A9F4" Margin="1">
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
-                    <Label 
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        FontSize="30"
-                        Style="{DynamicResource SubtitleStyle}"
-                        Text="Diet and Fitness" 
-                        HorizontalTextAlignment="Center"/>
-                </Grid>
+                <Frame Margin="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Source="menu_icon.png" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontSize="30"
+                            HorizontalTextAlignment="Center"
+                            Style="{DynamicResource SubtitleStyle}"
+                            Text="Diet and Fitness" />
+                    </Grid>
                 </Frame>
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame HasShadow="False" Margin="3">
-                        <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-                            <Label
-                                FontSize="24"
-                                Text="{Binding Title}"
-                                VerticalOptions="FillAndExpand"
-                                VerticalTextAlignment="Center" />
-                        </StackLayout>
+                        <Frame Margin="3" HasShadow="False">
+                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                                <Label
+                                    FontSize="24"
+                                    Text="{Binding Title}"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>

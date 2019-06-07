@@ -110,6 +110,13 @@ namespace DietAndFitness.ViewModels.Secondary
             Carbohydrates += item.Carbohydrates;
             Fats += item.Fats;
         }
+        public void Remove(CompleteFoodItem item)
+        {
+            Calories -= item.Calories;
+            Proteins -= item.Proteins;
+            Carbohydrates -= item.Carbohydrates;
+            Fats -= item.Fats;
+        }
         public void Reset()
         {
             Calories = 0;

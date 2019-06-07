@@ -32,7 +32,7 @@
                                 <gauge:SymbolPointer
                                     MarkerShape="Diamond"
                                     Offset="-30"
-                                    Color="#5b86e5"
+                                    Color="Purple"
                                     Value="{Binding TargetValues.Calories}" />
                                 <gauge:BarPointer
                                     x:Name="barPointer"
@@ -48,7 +48,10 @@
                     <gauge:SfLinearGauge.Annotations>
                         <gauge:LinearGaugeAnnotation ScaleValue="{Binding TargetValues.Calories}" ViewMargin="0,-50">
                             <gauge:LinearGaugeAnnotation.View>
-                                <Label Text="{Binding TargetValues.CaloriesText}" WidthRequest="100" />
+                                <Label
+                                    FontSize="Small"
+                                    Text="{Binding TargetValues.CaloriesText}"
+                                    WidthRequest="100" />
                             </gauge:LinearGaugeAnnotation.View>
                         </gauge:LinearGaugeAnnotation>
                     </gauge:SfLinearGauge.Annotations>
