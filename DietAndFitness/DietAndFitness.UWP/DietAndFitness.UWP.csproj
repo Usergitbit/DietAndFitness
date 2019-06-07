@@ -139,7 +139,14 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="backup_icon.png" />
+    <Content Include="calendar_icon.png" />
+    <Content Include="calories_icon.png" />
+    <Content Include="food_database_icon.png" />
+    <Content Include="macros_icon.png" />
     <Content Include="menu_icon.png" />
+    <Content Include="options_icon.png" />
+    <Content Include="profile_icon.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -171,6 +178,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="statistics_icon.png" />
+    <Content Include="today_food_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

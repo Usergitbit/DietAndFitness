@@ -39,11 +39,22 @@
                     <ViewCell>
                         <Frame Margin="3" HasShadow="False">
                             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-                                <Label
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding IconSource}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontSize="24"
+                                        Text="{Binding Title}" />
+                                </Grid>
+                                <!--<Label
                                     FontSize="24"
                                     Text="{Binding Title}"
                                     VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Center" />
+                                    VerticalTextAlignment="Center" />-->
                             </StackLayout>
                         </Frame>
                     </ViewCell>

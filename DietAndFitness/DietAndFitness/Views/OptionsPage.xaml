@@ -3,8 +3,18 @@
     x:Class="DietAndFitness.Views.OptionsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DietAndFitness.Views">
+    xmlns:local="clr-namespace:DietAndFitness.Views"
+    xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+    windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>30</x:Double>
+                <x:Double>30</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
     <!--  Pages can be added as references or inline  -->
-    <local:CreateUserProfilePage Title="Profile" />
-    <local:UploadDbPage Title="Backup" />
+    <local:CreateUserProfilePage Title="Profile" IconImageSource="profile_icon.png" />
+    <local:UploadDbPage Title="Backup" IconImageSource="backup_icon.png" />
 </TabbedPage>

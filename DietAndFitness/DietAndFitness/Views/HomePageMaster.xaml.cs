@@ -33,11 +33,11 @@ namespace DietAndFitness.Views
             {
                 MenuItems = new ObservableCollection<HomePageMenuItem>(new[]
                 {
-                   new HomePageMenuItem { Id = 0, Title = "Today's Food", TargetType = typeof(DailyFoodListPage)},
-                    new HomePageMenuItem { Id = 1, Title = "Calendar", TargetType = typeof(CalendarPage)},
-                    new HomePageMenuItem { Id = 2, Title = "Food Database", TargetType = typeof(FoodDatabasePage) },
-                    new HomePageMenuItem { Id = 3, Title = "Statistics", TargetType = typeof(StatisticsPage) },
-                    new HomePageMenuItem { Id = 4, Title = "Options" , TargetType = typeof(OptionsPage)},
+                   new HomePageMenuItem { Id = 0, Title = "Today's Food", TargetType = typeof(DailyFoodListPage), IconSource = "today_food_icon.png"},
+                    new HomePageMenuItem { Id = 1, Title = "Calendar", TargetType = typeof(CalendarPage), IconSource = "calendar_icon.png"},
+                    new HomePageMenuItem { Id = 2, Title = "Food Database", TargetType = typeof(FoodDatabasePage), IconSource = "food_database_icon.png" },
+                    new HomePageMenuItem { Id = 3, Title = "Statistics", TargetType = typeof(StatisticsPage), IconSource = "statistics_icon.png" },
+                    new HomePageMenuItem { Id = 4, Title = "Options" , TargetType = typeof(OptionsPage), IconSource = "options_icon.png"},
                 });
             }
             
