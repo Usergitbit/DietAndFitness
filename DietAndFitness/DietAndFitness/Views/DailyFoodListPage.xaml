@@ -51,7 +51,7 @@
                                 <Label
                                     FontSize="Small"
                                     Text="{Binding TargetValues.CaloriesText}"
-                                    WidthRequest="100" />
+                                    WidthRequest="150" />
                             </gauge:LinearGaugeAnnotation.View>
                         </gauge:LinearGaugeAnnotation>
                     </gauge:SfLinearGauge.Annotations>
@@ -199,5 +199,6 @@
                     Text="Delete" />
             </Grid>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

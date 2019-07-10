@@ -53,14 +53,14 @@ namespace DietAndFitness.Core
             if (handler == null)
                 return;
             IsDirty = true;
-            Debug.WriteLine("PropertyChanged called from" + this.ToString() + " " + IsDirty);
+            Debug.WriteLine("PropertyChanged called from" + ToString() + " " + IsDirty);
             handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
         }
 
         protected virtual void OnCollectionChanged ()
         {
-            var handler = this.CollectionChanged;
+            var handler = CollectionChanged;
             handler?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
         

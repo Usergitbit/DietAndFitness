@@ -26,7 +26,6 @@ namespace DietAndFitness
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
-
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("OTc4NjJAMzEzNzJlMzEyZTMwaHNXMVlYNkllK0psbWU4SmFQSjRieWFRWlNxSjJxekpkTXYwLytNaXdVST0=;OTc4NjNAMzEzNzJlMzEyZTMwaUphNlg5RDNySXJwTjlYSmtaeHF4VGlCWFZUckdodGJZTklRSExxNStnST0=;OTc4NjRAMzEzNzJlMzEyZTMwQ0k4dGxoaHpQSlFiRE9NL2lPR2NHOWQzREEvL2VRUkhnM2xTQU0zeUM2ST0=;OTc4NjVAMzEzNzJlMzEyZTMwSFVTYllQVmF5N3lWc0VsSjlwRGVwSXQrTExXd3NHd2hvdUdyKzNsbmUybz0=;OTc4NjZAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=;OTc4NjdAMzEzNzJlMzEyZTMwUXZUbEVKSnBoSVFsSFFWaXlJckdVSGxGZUgxcWc5K1VzaWJjUTc3MWlBaz0=;OTc4NjhAMzEzNzJlMzEyZTMwRGlZbEdhaTMyQU1EV1RWazhTU2tkbk5BdmVNTHFXMmdSZVJWMjZ5MVlzND0=;OTc4NjlAMzEzNzJlMzEyZTMwWWlpLy9DdkZHQ0lHUGtKQW1JMkcwMVRBVnNsakkyS01MN0VLWWxUeDZ0Yz0=;OTc4NzBAMzEzNzJlMzEyZTMwbndDZW56NWM0Q3A0U3JyOFNVa21oOThOdWgvWUZ3QTFmZEdlRW9CKzVURT0=;OTc4NzFAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
@@ -38,12 +37,15 @@ namespace DietAndFitness
             GlobalSQLiteConnection.ConnectToLocalDatabase(DBLocalControl.DestinationPath);
             DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
             DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            IOC.IOC.RegisterDialogService(new DialogService());
+            IOC.IOC.RegisterDataAccessService(DBLocalAccess);
             //If there are profiles open the normal HomePage
             if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())//Current.Properties.ContainsKey("HasProfiles"))
             {
                 var daily = new DailyFoodListPage();
                 var navigationPage = new NavigationPage(daily);
                 NavigationService = new NavigationService(navigationPage);
+                IOC.IOC.RegisterNavigationServiceService(NavigationService);
                 var vm = new DailyFoodListViewModel();
                 daily.DailyFoodDatabase = vm;
                 daily.BindingContext = vm;
@@ -58,7 +60,7 @@ namespace DietAndFitness
                 var createUserProfilePage = new CreateUserProfilePage();
                 var navigationPage = new NavigationPage(createUserProfilePage);
                 NavigationService = new NavigationService(navigationPage);
-
+                IOC.IOC.RegisterNavigationServiceService(NavigationService);
                 //Setting the VM must be done from outside as the navigation service root page is set to the page itself
                 //but the VM requires a reference to the navigation service in the constructor
                 CreateUserProfileViewModel userProfileViewModel = new CreateUserProfileViewModel();

@@ -18,13 +18,11 @@
     <Compile Remove="Views\EditFoodItemDB.xaml.cs" />
     <Compile Remove="Views\Page1.xaml.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Remove="Views\EditDailyFoodItem.xaml" />
     <EmbeddedResource Remove="Views\EditFoodItemDB.xaml" />
     <EmbeddedResource Remove="Views\Page1.xaml" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="Resources\Databases\LocalDatabase.db" />
     <None Remove="Resources\Databases\LocalFoodItemsDB.db" />

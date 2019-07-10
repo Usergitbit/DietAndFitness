@@ -263,6 +263,7 @@
                                 <Button
                                     Grid.Row="5"
                                     Grid.Column="2"
+                                    Command="{Binding ActivityLevelHelpCommand}"
                                     HorizontalOptions="Center"
                                     Text="Help!"
                                     VerticalOptions="Center" />

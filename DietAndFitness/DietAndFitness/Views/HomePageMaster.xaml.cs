@@ -20,7 +20,7 @@ namespace DietAndFitness.Views
         public HomePageMaster()
         {
             InitializeComponent();
-
+            
             BindingContext = new HomePageMasterViewModel();
             ListView = MenuItemsListView;
         }

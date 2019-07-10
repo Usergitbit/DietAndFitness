@@ -10,7 +10,7 @@ namespace DietAndFitness.Interfaces
     /// <summary>
     /// Interface for basic CRUD operations
     /// </summary>
-    public interface IDataAccess 
+    public interface IDataAccessService 
     {
     
         Task<List<T>> GetAllAsync<T>() where T : DatabaseEntity, new();

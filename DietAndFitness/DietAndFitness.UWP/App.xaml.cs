@@ -27,7 +27,12 @@ using Windows.UI.Xaml.Navigation;
 namespace DietAndFitness.UWP
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
+    /// Provides application-specific 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {

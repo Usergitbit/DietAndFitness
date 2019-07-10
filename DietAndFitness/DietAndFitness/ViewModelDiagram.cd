@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DietAndFitness.Core.ViewModelBase" Collapsed="true">
+    <Position X="4.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACAAAAAAIAAAAAAAgAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.Base.ChangeBaseViewModel&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAAACAAAQAAAAEAAEAAAAFBAAAAAAECAACACAA=</HashCode>
+      <FileName>ViewModels\Base\ChangeBaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.Base.ListBaseViewModel&lt;T, P&gt;" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIIAAiAACAIAAAgAAAABCAAAAAAQABAAQEAUCAA=</HashCode>
+      <FileName>ViewModels\Base\ListBaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.Secondary.Sum" Collapsed="true">
+    <Position X="6.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAYAAAAAAAAABAAAAAAABBACEAAQABAAQAAAAGAEAAA=</HashCode>
+      <FileName>ViewModels\Secondary\Sum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.CalendarViewModel" Collapsed="true">
+    <Position X="9.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\CalendarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.CaloriesStatisticsViewModel" Collapsed="true">
+    <Position X="6.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAQAAAAACAAAAgiAAAYAgAAAAAAAEAAAAA=</HashCode>
+      <FileName>ViewModels\CaloriesStatisticsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.ChangeDailyFoodItemViewModel" Collapsed="true">
+    <Position X="8.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAAIAAgAAgQAAAAAAAAABAAAAAQAAAAGCAAAAgAA=</HashCode>
+      <FileName>ViewModels\ChangeDailyFoodItemViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.ChangeFoodItemDBViewModel" Collapsed="true">
+    <Position X="7.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ChangeFoodItemDBViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.CreateUserProfileViewModel" Collapsed="true">
+    <Position X="9.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAMAQAACUgAAEEICIAAiigiwAgAAsACEkgAAEIEQ=</HashCode>
+      <FileName>ViewModels\CreateUserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.DailyFoodListViewModel" Collapsed="true">
+    <Position X="11.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIgAIQQIACAAAAABAAAABAQRAAQAEUAAABA=</HashCode>
+      <FileName>ViewModels\DailyFoodListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.FoodDatabaseViewModel" Collapsed="true">
+    <Position X="10.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ViewModels\FoodDatabaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.MacrosStatisticsViewModel" Collapsed="true">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAQAAAAACAAAAAgAgAAAAIAAAAAAEAAAAA=</HashCode>
+      <FileName>ViewModels\MacrosStatisticsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.UploadDBViewModel" Collapsed="true">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\UploadDBViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

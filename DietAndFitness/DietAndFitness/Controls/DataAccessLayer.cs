@@ -18,7 +18,7 @@ namespace DietAndFitness.Controls
     /// Class that implements the interface for basic CRUD operations
     /// Keeps the Model specific implementations separate from ViewModels for future database migrations
     /// </summary>
-    public class DataAccessLayer : IDataAccess 
+    public class DataAccessLayer : IDataAccessService 
     {
         private SQLiteAsyncConnection databaseAsync;
         private SQLiteConnection databaseSync;

@@ -118,6 +118,7 @@ namespace DietAndFitness.ViewModels
         public ICommand PopUpAcceptCommand { get; private set; }
         public ICommand PopUpDeclineCommand { get; private set; }
         public ICommand FormulaHelpCommand { get; private set; }
+        public ICommand ActivityLevelHelpCommand { get; private set; }
         public Profile UserProfile
         {
             get
@@ -175,9 +176,15 @@ namespace DietAndFitness.ViewModels
             CalculateBodyFatCommand = new Command(execute: OpenCalculateBodyFatDialog);
             PopUpAcceptCommand = new Command(execute: AcceptBodyFatCalculation, canExecute: ValidateAcceptBodyFatCalculationButton);
             FormulaHelpCommand = new Command(execute: ShowFormulaHelpDialog);
+            ActivityLevelHelpCommand = new Command(execute: ShowActivityHelpDialog);
             PropertyChanged += OnSelectionChangedIDSolver;
             UserProfile.PropertyChanged += OnUserProfileChanged;
             ButtonText = "Create Profile";
+        }
+
+        private async void ShowActivityHelpDialog()
+        {
+            await dialogService.ShowMessage("1.2 - Sedentary\n1.3 - 1.4 Light(1-3 days/week)\n1.5 - 1.6 Moderate(3-5 days/week)\n1.7 - 1.8 Active(7 days/week)\n1.9 - 2 Athlete", "Activity Level Information");
         }
 
         private async void ShowFormulaHelpDialog()
