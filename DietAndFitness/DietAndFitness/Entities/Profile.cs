@@ -192,22 +192,26 @@ namespace DietAndFitness.Entities
             switch (ProfileTypesId)
             {
                 //maintaince
-                case 1:
+                case (int)ProfileTypeEnum.Maintaince:
                     return new Sum("Target: ")
                     {
-                        Calories = bmr
+                        Calories = bmr,
+                        Proteins = Weight * 1.8
+                        
                     };
                 //cut
-                case 2:
+                case (int)ProfileTypeEnum.Cut:
                     return new Sum("Target: ")
                     {
-                        Calories = bmr / 1.2
+                        Calories = bmr / 1.2,
+                        Proteins = Weight * 1.8
                     };
                 //bulk
-                case 3:
+                case (int)ProfileTypeEnum.Bulk:
                     return new Sum("Target: ")
                     {
-                        Calories = bmr * 1.1
+                        Calories = bmr * 1.1,
+                        Proteins = Weight * 1.8
                     };
                 default:
                     return new Sum("Target: ");
@@ -222,5 +226,12 @@ namespace DietAndFitness.Entities
             return targeValues;
         }
 
+    }
+
+    public enum ProfileTypeEnum
+    {
+        Maintaince = 1,
+        Cut = 2,
+        Bulk = 3
     }
 }

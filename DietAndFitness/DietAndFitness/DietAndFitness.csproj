@@ -34,15 +34,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveXAML" Version="2.1.72" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
-    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="17.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="17.1.0.50" />
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="17.2.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="17.2.0.36" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +69,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Enums\" />
     <Folder Include="Styles\" />
     <Folder Include="Resources\Icons\" />
   </ItemGroup>

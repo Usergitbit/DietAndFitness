@@ -106,9 +106,9 @@ namespace DietAndFitness.ViewModels.Secondary
         public void Add(CompleteFoodItem item)
         {
             Calories += item.Calories;
-            Proteins += item.Proteins;
-            Carbohydrates += item.Carbohydrates;
-            Fats += item.Fats;
+            Proteins = Math.Round((Proteins ?? 0 ) + item.Proteins );
+            Carbohydrates = Math.Round((Carbohydrates ?? 0) + item.Carbohydrates);
+            Fats = Math.Round((Fats ?? 0) + item.Fats);
         }
         public void Remove(CompleteFoodItem item)
         {

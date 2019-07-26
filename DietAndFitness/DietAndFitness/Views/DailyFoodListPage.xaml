@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:DietAndFitness.ViewModels">
     <ContentPage.Content>
         <StackLayout Padding="5">
-            <Frame HasShadow="True">
+            <!--<Frame HasShadow="True">
                 <gauge:SfLinearGauge Orientation="OrientationHorizontal" VerticalOptions="CenterAndExpand">
                     <gauge:SfLinearGauge.Header>
                         <gauge:LinearHeader Text="{Binding CaloriesValuesInfo}" TextSize="20" />
@@ -56,6 +56,410 @@
                         </gauge:LinearGaugeAnnotation>
                     </gauge:SfLinearGauge.Annotations>
                 </gauge:SfLinearGauge>
+            </Frame>-->
+            <!--<Frame HasShadow="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <gauge:SfCircularGauge
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <gauge:SfCircularGauge.Headers>
+                            <gauge:Header
+                                ForegroundColor="Black"
+                                Text="{Binding CurrentValues.Calories}"
+                                TextSize="20"
+                                VerticalHeaderPosition="Start" />
+                        </gauge:SfCircularGauge.Headers>
+                        <gauge:SfCircularGauge.Annotations>
+                            <gauge:GaugeAnnotation Angle="90" Offset="-0.5">
+                                <gauge:GaugeAnnotation.View>
+                                    <gauge:SfCircularGauge HeightRequest="100" WidthRequest="100">
+                                        <gauge:SfCircularGauge.Headers>
+                                            <gauge:Header
+                                                ForegroundColor="Black"
+                                                HorizontalHeaderPosition="Center"
+                                                Text="{Binding CurrentValues.Proteins}"
+                                                VerticalHeaderPosition="End" />
+                                        </gauge:SfCircularGauge.Headers>
+                                        <gauge:SfCircularGauge.Annotations>
+                                            <gauge:GaugeAnnotation>
+                                                <gauge:GaugeAnnotation.View>
+                                                    <Label
+                                                        FontSize="12"
+                                                        HeightRequest="30"
+                                                        HorizontalTextAlignment="Center"
+                                                        Text="Proteins"
+                                                        TextColor="Black"
+                                                        VerticalTextAlignment="Center"
+                                                        WidthRequest="50" />
+                                                </gauge:GaugeAnnotation.View>
+                                            </gauge:GaugeAnnotation>
+                                        </gauge:SfCircularGauge.Annotations>
+
+                                        <gauge:SfCircularGauge.Scales>
+                                            <gauge:Scale
+                                                EndValue="{Binding MaximumValues.Calories}"
+                                                Interval="500"
+                                                MinorTicksPerInterval="4"
+                                                ShowLabels="False"
+                                                ShowTicks="True"
+                                                StartValue="0">
+
+                                                <gauge:Scale.Pointers>
+                                                    <gauge:RangePointer Color="{Binding ColorIndicator}" Value="{Binding CurrentValues.Proteins}" />
+                                                    <gauge:MarkerPointer Value="{Binding TargetValues.Proteins}" />
+                                                </gauge:Scale.Pointers>
+
+                                            </gauge:Scale>
+
+                                        </gauge:SfCircularGauge.Scales>
+
+
+                                    </gauge:SfCircularGauge>
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                            <gauge:GaugeAnnotation Offset="-0.5">
+                                <gauge:GaugeAnnotation.View>
+                                    <gauge:SfCircularGauge HeightRequest="100" WidthRequest="100">
+                                        <gauge:SfCircularGauge.Headers>
+                                            <gauge:Header
+                                                ForegroundColor="Black"
+                                                HorizontalHeaderPosition="Center"
+                                                Text="{Binding CurrentValues.Fats}"
+                                                VerticalHeaderPosition="End" />
+                                        </gauge:SfCircularGauge.Headers>
+                                        <gauge:SfCircularGauge.Annotations>
+                                            <gauge:GaugeAnnotation>
+                                                <gauge:GaugeAnnotation.View>
+                                                    <Label
+                                                        FontSize="12"
+                                                        HeightRequest="30"
+                                                        HorizontalTextAlignment="Center"
+                                                        Text="Fats"
+                                                        TextColor="Black"
+                                                        VerticalTextAlignment="Center"
+                                                        WidthRequest="50" />
+                                                </gauge:GaugeAnnotation.View>
+                                            </gauge:GaugeAnnotation>
+                                        </gauge:SfCircularGauge.Annotations>
+
+                                        <gauge:SfCircularGauge.Scales>
+                                            <gauge:Scale
+                                                EndValue="{Binding MaximumValues.Calories}"
+                                                Interval="500"
+                                                MinorTicksPerInterval="4"
+                                                ShowLabels="False"
+                                                ShowTicks="True"
+                                                StartValue="0">
+
+                                                <gauge:Scale.Pointers>
+                                                    <gauge:RangePointer Color="{Binding ColorIndicator}" Value="{Binding CurrentValues.Proteins}" />
+                                                    <gauge:MarkerPointer Value="{Binding TargetValues.Proteins}" />
+                                                </gauge:Scale.Pointers>
+
+                                            </gauge:Scale>
+
+                                        </gauge:SfCircularGauge.Scales>
+
+
+                                    </gauge:SfCircularGauge>
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                            <gauge:GaugeAnnotation Offset="0.5">
+                                <gauge:GaugeAnnotation.View>
+                                    <gauge:SfCircularGauge HeightRequest="100" WidthRequest="100">
+                                        <gauge:SfCircularGauge.Headers>
+                                            <gauge:Header
+                                                ForegroundColor="Black"
+                                                HorizontalHeaderPosition="Center"
+                                                Text="{Binding CurrentValues.Carbohydrates}"
+                                                VerticalHeaderPosition="End" />
+                                        </gauge:SfCircularGauge.Headers>
+                                        <gauge:SfCircularGauge.Annotations>
+                                            <gauge:GaugeAnnotation>
+                                                <gauge:GaugeAnnotation.View>
+                                                    <Label
+                                                        FontSize="12"
+                                                        HeightRequest="30"
+                                                        HorizontalTextAlignment="Center"
+                                                        Text="Carbs"
+                                                        TextColor="Black"
+                                                        VerticalTextAlignment="Center"
+                                                        WidthRequest="100" />
+                                                </gauge:GaugeAnnotation.View>
+                                            </gauge:GaugeAnnotation>
+                                        </gauge:SfCircularGauge.Annotations>
+
+                                        <gauge:SfCircularGauge.Scales>
+                                            <gauge:Scale
+                                                EndValue="{Binding MaximumValues.Calories}"
+                                                Interval="500"
+                                                MinorTicksPerInterval="4"
+                                                ShowLabels="False"
+                                                ShowTicks="True"
+                                                StartValue="0">
+
+                                                <gauge:Scale.Pointers>
+                                                    <gauge:RangePointer Color="{Binding ColorIndicator}" Value="{Binding CurrentValues.Proteins}" />
+                                                    <gauge:MarkerPointer Value="{Binding TargetValues.Proteins}" />
+                                                </gauge:Scale.Pointers>
+
+                                            </gauge:Scale>
+
+                                        </gauge:SfCircularGauge.Scales>
+
+
+                                    </gauge:SfCircularGauge>
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                            <gauge:GaugeAnnotation>
+                                <gauge:GaugeAnnotation.View>
+                                    <Label
+                                        FontSize="20"
+                                        HeightRequest="30"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Calories"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center"
+                                        WidthRequest="100" />
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+
+                        </gauge:SfCircularGauge.Annotations>
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale
+                                EndValue="{Binding MaximumValues.Calories}"
+                                Interval="500"
+                                LabelOffset="1.2"
+                                MinorTicksPerInterval="4"
+                                ShowTicks="True"
+                                StartValue="0">
+
+
+                                <gauge:Scale.Pointers>
+                                    <gauge:RangePointer Color="{Binding ColorIndicator}" Value="{Binding CurrentValues.Calories}" />
+                                    <gauge:MarkerPointer Value="{Binding TargetValues.Calories}" />
+                                </gauge:Scale.Pointers>
+
+                            </gauge:Scale>
+
+                        </gauge:SfCircularGauge.Scales>
+
+                    </gauge:SfCircularGauge>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding CaloriesValuesInfo}" />
+                </Grid>
+            </Frame>-->
+            <Frame HasShadow="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <!--<ColumnDefinition Width="*" />-->
+                    </Grid.ColumnDefinitions>
+
+                    <gauge:SfLinearGauge
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Orientation="OrientationHorizontal"
+                        VerticalOptions="CenterAndExpand">
+                        <gauge:SfLinearGauge.Header>
+                            <gauge:LinearHeader Text="{Binding CaloriesValuesInfo}" TextSize="20" />
+                        </gauge:SfLinearGauge.Header>
+                        <gauge:SfLinearGauge.Scales>
+                            <gauge:LinearScale
+                                Interval="500"
+                                LabelColor="#424242"
+                                LabelFontSize="12"
+                                MaximumValue="{Binding MaximumValues.Calories}"
+                                MinimumValue="0"
+                                MinorTicksPerInterval="4"
+                                ScaleBarColor="#e0e9f9"
+                                ScaleBarSize="25">
+                                <gauge:LinearScale.MajorTickSettings>
+                                    <gauge:LinearTickSettings
+                                        Length="10"
+                                        Thickness="1"
+                                        Color="#9E9E9E" />
+                                </gauge:LinearScale.MajorTickSettings>
+                                <gauge:LinearScale.Pointers>
+                                    <gauge:SymbolPointer
+                                        MarkerShape="Diamond"
+                                        Offset="-30"
+                                        Color="Purple"
+                                        Value="{Binding TargetValues.Calories}" />
+                                    <gauge:BarPointer
+                                        x:Name="barPointer"
+                                        CornerRadius="10"
+                                        CornerRadiusType="End"
+                                        EnableAnimation="True"
+                                        Thickness="15"
+                                        Color="{Binding ColorIndicator}"
+                                        Value="{Binding CurrentValues.Calories}" />
+                                </gauge:LinearScale.Pointers>
+                            </gauge:LinearScale>
+                        </gauge:SfLinearGauge.Scales>
+                        <gauge:SfLinearGauge.Annotations>
+                            <gauge:LinearGaugeAnnotation ScaleValue="{Binding TargetValues.Calories}">
+                                <gauge:LinearGaugeAnnotation.ViewMargin>
+                                    <OnPlatform x:TypeArguments="Point">
+                                        <On Platform="iOS" Value="0,-30" />
+                                        <On Platform="Android" Value="0,-40" />
+                                        <On Platform="UWP" Value="0,-40" />
+                                    </OnPlatform>
+                                </gauge:LinearGaugeAnnotation.ViewMargin>
+                                <gauge:LinearGaugeAnnotation.View>
+                                    <Label
+                                        FontSize="Small"
+                                        Text="{Binding TargetValues.CaloriesText}"
+                                        WidthRequest="150" />
+                                </gauge:LinearGaugeAnnotation.View>
+                            </gauge:LinearGaugeAnnotation>
+                        </gauge:SfLinearGauge.Annotations>
+                    </gauge:SfLinearGauge>
+                    <gauge:SfCircularGauge Grid.Row="1" Grid.Column="0">
+                        <gauge:SfCircularGauge.Headers>
+                            <gauge:Header
+                                ForegroundColor="Black"
+                                HorizontalHeaderPosition="Center"
+                                Text="{Binding CurrentValues.Proteins}"
+                                VerticalHeaderPosition="End" />
+                        </gauge:SfCircularGauge.Headers>
+                        <gauge:SfCircularGauge.Annotations>
+                            <gauge:GaugeAnnotation>
+                                <gauge:GaugeAnnotation.View>
+                                    <Label
+                                        FontSize="12"
+                                        HeightRequest="30"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Proteins"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center"
+                                        WidthRequest="50" />
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                        </gauge:SfCircularGauge.Annotations>
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale
+                                EndValue="{Binding MaximumValues.Proteins}"
+                                Interval="20"
+                                MinorTicksPerInterval="4"
+                                ShowTicks="True"
+                                StartValue="0">
+                                <gauge:Scale.Pointers>
+                                    <gauge:RangePointer Color="{Binding ColorIndicatorProteins}" Value="{Binding CurrentValues.Proteins}" />
+                                </gauge:Scale.Pointers>
+
+                            </gauge:Scale>
+
+                        </gauge:SfCircularGauge.Scales>
+
+
+                    </gauge:SfCircularGauge>
+                    <gauge:SfCircularGauge Grid.Row="1" Grid.Column="1">
+                        <gauge:SfCircularGauge.Headers>
+                            <gauge:Header
+                                ForegroundColor="Black"
+                                HorizontalHeaderPosition="Center"
+                                Text="{Binding CurrentValues.Carbohydrates}"
+                                VerticalHeaderPosition="End" />
+                        </gauge:SfCircularGauge.Headers>
+                        <gauge:SfCircularGauge.Annotations>
+                            <gauge:GaugeAnnotation>
+                                <gauge:GaugeAnnotation.View>
+                                    <Label
+                                        FontSize="12"
+                                        HeightRequest="30"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Carbs"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center"
+                                        WidthRequest="50" />
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                        </gauge:SfCircularGauge.Annotations>
+
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale
+                                EndValue="{Binding MaximumValues.Proteins}"
+                                Interval="20"
+                                MinorTicksPerInterval="4"
+                                ShowTicks="True"
+                                StartValue="0">
+
+                                <gauge:Scale.Pointers>
+                                    <gauge:RangePointer Color="DarkOrange" Value="{Binding CurrentValues.Carbohydrates}" />
+                                </gauge:Scale.Pointers>
+
+                            </gauge:Scale>
+
+                        </gauge:SfCircularGauge.Scales>
+
+
+                    </gauge:SfCircularGauge>
+                    <gauge:SfCircularGauge Grid.Row="1" Grid.Column="2">
+                        <gauge:SfCircularGauge.Headers>
+                            <gauge:Header
+                                ForegroundColor="Black"
+                                HorizontalHeaderPosition="Center"
+                                Text="{Binding CurrentValues.Fats}"
+                                VerticalHeaderPosition="End" />
+                        </gauge:SfCircularGauge.Headers>
+                        <gauge:SfCircularGauge.Annotations>
+                            <gauge:GaugeAnnotation>
+                                <gauge:GaugeAnnotation.View>
+                                    <Label
+                                        FontSize="12"
+                                        HeightRequest="30"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Fats"
+                                        TextColor="Black"
+                                        VerticalTextAlignment="Center"
+                                        WidthRequest="50" />
+                                </gauge:GaugeAnnotation.View>
+                            </gauge:GaugeAnnotation>
+                        </gauge:SfCircularGauge.Annotations>
+
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale
+                                EndValue="{Binding MaximumValues.Proteins}"
+                                Interval="20"
+                                MinorTicksPerInterval="4"
+                                ShowTicks="True"
+                                StartValue="0">
+
+                                <gauge:Scale.Pointers>
+                                    <gauge:RangePointer Color="DarkOrange" Value="{Binding CurrentValues.Fats}" />
+                                </gauge:Scale.Pointers>
+
+                            </gauge:Scale>
+
+                        </gauge:SfCircularGauge.Scales>
+
+
+                    </gauge:SfCircularGauge>
+                    <!--<Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding CaloriesValuesInfo}" />-->
+                </Grid>
             </Frame>
             <ListView
                 HasUnevenRows="True"

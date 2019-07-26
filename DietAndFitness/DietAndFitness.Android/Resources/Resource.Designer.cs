@@ -26,12 +26,14 @@ namespace DietAndFitness.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.input_layout_drop_down_icon = global::DietAndFitness.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_In = global::DietAndFitness.Droid.Resource.Animation.SfChart_Fade_In;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_Out = global::DietAndFitness.Droid.Resource.Animation.SfChart_Fade_Out;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Scale_In = global::DietAndFitness.Droid.Resource.Animation.SfChart_Scale_In;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Scale_Out = global::DietAndFitness.Droid.Resource.Animation.SfChart_Scale_Out;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.Drawable.input_layout_drop_down_icon = global::DietAndFitness.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Drawable.inputlayout_togglecollapseicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Drawable.inputlayout_togglevisibleicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Id.annotationLayout = global::DietAndFitness.Droid.Resource.Id.annotationLayout;
@@ -64,10 +66,13 @@ namespace DietAndFitness.Droid
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.q = global::DietAndFitness.Droid.Resource.String.q;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.quarter = global::DietAndFitness.Droid.Resource.String.quarter;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_close_label = global::DietAndFitness.Droid.Resource.String.sfchart_close_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_decrease_label = global::DietAndFitness.Droid.Resource.String.sfchart_decrease_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_high_label = global::DietAndFitness.Droid.Resource.String.sfchart_high_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_increase_label = global::DietAndFitness.Droid.Resource.String.sfchart_increase_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_low_label = global::DietAndFitness.Droid.Resource.String.sfchart_low_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_open_label = global::DietAndFitness.Droid.Resource.String.sfchart_open_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_others_label = global::DietAndFitness.Droid.Resource.String.sfchart_others_label;
+			global::Syncfusion.SfChart.XForms.Droid.Resource.String.sfchart_total_label = global::DietAndFitness.Droid.Resource.String.sfchart_total_label;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.w = global::DietAndFitness.Droid.Resource.String.w;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.String.week = global::DietAndFitness.Droid.Resource.String.week;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.barPointerColor = global::DietAndFitness.Droid.Resource.Attribute.barPointerColor;
@@ -482,6 +487,7 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor;
 			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize;
 			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerWidth = global::DietAndFitness.Droid.Resource.Styleable.SfPicker_pickerWidth;
+			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.input_layout_drop_down_icon = global::DietAndFitness.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglecollapseicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.inputlayout_togglevisibleicon = global::DietAndFitness.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
 			global::Syncfusion.XForms.Android.PopupLayout.Resource.Drawable.popup_forms_android_close_icon = global::DietAndFitness.Droid.Resource.Drawable.popup_forms_android_close_icon;
@@ -559,6 +565,7 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.Schedule.Resource.Id.monthView = global::DietAndFitness.Droid.Resource.Id.monthView;
 			global::Com.Syncfusion.Schedule.Resource.Id.weekView = global::DietAndFitness.Droid.Resource.Id.weekView;
 			global::Com.Syncfusion.Schedule.Resource.Id.workWeekView = global::DietAndFitness.Droid.Resource.Id.workWeekView;
+			global::Com.Syncfusion.Schedule.Resource.String.NoResources = global::DietAndFitness.Droid.Resource.String.NoResources;
 			global::Com.Syncfusion.Schedule.Resource.String.NoSelectedDate = global::DietAndFitness.Droid.Resource.String.NoSelectedDate;
 			global::Com.Syncfusion.Schedule.Resource.String.No_Appointments = global::DietAndFitness.Droid.Resource.String.No_Appointments;
 			global::Com.Syncfusion.Schedule.Resource.String.all_day = global::DietAndFitness.Droid.Resource.String.all_day;
@@ -6780,26 +6787,26 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f020149
-			public const int avd_hide_password_1 = 2130837833;
-			
 			// aapt resource value: 0x7f02014a
-			public const int avd_hide_password_2 = 2130837834;
+			public const int avd_hide_password_1 = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int avd_hide_password_3 = 2130837835;
+			public const int avd_hide_password_2 = 2130837835;
+			
+			// aapt resource value: 0x7f02014c
+			public const int avd_hide_password_3 = 2130837836;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f02014c
-			public const int avd_show_password_1 = 2130837836;
-			
 			// aapt resource value: 0x7f02014d
-			public const int avd_show_password_2 = 2130837837;
+			public const int avd_show_password_1 = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int avd_show_password_3 = 2130837838;
+			public const int avd_show_password_2 = 2130837838;
+			
+			// aapt resource value: 0x7f02014f
+			public const int avd_show_password_3 = 2130837839;
 			
 			// aapt resource value: 0x7f020058
 			public const int backup_icon = 2130837592;
@@ -7375,154 +7382,157 @@ namespace DietAndFitness.Droid
 			public const int icon = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int inputlayout_togglecollapseicon = 2130837783;
+			public const int input_layout_drop_down_icon = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int inputlayout_togglevisibleicon = 2130837784;
+			public const int inputlayout_togglecollapseicon = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int macros_icon = 2130837785;
+			public const int inputlayout_togglevisibleicon = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int menu_icon = 2130837786;
+			public const int macros_icon = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mr_button_connected_dark = 2130837787;
+			public const int menu_icon = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_button_connected_light = 2130837788;
+			public const int mr_button_connected_dark = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_button_connecting_dark = 2130837789;
+			public const int mr_button_connected_light = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_button_connecting_light = 2130837790;
+			public const int mr_button_connecting_dark = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_button_dark = 2130837791;
+			public const int mr_button_connecting_light = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_button_light = 2130837792;
+			public const int mr_button_dark = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_dialog_close_dark = 2130837793;
+			public const int mr_button_light = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mr_dialog_close_light = 2130837794;
+			public const int mr_dialog_close_dark = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mr_dialog_material_background_dark = 2130837795;
+			public const int mr_dialog_close_light = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mr_dialog_material_background_light = 2130837796;
+			public const int mr_dialog_material_background_dark = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int mr_group_collapse = 2130837797;
+			public const int mr_dialog_material_background_light = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int mr_group_expand = 2130837798;
+			public const int mr_group_collapse = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int mr_media_pause_dark = 2130837799;
+			public const int mr_group_expand = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int mr_media_pause_light = 2130837800;
+			public const int mr_media_pause_dark = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int mr_media_play_dark = 2130837801;
+			public const int mr_media_pause_light = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int mr_media_play_light = 2130837802;
+			public const int mr_media_play_dark = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int mr_media_stop_dark = 2130837803;
+			public const int mr_media_play_light = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int mr_media_stop_light = 2130837804;
+			public const int mr_media_stop_dark = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int mr_vol_type_audiotrack_dark = 2130837805;
+			public const int mr_media_stop_light = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int mr_vol_type_audiotrack_light = 2130837806;
+			public const int mr_vol_type_audiotrack_dark = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int mtrl_snackbar_background = 2130837807;
+			public const int mr_vol_type_audiotrack_light = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int mtrl_tabs_default_indicator = 2130837808;
+			public const int mtrl_snackbar_background = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int navigation_empty_icon = 2130837809;
+			public const int mtrl_tabs_default_indicator = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int notification_action_background = 2130837810;
+			public const int navigation_empty_icon = 2130837810;
 			
 			// aapt resource value: 0x7f020133
-			public const int notification_bg = 2130837811;
+			public const int notification_action_background = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int notification_bg_low = 2130837812;
+			public const int notification_bg = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int notification_bg_low_normal = 2130837813;
+			public const int notification_bg_low = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int notification_bg_low_pressed = 2130837814;
+			public const int notification_bg_low_normal = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int notification_bg_normal = 2130837815;
+			public const int notification_bg_low_pressed = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int notification_bg_normal_pressed = 2130837816;
+			public const int notification_bg_normal = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int notification_icon_background = 2130837817;
-			
-			// aapt resource value: 0x7f020147
-			public const int notification_template_icon_bg = 2130837831;
-			
-			// aapt resource value: 0x7f020148
-			public const int notification_template_icon_low_bg = 2130837832;
+			public const int notification_bg_normal_pressed = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int notification_tile_bg = 2130837818;
+			public const int notification_icon_background = 2130837818;
+			
+			// aapt resource value: 0x7f020148
+			public const int notification_template_icon_bg = 2130837832;
+			
+			// aapt resource value: 0x7f020149
+			public const int notification_template_icon_low_bg = 2130837833;
 			
 			// aapt resource value: 0x7f02013b
-			public const int notify_panel_notification_icon_bg = 2130837819;
+			public const int notification_tile_bg = 2130837819;
 			
 			// aapt resource value: 0x7f02013c
-			public const int options_icon = 2130837820;
+			public const int notify_panel_notification_icon_bg = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int popup_forms_android_close_icon = 2130837821;
+			public const int options_icon = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int popup_forms_android_shadow = 2130837822;
+			public const int popup_forms_android_close_icon = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int popup_forms_dark_theme_close_icon = 2130837823;
+			public const int popup_forms_android_shadow = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int popup_forms_light_theme_close_icon = 2130837824;
+			public const int popup_forms_dark_theme_close_icon = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int profile_icon = 2130837825;
+			public const int popup_forms_light_theme_close_icon = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int Recurrence = 2130837826;
+			public const int profile_icon = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int statistics_icon = 2130837827;
+			public const int Recurrence = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int today_food_icon = 2130837828;
+			public const int statistics_icon = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int tooltip_frame_dark = 2130837829;
+			public const int today_food_icon = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int tooltip_frame_light = 2130837830;
+			public const int tooltip_frame_dark = 2130837830;
+			
+			// aapt resource value: 0x7f020147
+			public const int tooltip_frame_light = 2130837831;
 			
 			static Drawable()
 			{
@@ -8936,11 +8946,14 @@ namespace DietAndFitness.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090057
-			public const int ApplicationName = 2131296343;
+			// aapt resource value: 0x7f090058
+			public const int ApplicationName = 2131296344;
 			
-			// aapt resource value: 0x7f090056
-			public const int Hello = 2131296342;
+			// aapt resource value: 0x7f090057
+			public const int Hello = 2131296343;
+			
+			// aapt resource value: 0x7f090052
+			public const int NoResources = 2131296338;
 			
 			// aapt resource value: 0x7f090051
 			public const int NoSelectedDate = 2131296337;
@@ -9065,8 +9078,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f090032
 			public const int abc_toolbar_collapse_description = 2131296306;
 			
-			// aapt resource value: 0x7f090054
-			public const int accept = 2131296340;
+			// aapt resource value: 0x7f090055
+			public const int accept = 2131296341;
 			
 			// aapt resource value: 0x7f090050
 			public const int all_day = 2131296336;
@@ -9083,8 +9096,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f090043
 			public const int character_counter_pattern = 2131296323;
 			
-			// aapt resource value: 0x7f090055
-			public const int decline = 2131296341;
+			// aapt resource value: 0x7f090056
+			public const int decline = 2131296342;
 			
 			// aapt resource value: 0x7f090044
 			public const int fab_transformation_scrim_behavior = 2131296324;
@@ -9188,44 +9201,53 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f09004c
 			public const int path_password_strike_through = 2131296332;
 			
-			// aapt resource value: 0x7f090053
-			public const int popup_message = 2131296339;
+			// aapt resource value: 0x7f090054
+			public const int popup_message = 2131296340;
+			
+			// aapt resource value: 0x7f09005a
+			public const int q = 2131296346;
 			
 			// aapt resource value: 0x7f090059
-			public const int q = 2131296345;
-			
-			// aapt resource value: 0x7f090058
-			public const int quarter = 2131296344;
+			public const int quarter = 2131296345;
 			
 			// aapt resource value: 0x7f090033
 			public const int search_menu_title = 2131296307;
 			
-			// aapt resource value: 0x7f09005f
-			public const int sfchart_close_label = 2131296351;
+			// aapt resource value: 0x7f090060
+			public const int sfchart_close_label = 2131296352;
 			
-			// aapt resource value: 0x7f09005c
-			public const int sfchart_high_label = 2131296348;
+			// aapt resource value: 0x7f090063
+			public const int sfchart_decrease_label = 2131296355;
 			
 			// aapt resource value: 0x7f09005d
-			public const int sfchart_low_label = 2131296349;
+			public const int sfchart_high_label = 2131296349;
+			
+			// aapt resource value: 0x7f090062
+			public const int sfchart_increase_label = 2131296354;
 			
 			// aapt resource value: 0x7f09005e
-			public const int sfchart_open_label = 2131296350;
+			public const int sfchart_low_label = 2131296350;
 			
-			// aapt resource value: 0x7f090060
-			public const int sfchart_others_label = 2131296352;
+			// aapt resource value: 0x7f09005f
+			public const int sfchart_open_label = 2131296351;
+			
+			// aapt resource value: 0x7f090061
+			public const int sfchart_others_label = 2131296353;
+			
+			// aapt resource value: 0x7f090064
+			public const int sfchart_total_label = 2131296356;
 			
 			// aapt resource value: 0x7f09004d
 			public const int status_bar_notification_info_overflow = 2131296333;
 			
-			// aapt resource value: 0x7f090052
-			public const int title = 2131296338;
+			// aapt resource value: 0x7f090053
+			public const int title = 2131296339;
+			
+			// aapt resource value: 0x7f09005c
+			public const int w = 2131296348;
 			
 			// aapt resource value: 0x7f09005b
-			public const int w = 2131296347;
-			
-			// aapt resource value: 0x7f09005a
-			public const int week = 2131296346;
+			public const int week = 2131296347;
 			
 			static String()
 			{

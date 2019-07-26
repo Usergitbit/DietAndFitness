@@ -93,6 +93,21 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public Color ColorIndicatorProteins
+        {
+            get
+            {
+                if (CurrentValues.Proteins < TargetValues.Proteins)
+                    return Color.Red;
+                else
+                    return Color.Green;
+            }
+            set
+            {
+                OnPropertyChanged();
+            }
+        }
         public double ErrorMargin
         {
             get
@@ -191,6 +206,7 @@ namespace DietAndFitness.ViewModels
                 CurrentValues.Add(item);
             }
             OnPropertyChanged(nameof(ColorIndicator));
+            OnPropertyChanged(nameof(ColorIndicatorProteins));
             OnPropertyChanged(nameof(CaloriesValuesInfo));
             //increase gauge size so the current values don't go outside the page
             if (CurrentValues.Calories > MaximumValues.Calories)
