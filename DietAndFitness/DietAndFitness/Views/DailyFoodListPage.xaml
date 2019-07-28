@@ -35,7 +35,7 @@
                                     Color="Purple"
                                     Value="{Binding TargetValues.Calories}" />
                                 <gauge:BarPointer
-                                    x:Name="barPointer"
+                                    x:Name="barPointer2"
                                     CornerRadius="10"
                                     CornerRadiusType="End"
                                     EnableAnimation="True"
