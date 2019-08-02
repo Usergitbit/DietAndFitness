@@ -27,11 +27,13 @@ namespace DietAndFitness.Views
             MasterPage.ListView.SelectedItem = null;
             await Task.Run(() =>
             {
-                var page = (Page)Activator.CreateInstance(item.TargetType);
-                page.Title = item.Title;
-                var navigationPage = Detail as NavigationPage;
+                
                 Device.BeginInvokeOnMainThread(async () =>
                 {
+                    var page = (Page)Activator.CreateInstance(item.TargetType);
+                    page.Title = item.Title;
+                    var navigationPage = Detail as NavigationPage;
+
                     navigationPage.Navigation.InsertPageBefore(page, navigationPage.RootPage);
                     await navigationPage.PopToRootAsync();
                 });
