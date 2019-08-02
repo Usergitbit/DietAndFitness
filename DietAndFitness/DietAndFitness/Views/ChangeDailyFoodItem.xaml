@@ -99,7 +99,7 @@
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 Placeholder="Quantity"
-                Text="{Binding CurrentItem.Quantity, Converter={StaticResource StringToNullableDouble}" />
+                Text="{Binding CurrentItem.Quantity, Converter={StaticResource StringToNullableDouble }" />
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
