@@ -8,8 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <local:StringToNullableDouble x:Key="StringToNullableDouble" />
-            <local:MacroTypeToString x:Key="MacroTypeToString"/>
-            <local:DateToStringForCalories x:Key="DateToStringForCalories"/>
+            <local:MacroTypeToString x:Key="MacroTypeToString" />
+            <local:DateToStringForCalories x:Key="DateToStringForCalories" />
             <Style TargetType="Frame">
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="OutlineColor" Value="DeepSkyBlue" />

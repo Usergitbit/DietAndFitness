@@ -9,7 +9,7 @@ namespace DietAndFitness.Interfaces
     /// <summary>
     /// Interface for implementing navigation methods
     /// </summary>
-    interface INavigationService
+    public interface INavigationService
     {
         Task NavigateToAsync(Page page);
         Task GoBackAsync();

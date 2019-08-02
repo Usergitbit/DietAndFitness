@@ -13,7 +13,7 @@
                 VerticalOptions="CenterAndExpand">
                 <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
             </DatePicker>-->
-            <syncfusion:SfSchedule ScheduleView="MonthView" SelectedDate="{Binding SelectedDate, Mode = TwoWay}" CellTapped="SfSchedule_CellTapped"/>
+            <syncfusion:SfSchedule ScheduleView="MonthView" SelectedDate="{Binding SelectedDate, Mode = TwoWay}"/>
             <!--<Grid
                 ColumnSpacing="0"
                 HorizontalOptions="Center"

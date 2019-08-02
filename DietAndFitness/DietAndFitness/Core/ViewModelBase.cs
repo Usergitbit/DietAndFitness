@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
-
 namespace DietAndFitness.Core
 {
     /// <summary>
@@ -16,17 +15,16 @@ namespace DietAndFitness.Core
     public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected NavigationService navigationService;
+        protected INavigationService navigationService;
         protected readonly IDialogService dialogService;
-        protected DataAccessLayer DBLocalAccess { get; set; }
+        protected IDataAccessService DBLocalAccess { get; set; }
 
 
         public ViewModelBase()
         {
-            //this.navigationService = navigationService;
-            this.navigationService = App.NavigationService;
-            dialogService = new DialogService();
-            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            navigationService = IOC.IOC.GetNavigationService();
+            dialogService = IOC.IOC.GetDialogService();
+            DBLocalAccess = IOC.IOC.GetDataAccessService();
         }
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
         {

@@ -17,13 +17,14 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>DietAndFitness.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>
+    </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\TGeorge\Desktop\DAF UWP</AppxPackageDir>
+    <AppxPackageDir>C:\Users\TGeorge\Dropbox\ss\</AppxPackageDir>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>3421190BAEBB3AE9D2E7E46E8E005937441822E8</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>8078A6BDD1530EEC7A0EC0D70D0ACC606BE5232C</PackageCertificateThumbprint>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
@@ -100,6 +101,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomRenderers\AdvancedEntry.cs" />
     <Compile Include="FilePathUWP.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -113,6 +115,39 @@
     <None Include="DietAndFitness.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="backup_icon.png" />
+    <Content Include="calendar_icon.png" />
+    <Content Include="calories_icon.png" />
+    <Content Include="food_database_icon.png" />
+    <Content Include="macros_icon.png" />
+    <Content Include="menu_icon.png" />
+    <Content Include="options_icon.png" />
+    <Content Include="profile_icon.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -139,12 +174,13 @@
     <Content Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="statistics_icon.png" />
+    <Content Include="today_food_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -157,26 +193,32 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="LiveXAML">
+      <Version>2.1.72</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPicker">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
+      <Version>17.2.0.36</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule">
-      <Version>16.3.0.29</Version>
+      <Version>17.2.0.36</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DietAndFitness\DietAndFitness.csproj">

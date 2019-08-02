@@ -9,7 +9,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:HomePageDetail/>
+        <pages:DailyFoodListPage/>
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

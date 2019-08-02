@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DietAndFitness.Core.ModelBase" Collapsed="true">
+    <Position X="1.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAIAAAgAAAgAAAABEAAAABAAAAQAA=</HashCode>
+      <FileName>Core\ModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DietAndFitness.Entities.DailyFoodItem" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAgAAAAgIAAAAAAAAAACAAAAQgAAAkAA=</HashCode>
+      <FileName>Entities\DailyFoodItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.DatabaseEntity" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAABAAAAgAAAICgIEAQAADAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\DatabaseEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DietAndFitness.Entities.DietFormula" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\DietFormula.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.GlobalFoodItem" Collapsed="true">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUAACAAAAAAAAAACAgIABAAEAAQABAAAAAAACAFAAA=</HashCode>
+      <FileName>Entities\GlobalFoodItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.LocalFoodItem" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUAICAAAAAAAAAACAgIABAAEAAQABAAAAAAACAFAAA=</HashCode>
+      <FileName>Entities\LocalFoodItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.Profile" Collapsed="true">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABAAABAAABAQABCyIAAQgoCAAACCgAAAABEAABAQ=</HashCode>
+      <FileName>Entities\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.ProfileType" Collapsed="true">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ProfileType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.Entities.VersionItem" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEgIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\VersionItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DietAndFitness.ViewModels.Secondary.CompleteFoodItem" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAABAAAAAAAAAAABgIABAQAAAAABAAAAAAgAAEAEA=</HashCode>
+      <FileName>ViewModels\Secondary\CompleteFoodItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

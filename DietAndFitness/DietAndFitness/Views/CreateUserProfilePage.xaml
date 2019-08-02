@@ -4,241 +4,368 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
-    xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms"
-    xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms">
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand">
-            <ScrollView HorizontalOptions="FillAndExpand">
-                <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <sfPopup:SfPopupLayout IsOpen="{Binding IsPopUpOpen}">
+            <sfPopup:SfPopupLayout.PopupView>
+                <sfPopup:PopupView
+                    AcceptCommand="{Binding PopUpAcceptCommand}"
+                    AppearanceMode="TwoButton"
+                    DeclineCommand="{Binding PopUpDeclineCommand}"
+                    HeaderTitle="Calculate Body Fat %">
+                    <sfPopup:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Waist (at navel)"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    MaximumNumberDecimalDigits="2"
+                                    ParserMode="Double"
+                                    TextAlignment="Center"
+                                    ValueChangeMode="OnKeyFocus"
+                                    WidthRequest="75"
+                                    Value="{Binding WaistLenght}" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="cm"
+                                    VerticalOptions="CenterAndExpand" />
 
-                    <Grid HorizontalOptions="CenterAndExpand">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Neck (at narrowest)"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    MaximumNumberDecimalDigits="2"
+                                    ParserMode="Double"
+                                    TextAlignment="Center"
+                                    ValueChangeMode="OnKeyFocus"
+                                    WidthRequest="75"
+                                    Value="{Binding NeckLength}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="cm"
+                                    VerticalOptions="CenterAndExpand" />
 
-                        <Label
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Height"
-                            VerticalOptions="CenterAndExpand" />
-                        <syncfusion:SfNumericTextBox
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            HorizontalOptions="CenterAndExpand"
-                            MaximumNumberDecimalDigits="2"
-                            ParserMode="Double"
-                            WidthRequest="75"
-                            Value="{Binding UserProfile.Height}"
-                            TextAlignment="Center"/>
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    IsVisible="{Binding IsFemale}"
+                                    Text="Hip (at widest)"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    IsVisible="{Binding IsFemale}"
+                                    MaximumNumberDecimalDigits="2"
+                                    ParserMode="Double"
+                                    TextAlignment="Center"
+                                    ValueChangeMode="OnKeyFocus"
+                                    WidthRequest="75"
+                                    Value="{Binding HipLength}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    HorizontalOptions="CenterAndExpand"
+                                    IsVisible="{Binding IsFemale}"
+                                    Text="cm"
+                                    VerticalOptions="CenterAndExpand" />
 
-                        <Label
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Weight"
-                            VerticalOptions="CenterAndExpand" />
-                        <syncfusion:SfNumericTextBox
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            HorizontalOptions="CenterAndExpand"
-                            MaximumNumberDecimalDigits="2"
-                            ParserMode="Double"
-                            WidthRequest="75"
-                            Value="{Binding UserProfile.Weight}" 
-                            TextAlignment="Center"/>
-                        
-                        <Label
-                            Grid.Row="2"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Birth Date"
-                            VerticalOptions="CenterAndExpand" />
-                        <DatePicker
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Date="{Binding UserProfile.BirthDate}"
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-                        </DatePicker>
-                        <Label
-                            Grid.Row="3"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Sex"
-                            VerticalOptions="CenterAndExpand" />
-                        <Picker
-                            x:Name="sexPicker"
-                            Grid.Row="3"
-                            Grid.Column="1"
-                            HorizontalOptions="FillAndExpand"
-                            SelectedItem="{Binding UserProfile.Sex}">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Male</x:String>
-                                    <x:String>Female</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
-                        <Label
-                            Grid.Row="4"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Formula"
-                            VerticalOptions="CenterAndExpand" />
-                        <Picker
-                            x:Name="formulaPicker"
-                            Grid.Row="4"
-                            Grid.Column="1"
-                            HorizontalOptions="FillAndExpand"
-                            ItemDisplayBinding="{Binding Name}"
-                            ItemsSource="{Binding DietFormulas}"
-                            SelectedIndex="1"
-                            SelectedIndexChanged="OnFormulaPickerSelectedIndexChanged"
-                            SelectedItem="{Binding SelectedDietFormula}"
-                            WidthRequest="150"/>
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="{Binding CalculatedBodyFat, StringFormat='Body fat = {0}%'}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </Grid>
+                        </DataTemplate>
+                    </sfPopup:PopupView.ContentTemplate>
+                </sfPopup:PopupView>
+            </sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:SfPopupLayout.Content>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <ScrollView HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            <Grid HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                        <Button
-                            Grid.Row="4"
-                            Grid.Column="2"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Help!" />
-                        <Label
-                            Grid.Row="5"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Activity Level"
-                            VerticalOptions="CenterAndExpand" />
-                        <range:SfRangeSlider
-                            Grid.Row="5"
-                            Grid.Column="1"
-                            Maximum="2"
-                            Minimum="1.2"
-                            Orientation="Horizontal"
-                            ShowRange="False"
-                            ShowValueLabel="False"
-                            SnapsTo="StepValues"
-                            StepFrequency="0.1"
-                            TickFrequency="0.2"
-                            TickPlacement="BottomRight"
-                            ToolTipPlacement="TopLeft"
-                            ToolTipPrecision="1"
-                            VerticalOptions="Center"
-                            WidthRequest="75"
-                            Value="{Binding UserProfile.ActivityLevel}" />
-                        <Button
-                            Grid.Row="5"
-                            Grid.Column="2"
-                            HorizontalOptions="Center"
-                            Text="Help!"
-                            VerticalOptions="Center" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Height"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    MaximumNumberDecimalDigits="2"
+                                    ParserMode="Double"
+                                    TextAlignment="Center"
+                                    WidthRequest="75"
+                                    Value="{Binding UserProfile.Height}" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="cm"
+                                    VerticalOptions="CenterAndExpand" />
 
-                        <Label
-                            x:Name="bodyFatNameLabel"
-                            Grid.Row="6"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            IsVisible="False"
-                            Text="Body Fat"
-                            VerticalOptions="CenterAndExpand" />
-                        <syncfusion:SfNumericTextBox
-                            x:Name="bodyFatEntry"
-                            Grid.Row="6"
-                            Grid.Column="1"
-                            FormatString="p"
-                            HorizontalOptions="Center"
-                            IsVisible="False"
-                            PercentDisplayMode="Value"
-                            WidthRequest="75"
-                            Value="{Binding UserProfile.BodyFat}"
-                            TextAlignment="Center"/>
-                        <Label
-                            Grid.Row="7"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Name"
-                            VerticalOptions="CenterAndExpand" />
-                        <Entry
-                            Grid.Row="7"
-                            Grid.Column="1"
-                            HorizontalOptions="FillAndExpand"
-                            Text="{Binding UserProfile.Name}"  
-                            Placeholder="Profile Name"
-                            HorizontalTextAlignment="Center"/>
-                        <Label
-                            Grid.Row="8"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Start Date"
-                            VerticalOptions="CenterAndExpand" />
-                        <DatePicker
-                            Grid.Row="8"
-                            Grid.Column="1"
-                            Date="{Binding UserProfile.StartDate}"
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-                        </DatePicker>
-                        <Label
-                            Grid.Row="9"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="End Date"
-                            VerticalOptions="CenterAndExpand" />
-                        <DatePicker
-                            Grid.Row="9"
-                            Grid.Column="1"
-                            Date="{Binding UserProfile.EndDate}"
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                            <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-                        </DatePicker>
-                        <Label
-                            Grid.Row="10"
-                            Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="Profile Type"
-                            VerticalOptions="CenterAndExpand" />
-                        <Picker
-                            Grid.Row="10"
-                            Grid.Column="1"
-                            HorizontalOptions="FillAndExpand"
-                            ItemsSource="{Binding ProfileTypes}"
-                            ItemDisplayBinding="{Binding Name}"
-                            SelectedItem="{Binding SelectedProfileType}"
-                            VerticalOptions="CenterAndExpand">
-                        </Picker>
-                    </Grid>
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Weight"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    HorizontalOptions="CenterAndExpand"
+                                    MaximumNumberDecimalDigits="2"
+                                    ParserMode="Double"
+                                    TextAlignment="Center"
+                                    WidthRequest="75"
+                                    Value="{Binding UserProfile.Weight}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="kg"
+                                    VerticalOptions="CenterAndExpand" />
 
-                    <Label
-                        x:Name="TotalCaloriesLabel"
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Birth Date"
+                                    VerticalOptions="CenterAndExpand" />
+                                <DatePicker
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Date="{Binding UserProfile.BirthDate}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                </DatePicker>
+                                <Label
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Sex"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Picker
+                                    x:Name="sexPicker"
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    SelectedItem="{Binding UserProfile.Sex}">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Male</x:String>
+                                            <x:String>Female</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                                <Label
+                                    Grid.Row="4"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Formula"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Picker
+                                    x:Name="formulaPicker"
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemDisplayBinding="{Binding Name}"
+                                    ItemsSource="{Binding DietFormulas}"
+                                    SelectedIndex="1"
+                                    SelectedIndexChanged="OnFormulaPickerSelectedIndexChanged"
+                                    SelectedItem="{Binding SelectedDietFormula}"
+                                    WidthRequest="150" />
+
+                                <Button
+                                    Grid.Row="4"
+                                    Grid.Column="2"
+                                    Command="{Binding FormulaHelpCommand}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Help!" />
+                                <Label
+                                    Grid.Row="5"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Activity Level"
+                                    VerticalOptions="CenterAndExpand" />
+                                <range:SfRangeSlider
+                                    Grid.Row="5"
+                                    Grid.Column="1"
+                                    Maximum="2"
+                                    Minimum="1.2"
+                                    Orientation="Horizontal"
+                                    ShowRange="False"
+                                    ShowValueLabel="False"
+                                    SnapsTo="StepValues"
+                                    StepFrequency="0.1"
+                                    TickFrequency="0.2"
+                                    TickPlacement="BottomRight"
+                                    ToolTipPlacement="TopLeft"
+                                    ToolTipPrecision="1"
+                                    VerticalOptions="Center"
+                                    WidthRequest="75"
+                                    Value="{Binding UserProfile.ActivityLevel}" />
+                                <Button
+                                    Grid.Row="5"
+                                    Grid.Column="2"
+                                    Command="{Binding ActivityLevelHelpCommand}"
+                                    HorizontalOptions="Center"
+                                    Text="Help!"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    x:Name="bodyFatNameLabel"
+                                    Grid.Row="6"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    IsVisible="False"
+                                    Text="Body Fat"
+                                    VerticalOptions="CenterAndExpand" />
+                                <syncfusion:SfNumericTextBox
+                                    x:Name="bodyFatEntry"
+                                    Grid.Row="6"
+                                    Grid.Column="1"
+                                    FormatString="p"
+                                    HorizontalOptions="Center"
+                                    IsVisible="False"
+                                    PercentDisplayMode="Value"
+                                    TextAlignment="Center"
+                                    WidthRequest="75"
+                                    Value="{Binding UserProfile.BodyFat}" />
+                                <Button
+                                    x:Name="bodyFatCalculateButton"
+                                    Grid.Row="6"
+                                    Grid.Column="2"
+                                    Command="{Binding CalculateBodyFatCommand}"
+                                    IsVisible="False"
+                                    Text="Calculate" />
+                                <Label
+                                    Grid.Row="7"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Name"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Entry
+                                    Grid.Row="7"
+                                    Grid.Column="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Placeholder="Profile Name"
+                                    Text="{Binding UserProfile.Name}" />
+                                <Label
+                                    Grid.Row="8"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Start Date"
+                                    VerticalOptions="CenterAndExpand" />
+                                <DatePicker
+                                    Grid.Row="8"
+                                    Grid.Column="1"
+                                    Date="{Binding UserProfile.StartDate}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                </DatePicker>
+                                <Label
+                                    Grid.Row="9"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="End Date"
+                                    VerticalOptions="CenterAndExpand" />
+                                <DatePicker
+                                    Grid.Row="9"
+                                    Grid.Column="1"
+                                    Date="{Binding UserProfile.EndDate}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                                </DatePicker>
+                                <Label
+                                    Grid.Row="10"
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Text="Profile Type"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Picker
+                                    Grid.Row="10"
+                                    Grid.Column="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemDisplayBinding="{Binding Name}"
+                                    ItemsSource="{Binding ProfileTypes}"
+                                    SelectedItem="{Binding SelectedProfileType}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </Grid>
+
+                            <Label
+                                x:Name="TotalCaloriesLabel"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+                    </ScrollView>
+                    <Button
+                        Command="{Binding CreateProfileCommand}"
+                        CommandParameter="{Binding UserProfile}"
                         HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand" />
-
+                        Text="{Binding ButtonText}"
+                        VerticalOptions="Center" />
                 </StackLayout>
-            </ScrollView>
-            <Button
-                Command="{Binding CreateProfileCommand}"
-                CommandParameter="{Binding UserProfile}"
-                HorizontalOptions="CenterAndExpand"
-                Text="{Binding ButtonText}"
-                VerticalOptions="Center" />
-        </StackLayout>
+            </sfPopup:SfPopupLayout.Content>
+        </sfPopup:SfPopupLayout>
     </ContentPage.Content>
 </ContentPage>

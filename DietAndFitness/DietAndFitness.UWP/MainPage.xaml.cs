@@ -1,4 +1,4 @@
-﻿using Syncfusion.SfPicker.XForms.UWP;
+using Syncfusion.SfPicker.XForms.UWP;
 using Syncfusion.SfGauge.XForms.UWP;
 using System;
 using System.Collections.Generic;

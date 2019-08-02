@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietAndFitness.ViewModels
@@ -36,6 +37,17 @@ namespace DietAndFitness.ViewModels
             }
         }
 
+        public string CaloriesValuesInfo
+        {
+            get { return "Calories Left "
+                    + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy"))) 
+                    + ": " 
+                    + Math.Round((TargetValues?.Calories - CurrentValues?.Calories) ?? 0); }
+            set
+            { 
+
+            }
+        }
         public Sum MaximumValues
         {
             get
@@ -75,6 +87,21 @@ namespace DietAndFitness.ViewModels
                     default:
                         return Color.Gray;
                 }
+            }
+            set
+            {
+                OnPropertyChanged();
+            }
+        }
+
+        public Color ColorIndicatorProteins
+        {
+            get
+            {
+                if (CurrentValues.Proteins < TargetValues.Proteins)
+                    return Color.Red;
+                else
+                    return Color.Green;
             }
             set
             {
@@ -155,12 +182,21 @@ namespace DietAndFitness.ViewModels
             TargetValues = new Sum("Target: ");
             MaximumValues = new Sum("Maximum: ");
             ErrorMargin = 200;
+            CurrentValues.PropertyChanged += UpdateCaloriesValuesInfo;
+            TargetValues.PropertyChanged += UpdateCaloriesValuesInfo;
         }
-        public async override void LoadList()
+
+        private void UpdateCaloriesValuesInfo(object sender, PropertyChangedEventArgs e)
+        {
+            
+        }
+
+        public async override Task LoadList()
         {
             var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync(Date);
             Items.Clear();
             CurrentValues.Reset();
+            //TODO: GET PROFILE BY DATE
             currentProfile = await DBLocalAccess.GetCurrentProfile();
             TargetValues = currentProfile.GetTargetValues();
             MaximumValues = currentProfile.GetMaximumValues();
@@ -168,21 +204,30 @@ namespace DietAndFitness.ViewModels
             {
                 Items.Add(item);
                 CurrentValues.Add(item);
-                OnPropertyChanged(this.GetPropertyName(x => x.ColorIndicator));
             }
+            OnPropertyChanged(nameof(ColorIndicator));
+            OnPropertyChanged(nameof(ColorIndicatorProteins));
+            OnPropertyChanged(nameof(CaloriesValuesInfo));
+            //increase gauge size so the current values don't go outside the page
+            if (CurrentValues.Calories > MaximumValues.Calories)
+                MaximumValues.Calories = CurrentValues.Calories + 100;
         }
         protected override void OpenAddPageFunction(object[] date)
         {
             base.OpenAddPageFunction(new object[] { Date });
         }
-        protected async override void ExecuteDelete(bool result)
+        protected async override Task ExecuteDelete(bool result)
         {
             if (result == true)
             {
                 try
                 {
                     await DBLocalAccess.Delete(SelectedItem.DailyFoodItem);
-                    LoadList();
+                    //await LoadList();
+                    Items.Remove(SelectedItem);
+                    CurrentValues.Remove(SelectedItem);
+                    OnPropertyChanged(nameof(ColorIndicator));
+                    OnPropertyChanged(nameof(CaloriesValuesInfo));
                     SelectedItem = null;
                 }
                 catch (Exception ex)

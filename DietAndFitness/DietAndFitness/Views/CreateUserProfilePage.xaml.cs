@@ -1,5 +1,6 @@
 ﻿using DietAndFitness.ViewModels;
 using Syncfusion.SfRangeSlider.XForms;
+using Syncfusion.XForms.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,14 +43,14 @@ namespace DietAndFitness.Views
             {
                 bodyFatNameLabel.IsVisible = true;
                 bodyFatEntry.IsVisible = true;
+                bodyFatCalculateButton.IsVisible = true;
             }
             else
             {
                 bodyFatNameLabel.IsVisible = false;
                 bodyFatEntry.IsVisible = false;
+                bodyFatCalculateButton.IsVisible = false;
             }
         }
-
-
     }
 }

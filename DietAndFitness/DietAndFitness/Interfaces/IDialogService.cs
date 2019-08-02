@@ -15,6 +15,7 @@ namespace DietAndFitness.Interfaces
         Task ShowMessage(string message, string title);
         Task ShowMessage(string message, string title, string buttonText, Action afterHideCallback);
         Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Action<bool> afterHideCallback);
+        Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Func<bool, Task> afterHideCallback);
         Task ShowMessageBox(string message, string title);
     }
 }

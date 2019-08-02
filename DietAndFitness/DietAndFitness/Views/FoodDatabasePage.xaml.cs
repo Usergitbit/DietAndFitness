@@ -21,10 +21,10 @@ namespace DietAndFitness.Views
             FoodDatabase = new FoodDatabaseViewModel();
             BindingContext = FoodDatabase;
         }
-        protected  override void OnAppearing()
+        protected  override async void OnAppearing()
         {
             base.OnAppearing();
-            FoodDatabase.LoadList();
+            await FoodDatabase.LoadList();
         }
         protected override void OnDisappearing()
         {

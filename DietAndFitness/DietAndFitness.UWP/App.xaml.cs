@@ -1,10 +1,11 @@
-﻿using Syncfusion.SfChart.XForms.UWP;
+using Syncfusion.SfChart.XForms.UWP;
 using Syncfusion.SfGauge.XForms.UWP;
 using Syncfusion.SfNumericTextBox.XForms.UWP;
 using Syncfusion.SfPicker.XForms.UWP;
 using Syncfusion.SfRangeSlider.XForms;
 using Syncfusion.SfRangeSlider.XForms.UWP;
 using Syncfusion.SfSchedule.XForms.UWP;
+using Syncfusion.XForms.UWP.PopupLayout;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +27,12 @@ using Windows.UI.Xaml.Navigation;
 namespace DietAndFitness.UWP
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
+    /// Provides application-specific 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
@@ -68,6 +74,7 @@ namespace DietAndFitness.UWP
                 assembliesToInclude.Add(typeof(SfLinearGaugeRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfRangeSliderRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfChartRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfPopupLayoutRenderer).GetTypeInfo().Assembly);
 
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);
@@ -115,5 +122,6 @@ namespace DietAndFitness.UWP
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
     }
 }

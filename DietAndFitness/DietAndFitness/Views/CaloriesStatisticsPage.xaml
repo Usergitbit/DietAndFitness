@@ -19,7 +19,10 @@
                 <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="0" Date="{Binding StartDate}" DateSelected="OnStartDateChanged"/>
                 <DatePicker x:Name="endDatePicker" Grid.Column="2" Grid.Row="0" Date="{Binding EndDate}" DateSelected="OnEndDateChanged" MaximumDate="{Binding sys:DateTime.Today}"/>
             </Grid>
-                <chart:SfChart VerticalOptions="FillAndExpand" Title="Monthly Calories">
+                <chart:SfChart VerticalOptions="FillAndExpand">
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text = "{Binding AverageCalories, StringFormat='Average calories over period: {0}'}"/>
+                </chart:SfChart.Title>
                 <chart:SfChart.PrimaryAxis >
                     <chart:DateTimeAxis EdgeLabelsDrawingMode="Shift">
                         <chart:DateTimeAxis.LabelStyle>
@@ -29,12 +32,15 @@
                 </chart:SfChart.PrimaryAxis>
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis Maximum="5000" Minimum="0">
+                        <chart:NumericalAxis.StripLines>
+                            <chart:NumericalStripLine Start="{Binding TargetCalories}" StrokeColor="Green" StrokeWidth="10" Width="10"/>
+                        </chart:NumericalAxis.StripLines>
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
                 <chart:SfChart.ChartBehaviors>
                     <chart:ChartZoomPanBehavior EnableSelectionZooming="False" ZoomMode="X" MaximumZoomLevel="200" />
                 </chart:SfChart.ChartBehaviors>
-                <chart:LineSeries EnableAnimation="True" ItemsSource ="{Binding MonthlyCalories}" XBindingPath="DailyFoodItem.CreatedAt"	YBindingPath="Calories"/>
+                <chart:LineSeries EnableAnimation="True" ItemsSource ="{Binding MonthlyCalories}" XBindingPath="CreatedAt"	YBindingPath="Calories"/>
             </chart:SfChart>
         </StackLayout>
     </ContentPage.Content>

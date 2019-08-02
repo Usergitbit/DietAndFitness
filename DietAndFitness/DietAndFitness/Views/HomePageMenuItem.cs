@@ -11,10 +11,11 @@ namespace DietAndFitness.Views
     {
         public HomePageMenuItem()
         {
-            TargetType = typeof(HomePageDetail);
+            TargetType = typeof(DailyFoodListPage);
         }
         public int Id { get; set; }
         public string Title { get; set; }
+        public string IconSource { get; set; }
 
         public Type TargetType { get; set; }
     }

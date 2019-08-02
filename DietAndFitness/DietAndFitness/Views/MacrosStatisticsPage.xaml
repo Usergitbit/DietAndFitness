@@ -20,7 +20,10 @@
                     <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="0" Date="{Binding StartDate}" DateSelected="OnStartDateChanged"/>
                     <DatePicker x:Name="endDatePicker" Grid.Column="2" Grid.Row="0" Date="{Binding EndDate}" DateSelected="OnEndDateChanged" MaximumDate="{Binding sys:DateTime.Today}"/>
                 </Grid>
-                <chart:SfChart VerticalOptions="FillAndExpand" Title="Monthly Calories">
+                <chart:SfChart VerticalOptions="FillAndExpand" >
+                    <chart:SfChart.Title>
+                        <chart:ChartTitle Text = "Macros over time"/>
+                    </chart:SfChart.Title>
                     <chart:SfChart.Legend>
                         <chart:ChartLegend DockPosition="Bottom"/>
                     </chart:SfChart.Legend>

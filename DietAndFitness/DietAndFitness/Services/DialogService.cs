@@ -92,6 +92,21 @@ namespace DietAndFitness.Services
             return result;
         }
 
+        public async Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Func<bool, Task> afterHideCallback)
+        {
+            var result = await Application.Current.MainPage.DisplayAlert(
+               title,
+               message,
+               buttonConfirmText,
+               buttonCancelText);
+
+            if (afterHideCallback != null)
+            {
+                await afterHideCallback(result);
+            }
+            return result;
+        }
+
         public async Task ShowMessageBox(
             string message,
             string title)
