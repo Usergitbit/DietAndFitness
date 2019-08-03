@@ -1,5 +1,4 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +15,7 @@ using DietAndFitness.Services;
 using System.Runtime.CompilerServices;
 using DietAndFitness.Views;
 using DietAndFitness.ViewModels.Base;
+using DietAndFitness.Core.Models;
 
 namespace DietAndFitness.ViewModels
 {

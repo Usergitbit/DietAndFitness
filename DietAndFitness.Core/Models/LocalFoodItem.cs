@@ -1,16 +1,14 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 /// <summary>
 /// Class for an entry in the GlobalFoodItem table
 /// </summary>
-namespace DietAndFitness.Entities
+namespace DietAndFitness.Core.Models
 {
     /// <summary>
     /// Model class for food items from the table that the user introduces
     /// </summary>
-    [Table("LocalFoodItem")]
     public class LocalFoodItem : DatabaseEntity
     {
 

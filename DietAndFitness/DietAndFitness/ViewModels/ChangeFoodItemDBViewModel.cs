@@ -1,6 +1,6 @@
 ﻿using DietAndFitness.Controls;
 using DietAndFitness.Core;
-using DietAndFitness.Entities;
+using DietAndFitness.Core.Models;
 using DietAndFitness.Services;
 using DietAndFitness.Validators;
 using DietAndFitness.ViewModels.Base;

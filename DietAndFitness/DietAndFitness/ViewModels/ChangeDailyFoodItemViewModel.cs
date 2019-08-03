@@ -1,8 +1,8 @@
 ﻿using DietAndFitness.Controls;
-using DietAndFitness.Entities;
+using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Composite;
 using DietAndFitness.Services;
 using DietAndFitness.ViewModels.Base;
-using DietAndFitness.ViewModels.Secondary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -80,12 +80,15 @@ namespace DietAndFitness.ViewModels
             FoodItems = new ObservableCollection<LocalFoodItem>();
             SearchCommand = new Command<string>(execute: RefreshListItems);
             PropertyChanged += OnSelectedItemChanged;
+            //CurrentItem.PropertyChanged += OnSelectedItemChanged;
+
         }
         private void OnSelectedItemChanged(object sender, PropertyChangedEventArgs e)
         {
             (ExecuteOperationCommand as Command).ChangeCanExecute();
             //This is so the Edit button will become available when the SelectedFoodItem changes
-            CurrentItem.IsDirty = true;
+            if(CurrentItem != null)
+                CurrentItem.IsDirty = true;
         }
         /// <summary>
         /// Override to set the selected LocalFoodItemID and Name and reset the selected LocalFoodItem
@@ -95,7 +98,11 @@ namespace DietAndFitness.ViewModels
         {
             CurrentItem.FoodItemID = SelectedFoodItem.ID;
             CurrentItem.Name = SelectedFoodItem.Name;
+            //The base operation function will create a new CurrentItem and we lose the reference so we have to unsubscribe here to prevent memory leaks
+            //CurrentItem.PropertyChanged -= OnSelectedItemChanged;
             base.Operation(parameter);
+            //resubscribe to the new CurrentItem so the validation function keeps functioning for changes in quantity;
+            //CurrentItem.PropertyChanged += OnSelectedItemChanged;
             SelectedFoodItem = null;
         }
         /// <summary>
@@ -136,6 +143,12 @@ namespace DietAndFitness.ViewModels
                 if (parameter.ID != null && !parameter.IsDirty)
                     return false;
             return true;
+        }
+
+        public override void Dispose()
+        {
+            PropertyChanged -= OnSelectedItemChanged;
+            base.Dispose();
         }
     }
 }

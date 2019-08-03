@@ -1,9 +1,9 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Entities;
+using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Composite;
 using DietAndFitness.Extensions;
 using DietAndFitness.Services;
 using DietAndFitness.ViewModels.Base;
-using DietAndFitness.ViewModels.Secondary;
 using DietAndFitness.Views;
 using System;
 using System.Collections.Generic;

@@ -1,25 +1,47 @@
-﻿using DietAndFitness.ViewModels.Secondary;
-using SQLite;
+﻿using DietAndFitness.Core.Models.Composite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DietAndFitness.Entities
+namespace DietAndFitness.Core.Models
 {
-    [Table("Profiles")]
     public class Profile : DatabaseEntity
     {
         private double height;
         private double weight;
         private DateTime birthDate;
         private string sex;
-        private int? dietFormula;
+        private int? dietFormulaId;
+        private DietFormula dietFormula;
         private double activityLevel;
         private double bodyFat;
         private DateTime startDate;
         private DateTime endDate;
         private int? profileTypesId;
         private ProfileType profileTypes;
+
+        public ProfileType ProfileTypes
+        {
+            get { return profileTypes; }
+            set
+            {
+                if (profileTypes == value)
+                    return;
+                profileTypes = value;
+                OnPropertyChanged();
+            }
+        }
+        public DietFormula DietFormula
+        {
+            get { return dietFormula; }
+            set
+            {
+                if (dietFormula == value)
+                    return;
+                dietFormula = value;
+                OnPropertyChanged();
+            }
+        }
         public double Height
         {
             get { return height; }
@@ -64,14 +86,14 @@ namespace DietAndFitness.Entities
                 OnPropertyChanged();
             }
         }
-        public int? DietFormula
+        public int? DietFormulaId
         {
-            get { return dietFormula; }
+            get { return dietFormulaId; }
             set
             {
-                if (dietFormula == value)
+                if (dietFormulaId == value)
                     return;
-                dietFormula = value;
+                dietFormulaId = value;
                 //required because of 0 based indexed in picker but FK in database c
                 OnPropertyChanged();
             }
@@ -140,10 +162,9 @@ namespace DietAndFitness.Entities
                 OnPropertyChanged();
             }
         }
-
         public override bool IsValid()
        {
-            if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0 || StartDate > EndDate || ProfileTypesId == null || DietFormula == null)
+            if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormulaId < 0 || StartDate > EndDate || ProfileTypesId == null || DietFormulaId == null)
                 return false;
             return true;
         }
@@ -157,7 +178,7 @@ namespace DietAndFitness.Entities
             Weight = 0;
             BirthDate = DateTime.Today;
             Sex = String.Empty;
-            DietFormula = 1;
+            DietFormulaId = 1;
             ActivityLevel = 1.2;
             BodyFat = 0;
             ProfileTypesId = 1;
@@ -170,11 +191,12 @@ namespace DietAndFitness.Entities
             EndDate = DateTime.Today;
             BirthDate = new DateTime(1990,1,1);
         }
+
         public Sum GetTargetValues()
         {
-            
+
             double bmr = 0;
-            switch(DietFormula.Value)
+            switch (DietFormulaId.Value)
             {
                 case 1:
                     bmr = Sex == "Male" ? (10 * Weight) + (6.25 * Height) - (5 * (DateTime.Today.Year - BirthDate.Year)) + 5
@@ -199,7 +221,7 @@ namespace DietAndFitness.Entities
                     {
                         Calories = bmr,
                         Proteins = Weight * 1.8
-                        
+
                     };
                 //cut
                 case (int)ProfileTypeEnum.Cut:
@@ -219,17 +241,7 @@ namespace DietAndFitness.Entities
                     return new Sum("Target: ");
             }
         }
-        public ProfileType ProfileTypes
-        {
-            get { return profileTypes; }
-            set
-            {
-                if (profileTypes == value)
-                    return;
-                profileTypes = value;
-                OnCollectionChanged();
-            }
-        }
+
         public Sum GetMaximumValues()
         {
             var targeValues = GetTargetValues();

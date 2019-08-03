@@ -11,12 +11,40 @@ using Xamarin.Forms.Xaml;
 
 namespace DietAndFitness.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DailyFoodListPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DailyFoodListPage : ContentPage
+    {
         public DailyFoodListViewModel DailyFoodDatabase { get; set; }
-		public DailyFoodListPage ()
-		{
+        public DailyFoodListPage(bool createVM)
+        {
+            try
+            {
+                //crashes on UWP if not created on main thread
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    Device.BeginInvokeOnMainThread(new Action(() =>
+                    {
+                        InitializeComponent();
+                    }));
+                }
+                else
+                {
+                    InitializeComponent();
+                }
+                if (createVM)
+                {
+                    DailyFoodDatabase = new DailyFoodListViewModel();
+                    BindingContext = DailyFoodDatabase;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("from on first ctr");
+            }
+        }
+        public DailyFoodListPage()
+        {
             try
             {
                 //crashes on UWP if not created on main thread

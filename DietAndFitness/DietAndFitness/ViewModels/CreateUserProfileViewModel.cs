@@ -1,7 +1,7 @@
 ﻿using DietAndFitness.Controls;
 using DietAndFitness.Core;
+using DietAndFitness.Core.Models;
 using DietAndFitness.Extensions;
-using DietAndFitness.Entities;
 using DietAndFitness.Services;
 using System;
 using System.Collections.Generic;
@@ -171,7 +171,7 @@ namespace DietAndFitness.ViewModels
             UserProfile = new Profile();
             SelectedDietFormula = new DietFormula();
             SelectedProfileType = new ProfileType();
-            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessService();
             CreateProfileCommand = new Command<Profile>(execute: CreateUserProfile, canExecute: ValidateCreateButon);
             CalculateBodyFatCommand = new Command(execute: OpenCalculateBodyFatDialog);
             PopUpAcceptCommand = new Command(execute: AcceptBodyFatCalculation, canExecute: ValidateAcceptBodyFatCalculationButton);
@@ -230,7 +230,7 @@ namespace DietAndFitness.ViewModels
         private void OnSelectionChangedIDSolver(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula))
-                UserProfile.DietFormula = SelectedDietFormula?.ID;
+                UserProfile.DietFormulaId = SelectedDietFormula?.ID;
             if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType))
                 UserProfile.ProfileTypesId = SelectedProfileType?.ID;
             if (e.PropertyName == nameof(WaistLenght) || e.PropertyName == nameof(NeckLength) || e.PropertyName == nameof(HipLength))
@@ -265,10 +265,10 @@ namespace DietAndFitness.ViewModels
             ProfileTypes.Clear();
             List<ProfileType> profileTypes = await DBLocalAccess.GetAllAsync<ProfileType>();
             profileTypes.ForEach(x => ProfileTypes.Add(x));
-            if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())
+            if (DBLocalAccess.HasProfiles())
             {
                 UserProfile = await DBLocalAccess.GetCurrentProfile();
-                SelectedDietFormula = dietFormulas.Find(x => x.ID == UserProfile.DietFormula);
+                SelectedDietFormula = dietFormulas.Find(x => x.ID == UserProfile.DietFormulaId);
                 SelectedProfileType = profileTypes.Find(x => x.ID == UserProfile.ProfileTypesId);
                 ButtonText = "Edit Profile";
             }

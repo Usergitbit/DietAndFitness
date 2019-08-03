@@ -1,5 +1,5 @@
-﻿using DietAndFitness.Entities;
-using DietAndFitness.ViewModels.Secondary;
+﻿using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Composite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,13 +14,14 @@ namespace DietAndFitness.Interfaces
     {
     
         Task<List<T>> GetAllAsync<T>() where T : DatabaseEntity, new();
-        Task<int> Insert<T>(T entity);
-        Task<int> Update<T>(T entity);
+        Task<int> Insert<T>(T entity) where T : class;
+        Task<int> Update<T>(T entity) where T : class;
         Task<int> Update<T>(GlobalFoodItem item) where T : DatabaseEntity, new();
-        Task<int> Delete<T>(T entity);
+        Task<int> Delete<T>(T entity) where T : class;
         Task<List<T>> GetByDate<T>(DateTime date) where T : DatabaseEntity, new();
         Task<List<T>> GetByGUID<T>(string guid) where T : DatabaseEntity, new();
-        Task<List<VersionItem>> GetVersion();
+        Task<List<VersionItem>> GetVersionAsync();
+        void IncrementVersion();
         bool HasProfiles();
         Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime date);
         Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime startDate, DateTime endDate);

@@ -1,6 +1,6 @@
 ﻿using DietAndFitness.Controls;
 using DietAndFitness.Core;
-using DietAndFitness.Entities;
+using DietAndFitness.Core.Models;
 using DietAndFitness.Services;
 using System;
 using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace DietAndFitness.ViewModels.Base
         private T currentItem;
         private string progressindicator = "Waiting for input...";
         private string operationInfo = "Add";
+        protected DateTime date = DateTime.Today;
         #endregion
         public string OperationInfo
         {
@@ -77,6 +78,7 @@ namespace DietAndFitness.ViewModels.Base
         }
         public ChangeBaseViewModel(DateTime date) : base()
         {
+            this.date = date;
             CurrentItem = Activator.CreateInstance(typeof(T), date) as T;
             Initialize();
         }
@@ -107,7 +109,11 @@ namespace DietAndFitness.ViewModels.Base
                     {
                         await DBLocalAccess.Insert(parameter);
                         //if program stays here the insert date will be incorrect
-                        CurrentItem.ResetValues();
+                        // we lose the reference when we make a new item so we have to unsubscribe here to prevent memory leaks
+                        CurrentItem.PropertyChanged -= OnCurrentItemPropertyChanged;
+                        CurrentItem = Activator.CreateInstance(typeof(T), date) as T;
+                        //resubscribe for the new item
+                        CurrentItem.PropertyChanged += OnCurrentItemPropertyChanged;
                         ProgressIndicator = "Item added successfully!";
                         await SwitchProgressIndicator();
                     }
@@ -158,10 +164,6 @@ namespace DietAndFitness.ViewModels.Base
             (ExecuteOperationCommand as Command).ChangeCanExecute();
         }
         #endregion
-        public override void Dispose()
-        {
-            CurrentItem.PropertyChanged -= OnCurrentItemPropertyChanged;
-            base.Dispose();
-        }
+
     }
 }

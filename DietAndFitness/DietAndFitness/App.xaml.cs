@@ -1,8 +1,11 @@
 ﻿using DietAndFitness.Controls;
-using DietAndFitness.Entities;
+using DietAndFitness.Core.Models;
+using DietAndFitness.DatabaseContext;
+using DietAndFitness.Interfaces;
 using DietAndFitness.Services;
 using DietAndFitness.ViewModels;
 using DietAndFitness.Views;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,12 +24,10 @@ namespace DietAndFitness
 	{
         private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
         private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";
-        private DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
-        private DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+        private IDataAccessService DBLocalAccess = new DataAccessService();
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
-            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("OTc4NjJAMzEzNzJlMzEyZTMwaHNXMVlYNkllK0psbWU4SmFQSjRieWFRWlNxSjJxekpkTXYwLytNaXdVST0=;OTc4NjNAMzEzNzJlMzEyZTMwaUphNlg5RDNySXJwTjlYSmtaeHF4VGlCWFZUckdodGJZTklRSExxNStnST0=;OTc4NjRAMzEzNzJlMzEyZTMwQ0k4dGxoaHpQSlFiRE9NL2lPR2NHOWQzREEvL2VRUkhnM2xTQU0zeUM2ST0=;OTc4NjVAMzEzNzJlMzEyZTMwSFVTYllQVmF5N3lWc0VsSjlwRGVwSXQrTExXd3NHd2hvdUdyKzNsbmUybz0=;OTc4NjZAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=;OTc4NjdAMzEzNzJlMzEyZTMwUXZUbEVKSnBoSVFsSFFWaXlJckdVSGxGZUgxcWc5K1VzaWJjUTc3MWlBaz0=;OTc4NjhAMzEzNzJlMzEyZTMwRGlZbEdhaTMyQU1EV1RWazhTU2tkbk5BdmVNTHFXMmdSZVJWMjZ5MVlzND0=;OTc4NjlAMzEzNzJlMzEyZTMwWWlpLy9DdkZHQ0lHUGtKQW1JMkcwMVRBVnNsakkyS01MN0VLWWxUeDZ0Yz0=;OTc4NzBAMzEzNzJlMzEyZTMwbndDZW56NWM0Q3A0U3JyOFNVa21oOThOdWgvWUZ3QTFmZEdlRW9CKzVURT0=;OTc4NzFAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=");
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI1NjUyQDMxMzcyZTMyMmUzMGpjZVl3a0x4dHI1SUoyc0RWcTlYNGFGOWlGSjJyWUJrWjYvTi81U0hJMlU9");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
@@ -36,14 +37,14 @@ namespace DietAndFitness
             GlobalSQLiteConnection.ConnectToGlobalDatabaseAsync(DBGlobalControl.DestinationPath);
             GlobalSQLiteConnection.ConnectToLocalDatabaseAsync(DBLocalControl.DestinationPath);
             GlobalSQLiteConnection.ConnectToLocalDatabase(DBLocalControl.DestinationPath);
-            DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
-            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
+            DBLocalAccess = new DataAccessService();
             IOC.IOC.RegisterDialogService(new DialogService());
             IOC.IOC.RegisterDataAccessService(DBLocalAccess);
+            new CompatbilityManager(DBLocalAccess).EnsureCompatibility();
             //If there are profiles open the normal HomePage
-            if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())//Current.Properties.ContainsKey("HasProfiles"))
+            if (DBLocalAccess.HasProfiles())
             {
-                var daily = new DailyFoodListPage();
+                var daily = new DailyFoodListPage(false);
                 var navigationPage = new NavigationPage(daily);
                 NavigationService = new NavigationService(navigationPage);
                 IOC.IOC.RegisterNavigationServiceService(NavigationService);
@@ -76,10 +77,10 @@ namespace DietAndFitness
 		protected override async void OnStart ()
 		{
             // Handle when your app starts
-            Debug.WriteLine("App Started!");
-            bool result = await IsUpToDate();
-            if(!result)
-                await MergeDatabases();
+            //Debug.WriteLine("App Started!");
+            //bool result = await IsUpToDate();
+            //if(!result)
+            //    await MergeDatabases();
         }
 
 		protected override void OnSleep ()
@@ -98,11 +99,35 @@ namespace DietAndFitness
         private async Task MergeDatabases()
         {
 
-            List<GlobalFoodItem> globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
-            foreach (GlobalFoodItem item in globalFoodItems)
+            var sqliteContext = new SQLiteDbContext();
+            var globalContext = new GlobalDbContext();
+            ////add the items that are in the global context but not in the sqlite context
+            //sqliteContext.LocalFoodItems
+            //    .AddRange(globalContext.GlobalFoodItems
+            //                    //select the global food items that are not fount in the local context and transform them into a local food item
+            //                    .Where(gfi => sqliteContext.LocalFoodItems
+            //                                        .Where(lfi => lfi.GUID == gfi.GUID).Count() == 0)
+            //                                        .Select(gfi => new LocalFoodItem(gfi)));
+
+            //foreach(var globalItem in globalContext.GlobalFoodItems)
+            //    foreach(var localItem in sqliteContext.LocalFoodItems.Where(lfi => lfi.GUID == globalItem.GUID))
+            //    {
+            //        localItem.Name = globalItem.Name;
+            //        localItem.Proteins = globalItem.Proteins;
+            //        localItem.ModifiedAt = DateTime.Now;
+            //        localItem.Carbohydrates = globalItem.Carbohydrates;
+            //        localItem.Fats = globalItem.Fats;
+            //        localItem.Brand = globalItem.Brand;
+            //        sqliteContext.LocalFoodItems.Update(localItem);
+            //    }
+            //await sqliteContext.SaveChangesAsync();
+
+            //List<GlobalFoodItem> globalFoodItems = await DBGlobalAccess.GetAllAsync<GlobalFoodItem>();
+            var globalFoodItems = await globalContext.GlobalFoodItems.ToListAsync();
+            foreach (var item in globalFoodItems)
             {
                 //check if the items are not already in the Local database and insert them if not
-                List<LocalFoodItem> searchResult = await DBLocalAccess.GetByGUID<LocalFoodItem>(item.GUID);
+                var searchResult = await DBLocalAccess.GetByGUID<LocalFoodItem>(item.GUID);
                 if (searchResult.Count == 0)
                 {
                     try
@@ -122,12 +147,13 @@ namespace DietAndFitness
                         await DBLocalAccess.Update<LocalFoodItem>(item);
                         Debug.WriteLine("Updated a value!");
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         Debug.WriteLine(ex.Message + " YOU DUN GOOFED");
                     }
                 }
             }
+            await sqliteContext.SaveChangesAsync();
         }
         /// <summary>
         /// Determines whether the Local database is up to date
@@ -135,10 +161,8 @@ namespace DietAndFitness
         /// <returns>True if up to date. False if not up to date.</returns>
         private async Task<bool> IsUpToDate()
         {
-            DataAccessLayer DBGlobalAccess = new DataAccessLayer(GlobalSQLiteConnection.GlobalDatabase);
-            DataAccessLayer DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
-            List<VersionItem> versionLocal = await DBLocalAccess.GetVersion();
-            List<VersionItem> versionGlobal = await DBGlobalAccess.GetVersion();
+            List<VersionItem> versionLocal = await new SQLiteDbContext().VersionItems.ToListAsync();
+            List<VersionItem> versionGlobal = await new GlobalDbContext().VersionItems.ToListAsync();
             if (versionLocal[0].Number < versionGlobal[0].Number)
                 return false;
             return true;
