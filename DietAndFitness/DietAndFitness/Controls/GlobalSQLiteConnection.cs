@@ -1,8 +1,11 @@
-﻿using SQLite;
+﻿using Microsoft.Data.Sqlite;
+using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 /// <summary>
 /// Static class that provides access to the database from anywhere in the program
@@ -52,6 +55,13 @@ namespace DietAndFitness.Controls
             {
                 Debug.WriteLine("Error at accessing database file" + e.Message);
             }
+        }
+
+        public static async Task<DbConnection> GetSQLiteConnection(string databasePath)
+        {
+            var connection = new SqliteConnection("" + new SqliteConnectionStringBuilder { DataSource = databasePath });
+            await connection.OpenAsync();
+            return connection;
         }
     }
 }

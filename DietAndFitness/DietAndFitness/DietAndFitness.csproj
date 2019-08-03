@@ -90,6 +90,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.netcore.universalwindowsplatform\6.2.8\ref\uap10.0.15138\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Controls\InputPair.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

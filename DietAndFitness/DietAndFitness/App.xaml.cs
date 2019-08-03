@@ -78,9 +78,9 @@ namespace DietAndFitness
 		{
             // Handle when your app starts
             //Debug.WriteLine("App Started!");
-            //bool result = await IsUpToDate();
-            //if(!result)
-            //    await MergeDatabases();
+            bool result = await IsUpToDate();
+            if (!result)
+                await MergeDatabases();
         }
 
 		protected override void OnSleep ()
@@ -161,6 +161,7 @@ namespace DietAndFitness
         /// <returns>True if up to date. False if not up to date.</returns>
         private async Task<bool> IsUpToDate()
         {
+            return true;
             List<VersionItem> versionLocal = await new SQLiteDbContext().VersionItems.ToListAsync();
             List<VersionItem> versionGlobal = await new GlobalDbContext().VersionItems.ToListAsync();
             if (versionLocal[0].Number < versionGlobal[0].Number)

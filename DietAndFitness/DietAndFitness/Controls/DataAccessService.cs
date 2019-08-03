@@ -69,10 +69,12 @@ namespace DietAndFitness.Controls
 
         public void IncrementVersion()
         {
-            var version = sqliteDbContext.VersionItems.ToList()[0];
-            version.Number += 1;
-            sqliteDbContext.Update(version);
-            sqliteDbContext.SaveChanges();
+            
+            var command = sqliteDbContext.Database.GetDbConnection().CreateCommand();
+            sqliteDbContext.Database.OpenConnection();
+            command.CommandText = @"update VersionItem
+                                    set Number = Number + 1; ";
+            command.ExecuteNonQuery();
         }
 
         public async Task<List<VersionItem>> GetVersionAsync()

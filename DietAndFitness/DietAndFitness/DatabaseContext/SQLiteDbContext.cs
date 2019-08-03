@@ -1,9 +1,12 @@
-﻿using DietAndFitness.Core.EntityFramework.ModelBuilders;
+﻿using DietAndFitness.Controls;
+using DietAndFitness.Core.EntityFramework.ModelBuilders;
 using DietAndFitness.Core.Models;
 using DietAndFitness.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
 
@@ -14,6 +17,7 @@ namespace DietAndFitness.DatabaseContext
         //private const string databaseName = "LocalDatabaseEF.db";
         private const string databaseName = "LocalFoodItemsDB.db";
         private string _databasePath;
+        private DbConnection sqliteConnection;
         public DbSet<LocalFoodItem> LocalFoodItems { get; set; }
         public DbSet<DailyFoodItem> DailyFoodItems { get; set; }
         public DbSet<Profile> Profiles { get; set; }
@@ -29,12 +33,14 @@ namespace DietAndFitness.DatabaseContext
         {
 
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override async void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             string dbPath = DependencyService.Get<IFilePath>().GetLocalFilePath(databaseName);
             //string dbPath = @"C:\Repositories\DietAndFitness\DietAndFitness\DietAndFitness\Resources\Databases\" + @"\LocalDatabaseEF.db";
-            optionsBuilder.UseSqlite($"Filename={dbPath}");
+            sqliteConnection = await GlobalSQLiteConnection.GetSQLiteConnection(dbPath);
+            optionsBuilder.UseSqlite(sqliteConnection);
+            //optionsBuilder.UseSqlite($"Filename={dbPath}");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -50,6 +56,20 @@ namespace DietAndFitness.DatabaseContext
                     return (DbSet<T>)prop.GetValue(this);
             }
             throw new Exception($"Could not find a property that matches the requested type {typeof(T)} in the class SQLiteDbContext");
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            try
+            {
+                sqliteConnection.Close();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Error closing connection! " + ex.Message);
+            }
+
         }
     }
 }
