@@ -64,7 +64,7 @@ namespace DietAndFitness.Controls
 
         public async Task<Profile> GetCurrentProfile()
         {
-            return await sqliteDbContext.Profiles.FirstOrDefaultAsync(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today);
+            return await sqliteDbContext.Profiles.Include(p => p.DietFormula).Include(p => p.ProfileTypes).FirstOrDefaultAsync(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today);
         }
 
         public void IncrementVersion()

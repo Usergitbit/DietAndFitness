@@ -227,11 +227,16 @@ namespace DietAndFitness.ViewModels
             (CreateProfileCommand as Command).ChangeCanExecute();
         }
 
+        /// <summary>
+        /// TODO: Should use converter instead, too much jumping aroudn and onprop change hooking results in wierd errors
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSelectionChangedIDSolver(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula))
-                UserProfile.DietFormulaId = SelectedDietFormula?.ID;
-            if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType))
+            if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula) && SelectedDietFormula != null)
+                UserProfile.DietFormulaId = SelectedDietFormula.ID;
+            if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType) && SelectedProfileType != null)
                 UserProfile.ProfileTypesId = SelectedProfileType?.ID;
             if (e.PropertyName == nameof(WaistLenght) || e.PropertyName == nameof(NeckLength) || e.PropertyName == nameof(HipLength))
             {
@@ -311,6 +316,11 @@ namespace DietAndFitness.ViewModels
             return false;
         }
 
-
+        public override void Dispose()
+        {
+            PropertyChanged -= OnSelectionChangedIDSolver;
+            UserProfile.PropertyChanged -= OnUserProfileChanged;
+            base.Dispose();
+        }
     }
 }

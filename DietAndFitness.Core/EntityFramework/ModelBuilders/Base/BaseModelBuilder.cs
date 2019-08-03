@@ -204,10 +204,16 @@ namespace DietAndFitness.Core.EntityFramework.ModelBuilders.Base
                 .IsUnique();
 
             modelBuilder.Entity<Profile>()
-                .HasOne(FK => FK.DietFormula);
+                .HasOne(FK => FK.DietFormula)
+                .WithMany()
+                .HasForeignKey(FK => FK.DietFormulaId)
+                .IsRequired();
 
             modelBuilder.Entity<Profile>()
-                .HasOne(FK => FK.ProfileTypes);
+                .HasOne(FK => FK.ProfileTypes)
+                .WithMany()
+                .HasForeignKey(FK => FK.ProfileTypesId)
+                .IsRequired();
 
             modelBuilder.Entity<Profile>()
                 .Ignore(IGN => IGN.IsDirty);
