@@ -106,31 +106,14 @@ namespace DietAndFitness.ViewModels
             SelectedFoodItem = null;
         }
         /// <summary>
-        /// Search method for finding an item to add. Highly inefficient as each serach selects the whole database
-        /// TODO: Cache whole database? Custom selects?
-        /// TODO: Create Behavior that can bind event to command for creating dynamically updated list
+        /// Search method for finding an item to add. 
         /// </summary>
         /// <param name="parameter"></param>
         async void RefreshListItems(string parameter)
         {
             if (parameter != null)
             {
-                List<LocalFoodItem> localFoodItems = new List<LocalFoodItem>();
-                try
-                {
-                    localFoodItems = await DBLocalAccess.GetAllAsync<LocalFoodItem>();
-                }
-                catch (Exception ex)
-                {
-                    await dialogService.ShowError(ex, "Error", "Ok", null);
-                }
-                FoodItems = new ObservableCollection<LocalFoodItem>();
-                localFoodItems = localFoodItems.FindAll(delegate (LocalFoodItem item)
-                {
-                    return item.Name.ToLower().Contains(parameter.ToLower());
-                });
-                foreach (var item in localFoodItems)
-                    FoodItems.Add(item);
+                FoodItems = new ObservableCollection<LocalFoodItem>(await DBLocalAccess.GetByDescription(parameter));
                 SelectedFoodItem = null;
             }
         }

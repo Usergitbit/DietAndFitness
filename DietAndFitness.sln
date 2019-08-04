@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietAndFitness", "DietAndFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConfig", "DbConfig\DbConfig.csproj", "{964B8E44-6586-4102-B773-52182641F898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietAndFitness.Core", "DietAndFitness.Core\DietAndFitness.Core.csproj", "{0B8DD4A0-6059-4956-A3AC-593216E85A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietAndFitness.Core", "DietAndFitness.Core\DietAndFitness.Core.csproj", "{0B8DD4A0-6059-4956-A3AC-593216E85A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

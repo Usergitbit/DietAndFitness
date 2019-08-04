@@ -131,5 +131,13 @@ namespace DietAndFitness.Controls
             }
             return 0;
         }
+
+        public async Task<List<LocalFoodItem>> GetByDescription(string description)
+        {
+            return await sqliteDbContext.LocalFoodItems.Where(lfi => lfi.Name.ToLower().Contains(description)
+                                                                     || (lfi.Brand != null && lfi.Brand.ToLower().Contains(description))
+                                                                     || (lfi.CookingMode != null && lfi.CookingMode.ToLower().Contains(description))).ToListAsync();
+
+        }
     }
 }
