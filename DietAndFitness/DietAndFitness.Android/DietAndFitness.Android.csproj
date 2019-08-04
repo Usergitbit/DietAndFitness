@@ -56,26 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
+      <Version>17.2.0.39</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPicker">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule">
-      <Version>17.2.0.36</Version>
+      <Version>17.2.0.39</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />

@@ -1,9 +1,12 @@
-﻿using System;
+﻿using DietAndFitness.Extensions;
+using Syncfusion.SfAutoComplete.XForms;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
@@ -13,6 +16,7 @@ namespace DietAndFitness.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeDailyFoodItem : ContentPage
     {
+        DebounceDispatcher dispatcher = new DebounceDispatcher();
         public ChangeDailyFoodItem()
         {
             InitializeComponent();
@@ -21,19 +25,41 @@ namespace DietAndFitness.Views
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            searchBar.Unfocus();
+            autoCompleteSearchBar.Unfocus();
             entryQuantity.Focus();
-            myLlistView.ScrollTo(e.SelectedItem, ScrollToPosition.Start, true);
+            myLlistView.ScrollTo(e.SelectedItem, ScrollToPosition.MakeVisible, true);
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+            var vm = BindingContext as DietAndFitness.ViewModels.ChangeDailyFoodItemViewModel;
+            await vm.LoadList();
             if (myLlistView.SelectedItem == null)
-                searchBar.Focus();
+                autoCompleteSearchBar.Focus();
             else
                 entryQuantity.Focus();
+            //var x = lol;
+            //lol.AutoCompleteSource = vm.FoodItems;
         }
 
+        public class SmartAutoComplete : SfAutoComplete
+        {
+            void wtf()
+            {
 
+            }
+        }
+
+        private void AutoCompleteSearchBar_FilterCollectionChanged(object sender, FilterCollectionChangedEventArgs e)
+        {
+            dispatcher.Debounce(500, () =>
+             {
+                 Device.BeginInvokeOnMainThread(() =>
+                 {
+                     myLlistView.ItemsSource = autoCompleteSearchBar.FilteredItems;
+                     Debug.WriteLine("Executed from Device.BeginInvokeOnMainThread on filter complete");
+                 });
+             });
+        }
     }
 }

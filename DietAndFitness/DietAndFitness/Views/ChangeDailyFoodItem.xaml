@@ -2,20 +2,29 @@
 <ContentPage
     x:Class="DietAndFitness.Views.ChangeDailyFoodItem"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms">
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar
+            <!--<SearchBar
                 x:Name="searchBar"
                 Placeholder="Find some food"
                 SearchCommand="{Binding SearchCommand}"
                 SearchCommandParameter="{Binding SearchBarText}"
-                Text="{Binding SearchBarText}" />
+                Text="{Binding SearchBarText}" />-->
+            <autocomplete:SfAutoComplete
+                x:Name="autoCompleteSearchBar"
+                AutoCompleteMode="Suggest"
+                DataSource="{Binding FoodItems}"
+                DisplayMemberPath="Name"
+                FilterCollectionChanged="AutoCompleteSearchBar_FilterCollectionChanged"
+                FilteredItems="{Binding FilteredItems, Mode=TwoWay}"
+                SuggestionBoxPlacement="None"
+                SuggestionMode="Contains" />
             <ListView
                 x:Name="myLlistView"
                 HasUnevenRows="True"
                 ItemSelected="OnItemSelected"
-                ItemsSource="{Binding FoodItems}"
                 SelectedItem="{Binding SelectedFoodItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -37,6 +37,7 @@ namespace DietAndFitness.iOS
             SfGaugeRenderer.Init();
             SfChartRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
             IQKeyboardManager.SharedManager.Enable = true;
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);

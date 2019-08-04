@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -55,7 +56,22 @@ namespace DietAndFitness.ViewModels
             }
             set
             {
+                if (foodItems == value)
+                    return;
                 foodItems = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private IEnumerable<object> _filteredItems;
+        public IEnumerable<object> FilteredItems
+        {
+            get { return _filteredItems; }
+            set
+            {
+                if (_filteredItems == value)
+                    return;
+                _filteredItems = value;
                 OnPropertyChanged();
             }
         }
@@ -75,13 +91,32 @@ namespace DietAndFitness.ViewModels
             //Using the field instead of the property prevents the OnPropertyChanged event from firing and making the Edit button available from the start
             selectedFoodItem = selectedItem.LocalFoodItem;
         }
+
+        private LocalFoodItem _selectedFilterItem;
+        public LocalFoodItem selectedFilterItem
+        {
+            get { return _selectedFilterItem; }
+            set
+            {
+                if (_selectedFilterItem == value)
+                    return;
+                _selectedFilterItem = value;
+                OnPropertyChanged();
+            }
+        }
         private void Initialize()
         {
             FoodItems = new ObservableCollection<LocalFoodItem>();
+            FilteredItems = new ObservableCollection<LocalFoodItem>();
             SearchCommand = new Command<string>(execute: RefreshListItems);
             PropertyChanged += OnSelectedItemChanged;
             //CurrentItem.PropertyChanged += OnSelectedItemChanged;
 
+        }
+
+        public async Task LoadList()
+        {
+            FoodItems = new ObservableCollection<LocalFoodItem> (await DBLocalAccess.GetAllAsync<LocalFoodItem>());
         }
         private void OnSelectedItemChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -98,11 +133,7 @@ namespace DietAndFitness.ViewModels
         {
             CurrentItem.FoodItemID = SelectedFoodItem.ID;
             CurrentItem.Name = SelectedFoodItem.Name;
-            //The base operation function will create a new CurrentItem and we lose the reference so we have to unsubscribe here to prevent memory leaks
-            //CurrentItem.PropertyChanged -= OnSelectedItemChanged;
             base.Operation(parameter);
-            //resubscribe to the new CurrentItem so the validation function keeps functioning for changes in quantity;
-            //CurrentItem.PropertyChanged += OnSelectedItemChanged;
             SelectedFoodItem = null;
         }
         /// <summary>
