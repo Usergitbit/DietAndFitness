@@ -1,8 +1,6 @@
-﻿using DietAndFitness.Controls;
-using DietAndFitness.Core;
+﻿using DietAndFitness.Core;
 using DietAndFitness.Core.Models;
 using DietAndFitness.Services;
-using DietAndFitness.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

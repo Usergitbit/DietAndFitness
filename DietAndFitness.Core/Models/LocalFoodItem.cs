@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 /// <summary>
 /// Class for an entry in the GlobalFoodItem table
 /// </summary>

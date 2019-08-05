@@ -12,6 +12,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\**" />
+    <Compile Remove="Validators\**" />
+    <Compile Remove="ViewModels\Secondary\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Validators\**" />
+    <EmbeddedResource Remove="ViewModels\Secondary\**" />
+    <None Remove="Entities\**" />
+    <None Remove="Validators\**" />
+    <None Remove="ViewModels\Secondary\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\DataAccessLayer.cs" />
+    <Compile Remove="Controls\InputPair.xaml.cs" />
     <Compile Remove="ViewModels\EditDailyFoodItemViewModel.cs" />
     <Compile Remove="ViewModels\EditFoodItemDBViewModel.cs" />
     <Compile Remove="Views\EditDailyFoodItem.xaml.cs" />
@@ -19,6 +33,7 @@
     <Compile Remove="Views\Page1.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Remove="Controls\InputPair.xaml" />
     <EmbeddedResource Remove="Views\EditDailyFoodItem.xaml" />
     <EmbeddedResource Remove="Views\EditFoodItemDB.xaml" />
     <EmbeddedResource Remove="Views\Page1.xaml" />
@@ -97,9 +112,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\InputPair.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\ChangeDailyFoodItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

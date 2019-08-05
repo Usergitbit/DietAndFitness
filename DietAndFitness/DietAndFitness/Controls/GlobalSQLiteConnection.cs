@@ -1,12 +1,9 @@
 ﻿using Microsoft.Data.Sqlite;
 using SQLite;
 using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 /// <summary>
 /// Static class that provides access to the database from anywhere in the program
 /// Should only be used to instantiate a DataAccessLayer

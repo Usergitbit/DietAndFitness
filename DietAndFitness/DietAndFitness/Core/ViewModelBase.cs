@@ -1,11 +1,7 @@
-﻿using DietAndFitness.Controls;
-using DietAndFitness.Interfaces;
-using DietAndFitness.Services;
+﻿using DietAndFitness.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 namespace DietAndFitness.Core
 {
     /// <summary>

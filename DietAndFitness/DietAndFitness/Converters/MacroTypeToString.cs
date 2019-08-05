@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 using static DietAndFitness.ViewModels.MacrosStatisticsViewModel.Macro;
 

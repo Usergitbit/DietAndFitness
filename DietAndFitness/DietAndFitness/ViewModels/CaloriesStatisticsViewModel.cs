@@ -1,11 +1,7 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.ViewModels.Secondary;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Linq;
-using DietAndFitness.Entities;
 using System.Threading.Tasks;
 
 namespace DietAndFitness.ViewModels

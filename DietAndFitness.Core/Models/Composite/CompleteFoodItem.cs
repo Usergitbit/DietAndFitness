@@ -1,7 +1,4 @@
-﻿using DietAndFitness.Core;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace DietAndFitness.Core.Models.Composite
 {

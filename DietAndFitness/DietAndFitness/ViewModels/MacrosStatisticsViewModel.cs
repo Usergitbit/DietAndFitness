@@ -1,5 +1,4 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.ViewModels.Secondary;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;

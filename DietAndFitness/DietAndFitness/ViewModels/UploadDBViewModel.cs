@@ -1,9 +1,4 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 

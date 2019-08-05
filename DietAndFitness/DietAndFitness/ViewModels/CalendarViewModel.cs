@@ -1,9 +1,6 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Services;
 using DietAndFitness.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 

@@ -1,12 +1,8 @@
-﻿using DietAndFitness.Controls;
-using DietAndFitness.Core;
+﻿using DietAndFitness.Core;
 using DietAndFitness.Core.Models;
-using DietAndFitness.Services;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;

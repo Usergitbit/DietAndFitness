@@ -1,5 +1,4 @@
-﻿using DietAndFitness.Core;
-using DietAndFitness.Interfaces;
+﻿using DietAndFitness.Interfaces;
 using System;
 using System.Runtime.CompilerServices;
 

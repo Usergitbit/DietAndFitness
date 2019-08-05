@@ -4,10 +4,8 @@ using DietAndFitness.Core.Models;
 using DietAndFitness.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
-using System.Text;
 using Xamarin.Forms;
 
 namespace DietAndFitness.DatabaseContext

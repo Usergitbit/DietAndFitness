@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DietAndFitness.Interfaces
+﻿namespace DietAndFitness.Interfaces
 {
     interface IValidation
     {
