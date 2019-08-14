@@ -17,21 +17,21 @@ namespace DietAndFitness.Services
         }
         public async Task GoBackAsync()
         {
-            await navigationPage.PopAsync();
+            await navigationPage.PopAsync(true);
         }
 
         public async Task NavigateToAsync(Page page)
         {
-            await navigationPage.PushAsync(page);
+            await navigationPage.PushAsync(page, true);
         }
 
         public async Task PushModal(Page page)
         {
-            await App.Current.MainPage.Navigation.PushModalAsync(page);
+            await App.Current.MainPage.Navigation.PushModalAsync(page, true);
         }
         public async Task PopModal()
         {
-            await App.Current.MainPage.Navigation.PopModalAsync();
+            await App.Current.MainPage.Navigation.PopModalAsync(true);
         }
 
         /// <summary>

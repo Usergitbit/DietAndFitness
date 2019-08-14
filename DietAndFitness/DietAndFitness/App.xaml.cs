@@ -28,6 +28,13 @@ namespace DietAndFitness
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI1NjUyQDMxMzcyZTMyMmUzMGpjZVl3a0x4dHI1SUoyc0RWcTlYNGFGOWlGSjJyWUJrWjYvTi81U0hJMlU9");
             InitializeComponent();
             //loadTIme.Start();
+          
+            //loadTIme.Stop();
+
+        }
+
+		protected override async void OnStart ()
+		{
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
             DatabaseController DBLocalControl = new DatabaseController(LOCALFOOD_ITEM_DATABASE);
@@ -49,7 +56,7 @@ namespace DietAndFitness
                 var vm = new DailyFoodListViewModel();
                 daily.DailyFoodDatabase = vm;
                 daily.BindingContext = vm;
-                vm.LoadList();
+                await vm.LoadList();
                 var homePage = new HomePage();
                 homePage.Detail = navigationPage;
                 MainPage = homePage;
@@ -69,12 +76,6 @@ namespace DietAndFitness
                 MainPage = navigationPage;
 
             }
-            //loadTIme.Stop();
-
-        }
-
-		protected override async void OnStart ()
-		{
             // Handle when your app starts
             //Debug.WriteLine("App Started!");
             //DialogService dialogService = new DialogService();
@@ -83,7 +84,7 @@ namespace DietAndFitness
             //bool result = await IsUpToDate();
             //if (!result)
             //    await MergeDatabases();
-           // loadTIme.Stop();
+            // loadTIme.Stop();
             //await dialogService.ShowMessageBox($"{loadTIme.Elapsed.TotalSeconds} seconds until all merge sthi finished", "Time elapsed");
         }
 
