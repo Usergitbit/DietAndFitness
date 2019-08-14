@@ -13,7 +13,7 @@ namespace DietAndFitness.ViewModels
 {
     public class ChangeDailyFoodItemViewModel : ChangeBaseViewModel<DailyFoodItem>
     {
-        private ObservableCollection<LocalFoodItem> foodItems;
+        private List<LocalFoodItem> foodItems;
         private string searchBarText;
         public string SearchBarText
         {
@@ -44,7 +44,7 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<LocalFoodItem> FoodItems
+        public List<LocalFoodItem> FoodItems
         {
             get
             {
@@ -71,7 +71,6 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-        public ICommand SearchCommand { get; private set; }
         public ChangeDailyFoodItemViewModel( ) : base()
         {
             Initialize();
@@ -102,9 +101,8 @@ namespace DietAndFitness.ViewModels
         }
         private void Initialize()
         {
-            FoodItems = new ObservableCollection<LocalFoodItem>();
+            FoodItems = new List<LocalFoodItem>();
             FilteredItems = new ObservableCollection<LocalFoodItem>();
-            SearchCommand = new Command<string>(execute: RefreshListItems);
             PropertyChanged += OnSelectedItemChanged;
             //CurrentItem.PropertyChanged += OnSelectedItemChanged;
 
@@ -112,7 +110,7 @@ namespace DietAndFitness.ViewModels
 
         public async Task LoadList()
         {
-            FoodItems = new ObservableCollection<LocalFoodItem> (await DBLocalAccess.GetAllAsync<LocalFoodItem>());
+            FoodItems = await DBLocalAccess.GetAllAsync<LocalFoodItem>().ConfigureAwait(false);
         }
         private void OnSelectedItemChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -131,18 +129,6 @@ namespace DietAndFitness.ViewModels
             CurrentItem.Name = SelectedFoodItem.Name;
             base.Operation(parameter);
             SelectedFoodItem = null;
-        }
-        /// <summary>
-        /// Search method for finding an item to add. 
-        /// </summary>
-        /// <param name="parameter"></param>
-        async void RefreshListItems(string parameter)
-        {
-            if (parameter != null)
-            {
-                FoodItems = new ObservableCollection<LocalFoodItem>(await DBLocalAccess.GetByDescription(parameter));
-                SelectedFoodItem = null;
-            }
         }
         protected override bool ValidateExecuteOperationButton(DailyFoodItem parameter)
         {

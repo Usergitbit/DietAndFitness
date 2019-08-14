@@ -20,7 +20,6 @@ namespace DietAndFitness.DatabaseContext
         }
         public GlobalDbContext()
         {
-
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

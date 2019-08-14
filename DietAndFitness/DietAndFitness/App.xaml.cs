@@ -21,11 +21,13 @@ namespace DietAndFitness
         private const string GLOBALFOOD_ITEM_DATABASE = "LocalDatabase.db";
         private const string LOCALFOOD_ITEM_DATABASE = "LocalFoodItemsDB.db";
         private IDataAccessService DBLocalAccess = new DataAccessService();
+        //Stopwatch loadTIme = new Stopwatch();
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI1NjUyQDMxMzcyZTMyMmUzMGpjZVl3a0x4dHI1SUoyc0RWcTlYNGFGOWlGSjJyWUJrWjYvTi81U0hJMlU9");
             InitializeComponent();
+            //loadTIme.Start();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
             DatabaseController DBLocalControl = new DatabaseController(LOCALFOOD_ITEM_DATABASE);
@@ -67,6 +69,7 @@ namespace DietAndFitness
                 MainPage = navigationPage;
 
             }
+            //loadTIme.Stop();
 
         }
 
@@ -74,9 +77,14 @@ namespace DietAndFitness
 		{
             // Handle when your app starts
             //Debug.WriteLine("App Started!");
-            bool result = await IsUpToDate();
-            if (!result)
-                await MergeDatabases();
+            //DialogService dialogService = new DialogService();
+            //await dialogService.ShowMessageBox($"{loadTIme.Elapsed.TotalSeconds} seconds until all constructor shit finished", "Time elapsed");
+            //loadTIme.Restart();
+            //bool result = await IsUpToDate();
+            //if (!result)
+            //    await MergeDatabases();
+           // loadTIme.Stop();
+            //await dialogService.ShowMessageBox($"{loadTIme.Elapsed.TotalSeconds} seconds until all merge sthi finished", "Time elapsed");
         }
 
 		protected override void OnSleep ()

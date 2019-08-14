@@ -93,6 +93,7 @@ namespace DietAndFitness.ViewModels.Base
         }
         private async void Close()
         {
+            DBLocalAccess.DiscardChanges();
             await navigationService.PopModal();
         }
         protected virtual async void Operation(T parameter)

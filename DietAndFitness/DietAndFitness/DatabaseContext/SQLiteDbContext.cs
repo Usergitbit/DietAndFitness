@@ -4,8 +4,10 @@ using DietAndFitness.Core.Models;
 using DietAndFitness.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace DietAndFitness.DatabaseContext
@@ -69,5 +71,6 @@ namespace DietAndFitness.DatabaseContext
             }
 
         }
+
     }
 }

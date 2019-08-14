@@ -1,6 +1,7 @@
 ﻿using DietAndFitness.Core;
 using DietAndFitness.Views;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 

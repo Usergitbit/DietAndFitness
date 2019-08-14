@@ -18,10 +18,10 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                sqliteDbContext.DbSet<T>().Remove(entity);
+                sqliteDbContext.Remove(entity);
                 await sqliteDbContext.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -54,7 +54,7 @@ namespace DietAndFitness.Controls
 
         public async Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime startDate, DateTime endDate)
         {
-            return await  sqliteDbContext.DbSet<DailyFoodItem>()
+            return await sqliteDbContext.DbSet<DailyFoodItem>()
                 .Include(dfi => dfi.FoodItem)
                 .Where(dfi => dfi.CreatedAt >= startDate && dfi.CreatedAt <= endDate)
                 .Select(x => new CompleteFoodItem { DailyFoodItem = x, LocalFoodItem = x.FoodItem })
@@ -68,7 +68,7 @@ namespace DietAndFitness.Controls
 
         public void IncrementVersion()
         {
-            
+
             var command = sqliteDbContext.Database.GetDbConnection().CreateCommand();
             sqliteDbContext.Database.OpenConnection();
             command.CommandText = @"update VersionItem
@@ -90,10 +90,10 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                sqliteDbContext.DbSet<T>().Add(entity);
+                await sqliteDbContext.DbSet<T>().AddAsync(entity);
                 await sqliteDbContext.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -104,10 +104,9 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                sqliteDbContext.DbSet<T>().Update(entity);
                 await sqliteDbContext.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -123,8 +122,9 @@ namespace DietAndFitness.Controls
                 castedItem.ID = result.ID;
                 sqliteDbContext.LocalFoodItems.Update(castedItem);
                 await sqliteDbContext.SaveChangesAsync();
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
@@ -137,6 +137,13 @@ namespace DietAndFitness.Controls
                                                                      || (lfi.Brand != null && lfi.Brand.ToLower().Contains(description))
                                                                      || (lfi.CookingMode != null && lfi.CookingMode.ToLower().Contains(description))).ToListAsync();
 
+        }
+
+        public void DiscardChanges()
+        {
+            sqliteDbContext.ChangeTracker.Entries()
+                .Where(e => e.Entity != null).ToList()
+                .ForEach(e => e.State = EntityState.Detached);
         }
     }
 }

@@ -26,5 +26,6 @@ namespace DietAndFitness.Interfaces
         Task<List<CompleteFoodItem>> GetCompleteItemAsync(DateTime startDate, DateTime endDate);
         Task<Profile> GetCurrentProfile();
         Task<List<LocalFoodItem>> GetByDescription(string description);
+        void DiscardChanges();
     }
 }
