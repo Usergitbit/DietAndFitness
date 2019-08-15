@@ -19,18 +19,27 @@ namespace DietAndFitness.Views
             var item = e.SelectedItem as HomePageMenuItem;
             if (item == null)
                 return;
-            
-            MasterPage.ListView.SelectedItem = null;
+            MasterPage.LoadingLabel.IsVisible = true;
+            await Task.Delay(1);
+
+            await Task.Run(() =>
+            {
+                var page = (Page)Activator.CreateInstance(item.TargetType);
+                page.Title = item.Title;
+                var navigationPage = Detail as NavigationPage;
+
+                Device.BeginInvokeOnMainThread(async () => 
+                {
+                    navigationPage.Navigation.InsertPageBefore(page, navigationPage.RootPage);
+                    await navigationPage.PopToRootAsync();
+                    MasterPage.ListView.SelectedItem = null;
+                    MasterPage.LoadingLabel.IsVisible = false;
+                    IsPresented = false;
+                });
+                
+            });
 
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
-            var navigationPage = Detail as NavigationPage;
-
-            navigationPage.Navigation.InsertPageBefore(page, navigationPage.RootPage);
-            await navigationPage.PopToRootAsync();
-
-            IsPresented = false;
 
         }
     }

@@ -7,65 +7,65 @@ using System.Runtime.CompilerServices;
 
 namespace DietAndFitness.Core
 {
-    /// <summary>
-    /// Base model class that others derive from
-    /// </summary>
-    [Serializable]
-    public class ModelBase : INotifyPropertyChanged,
-                             INotifyCollectionChanged,
-                             IDisposable
-    {
+    ///// <summary>
+    ///// Base model class that others derive from
+    ///// </summary>
+    //[Serializable]
+    //public class ModelBase : INotifyPropertyChanged,
+    //                         INotifyCollectionChanged,
+    //                         IDisposable
+    //{
         
-        private bool isDirty;
-        [Ignore] //Ignores this property when adding to the database, not needed for local database at the time of creation
-        public bool IsDirty
-        {
-            get
-            {
-                return isDirty;
-            }
-            set
-            {
-                if (isDirty == value)
-                    return;
-                isDirty = value;
-            }
-        }
+    //    private bool isDirty;
+    //    [Ignore] //Ignores this property when adding to the database, not needed for local database at the time of creation
+    //    public bool IsDirty
+    //    {
+    //        get
+    //        {
+    //            return isDirty;
+    //        }
+    //        set
+    //        {
+    //            if (isDirty == value)
+    //                return;
+    //            isDirty = value;
+    //        }
+    //    }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-        public ModelBase()
-        {
-            //required for serialization
-        }
+    //    public event PropertyChangedEventHandler PropertyChanged;
+    //    public event NotifyCollectionChangedEventHandler CollectionChanged;
+    //    public ModelBase()
+    //    {
+    //        //required for serialization
+    //    }
 
-        public void Dispose()
-        {
-            //throw new NotImplementedException();
+    //    public void Dispose()
+    //    {
+    //        //throw new NotImplementedException();
            
-        }
+    //    }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler == null)
-                return;
-            IsDirty = true;
-            Debug.WriteLine("PropertyChanged called from" + ToString() + " " + IsDirty);
-            handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+    //    protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
+    //    {
+    //        var handler = PropertyChanged;
+    //        if (handler == null)
+    //            return;
+    //        IsDirty = true;
+    //        Debug.WriteLine("PropertyChanged called from" + ToString() + " " + IsDirty);
+    //        handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
-        }
+    //    }
 
-        protected virtual void OnCollectionChanged ()
-        {
-            var handler = CollectionChanged;
-            handler?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
-        }
+    //    protected virtual void OnCollectionChanged ()
+    //    {
+    //        var handler = CollectionChanged;
+    //        handler?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+    //    }
         
-        public void Clean()
-        {
-            isDirty = false;
-            Debug.WriteLine("I was cleaned");
-        }
-    }
+    //    public void Clean()
+    //    {
+    //        isDirty = false;
+    //        Debug.WriteLine("I was cleaned");
+    //    }
+    //}
 }

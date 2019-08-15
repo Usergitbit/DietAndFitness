@@ -10,11 +10,17 @@ namespace DietAndFitness.Views
     public partial class HomePageMaster : ContentPage
     {
         public ListView ListView;
+        public Grid LoadingLabel
+        {
+            get
+            {
+                return loadingLabel;
+            }
+        }
 
         public HomePageMaster()
         {
             InitializeComponent();
-            
             BindingContext = new HomePageMasterViewModel();
             ListView = MenuItemsListView;
         }

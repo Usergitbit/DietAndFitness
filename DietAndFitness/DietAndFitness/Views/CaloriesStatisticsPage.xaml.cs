@@ -20,6 +20,7 @@ namespace DietAndFitness.Views
         {
             base.OnAppearing();
             await StatisticsViewModel.LoadData();
+            
         }
 
         private async void OnStartDateChanged(object sender, DateChangedEventArgs e)

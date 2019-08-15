@@ -71,18 +71,80 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteTokensWrapMode = global::DietAndFitness.Droid.Resource.Attribute.autocompleteTokensWrapMode;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteWatermark = global::DietAndFitness.Droid.Resource.Attribute.autocompleteWatermark;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.autocompleteWatermarkColor = global::DietAndFitness.Droid.Resource.Attribute.autocompleteWatermarkColor;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fastScrollEnabled = global::DietAndFitness.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::DietAndFitness.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::DietAndFitness.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fastScrollVerticalThumbDrawable = global::DietAndFitness.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fastScrollVerticalTrackDrawable = global::DietAndFitness.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.font = global::DietAndFitness.Droid.Resource.Attribute.font;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderAuthority = global::DietAndFitness.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderCerts = global::DietAndFitness.Droid.Resource.Attribute.fontProviderCerts;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderFetchStrategy = global::DietAndFitness.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderFetchTimeout = global::DietAndFitness.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderPackage = global::DietAndFitness.Droid.Resource.Attribute.fontProviderPackage;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontProviderQuery = global::DietAndFitness.Droid.Resource.Attribute.fontProviderQuery;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontStyle = global::DietAndFitness.Droid.Resource.Attribute.fontStyle;
+			global::Com.Syncfusion.Autocomplete.Resource.Attribute.fontWeight = global::DietAndFitness.Droid.Resource.Attribute.fontWeight;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.layoutManager = global::DietAndFitness.Droid.Resource.Attribute.layoutManager;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.reverseLayout = global::DietAndFitness.Droid.Resource.Attribute.reverseLayout;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.spanCount = global::DietAndFitness.Droid.Resource.Attribute.spanCount;
 			global::Com.Syncfusion.Autocomplete.Resource.Attribute.stackFromEnd = global::DietAndFitness.Droid.Resource.Attribute.stackFromEnd;
+			global::Com.Syncfusion.Autocomplete.Resource.Boolean.abc_action_bar_embed_tabs = global::DietAndFitness.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Com.Syncfusion.Autocomplete.Resource.Color.notification_action_color_filter = global::DietAndFitness.Droid.Resource.Color.notification_action_color_filter;
+			global::Com.Syncfusion.Autocomplete.Resource.Color.notification_icon_bg_color = global::DietAndFitness.Droid.Resource.Color.notification_icon_bg_color;
+			global::Com.Syncfusion.Autocomplete.Resource.Color.ripple_material_light = global::DietAndFitness.Droid.Resource.Color.ripple_material_light;
+			global::Com.Syncfusion.Autocomplete.Resource.Color.secondary_text_default_material_light = global::DietAndFitness.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.compat_button_inset_horizontal_material = global::DietAndFitness.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.compat_button_inset_vertical_material = global::DietAndFitness.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.compat_button_padding_horizontal_material = global::DietAndFitness.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.compat_button_padding_vertical_material = global::DietAndFitness.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.compat_control_corner_material = global::DietAndFitness.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.fastscroll_default_thickness = global::DietAndFitness.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.fastscroll_margin = global::DietAndFitness.Droid.Resource.Dimension.fastscroll_margin;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.fastscroll_minimum_range = global::DietAndFitness.Droid.Resource.Dimension.fastscroll_minimum_range;
 			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::DietAndFitness.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::DietAndFitness.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::Com.Syncfusion.Autocomplete.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::DietAndFitness.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_action_icon_size = global::DietAndFitness.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_action_text_size = global::DietAndFitness.Droid.Resource.Dimension.notification_action_text_size;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_big_circle_margin = global::DietAndFitness.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_content_margin_start = global::DietAndFitness.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_large_icon_height = global::DietAndFitness.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_large_icon_width = global::DietAndFitness.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_main_column_padding_top = global::DietAndFitness.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_media_narrow_margin = global::DietAndFitness.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_right_icon_size = global::DietAndFitness.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_right_side_padding_top = global::DietAndFitness.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_small_icon_background_padding = global::DietAndFitness.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_small_icon_size_as_large = global::DietAndFitness.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_subtext_size = global::DietAndFitness.Droid.Resource.Dimension.notification_subtext_size;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_top_pad = global::DietAndFitness.Droid.Resource.Dimension.notification_top_pad;
+			global::Com.Syncfusion.Autocomplete.Resource.Dimension.notification_top_pad_large_text = global::DietAndFitness.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_action_background = global::DietAndFitness.Droid.Resource.Drawable.notification_action_background;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg = global::DietAndFitness.Droid.Resource.Drawable.notification_bg;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg_low = global::DietAndFitness.Droid.Resource.Drawable.notification_bg_low;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg_low_normal = global::DietAndFitness.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg_low_pressed = global::DietAndFitness.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg_normal = global::DietAndFitness.Droid.Resource.Drawable.notification_bg_normal;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_bg_normal_pressed = global::DietAndFitness.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_icon_background = global::DietAndFitness.Droid.Resource.Drawable.notification_icon_background;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_template_icon_bg = global::DietAndFitness.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_template_icon_low_bg = global::DietAndFitness.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notification_tile_bg = global::DietAndFitness.Droid.Resource.Drawable.notification_tile_bg;
+			global::Com.Syncfusion.Autocomplete.Resource.Drawable.notify_panel_notification_icon_bg = global::DietAndFitness.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
 			global::Com.Syncfusion.Autocomplete.Resource.Drawable.sfclosebutton = global::DietAndFitness.Droid.Resource.Drawable.sfclosebutton;
 			global::Com.Syncfusion.Autocomplete.Resource.Drawable.styleinfo = global::DietAndFitness.Droid.Resource.Drawable.styleinfo;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.Itemname = global::DietAndFitness.Droid.Resource.Id.Itemname;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.action_container = global::DietAndFitness.Droid.Resource.Id.action_container;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.action_divider = global::DietAndFitness.Droid.Resource.Id.action_divider;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.action_image = global::DietAndFitness.Droid.Resource.Id.action_image;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.action_text = global::DietAndFitness.Droid.Resource.Id.action_text;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.actions = global::DietAndFitness.Droid.Resource.Id.actions;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.append = global::DietAndFitness.Droid.Resource.Id.append;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.async = global::DietAndFitness.Droid.Resource.Id.async;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.blocking = global::DietAndFitness.Droid.Resource.Id.blocking;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.bottom = global::DietAndFitness.Droid.Resource.Id.bottom;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.chronometer = global::DietAndFitness.Droid.Resource.Id.chronometer;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.contains = global::DietAndFitness.Droid.Resource.Id.contains;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.containsWithCaseSensitive = global::DietAndFitness.Droid.Resource.Id.containsWithCaseSensitive;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.custom = global::DietAndFitness.Droid.Resource.Id.custom;
@@ -91,23 +153,70 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.Autocomplete.Resource.Id.endsWithCaseSensitive = global::DietAndFitness.Droid.Resource.Id.endsWithCaseSensitive;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.equals = global::DietAndFitness.Droid.Resource.Id.equals;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.equalsWithCaseSensitive = global::DietAndFitness.Droid.Resource.Id.equalsWithCaseSensitive;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.forever = global::DietAndFitness.Droid.Resource.Id.forever;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.icon = global::DietAndFitness.Droid.Resource.Id.icon;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.icon_group = global::DietAndFitness.Droid.Resource.Id.icon_group;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.info = global::DietAndFitness.Droid.Resource.Id.info;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.italic = global::DietAndFitness.Droid.Resource.Id.italic;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.item_touch_helper_previous_elevation = global::DietAndFitness.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.line1 = global::DietAndFitness.Droid.Resource.Id.line1;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.line3 = global::DietAndFitness.Droid.Resource.Id.line3;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.none = global::DietAndFitness.Droid.Resource.Id.none;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.normal = global::DietAndFitness.Droid.Resource.Id.normal;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.notification_background = global::DietAndFitness.Droid.Resource.Id.notification_background;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.notification_main_column = global::DietAndFitness.Droid.Resource.Id.notification_main_column;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.notification_main_column_container = global::DietAndFitness.Droid.Resource.Id.notification_main_column_container;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.right_icon = global::DietAndFitness.Droid.Resource.Id.right_icon;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.right_side = global::DietAndFitness.Droid.Resource.Id.right_side;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.startsWith = global::DietAndFitness.Droid.Resource.Id.startsWith;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.startsWithCaseSensitive = global::DietAndFitness.Droid.Resource.Id.startsWithCaseSensitive;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.suggest = global::DietAndFitness.Droid.Resource.Id.suggest;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.suggestAppend = global::DietAndFitness.Droid.Resource.Id.suggestAppend;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.text = global::DietAndFitness.Droid.Resource.Id.text;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.text2 = global::DietAndFitness.Droid.Resource.Id.text2;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.time = global::DietAndFitness.Droid.Resource.Id.time;
+			global::Com.Syncfusion.Autocomplete.Resource.Id.title = global::DietAndFitness.Droid.Resource.Id.title;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.token = global::DietAndFitness.Droid.Resource.Id.token;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.top = global::DietAndFitness.Droid.Resource.Id.top;
 			global::Com.Syncfusion.Autocomplete.Resource.Id.wrap = global::DietAndFitness.Droid.Resource.Id.wrap;
+			global::Com.Syncfusion.Autocomplete.Resource.Integer.status_bar_notification_info_maxnum = global::DietAndFitness.Droid.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Com.Syncfusion.Autocomplete.Resource.Layout.CustomizedView = global::DietAndFitness.Droid.Resource.Layout.CustomizedView;
 			global::Com.Syncfusion.Autocomplete.Resource.Layout.CustomizedView1 = global::DietAndFitness.Droid.Resource.Layout.CustomizedView1;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_action = global::DietAndFitness.Droid.Resource.Layout.notification_action;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_action_tombstone = global::DietAndFitness.Droid.Resource.Layout.notification_action_tombstone;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_template_custom_big = global::DietAndFitness.Droid.Resource.Layout.notification_template_custom_big;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_template_icon_group = global::DietAndFitness.Droid.Resource.Layout.notification_template_icon_group;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_template_part_chronometer = global::DietAndFitness.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Com.Syncfusion.Autocomplete.Resource.Layout.notification_template_part_time = global::DietAndFitness.Droid.Resource.Layout.notification_template_part_time;
 			global::Com.Syncfusion.Autocomplete.Resource.Layout.sfautocomplete_layout = global::DietAndFitness.Droid.Resource.Layout.sfautocomplete_layout;
 			global::Com.Syncfusion.Autocomplete.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Autocomplete.Resource.String.status_bar_notification_info_overflow = global::DietAndFitness.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.TextAppearance_Compat_Notification = global::DietAndFitness.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.TextAppearance_Compat_Notification_Info = global::DietAndFitness.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::DietAndFitness.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.TextAppearance_Compat_Notification_Time = global::DietAndFitness.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.TextAppearance_Compat_Notification_Title = global::DietAndFitness.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.Widget_Compat_NotificationActionContainer = global::DietAndFitness.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Com.Syncfusion.Autocomplete.Resource.Style.Widget_Compat_NotificationActionText = global::DietAndFitness.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily = global::DietAndFitness.Droid.Resource.Styleable.FontFamily;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderAuthority = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderCerts = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderPackage = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamily_fontProviderQuery = global::DietAndFitness.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamilyFont = global::DietAndFitness.Droid.Resource.Styleable.FontFamilyFont;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamilyFont_font = global::DietAndFitness.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamilyFont_fontStyle = global::DietAndFitness.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.FontFamilyFont_fontWeight = global::DietAndFitness.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_descendantFocusability = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_android_orientation = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_fastScrollEnabled = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_layoutManager = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_layoutManager;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_reverseLayout = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_reverseLayout;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.RecyclerView_spanCount = global::DietAndFitness.Droid.Resource.Styleable.RecyclerView_spanCount;
@@ -155,6 +264,44 @@ namespace DietAndFitness.Droid
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteTokensWrapMode = global::DietAndFitness.Droid.Resource.Styleable.SfAutoComplete_autocompleteTokensWrapMode;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteWatermark = global::DietAndFitness.Droid.Resource.Styleable.SfAutoComplete_autocompleteWatermark;
 			global::Com.Syncfusion.Autocomplete.Resource.Styleable.SfAutoComplete_autocompleteWatermarkColor = global::DietAndFitness.Droid.Resource.Styleable.SfAutoComplete_autocompleteWatermarkColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorAnimationTypes = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorIsBusy = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorSecondaryColor = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextColor = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTextSize = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitle = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorTitlePlacement = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxHeight = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Attribute.busyIndicatorViewBoxWidth = global::DietAndFitness.Droid.Resource.Attribute.busyIndicatorViewBoxWidth;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ball = global::DietAndFitness.Droid.Resource.Id.ball;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.battery = global::DietAndFitness.Droid.Resource.Id.battery;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.bottom = global::DietAndFitness.Droid.Resource.Id.bottom;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.box = global::DietAndFitness.Droid.Resource.Id.box;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.doubleCircle = global::DietAndFitness.Droid.Resource.Id.doubleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.ecg = global::DietAndFitness.Droid.Resource.Id.ecg;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.gearBox = global::DietAndFitness.Droid.Resource.Id.gearBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.globe = global::DietAndFitness.Droid.Resource.Id.globe;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.horizontalPulsingBox = global::DietAndFitness.Droid.Resource.Id.horizontalPulsingBox;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.movieTimer = global::DietAndFitness.Droid.Resource.Id.movieTimer;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.none = global::DietAndFitness.Droid.Resource.Id.none;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.print = global::DietAndFitness.Droid.Resource.Id.print;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rectangle = global::DietAndFitness.Droid.Resource.Id.rectangle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.rollingBall = global::DietAndFitness.Droid.Resource.Id.rollingBall;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.singleCircle = global::DietAndFitness.Droid.Resource.Id.singleCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.slicedCircle = global::DietAndFitness.Droid.Resource.Id.slicedCircle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.top = global::DietAndFitness.Droid.Resource.Id.top;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Id.zoomingTarget = global::DietAndFitness.Droid.Resource.Id.zoomingTarget;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.String.library_name = global::DietAndFitness.Droid.Resource.String.library_name;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorAnimationTypes;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorIsBusy;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorSecondaryColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextColor;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTextSize;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitle;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorTitlePlacement;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxHeight;
+			global::Com.Syncfusion.Sfbusyindicator.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth = global::DietAndFitness.Droid.Resource.Styleable.SfBusyIndicator_busyIndicatorViewBoxWidth;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_In = global::DietAndFitness.Droid.Resource.Animation.SfChart_Fade_In;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Fade_Out = global::DietAndFitness.Droid.Resource.Animation.SfChart_Fade_Out;
 			global::Syncfusion.SfChart.XForms.Droid.Resource.Animation.SfChart_Scale_In = global::DietAndFitness.Droid.Resource.Animation.SfChart_Scale_In;
@@ -3561,131 +3708,131 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f010052
 			public const int autoSizeTextType = 2130772050;
 			
-			// aapt resource value: 0x7f0102b6
-			public const int autocompleteBorderColor = 2130772662;
-			
-			// aapt resource value: 0x7f0102cb
-			public const int autocompleteClearButtonColor = 2130772683;
-			
 			// aapt resource value: 0x7f0102bf
-			public const int autocompleteDisplayMemberPath = 2130772671;
-			
-			// aapt resource value: 0x7f0102c4
-			public const int autocompleteDropDownBackgroundColor = 2130772676;
+			public const int autocompleteBorderColor = 2130772671;
 			
 			// aapt resource value: 0x7f0102d4
-			public const int autocompleteDropDownCornerRadius = 2130772692;
-			
-			// aapt resource value: 0x7f0102d6
-			public const int autocompleteDropDownFooterViewHeight = 2130772694;
-			
-			// aapt resource value: 0x7f0102d5
-			public const int autocompleteDropDownHeaderViewHeight = 2130772693;
-			
-			// aapt resource value: 0x7f0102d3
-			public const int autocompleteDropDownItemHeight = 2130772691;
-			
-			// aapt resource value: 0x7f0102ba
-			public const int autocompleteDropDownOpen = 2130772666;
-			
-			// aapt resource value: 0x7f0102c5
-			public const int autocompleteDropDownTextColor = 2130772677;
-			
-			// aapt resource value: 0x7f0102c7
-			public const int autocompleteDropDownTextSize = 2130772679;
-			
-			// aapt resource value: 0x7f0102c0
-			public const int autocompleteEnableSelectionIndicator = 2130772672;
-			
-			// aapt resource value: 0x7f0102d1
-			public const int autocompleteHighlightedTextColor = 2130772689;
-			
-			// aapt resource value: 0x7f0102cc
-			public const int autocompleteIgnoreDiacritic = 2130772684;
+			public const int autocompleteClearButtonColor = 2130772692;
 			
 			// aapt resource value: 0x7f0102c8
-			public const int autocompleteImageMemberPath = 2130772680;
-			
-			// aapt resource value: 0x7f0102c1
-			public const int autocompleteIndicatorText = 2130772673;
-			
-			// aapt resource value: 0x7f0102c2
-			public const int autocompleteIndicatorTextColor = 2130772674;
-			
-			// aapt resource value: 0x7f0102d2
-			public const int autocompleteIndicatorTextSize = 2130772690;
+			public const int autocompleteDisplayMemberPath = 2130772680;
 			
 			// aapt resource value: 0x7f0102cd
-			public const int autocompleteIsFocused = 2130772685;
+			public const int autocompleteDropDownBackgroundColor = 2130772685;
 			
-			// aapt resource value: 0x7f0102d0
-			public const int autocompleteIsSelectedItemsVisibleInDropDown = 2130772688;
+			// aapt resource value: 0x7f0102dd
+			public const int autocompleteDropDownCornerRadius = 2130772701;
 			
-			// aapt resource value: 0x7f0102ce
-			public const int autocompleteLoadMoreText = 2130772686;
+			// aapt resource value: 0x7f0102df
+			public const int autocompleteDropDownFooterViewHeight = 2130772703;
 			
-			// aapt resource value: 0x7f0102c6
-			public const int autocompleteMaximumDropDownHeight = 2130772678;
+			// aapt resource value: 0x7f0102de
+			public const int autocompleteDropDownHeaderViewHeight = 2130772702;
 			
-			// aapt resource value: 0x7f0102bb
-			public const int autocompleteMaximumSuggestion = 2130772667;
+			// aapt resource value: 0x7f0102dc
+			public const int autocompleteDropDownItemHeight = 2130772700;
 			
 			// aapt resource value: 0x7f0102c3
-			public const int autocompleteMinimumPrefixCharacters = 2130772675;
+			public const int autocompleteDropDownOpen = 2130772675;
 			
-			// aapt resource value: 0x7f0102db
-			public const int autocompleteMode = 2130772699;
+			// aapt resource value: 0x7f0102ce
+			public const int autocompleteDropDownTextColor = 2130772686;
 			
-			// aapt resource value: 0x7f0102da
-			public const int autocompleteMultiSelectMode = 2130772698;
-			
-			// aapt resource value: 0x7f0102cf
-			public const int autocompleteNoResultsFoundText = 2130772687;
-			
-			// aapt resource value: 0x7f0102be
-			public const int autocompletePopUpDelay = 2130772670;
-			
-			// aapt resource value: 0x7f0102bc
-			public const int autocompleteSelectedIndex = 2130772668;
-			
-			// aapt resource value: 0x7f0102b2
-			public const int autocompleteShowBorder = 2130772658;
-			
-			// aapt resource value: 0x7f0102b3
-			public const int autocompleteShowClearButton = 2130772659;
-			
-			// aapt resource value: 0x7f0102ca
-			public const int autocompleteShowDropDownFooterView = 2130772682;
+			// aapt resource value: 0x7f0102d0
+			public const int autocompleteDropDownTextSize = 2130772688;
 			
 			// aapt resource value: 0x7f0102c9
-			public const int autocompleteShowDropDownHeaderView = 2130772681;
+			public const int autocompleteEnableSelectionIndicator = 2130772681;
 			
-			// aapt resource value: 0x7f0102bd
-			public const int autocompleteShowSuggestionsOnFocus = 2130772669;
+			// aapt resource value: 0x7f0102da
+			public const int autocompleteHighlightedTextColor = 2130772698;
 			
-			// aapt resource value: 0x7f0102d8
-			public const int autocompleteSuggestionBoxPlacement = 2130772696;
+			// aapt resource value: 0x7f0102d5
+			public const int autocompleteIgnoreDiacritic = 2130772693;
 			
-			// aapt resource value: 0x7f0102d7
-			public const int autocompleteSuggestionMode = 2130772695;
+			// aapt resource value: 0x7f0102d1
+			public const int autocompleteImageMemberPath = 2130772689;
 			
-			// aapt resource value: 0x7f0102b8
-			public const int autocompleteText = 2130772664;
+			// aapt resource value: 0x7f0102ca
+			public const int autocompleteIndicatorText = 2130772682;
 			
-			// aapt resource value: 0x7f0102b5
-			public const int autocompleteTextColor = 2130772661;
+			// aapt resource value: 0x7f0102cb
+			public const int autocompleteIndicatorTextColor = 2130772683;
 			
-			// aapt resource value: 0x7f0102b9
-			public const int autocompleteTextSize = 2130772665;
+			// aapt resource value: 0x7f0102db
+			public const int autocompleteIndicatorTextSize = 2130772699;
+			
+			// aapt resource value: 0x7f0102d6
+			public const int autocompleteIsFocused = 2130772694;
 			
 			// aapt resource value: 0x7f0102d9
-			public const int autocompleteTokensWrapMode = 2130772697;
+			public const int autocompleteIsSelectedItemsVisibleInDropDown = 2130772697;
 			
-			// aapt resource value: 0x7f0102b7
-			public const int autocompleteWatermark = 2130772663;
+			// aapt resource value: 0x7f0102d7
+			public const int autocompleteLoadMoreText = 2130772695;
 			
-			// aapt resource value: 0x7f0102b4
-			public const int autocompleteWatermarkColor = 2130772660;
+			// aapt resource value: 0x7f0102cf
+			public const int autocompleteMaximumDropDownHeight = 2130772687;
+			
+			// aapt resource value: 0x7f0102c4
+			public const int autocompleteMaximumSuggestion = 2130772676;
+			
+			// aapt resource value: 0x7f0102cc
+			public const int autocompleteMinimumPrefixCharacters = 2130772684;
+			
+			// aapt resource value: 0x7f0102e4
+			public const int autocompleteMode = 2130772708;
+			
+			// aapt resource value: 0x7f0102e3
+			public const int autocompleteMultiSelectMode = 2130772707;
+			
+			// aapt resource value: 0x7f0102d8
+			public const int autocompleteNoResultsFoundText = 2130772696;
+			
+			// aapt resource value: 0x7f0102c7
+			public const int autocompletePopUpDelay = 2130772679;
+			
+			// aapt resource value: 0x7f0102c5
+			public const int autocompleteSelectedIndex = 2130772677;
+			
+			// aapt resource value: 0x7f0102bb
+			public const int autocompleteShowBorder = 2130772667;
+			
+			// aapt resource value: 0x7f0102bc
+			public const int autocompleteShowClearButton = 2130772668;
+			
+			// aapt resource value: 0x7f0102d3
+			public const int autocompleteShowDropDownFooterView = 2130772691;
+			
+			// aapt resource value: 0x7f0102d2
+			public const int autocompleteShowDropDownHeaderView = 2130772690;
+			
+			// aapt resource value: 0x7f0102c6
+			public const int autocompleteShowSuggestionsOnFocus = 2130772678;
+			
+			// aapt resource value: 0x7f0102e1
+			public const int autocompleteSuggestionBoxPlacement = 2130772705;
+			
+			// aapt resource value: 0x7f0102e0
+			public const int autocompleteSuggestionMode = 2130772704;
+			
+			// aapt resource value: 0x7f0102c1
+			public const int autocompleteText = 2130772673;
+			
+			// aapt resource value: 0x7f0102be
+			public const int autocompleteTextColor = 2130772670;
+			
+			// aapt resource value: 0x7f0102c2
+			public const int autocompleteTextSize = 2130772674;
+			
+			// aapt resource value: 0x7f0102e2
+			public const int autocompleteTokensWrapMode = 2130772706;
+			
+			// aapt resource value: 0x7f0102c0
+			public const int autocompleteWatermark = 2130772672;
+			
+			// aapt resource value: 0x7f0102bd
+			public const int autocompleteWatermarkColor = 2130772669;
 			
 			// aapt resource value: 0x7f01002f
 			public const int background = 2130772015;
@@ -3785,6 +3932,33 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 0x7f0101d3
 			public const int boxStrokeWidth = 2130772435;
+			
+			// aapt resource value: 0x7f0102b2
+			public const int busyIndicatorAnimationTypes = 2130772658;
+			
+			// aapt resource value: 0x7f0102ba
+			public const int busyIndicatorIsBusy = 2130772666;
+			
+			// aapt resource value: 0x7f0102b8
+			public const int busyIndicatorSecondaryColor = 2130772664;
+			
+			// aapt resource value: 0x7f0102b3
+			public const int busyIndicatorTextColor = 2130772659;
+			
+			// aapt resource value: 0x7f0102b7
+			public const int busyIndicatorTextSize = 2130772663;
+			
+			// aapt resource value: 0x7f0102b6
+			public const int busyIndicatorTitle = 2130772662;
+			
+			// aapt resource value: 0x7f0102b9
+			public const int busyIndicatorTitlePlacement = 2130772665;
+			
+			// aapt resource value: 0x7f0102b4
+			public const int busyIndicatorViewBoxHeight = 2130772660;
+			
+			// aapt resource value: 0x7f0102b5
+			public const int busyIndicatorViewBoxWidth = 2130772661;
 			
 			// aapt resource value: 0x7f01008e
 			public const int buttonBarButtonStyle = 2130772110;
@@ -7039,26 +7213,26 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f02014c
-			public const int avd_hide_password_1 = 2130837836;
-			
 			// aapt resource value: 0x7f02014d
-			public const int avd_hide_password_2 = 2130837837;
+			public const int avd_hide_password_1 = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int avd_hide_password_3 = 2130837838;
+			public const int avd_hide_password_2 = 2130837838;
+			
+			// aapt resource value: 0x7f02014f
+			public const int avd_hide_password_3 = 2130837839;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f02014f
-			public const int avd_show_password_1 = 2130837839;
-			
 			// aapt resource value: 0x7f020150
-			public const int avd_show_password_2 = 2130837840;
+			public const int avd_show_password_1 = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int avd_show_password_3 = 2130837841;
+			public const int avd_show_password_2 = 2130837841;
+			
+			// aapt resource value: 0x7f020152
+			public const int avd_show_password_3 = 2130837842;
 			
 			// aapt resource value: 0x7f020058
 			public const int backup_icon = 2130837592;
@@ -7643,154 +7817,157 @@ namespace DietAndFitness.Droid
 			public const int inputlayout_togglevisibleicon = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int macros_icon = 2130837786;
+			public const int loading_icon = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int menu_icon = 2130837787;
+			public const int macros_icon = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_button_connected_dark = 2130837788;
+			public const int menu_icon = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_button_connected_light = 2130837789;
+			public const int mr_button_connected_dark = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_button_connecting_dark = 2130837790;
+			public const int mr_button_connected_light = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_button_connecting_light = 2130837791;
+			public const int mr_button_connecting_dark = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_button_dark = 2130837792;
+			public const int mr_button_connecting_light = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_button_light = 2130837793;
+			public const int mr_button_dark = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mr_dialog_close_dark = 2130837794;
+			public const int mr_button_light = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mr_dialog_close_light = 2130837795;
+			public const int mr_dialog_close_dark = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mr_dialog_material_background_dark = 2130837796;
+			public const int mr_dialog_close_light = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int mr_dialog_material_background_light = 2130837797;
+			public const int mr_dialog_material_background_dark = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int mr_group_collapse = 2130837798;
+			public const int mr_dialog_material_background_light = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int mr_group_expand = 2130837799;
+			public const int mr_group_collapse = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int mr_media_pause_dark = 2130837800;
+			public const int mr_group_expand = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int mr_media_pause_light = 2130837801;
+			public const int mr_media_pause_dark = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int mr_media_play_dark = 2130837802;
+			public const int mr_media_pause_light = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int mr_media_play_light = 2130837803;
+			public const int mr_media_play_dark = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int mr_media_stop_dark = 2130837804;
+			public const int mr_media_play_light = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int mr_media_stop_light = 2130837805;
+			public const int mr_media_stop_dark = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int mr_vol_type_audiotrack_dark = 2130837806;
+			public const int mr_media_stop_light = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int mr_vol_type_audiotrack_light = 2130837807;
+			public const int mr_vol_type_audiotrack_dark = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int mtrl_snackbar_background = 2130837808;
+			public const int mr_vol_type_audiotrack_light = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int mtrl_tabs_default_indicator = 2130837809;
+			public const int mtrl_snackbar_background = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int navigation_empty_icon = 2130837810;
+			public const int mtrl_tabs_default_indicator = 2130837810;
 			
 			// aapt resource value: 0x7f020133
-			public const int notification_action_background = 2130837811;
+			public const int navigation_empty_icon = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int notification_bg = 2130837812;
+			public const int notification_action_background = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int notification_bg_low = 2130837813;
+			public const int notification_bg = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int notification_bg_low_normal = 2130837814;
+			public const int notification_bg_low = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int notification_bg_low_pressed = 2130837815;
+			public const int notification_bg_low_normal = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int notification_bg_normal = 2130837816;
+			public const int notification_bg_low_pressed = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int notification_bg_normal_pressed = 2130837817;
+			public const int notification_bg_normal = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int notification_icon_background = 2130837818;
-			
-			// aapt resource value: 0x7f02014a
-			public const int notification_template_icon_bg = 2130837834;
-			
-			// aapt resource value: 0x7f02014b
-			public const int notification_template_icon_low_bg = 2130837835;
+			public const int notification_bg_normal_pressed = 2130837818;
 			
 			// aapt resource value: 0x7f02013b
-			public const int notification_tile_bg = 2130837819;
+			public const int notification_icon_background = 2130837819;
+			
+			// aapt resource value: 0x7f02014b
+			public const int notification_template_icon_bg = 2130837835;
+			
+			// aapt resource value: 0x7f02014c
+			public const int notification_template_icon_low_bg = 2130837836;
 			
 			// aapt resource value: 0x7f02013c
-			public const int notify_panel_notification_icon_bg = 2130837820;
+			public const int notification_tile_bg = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int options_icon = 2130837821;
+			public const int notify_panel_notification_icon_bg = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int popup_forms_android_close_icon = 2130837822;
+			public const int options_icon = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int popup_forms_android_shadow = 2130837823;
+			public const int popup_forms_android_close_icon = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int popup_forms_dark_theme_close_icon = 2130837824;
+			public const int popup_forms_android_shadow = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int popup_forms_light_theme_close_icon = 2130837825;
+			public const int popup_forms_dark_theme_close_icon = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int profile_icon = 2130837826;
+			public const int popup_forms_light_theme_close_icon = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int Recurrence = 2130837827;
+			public const int profile_icon = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int sfclosebutton = 2130837828;
+			public const int Recurrence = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int statistics_icon = 2130837829;
+			public const int sfclosebutton = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int styleinfo = 2130837830;
+			public const int statistics_icon = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int today_food_icon = 2130837831;
+			public const int styleinfo = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int tooltip_frame_dark = 2130837832;
+			public const int today_food_icon = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int tooltip_frame_light = 2130837833;
+			public const int tooltip_frame_dark = 2130837833;
+			
+			// aapt resource value: 0x7f02014a
+			public const int tooltip_frame_light = 2130837834;
 			
 			static Drawable()
 			{
@@ -7808,8 +7985,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080039
 			public const int ALT = 2131230777;
 			
-			// aapt resource value: 0x7f08015b
-			public const int BorderView = 2131231067;
+			// aapt resource value: 0x7f080169
+			public const int BorderView = 2131231081;
 			
 			// aapt resource value: 0x7f08003a
 			public const int CTRL = 2131230778;
@@ -7823,8 +8000,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08003b
 			public const int FUNCTION = 2131230779;
 			
-			// aapt resource value: 0x7f0800f7
-			public const int Itemname = 2131230967;
+			// aapt resource value: 0x7f080105
+			public const int Itemname = 2131230981;
 			
 			// aapt resource value: 0x7f08003c
 			public const int META = 2131230780;
@@ -7835,41 +8012,41 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08003e
 			public const int SYM = 2131230782;
 			
-			// aapt resource value: 0x7f08013c
-			public const int action0 = 2131231036;
+			// aapt resource value: 0x7f08014a
+			public const int action0 = 2131231050;
 			
-			// aapt resource value: 0x7f0800ce
-			public const int action_bar = 2131230926;
+			// aapt resource value: 0x7f0800dc
+			public const int action_bar = 2131230940;
 			
 			// aapt resource value: 0x7f080001
 			public const int action_bar_activity_content = 2131230721;
 			
-			// aapt resource value: 0x7f0800cd
-			public const int action_bar_container = 2131230925;
+			// aapt resource value: 0x7f0800db
+			public const int action_bar_container = 2131230939;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int action_bar_root = 2131230921;
+			// aapt resource value: 0x7f0800d7
+			public const int action_bar_root = 2131230935;
 			
 			// aapt resource value: 0x7f080002
 			public const int action_bar_spinner = 2131230722;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int action_bar_subtitle = 2131230893;
+			// aapt resource value: 0x7f0800bb
+			public const int action_bar_subtitle = 2131230907;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int action_bar_title = 2131230892;
+			// aapt resource value: 0x7f0800ba
+			public const int action_bar_title = 2131230906;
 			
-			// aapt resource value: 0x7f080139
-			public const int action_container = 2131231033;
+			// aapt resource value: 0x7f080147
+			public const int action_container = 2131231047;
 			
-			// aapt resource value: 0x7f0800cf
-			public const int action_context_bar = 2131230927;
+			// aapt resource value: 0x7f0800dd
+			public const int action_context_bar = 2131230941;
 			
-			// aapt resource value: 0x7f080140
-			public const int action_divider = 2131231040;
+			// aapt resource value: 0x7f08014e
+			public const int action_divider = 2131231054;
 			
-			// aapt resource value: 0x7f08013a
-			public const int action_image = 2131231034;
+			// aapt resource value: 0x7f080148
+			public const int action_image = 2131231048;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -7877,29 +8054,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080004
 			public const int action_menu_presenter = 2131230724;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int action_mode_bar = 2131230923;
+			// aapt resource value: 0x7f0800d9
+			public const int action_mode_bar = 2131230937;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int action_mode_bar_stub = 2131230922;
+			// aapt resource value: 0x7f0800d8
+			public const int action_mode_bar_stub = 2131230936;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int action_mode_close_button = 2131230894;
-			
-			// aapt resource value: 0x7f08013b
-			public const int action_text = 2131231035;
+			// aapt resource value: 0x7f0800bc
+			public const int action_mode_close_button = 2131230908;
 			
 			// aapt resource value: 0x7f080149
-			public const int actions = 2131231049;
+			public const int action_text = 2131231049;
 			
-			// aapt resource value: 0x7f0800af
-			public const int activity_chooser_view_content = 2131230895;
+			// aapt resource value: 0x7f080157
+			public const int actions = 2131231063;
+			
+			// aapt resource value: 0x7f0800bd
+			public const int activity_chooser_view_content = 2131230909;
 			
 			// aapt resource value: 0x7f08002e
 			public const int add = 2131230766;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int alertTitle = 2131230912;
+			// aapt resource value: 0x7f0800ce
+			public const int alertTitle = 2131230926;
 			
 			// aapt resource value: 0x7f080064
 			public const int all = 2131230820;
@@ -7907,14 +8084,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08003f
 			public const int always = 2131230783;
 			
-			// aapt resource value: 0x7f0800ef
-			public const int annotationLayout = 2131230959;
+			// aapt resource value: 0x7f0800fd
+			public const int annotationLayout = 2131230973;
 			
 			// aapt resource value: 0x7f08007b
 			public const int anticlockwise = 2131230843;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int append = 2131230889;
+			// aapt resource value: 0x7f0800b7
+			public const int append = 2131230903;
 			
 			// aapt resource value: 0x7f080065
 			public const int async = 2131230821;
@@ -7925,14 +8102,20 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080097
 			public const int away = 2131230871;
 			
-			// aapt resource value: 0x7f0800ec
-			public const int axisLayout = 2131230956;
+			// aapt resource value: 0x7f0800fa
+			public const int axisLayout = 2131230970;
 			
 			// aapt resource value: 0x7f080095
 			public const int backward = 2131230869;
 			
+			// aapt resource value: 0x7f08009d
+			public const int ball = 2131230877;
+			
 			// aapt resource value: 0x7f08008d
 			public const int bar = 2131230861;
+			
+			// aapt resource value: 0x7f08009e
+			public const int battery = 2131230878;
 			
 			// aapt resource value: 0x7f080036
 			public const int beginning = 2131230774;
@@ -7949,35 +8132,38 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08006f
 			public const int bottomRight = 2131230831;
 			
-			// aapt resource value: 0x7f08014d
-			public const int bottom_labels = 2131231053;
+			// aapt resource value: 0x7f08015b
+			public const int bottom_labels = 2131231067;
 			
-			// aapt resource value: 0x7f0800de
-			public const int bottomtab_navarea = 2131230942;
+			// aapt resource value: 0x7f0800ec
+			public const int bottomtab_navarea = 2131230956;
 			
-			// aapt resource value: 0x7f0800df
-			public const int bottomtab_tabbar = 2131230943;
+			// aapt resource value: 0x7f0800ed
+			public const int bottomtab_tabbar = 2131230957;
 			
-			// aapt resource value: 0x7f0800e1
-			public const int browser_actions_header_text = 2131230945;
+			// aapt resource value: 0x7f08009f
+			public const int box = 2131230879;
 			
-			// aapt resource value: 0x7f0800e3
-			public const int browser_actions_menu_item_icon = 2131230947;
+			// aapt resource value: 0x7f0800ef
+			public const int browser_actions_header_text = 2131230959;
 			
-			// aapt resource value: 0x7f0800e4
-			public const int browser_actions_menu_item_text = 2131230948;
+			// aapt resource value: 0x7f0800f1
+			public const int browser_actions_menu_item_icon = 2131230961;
 			
-			// aapt resource value: 0x7f0800e2
-			public const int browser_actions_menu_items = 2131230946;
+			// aapt resource value: 0x7f0800f2
+			public const int browser_actions_menu_item_text = 2131230962;
 			
-			// aapt resource value: 0x7f0800e0
-			public const int browser_actions_menu_view = 2131230944;
+			// aapt resource value: 0x7f0800f0
+			public const int browser_actions_menu_items = 2131230960;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int buttonPanel = 2131230900;
+			// aapt resource value: 0x7f0800ee
+			public const int browser_actions_menu_view = 2131230958;
 			
-			// aapt resource value: 0x7f08013d
-			public const int cancel_action = 2131231037;
+			// aapt resource value: 0x7f0800c2
+			public const int buttonPanel = 2131230914;
+			
+			// aapt resource value: 0x7f08014b
+			public const int cancel_action = 2131231051;
 			
 			// aapt resource value: 0x7f08004c
 			public const int center = 2131230796;
@@ -7988,17 +8174,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080052
 			public const int center_vertical = 2131230802;
 			
-			// aapt resource value: 0x7f0800ee
-			public const int chartBehaviorLayout = 2131230958;
+			// aapt resource value: 0x7f0800fc
+			public const int chartBehaviorLayout = 2131230972;
 			
-			// aapt resource value: 0x7f0800f2
-			public const int chartLegendScrollView = 2131230962;
+			// aapt resource value: 0x7f080100
+			public const int chartLegendScrollView = 2131230976;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int checkbox = 2131230919;
+			// aapt resource value: 0x7f0800d5
+			public const int checkbox = 2131230933;
 			
-			// aapt resource value: 0x7f080145
-			public const int chronometer = 2131231045;
+			// aapt resource value: 0x7f080153
+			public const int chronometer = 2131231059;
 			
 			// aapt resource value: 0x7f080090
 			public const int circle = 2131230864;
@@ -8018,32 +8204,32 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080077
 			public const int compute = 2131230839;
 			
-			// aapt resource value: 0x7f0800fa
-			public const int container = 2131230970;
+			// aapt resource value: 0x7f080108
+			public const int container = 2131230984;
 			
-			// aapt resource value: 0x7f08009d
-			public const int contains = 2131230877;
+			// aapt resource value: 0x7f0800ab
+			public const int contains = 2131230891;
 			
-			// aapt resource value: 0x7f08009e
-			public const int containsWithCaseSensitive = 2131230878;
+			// aapt resource value: 0x7f0800ac
+			public const int containsWithCaseSensitive = 2131230892;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int content = 2131230915;
+			// aapt resource value: 0x7f0800d1
+			public const int content = 2131230929;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int contentPanel = 2131230903;
+			// aapt resource value: 0x7f0800c5
+			public const int contentPanel = 2131230917;
 			
-			// aapt resource value: 0x7f0800fb
-			public const int coordinator = 2131230971;
+			// aapt resource value: 0x7f080109
+			public const int coordinator = 2131230985;
 			
-			// aapt resource value: 0x7f08009f
-			public const int custom = 2131230879;
+			// aapt resource value: 0x7f0800ad
+			public const int custom = 2131230893;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int customPanel = 2131230909;
+			// aapt resource value: 0x7f0800cb
+			public const int customPanel = 2131230923;
 			
-			// aapt resource value: 0x7f0800ea
-			public const int dataMarkerLayout = 2131230954;
+			// aapt resource value: 0x7f0800f8
+			public const int dataMarkerLayout = 2131230968;
 			
 			// aapt resource value: 0x7f080069
 			public const int dayView = 2131230825;
@@ -8051,29 +8237,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080075
 			public const int decimalMode = 2131230837;
 			
-			// aapt resource value: 0x7f0800cc
-			public const int decor_content_parent = 2131230924;
+			// aapt resource value: 0x7f0800da
+			public const int decor_content_parent = 2131230938;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int default_activity_button = 2131230897;
+			// aapt resource value: 0x7f0800bf
+			public const int default_activity_button = 2131230911;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int delimiter = 2131230887;
+			// aapt resource value: 0x7f0800b5
+			public const int delimiter = 2131230901;
 			
-			// aapt resource value: 0x7f0800fd
-			public const int design_bottom_sheet = 2131230973;
+			// aapt resource value: 0x7f08010b
+			public const int design_bottom_sheet = 2131230987;
 			
-			// aapt resource value: 0x7f080102
-			public const int design_menu_item_action_area = 2131230978;
+			// aapt resource value: 0x7f080110
+			public const int design_menu_item_action_area = 2131230992;
 			
-			// aapt resource value: 0x7f080101
-			public const int design_menu_item_action_area_stub = 2131230977;
+			// aapt resource value: 0x7f08010f
+			public const int design_menu_item_action_area_stub = 2131230991;
 			
-			// aapt resource value: 0x7f080100
-			public const int design_menu_item_text = 2131230976;
+			// aapt resource value: 0x7f08010e
+			public const int design_menu_item_text = 2131230990;
 			
-			// aapt resource value: 0x7f0800ff
-			public const int design_navigation_view = 2131230975;
+			// aapt resource value: 0x7f08010d
+			public const int design_navigation_view = 2131230989;
 			
 			// aapt resource value: 0x7f080091
 			public const int diamond = 2131230865;
@@ -8081,29 +8267,35 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080027
 			public const int disableHome = 2131230759;
 			
+			// aapt resource value: 0x7f0800a0
+			public const int doubleCircle = 2131230880;
+			
 			// aapt resource value: 0x7f080076
 			public const int doubleMode = 2131230838;
 			
-			// aapt resource value: 0x7f0800d0
-			public const int edit_query = 2131230928;
+			// aapt resource value: 0x7f0800a1
+			public const int ecg = 2131230881;
+			
+			// aapt resource value: 0x7f0800de
+			public const int edit_query = 2131230942;
 			
 			// aapt resource value: 0x7f080099
 			public const int eightCrossEightDotMatrix = 2131230873;
 			
-			// aapt resource value: 0x7f080105
-			public const int eightsegment = 2131230981;
+			// aapt resource value: 0x7f080113
+			public const int eightsegment = 2131230995;
 			
 			// aapt resource value: 0x7f080037
 			public const int end = 2131230775;
 			
-			// aapt resource value: 0x7f08014b
-			public const int end_padder = 2131231051;
+			// aapt resource value: 0x7f080159
+			public const int end_padder = 2131231065;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int endsWith = 2131230880;
+			// aapt resource value: 0x7f0800ae
+			public const int endsWith = 2131230894;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int endsWithCaseSensitive = 2131230881;
+			// aapt resource value: 0x7f0800af
+			public const int endsWithCaseSensitive = 2131230895;
 			
 			// aapt resource value: 0x7f080046
 			public const int enterAlways = 2131230790;
@@ -8111,20 +8303,20 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080047
 			public const int enterAlwaysCollapsed = 2131230791;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int equals = 2131230882;
+			// aapt resource value: 0x7f0800b0
+			public const int equals = 2131230896;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int equalsWithCaseSensitive = 2131230883;
+			// aapt resource value: 0x7f0800b1
+			public const int equalsWithCaseSensitive = 2131230897;
 			
 			// aapt resource value: 0x7f080048
 			public const int exitUntilCollapsed = 2131230792;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int expand_activities_button = 2131230896;
+			// aapt resource value: 0x7f0800be
+			public const int expand_activities_button = 2131230910;
 			
-			// aapt resource value: 0x7f0800c6
-			public const int expanded_menu = 2131230918;
+			// aapt resource value: 0x7f0800d4
+			public const int expanded_menu = 2131230932;
 			
 			// aapt resource value: 0x7f080098
 			public const int far = 2131230872;
@@ -8144,11 +8336,11 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08005c
 			public const int @fixed = 2131230812;
 			
-			// aapt resource value: 0x7f080108
-			public const int flyoutcontent_appbar = 2131230984;
+			// aapt resource value: 0x7f080116
+			public const int flyoutcontent_appbar = 2131230998;
 			
-			// aapt resource value: 0x7f080109
-			public const int flyoutcontent_recycler = 2131230985;
+			// aapt resource value: 0x7f080117
+			public const int flyoutcontent_recycler = 2131230999;
 			
 			// aapt resource value: 0x7f080067
 			public const int forever = 2131230823;
@@ -8156,8 +8348,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080096
 			public const int forward = 2131230870;
 			
-			// aapt resource value: 0x7f080106
-			public const int fourteensegment = 2131230982;
+			// aapt resource value: 0x7f080114
+			public const int fourteensegment = 2131230996;
 			
 			// aapt resource value: 0x7f080083
 			public const int gaugeBottom = 2131230851;
@@ -8207,17 +8399,23 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080082
 			public const int gaugeVerticalHeaderStart = 2131230850;
 			
+			// aapt resource value: 0x7f0800a2
+			public const int gearBox = 2131230882;
+			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
 			
-			// aapt resource value: 0x7f0800e7
-			public const int gridLineLayout = 2131230951;
+			// aapt resource value: 0x7f0800a3
+			public const int globe = 2131230883;
 			
-			// aapt resource value: 0x7f08014e
-			public const int gridLinesLayout = 2131231054;
+			// aapt resource value: 0x7f0800f5
+			public const int gridLineLayout = 2131230965;
 			
-			// aapt resource value: 0x7f0800c2
-			public const int group_divider = 2131230914;
+			// aapt resource value: 0x7f08015c
+			public const int gridLinesLayout = 2131231068;
+			
+			// aapt resource value: 0x7f0800d0
+			public const int group_divider = 2131230928;
 			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
@@ -8228,14 +8426,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08006d
 			public const int horizontal = 2131230829;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int icon = 2131230899;
+			// aapt resource value: 0x7f0800a4
+			public const int horizontalPulsingBox = 2131230884;
 			
-			// aapt resource value: 0x7f0800f5
-			public const int iconView = 2131230965;
+			// aapt resource value: 0x7f0800c1
+			public const int icon = 2131230913;
 			
-			// aapt resource value: 0x7f08014a
-			public const int icon_group = 2131231050;
+			// aapt resource value: 0x7f080103
+			public const int iconView = 2131230979;
+			
+			// aapt resource value: 0x7f080158
+			public const int icon_group = 2131231064;
 			
 			// aapt resource value: 0x7f080041
 			public const int ifRoom = 2131230785;
@@ -8243,8 +8444,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080092
 			public const int image = 2131230866;
 			
-			// aapt resource value: 0x7f080146
-			public const int info = 2131231046;
+			// aapt resource value: 0x7f080154
+			public const int info = 2131231060;
 			
 			// aapt resource value: 0x7f080070
 			public const int inline = 2131230832;
@@ -8258,32 +8459,32 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f0800f6
-			public const int label = 2131230966;
+			// aapt resource value: 0x7f080104
+			public const int label = 2131230980;
 			
 			// aapt resource value: 0x7f08004e
 			public const int labeled = 2131230798;
 			
-			// aapt resource value: 0x7f0800f9
-			public const int largeLabel = 2131230969;
+			// aapt resource value: 0x7f080107
+			public const int largeLabel = 2131230983;
 			
 			// aapt resource value: 0x7f080054
 			public const int left = 2131230804;
 			
-			// aapt resource value: 0x7f0800f1
-			public const int legendHeader = 2131230961;
+			// aapt resource value: 0x7f0800ff
+			public const int legendHeader = 2131230975;
 			
-			// aapt resource value: 0x7f0800f4
-			public const int legendItemsLayout = 2131230964;
+			// aapt resource value: 0x7f080102
+			public const int legendItemsLayout = 2131230978;
 			
-			// aapt resource value: 0x7f0800ed
-			public const int legendLayout = 2131230957;
+			// aapt resource value: 0x7f0800fb
+			public const int legendLayout = 2131230971;
 			
-			// aapt resource value: 0x7f0800f3
-			public const int legendScrollView = 2131230963;
+			// aapt resource value: 0x7f080101
+			public const int legendScrollView = 2131230977;
 			
-			// aapt resource value: 0x7f0800f0
-			public const int legendViewGroup = 2131230960;
+			// aapt resource value: 0x7f0800fe
+			public const int legendViewGroup = 2131230974;
 			
 			// aapt resource value: 0x7f08001c
 			public const int line1 = 2131230748;
@@ -8294,29 +8495,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080024
 			public const int listMode = 2131230756;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int list_item = 2131230898;
+			// aapt resource value: 0x7f0800c0
+			public const int list_item = 2131230912;
 			
-			// aapt resource value: 0x7f080150
-			public const int main_appbar = 2131231056;
+			// aapt resource value: 0x7f08015e
+			public const int main_appbar = 2131231070;
 			
-			// aapt resource value: 0x7f080153
-			public const int main_scrollview = 2131231059;
+			// aapt resource value: 0x7f080161
+			public const int main_scrollview = 2131231073;
 			
-			// aapt resource value: 0x7f080152
-			public const int main_tablayout = 2131231058;
+			// aapt resource value: 0x7f080160
+			public const int main_tablayout = 2131231072;
 			
-			// aapt resource value: 0x7f080151
-			public const int main_toolbar = 2131231057;
+			// aapt resource value: 0x7f08015f
+			public const int main_toolbar = 2131231071;
 			
-			// aapt resource value: 0x7f08015a
-			public const int masked = 2131231066;
+			// aapt resource value: 0x7f080168
+			public const int masked = 2131231080;
 			
-			// aapt resource value: 0x7f08013f
-			public const int media_actions = 2131231039;
+			// aapt resource value: 0x7f08014d
+			public const int media_actions = 2131231053;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int message = 2131230941;
+			// aapt resource value: 0x7f0800eb
+			public const int message = 2131230955;
 			
 			// aapt resource value: 0x7f080038
 			public const int middle = 2131230776;
@@ -8327,143 +8528,146 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08006a
 			public const int monthView = 2131230826;
 			
-			// aapt resource value: 0x7f080126
-			public const int mr_art = 2131231014;
-			
-			// aapt resource value: 0x7f080117
-			public const int mr_cast_checkbox = 2131230999;
-			
-			// aapt resource value: 0x7f080110
-			public const int mr_cast_close_button = 2131230992;
-			
-			// aapt resource value: 0x7f08010b
-			public const int mr_cast_group_icon = 2131230987;
-			
-			// aapt resource value: 0x7f08010c
-			public const int mr_cast_group_name = 2131230988;
-			
-			// aapt resource value: 0x7f08010a
-			public const int mr_cast_list = 2131230986;
-			
-			// aapt resource value: 0x7f08010f
-			public const int mr_cast_meta = 2131230991;
-			
-			// aapt resource value: 0x7f080111
-			public const int mr_cast_meta_art = 2131230993;
-			
-			// aapt resource value: 0x7f080113
-			public const int mr_cast_meta_subtitle = 2131230995;
-			
-			// aapt resource value: 0x7f080112
-			public const int mr_cast_meta_title = 2131230994;
-			
-			// aapt resource value: 0x7f080115
-			public const int mr_cast_route_icon = 2131230997;
-			
-			// aapt resource value: 0x7f080116
-			public const int mr_cast_route_name = 2131230998;
-			
-			// aapt resource value: 0x7f080114
-			public const int mr_cast_stop_button = 2131230996;
-			
-			// aapt resource value: 0x7f080118
-			public const int mr_cast_volume_layout = 2131231000;
-			
-			// aapt resource value: 0x7f080119
-			public const int mr_cast_volume_slider = 2131231001;
-			
-			// aapt resource value: 0x7f08011b
-			public const int mr_chooser_list = 2131231003;
-			
-			// aapt resource value: 0x7f08011e
-			public const int mr_chooser_route_desc = 2131231006;
-			
-			// aapt resource value: 0x7f08011c
-			public const int mr_chooser_route_icon = 2131231004;
-			
-			// aapt resource value: 0x7f08011d
-			public const int mr_chooser_route_name = 2131231005;
-			
-			// aapt resource value: 0x7f08011a
-			public const int mr_chooser_title = 2131231002;
-			
-			// aapt resource value: 0x7f080123
-			public const int mr_close = 2131231011;
-			
-			// aapt resource value: 0x7f080129
-			public const int mr_control_divider = 2131231017;
+			// aapt resource value: 0x7f0800a5
+			public const int movieTimer = 2131230885;
 			
 			// aapt resource value: 0x7f080134
-			public const int mr_control_playback_ctrl = 2131231028;
-			
-			// aapt resource value: 0x7f080137
-			public const int mr_control_subtitle = 2131231031;
-			
-			// aapt resource value: 0x7f080136
-			public const int mr_control_title = 2131231030;
-			
-			// aapt resource value: 0x7f080135
-			public const int mr_control_title_container = 2131231029;
-			
-			// aapt resource value: 0x7f080124
-			public const int mr_custom_control = 2131231012;
+			public const int mr_art = 2131231028;
 			
 			// aapt resource value: 0x7f080125
-			public const int mr_default_control = 2131231013;
+			public const int mr_cast_checkbox = 2131231013;
 			
-			// aapt resource value: 0x7f080120
-			public const int mr_dialog_area = 2131231008;
+			// aapt resource value: 0x7f08011e
+			public const int mr_cast_close_button = 2131231006;
 			
-			// aapt resource value: 0x7f08012f
-			public const int mr_dialog_header_name = 2131231023;
+			// aapt resource value: 0x7f080119
+			public const int mr_cast_group_icon = 2131231001;
+			
+			// aapt resource value: 0x7f08011a
+			public const int mr_cast_group_name = 2131231002;
+			
+			// aapt resource value: 0x7f080118
+			public const int mr_cast_list = 2131231000;
+			
+			// aapt resource value: 0x7f08011d
+			public const int mr_cast_meta = 2131231005;
 			
 			// aapt resource value: 0x7f08011f
-			public const int mr_expandable_area = 2131231007;
-			
-			// aapt resource value: 0x7f080138
-			public const int mr_group_expand_collapse = 2131231032;
-			
-			// aapt resource value: 0x7f08010d
-			public const int mr_group_volume_route_name = 2131230989;
-			
-			// aapt resource value: 0x7f08010e
-			public const int mr_group_volume_slider = 2131230990;
-			
-			// aapt resource value: 0x7f080127
-			public const int mr_media_main_control = 2131231015;
-			
-			// aapt resource value: 0x7f080122
-			public const int mr_name = 2131231010;
-			
-			// aapt resource value: 0x7f080130
-			public const int mr_picker_close_button = 2131231024;
-			
-			// aapt resource value: 0x7f080131
-			public const int mr_picker_list = 2131231025;
-			
-			// aapt resource value: 0x7f080132
-			public const int mr_picker_route_icon = 2131231026;
-			
-			// aapt resource value: 0x7f080133
-			public const int mr_picker_route_name = 2131231027;
-			
-			// aapt resource value: 0x7f080128
-			public const int mr_playback_control = 2131231016;
+			public const int mr_cast_meta_art = 2131231007;
 			
 			// aapt resource value: 0x7f080121
-			public const int mr_title_bar = 2131231009;
+			public const int mr_cast_meta_subtitle = 2131231009;
+			
+			// aapt resource value: 0x7f080120
+			public const int mr_cast_meta_title = 2131231008;
+			
+			// aapt resource value: 0x7f080123
+			public const int mr_cast_route_icon = 2131231011;
+			
+			// aapt resource value: 0x7f080124
+			public const int mr_cast_route_name = 2131231012;
+			
+			// aapt resource value: 0x7f080122
+			public const int mr_cast_stop_button = 2131231010;
+			
+			// aapt resource value: 0x7f080126
+			public const int mr_cast_volume_layout = 2131231014;
+			
+			// aapt resource value: 0x7f080127
+			public const int mr_cast_volume_slider = 2131231015;
+			
+			// aapt resource value: 0x7f080129
+			public const int mr_chooser_list = 2131231017;
+			
+			// aapt resource value: 0x7f08012c
+			public const int mr_chooser_route_desc = 2131231020;
 			
 			// aapt resource value: 0x7f08012a
-			public const int mr_volume_control = 2131231018;
+			public const int mr_chooser_route_icon = 2131231018;
 			
 			// aapt resource value: 0x7f08012b
-			public const int mr_volume_group_list = 2131231019;
+			public const int mr_chooser_route_name = 2131231019;
 			
-			// aapt resource value: 0x7f08012d
-			public const int mr_volume_item_icon = 2131231021;
+			// aapt resource value: 0x7f080128
+			public const int mr_chooser_title = 2131231016;
+			
+			// aapt resource value: 0x7f080131
+			public const int mr_close = 2131231025;
+			
+			// aapt resource value: 0x7f080137
+			public const int mr_control_divider = 2131231031;
+			
+			// aapt resource value: 0x7f080142
+			public const int mr_control_playback_ctrl = 2131231042;
+			
+			// aapt resource value: 0x7f080145
+			public const int mr_control_subtitle = 2131231045;
+			
+			// aapt resource value: 0x7f080144
+			public const int mr_control_title = 2131231044;
+			
+			// aapt resource value: 0x7f080143
+			public const int mr_control_title_container = 2131231043;
+			
+			// aapt resource value: 0x7f080132
+			public const int mr_custom_control = 2131231026;
+			
+			// aapt resource value: 0x7f080133
+			public const int mr_default_control = 2131231027;
 			
 			// aapt resource value: 0x7f08012e
-			public const int mr_volume_slider = 2131231022;
+			public const int mr_dialog_area = 2131231022;
+			
+			// aapt resource value: 0x7f08013d
+			public const int mr_dialog_header_name = 2131231037;
+			
+			// aapt resource value: 0x7f08012d
+			public const int mr_expandable_area = 2131231021;
+			
+			// aapt resource value: 0x7f080146
+			public const int mr_group_expand_collapse = 2131231046;
+			
+			// aapt resource value: 0x7f08011b
+			public const int mr_group_volume_route_name = 2131231003;
+			
+			// aapt resource value: 0x7f08011c
+			public const int mr_group_volume_slider = 2131231004;
+			
+			// aapt resource value: 0x7f080135
+			public const int mr_media_main_control = 2131231029;
+			
+			// aapt resource value: 0x7f080130
+			public const int mr_name = 2131231024;
+			
+			// aapt resource value: 0x7f08013e
+			public const int mr_picker_close_button = 2131231038;
+			
+			// aapt resource value: 0x7f08013f
+			public const int mr_picker_list = 2131231039;
+			
+			// aapt resource value: 0x7f080140
+			public const int mr_picker_route_icon = 2131231040;
+			
+			// aapt resource value: 0x7f080141
+			public const int mr_picker_route_name = 2131231041;
+			
+			// aapt resource value: 0x7f080136
+			public const int mr_playback_control = 2131231030;
+			
+			// aapt resource value: 0x7f08012f
+			public const int mr_title_bar = 2131231023;
+			
+			// aapt resource value: 0x7f080138
+			public const int mr_volume_control = 2131231032;
+			
+			// aapt resource value: 0x7f080139
+			public const int mr_volume_group_list = 2131231033;
+			
+			// aapt resource value: 0x7f08013b
+			public const int mr_volume_item_icon = 2131231035;
+			
+			// aapt resource value: 0x7f08013c
+			public const int mr_volume_slider = 2131231036;
 			
 			// aapt resource value: 0x7f080014
 			public const int mtrl_child_content_container = 2131230740;
@@ -8474,8 +8678,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08002f
 			public const int multiply = 2131230767;
 			
-			// aapt resource value: 0x7f0800fe
-			public const int navigation_header_container = 2131230974;
+			// aapt resource value: 0x7f08010c
+			public const int navigation_header_container = 2131230988;
 			
 			// aapt resource value: 0x7f080042
 			public const int never = 2131230786;
@@ -8486,14 +8690,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080025
 			public const int normal = 2131230757;
 			
-			// aapt resource value: 0x7f080148
-			public const int notification_background = 2131231048;
+			// aapt resource value: 0x7f080156
+			public const int notification_background = 2131231062;
 			
-			// aapt resource value: 0x7f080142
-			public const int notification_main_column = 2131231042;
+			// aapt resource value: 0x7f080150
+			public const int notification_main_column = 2131231056;
 			
-			// aapt resource value: 0x7f080141
-			public const int notification_main_column_container = 2131231041;
+			// aapt resource value: 0x7f08014f
+			public const int notification_main_column_container = 2131231055;
 			
 			// aapt resource value: 0x7f080079
 			public const int onKeyFocus = 2131230841;
@@ -8510,8 +8714,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080057
 			public const int parallax = 2131230807;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int parentPanel = 2131230902;
+			// aapt resource value: 0x7f0800c4
+			public const int parentPanel = 2131230916;
 			
 			// aapt resource value: 0x7f08000b
 			public const int parent_matrix = 2131230731;
@@ -8519,14 +8723,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080058
 			public const int pin = 2131230808;
 			
+			// aapt resource value: 0x7f0800a6
+			public const int print = 2131230886;
+			
 			// aapt resource value: 0x7f080006
 			public const int progress_circular = 2131230726;
 			
 			// aapt resource value: 0x7f080007
 			public const int progress_horizontal = 2131230727;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int radio = 2131230920;
+			// aapt resource value: 0x7f0800d6
+			public const int radio = 2131230934;
 			
 			// aapt resource value: 0x7f080094
 			public const int rectangle = 2131230868;
@@ -8534,14 +8741,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080055
 			public const int right = 2131230805;
 			
-			// aapt resource value: 0x7f080147
-			public const int right_icon = 2131231047;
+			// aapt resource value: 0x7f080155
+			public const int right_icon = 2131231061;
 			
-			// aapt resource value: 0x7f080143
-			public const int right_side = 2131231043;
+			// aapt resource value: 0x7f080151
+			public const int right_side = 2131231057;
 			
-			// aapt resource value: 0x7f0800e5
-			public const int rootLayout = 2131230949;
+			// aapt resource value: 0x7f0800a7
+			public const int rollingBall = 2131230887;
+			
+			// aapt resource value: 0x7f0800f3
+			public const int rootLayout = 2131230963;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -8558,47 +8768,47 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080049
 			public const int scroll = 2131230793;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int scrollIndicatorDown = 2131230908;
+			// aapt resource value: 0x7f0800ca
+			public const int scrollIndicatorDown = 2131230922;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int scrollIndicatorUp = 2131230904;
+			// aapt resource value: 0x7f0800c6
+			public const int scrollIndicatorUp = 2131230918;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int scrollView = 2131230905;
+			// aapt resource value: 0x7f0800c7
+			public const int scrollView = 2131230919;
 			
 			// aapt resource value: 0x7f08005d
 			public const int scrollable = 2131230813;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int search_badge = 2131230930;
+			// aapt resource value: 0x7f0800e0
+			public const int search_badge = 2131230944;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int search_bar = 2131230929;
+			// aapt resource value: 0x7f0800df
+			public const int search_bar = 2131230943;
 			
-			// aapt resource value: 0x7f0800d3
-			public const int search_button = 2131230931;
+			// aapt resource value: 0x7f0800e1
+			public const int search_button = 2131230945;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int search_close_btn = 2131230936;
+			// aapt resource value: 0x7f0800e6
+			public const int search_close_btn = 2131230950;
 			
-			// aapt resource value: 0x7f0800d4
-			public const int search_edit_frame = 2131230932;
+			// aapt resource value: 0x7f0800e2
+			public const int search_edit_frame = 2131230946;
 			
-			// aapt resource value: 0x7f0800da
-			public const int search_go_btn = 2131230938;
+			// aapt resource value: 0x7f0800e8
+			public const int search_go_btn = 2131230952;
 			
-			// aapt resource value: 0x7f0800d5
-			public const int search_mag_icon = 2131230933;
+			// aapt resource value: 0x7f0800e3
+			public const int search_mag_icon = 2131230947;
 			
-			// aapt resource value: 0x7f0800d6
-			public const int search_plate = 2131230934;
+			// aapt resource value: 0x7f0800e4
+			public const int search_plate = 2131230948;
 			
-			// aapt resource value: 0x7f0800d7
-			public const int search_src_text = 2131230935;
+			// aapt resource value: 0x7f0800e5
+			public const int search_src_text = 2131230949;
 			
-			// aapt resource value: 0x7f0800db
-			public const int search_voice_btn = 2131230939;
+			// aapt resource value: 0x7f0800e9
+			public const int search_voice_btn = 2131230953;
 			
 			// aapt resource value: 0x7f08009a
 			public const int segmentFourteen = 2131230874;
@@ -8609,29 +8819,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08009c
 			public const int segmentSixteen = 2131230876;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int select_dialog_listview = 2131230940;
+			// aapt resource value: 0x7f0800ea
+			public const int select_dialog_listview = 2131230954;
 			
 			// aapt resource value: 0x7f08004f
 			public const int selected = 2131230799;
 			
-			// aapt resource value: 0x7f0800e9
-			public const int seriesLayout = 2131230953;
+			// aapt resource value: 0x7f0800f7
+			public const int seriesLayout = 2131230967;
 			
-			// aapt resource value: 0x7f080104
-			public const int sevensegment = 2131230980;
+			// aapt resource value: 0x7f080112
+			public const int sevensegment = 2131230994;
 			
-			// aapt resource value: 0x7f080154
-			public const int shellcontent_appbar = 2131231060;
+			// aapt resource value: 0x7f080162
+			public const int shellcontent_appbar = 2131231074;
 			
-			// aapt resource value: 0x7f080156
-			public const int shellcontent_scrollview = 2131231062;
+			// aapt resource value: 0x7f080164
+			public const int shellcontent_scrollview = 2131231076;
 			
-			// aapt resource value: 0x7f080155
-			public const int shellcontent_toolbar = 2131231061;
+			// aapt resource value: 0x7f080163
+			public const int shellcontent_toolbar = 2131231075;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int shortcut = 2131230916;
+			// aapt resource value: 0x7f0800d2
+			public const int shortcut = 2131230930;
 			
 			// aapt resource value: 0x7f08002a
 			public const int showCustom = 2131230762;
@@ -8642,14 +8852,20 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08002c
 			public const int showTitle = 2131230764;
 			
-			// aapt resource value: 0x7f080107
-			public const int sixteensegment = 2131230983;
+			// aapt resource value: 0x7f0800a8
+			public const int singleCircle = 2131230888;
 			
-			// aapt resource value: 0x7f080157
-			public const int sliding_tabs = 2131231063;
+			// aapt resource value: 0x7f080115
+			public const int sixteensegment = 2131230997;
 			
-			// aapt resource value: 0x7f0800f8
-			public const int smallLabel = 2131230968;
+			// aapt resource value: 0x7f0800a9
+			public const int slicedCircle = 2131230889;
+			
+			// aapt resource value: 0x7f080165
+			public const int sliding_tabs = 2131231077;
+			
+			// aapt resource value: 0x7f080106
+			public const int smallLabel = 2131230982;
 			
 			// aapt resource value: 0x7f080016
 			public const int snackbar_action = 2131230742;
@@ -8663,8 +8879,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08004b
 			public const int snapMargins = 2131230795;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int spacer = 2131230901;
+			// aapt resource value: 0x7f0800c3
+			public const int spacer = 2131230915;
 			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
@@ -8681,32 +8897,32 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080056
 			public const int start = 2131230806;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int startsWith = 2131230884;
+			// aapt resource value: 0x7f0800b2
+			public const int startsWith = 2131230898;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int startsWithCaseSensitive = 2131230885;
+			// aapt resource value: 0x7f0800b3
+			public const int startsWithCaseSensitive = 2131230899;
 			
-			// aapt resource value: 0x7f08013e
-			public const int status_bar_latest_event_content = 2131231038;
+			// aapt resource value: 0x7f08014c
+			public const int status_bar_latest_event_content = 2131231052;
 			
 			// aapt resource value: 0x7f08005b
 			public const int stretch = 2131230811;
 			
-			// aapt resource value: 0x7f0800e8
-			public const int stripLinesLayout = 2131230952;
+			// aapt resource value: 0x7f0800f6
+			public const int stripLinesLayout = 2131230966;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int submenuarrow = 2131230917;
+			// aapt resource value: 0x7f0800d3
+			public const int submenuarrow = 2131230931;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int submit_area = 2131230937;
+			// aapt resource value: 0x7f0800e7
+			public const int submit_area = 2131230951;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int suggest = 2131230890;
+			// aapt resource value: 0x7f0800b8
+			public const int suggest = 2131230904;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int suggestAppend = 2131230891;
+			// aapt resource value: 0x7f0800b9
+			public const int suggestAppend = 2131230905;
 			
 			// aapt resource value: 0x7f080026
 			public const int tabMode = 2131230758;
@@ -8720,8 +8936,8 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080020
 			public const int tag_unhandled_key_listeners = 2131230752;
 			
-			// aapt resource value: 0x7f0800eb
-			public const int technicalIndicatorLayout = 2131230955;
+			// aapt resource value: 0x7f0800f9
+			public const int technicalIndicatorLayout = 2131230969;
 			
 			// aapt resource value: 0x7f080021
 			public const int text = 2131230753;
@@ -8729,17 +8945,17 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080022
 			public const int text2 = 2131230754;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int textSpacerNoButtons = 2131230907;
+			// aapt resource value: 0x7f0800c9
+			public const int textSpacerNoButtons = 2131230921;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int textSpacerNoTitle = 2131230906;
+			// aapt resource value: 0x7f0800c8
+			public const int textSpacerNoTitle = 2131230920;
 			
 			// aapt resource value: 0x7f08005a
 			public const int textStart = 2131230810;
 			
-			// aapt resource value: 0x7f080103
-			public const int text_input_password_toggle = 2131230979;
+			// aapt resource value: 0x7f080111
+			public const int text_input_password_toggle = 2131230993;
 			
 			// aapt resource value: 0x7f080018
 			public const int textinput_counter = 2131230744;
@@ -8750,29 +8966,29 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08001a
 			public const int textinput_helper_text = 2131230746;
 			
-			// aapt resource value: 0x7f08014f
-			public const int thumbLayout = 2131231055;
+			// aapt resource value: 0x7f08015d
+			public const int thumbLayout = 2131231069;
 			
-			// aapt resource value: 0x7f080144
-			public const int time = 2131231044;
+			// aapt resource value: 0x7f080152
+			public const int time = 2131231058;
 			
 			// aapt resource value: 0x7f080023
 			public const int title = 2131230755;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int titleDividerNoCustom = 2131230913;
+			// aapt resource value: 0x7f0800cf
+			public const int titleDividerNoCustom = 2131230927;
 			
-			// aapt resource value: 0x7f0800e6
-			public const int titleLayout = 2131230950;
+			// aapt resource value: 0x7f0800f4
+			public const int titleLayout = 2131230964;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int title_template = 2131230911;
+			// aapt resource value: 0x7f0800cd
+			public const int title_template = 2131230925;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int token = 2131230888;
+			// aapt resource value: 0x7f0800b6
+			public const int token = 2131230902;
 			
-			// aapt resource value: 0x7f080158
-			public const int toolbar = 2131231064;
+			// aapt resource value: 0x7f080166
+			public const int toolbar = 2131231078;
 			
 			// aapt resource value: 0x7f080045
 			public const int top = 2131230789;
@@ -8780,14 +8996,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f080072
 			public const int topLeft = 2131230834;
 			
-			// aapt resource value: 0x7f0800be
-			public const int topPanel = 2131230910;
+			// aapt resource value: 0x7f0800cc
+			public const int topPanel = 2131230924;
 			
-			// aapt resource value: 0x7f08014c
-			public const int top_labels = 2131231052;
+			// aapt resource value: 0x7f08015a
+			public const int top_labels = 2131231066;
 			
-			// aapt resource value: 0x7f0800fc
-			public const int touch_outside = 2131230972;
+			// aapt resource value: 0x7f08010a
+			public const int touch_outside = 2131230986;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -8828,11 +9044,11 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08001b
 			public const int view_offset_helper = 2131230747;
 			
-			// aapt resource value: 0x7f080159
-			public const int visible = 2131231065;
+			// aapt resource value: 0x7f080167
+			public const int visible = 2131231079;
 			
-			// aapt resource value: 0x7f08012c
-			public const int volume_item_container = 2131231020;
+			// aapt resource value: 0x7f08013a
+			public const int volume_item_container = 2131231034;
 			
 			// aapt resource value: 0x7f08006b
 			public const int weekView = 2131230827;
@@ -8843,11 +9059,14 @@ namespace DietAndFitness.Droid
 			// aapt resource value: 0x7f08006c
 			public const int workWeekView = 2131230828;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int wrap = 2131230886;
+			// aapt resource value: 0x7f0800b4
+			public const int wrap = 2131230900;
 			
 			// aapt resource value: 0x7f080035
 			public const int wrap_content = 2131230773;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int zoomingTarget = 2131230890;
 			
 			static Id()
 			{
@@ -13404,15 +13623,6 @@ namespace DietAndFitness.Droid
 			public const int SearchView_voiceIcon = 12;
 			
 			public static int[] SfAutoComplete = new int[] {
-					2130772658,
-					2130772659,
-					2130772660,
-					2130772661,
-					2130772662,
-					2130772663,
-					2130772664,
-					2130772665,
-					2130772666,
 					2130772667,
 					2130772668,
 					2130772669,
@@ -13445,7 +13655,16 @@ namespace DietAndFitness.Droid
 					2130772696,
 					2130772697,
 					2130772698,
-					2130772699};
+					2130772699,
+					2130772700,
+					2130772701,
+					2130772702,
+					2130772703,
+					2130772704,
+					2130772705,
+					2130772706,
+					2130772707,
+					2130772708};
 			
 			// aapt resource value: 4
 			public const int SfAutoComplete_autocompleteBorderColor = 4;
@@ -13572,6 +13791,44 @@ namespace DietAndFitness.Droid
 			
 			// aapt resource value: 2
 			public const int SfAutoComplete_autocompleteWatermarkColor = 2;
+			
+			public static int[] SfBusyIndicator = new int[] {
+					2130772658,
+					2130772659,
+					2130772660,
+					2130772661,
+					2130772662,
+					2130772663,
+					2130772664,
+					2130772665,
+					2130772666};
+			
+			// aapt resource value: 0
+			public const int SfBusyIndicator_busyIndicatorAnimationTypes = 0;
+			
+			// aapt resource value: 8
+			public const int SfBusyIndicator_busyIndicatorIsBusy = 8;
+			
+			// aapt resource value: 6
+			public const int SfBusyIndicator_busyIndicatorSecondaryColor = 6;
+			
+			// aapt resource value: 1
+			public const int SfBusyIndicator_busyIndicatorTextColor = 1;
+			
+			// aapt resource value: 5
+			public const int SfBusyIndicator_busyIndicatorTextSize = 5;
+			
+			// aapt resource value: 4
+			public const int SfBusyIndicator_busyIndicatorTitle = 4;
+			
+			// aapt resource value: 7
+			public const int SfBusyIndicator_busyIndicatorTitlePlacement = 7;
+			
+			// aapt resource value: 2
+			public const int SfBusyIndicator_busyIndicatorViewBoxHeight = 2;
+			
+			// aapt resource value: 3
+			public const int SfBusyIndicator_busyIndicatorViewBoxWidth = 3;
 			
 			public static int[] SfCircularGauge = new int[] {
 					2130772524,

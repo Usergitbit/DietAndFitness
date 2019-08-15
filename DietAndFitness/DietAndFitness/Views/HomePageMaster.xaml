@@ -50,16 +50,30 @@
                                         FontSize="24"
                                         Text="{Binding Title}" />
                                 </Grid>
-                                <!--<Label
-                                    FontSize="24"
-                                    Text="{Binding Title}"
-                                    VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Center" />-->
                             </StackLayout>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Grid
+            x:Name="loadingLabel"
+            HorizontalOptions="CenterAndExpand"
+            IsVisible="False"
+            VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image Source="loading_icon.png" VerticalOptions="Center" />
+            <Label
+                Grid.Column="1"
+                FontSize="Medium"
+                Text="Loading..."
+                VerticalOptions="Center" />
+        </Grid>
     </StackLayout>
 </ContentPage>

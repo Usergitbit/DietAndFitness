@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietAndFitness.Core.Models.Base;
+using System;
 
 namespace DietAndFitness.Core.Models.Composite
 {

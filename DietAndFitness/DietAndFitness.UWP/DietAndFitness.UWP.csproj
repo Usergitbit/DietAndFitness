@@ -144,6 +144,7 @@
     <Content Include="calendar_icon.png" />
     <Content Include="calories_icon.png" />
     <Content Include="food_database_icon.png" />
+    <Content Include="loading_icon.png" />
     <Content Include="macros_icon.png" />
     <Content Include="menu_icon.png" />
     <Content Include="options_icon.png" />
@@ -197,30 +198,33 @@
       <Version>2.1.72</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator">
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfChart">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPicker">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule">
-      <Version>17.2.0.39</Version>
+      <Version>17.2.0.41</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.8" />
   </ItemGroup>
   <ItemGroup>

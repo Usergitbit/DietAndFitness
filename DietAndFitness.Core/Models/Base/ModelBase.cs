@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace DietAndFitness.Core
+namespace DietAndFitness.Core.Models.Base
 {
     /// <summary>
     /// Base model class that others derive from

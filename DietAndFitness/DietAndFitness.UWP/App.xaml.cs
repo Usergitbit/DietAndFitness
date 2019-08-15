@@ -1,4 +1,5 @@
 using Syncfusion.SfAutoComplete.XForms.UWP;
+using Syncfusion.SfBusyIndicator.XForms.UWP;
 using Syncfusion.SfChart.XForms.UWP;
 using Syncfusion.SfGauge.XForms.UWP;
 using Syncfusion.SfNumericTextBox.XForms.UWP;
@@ -77,6 +78,7 @@ namespace DietAndFitness.UWP
                 assembliesToInclude.Add(typeof(SfChartRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfPopupLayoutRenderer).GetTypeInfo().Assembly);
                 assembliesToInclude.Add(typeof(SfAutoCompleteRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude.Add(typeof(SfBusyIndicatorRenderer).GetTypeInfo().Assembly);
 
                 Xamarin.Forms.Forms.Init(e,assembliesToInclude);
 
