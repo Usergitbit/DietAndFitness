@@ -9,11 +9,11 @@ using Xamarin.Forms;
 
 namespace DietAndFitness.ViewModels.Base
 {
-    public abstract class ChangeBaseViewModel<T> :  ViewModelBase where T : DatabaseEntity, new()
+    public abstract class ChangeBaseViewModel<T> : ViewModelBase where T : DatabaseEntity, new()
     {
         #region Members
         private T currentItem;
-        private string progressindicator = "Waiting for input...";
+
         private string operationInfo = "Add";
         protected DateTime date = DateTime.Today;
         #endregion
@@ -38,7 +38,7 @@ namespace DietAndFitness.ViewModels.Base
             {
                 return currentItem;
             }
-           
+
             set
             {
                 if (value == currentItem)
@@ -50,21 +50,7 @@ namespace DietAndFitness.ViewModels.Base
         }
         public ICommand ExecuteOperationCommand { get; private set; }
         public ICommand CloseCommand { get; private set; }
-        public string ProgressIndicator
-        {
-            get
-            {
-                return progressindicator;
-            }
 
-            set
-            {
-                if (progressindicator == value)
-                    return;
-                progressindicator = value;
-                OnPropertyChanged();
-            }
-        }
         #endregion
 
         public ChangeBaseViewModel() : base()
@@ -80,7 +66,7 @@ namespace DietAndFitness.ViewModels.Base
         }
         public ChangeBaseViewModel(T selectedItem) : base()
         {
-            CurrentItem = selectedItem;        
+            CurrentItem = selectedItem;
             OperationInfo = "Edit";
             Initialize();
         }
@@ -88,15 +74,15 @@ namespace DietAndFitness.ViewModels.Base
         private void Initialize()
         {
             CurrentItem.PropertyChanged += OnCurrentItemPropertyChanged;
-            ExecuteOperationCommand = new Command<T>(execute: Operation, canExecute: ValidateExecuteOperationButton);
-            CloseCommand = new Command(execute: Close);
+            ExecuteOperationCommand = new Command<T>(async (T param) => { await Operation(param); }, canExecute: ValidateExecuteOperationButton);
+            CloseCommand = new Command(async () => { await Close(); });
         }
-        private async void Close()
+        private async Task Close()
         {
             DBLocalAccess.DiscardChanges();
             await navigationService.PopModal();
         }
-        protected virtual async void Operation(T parameter)
+        protected virtual async Task Operation(T parameter)
         {
             if (parameter.ID == null)
             {
@@ -104,6 +90,7 @@ namespace DietAndFitness.ViewModels.Base
                 if (parameter.IsValid())
                     try
                     {
+                        var stopWatch = new Stopwatch();
                         await DBLocalAccess.Insert(parameter);
                         //if program stays here the insert date will be incorrect
                         // we lose the reference when we make a new item so we have to unsubscribe here to prevent memory leaks
@@ -111,8 +98,7 @@ namespace DietAndFitness.ViewModels.Base
                         CurrentItem = Activator.CreateInstance(typeof(T), date) as T;
                         //resubscribe for the new item
                         CurrentItem.PropertyChanged += OnCurrentItemPropertyChanged;
-                        ProgressIndicator = "Item added successfully!";
-                        await SwitchProgressIndicator();
+                        OnOperationSuccess();
                     }
                     catch (Exception ex)
                     {
@@ -127,15 +113,23 @@ namespace DietAndFitness.ViewModels.Base
                         await DBLocalAccess.Update(parameter);
                         //if program stays here the insert date will be incorrect
                         CurrentItem.Clean();
-                        ProgressIndicator = "Item added successfully!";
                         (ExecuteOperationCommand as Command).ChangeCanExecute();
-                        await SwitchProgressIndicator();
+                        OnOperationFailiure();
                     }
                     catch (Exception ex)
                     {
                         await dialogService.ShowError(ex, "Error", "Ok", null);
                     }
             }
+        }
+        protected virtual void OnOperationSuccess()
+        {
+
+        }
+
+        protected virtual void OnOperationFailiure()
+        {
+
         }
         protected virtual bool ValidateExecuteOperationButton(T Parameter)
         {
@@ -149,11 +143,6 @@ namespace DietAndFitness.ViewModels.Base
                 }
             }
             return false;
-        }
-        public async Task SwitchProgressIndicator()
-        {
-            await Task.Delay(2000);
-            ProgressIndicator = "Waiting for input...";
         }
         private void OnCurrentItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {

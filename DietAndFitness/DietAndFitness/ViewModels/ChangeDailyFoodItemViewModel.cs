@@ -123,11 +123,11 @@ namespace DietAndFitness.ViewModels
         /// Override to set the selected LocalFoodItemID and Name and reset the selected LocalFoodItem
         /// </summary>
         /// <param name="parameter"></param>
-        protected override void Operation(DailyFoodItem parameter)
+        protected override async Task Operation(DailyFoodItem parameter)
         {
             CurrentItem.FoodItemID = SelectedFoodItem.ID;
             CurrentItem.Name = SelectedFoodItem.Name;
-            base.Operation(parameter);
+            await base.Operation(parameter);
             SelectedFoodItem = null;
         }
         protected override bool ValidateExecuteOperationButton(DailyFoodItem parameter)
