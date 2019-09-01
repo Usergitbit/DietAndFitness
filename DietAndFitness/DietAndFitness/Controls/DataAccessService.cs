@@ -81,9 +81,16 @@ namespace DietAndFitness.Controls
             return await sqliteDbContext.VersionItems.ToListAsync();
         }
 
+        /// <summary>
+        /// IF USING ONLY .ANY() IT CRASHES! SHOULD WRITE TEST FOR THIS
+        /// </summary>
+        /// <returns></returns>
         public bool HasProfiles()
         {
-            return sqliteDbContext.Profiles.Any();
+            var profiles = sqliteDbContext.Profiles.ToList();
+            var foundProfile = profiles.Where(p => p.StartDate <= DateTime.Today && p.EndDate >= DateTime.Today).Any();
+            return foundProfile;
+
         }
 
         public async Task<int> Insert<T>(T entity) where T : class
