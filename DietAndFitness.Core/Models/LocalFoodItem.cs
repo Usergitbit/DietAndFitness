@@ -114,12 +114,12 @@ namespace DietAndFitness.Core.Models
 
         public LocalFoodItem() : base()
         {
-            Brand = String.Empty;
-            CookingMode = String.Empty;
-            Calories = 0;
-            Carbohydrates = 0;
-            Proteins = 0;
-            Fats = 0;
+            Initialize();
+        }
+
+        public LocalFoodItem(DateTime date): base(date)
+        {
+            Initialize();
         }
         public LocalFoodItem(string _name, double? _proteins, double? _calories, double? _carbs, double? _fats, string _brand, string _cookingmode) : base()
         {
@@ -163,6 +163,16 @@ namespace DietAndFitness.Core.Models
             if (Name.Equals(String.Empty) || Calories.ToString().Equals(String.Empty) || Carbohydrates.ToString().Equals(String.Empty) || Proteins.ToString().Equals(String.Empty) || Fats.ToString().Equals(String.Empty))
                 return false;
             return true;
+        }
+
+        public void Initialize()
+        {
+            Brand = String.Empty;
+            CookingMode = String.Empty;
+            Calories = 0;
+            Carbohydrates = 0;
+            Proteins = 0;
+            Fats = 0;
         }
     }
 }
