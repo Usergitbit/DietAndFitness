@@ -26,8 +26,7 @@ namespace DietAndFitness
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
-            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("OTc4NjJAMzEzNzJlMzEyZTMwaHNXMVlYNkllK0psbWU4SmFQSjRieWFRWlNxSjJxekpkTXYwLytNaXdVST0=;OTc4NjNAMzEzNzJlMzEyZTMwaUphNlg5RDNySXJwTjlYSmtaeHF4VGlCWFZUckdodGJZTklRSExxNStnST0=;OTc4NjRAMzEzNzJlMzEyZTMwQ0k4dGxoaHpQSlFiRE9NL2lPR2NHOWQzREEvL2VRUkhnM2xTQU0zeUM2ST0=;OTc4NjVAMzEzNzJlMzEyZTMwSFVTYllQVmF5N3lWc0VsSjlwRGVwSXQrTExXd3NHd2hvdUdyKzNsbmUybz0=;OTc4NjZAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=;OTc4NjdAMzEzNzJlMzEyZTMwUXZUbEVKSnBoSVFsSFFWaXlJckdVSGxGZUgxcWc5K1VzaWJjUTc3MWlBaz0=;OTc4NjhAMzEzNzJlMzEyZTMwRGlZbEdhaTMyQU1EV1RWazhTU2tkbk5BdmVNTHFXMmdSZVJWMjZ5MVlzND0=;OTc4NjlAMzEzNzJlMzEyZTMwWWlpLy9DdkZHQ0lHUGtKQW1JMkcwMVRBVnNsakkyS01MN0VLWWxUeDZ0Yz0=;OTc4NzBAMzEzNzJlMzEyZTMwbndDZW56NWM0Q3A0U3JyOFNVa21oOThOdWgvWUZ3QTFmZEdlRW9CKzVURT0=;OTc4NzFAMzEzNzJlMzEyZTMwU0NseWFqeXpVWTVNV1NGRE9RZnNPK1VTQ2I3Wnowc0cwYzB0bm53Z0k3dz0=");
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI1NjUyQDMxMzcyZTMyMmUzMGpjZVl3a0x4dHI1SUoyc0RWcTlYNGFGOWlGSjJyWUJrWjYvTi81U0hJMlU9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("LICESE");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
