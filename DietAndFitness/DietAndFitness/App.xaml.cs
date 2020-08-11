@@ -26,7 +26,7 @@ namespace DietAndFitness
         public static NavigationService NavigationService { get; set; }
 		public App ()
 		{
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("LICESE");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI1NjUyQDMxMzcyZTMyMmUzMGpjZVl3a0x4dHI1SUoyc0RWcTlYNGFGOWlGSjJyWUJrWjYvTi81U0hJMlU9");
             InitializeComponent();
             DatabaseController DBGlobalControl = new DatabaseController(GLOBALFOOD_ITEM_DATABASE);
             DBGlobalControl.CopyDatabase();
