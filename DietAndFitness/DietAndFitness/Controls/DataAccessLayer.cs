@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 /// <summary>
 /// Class that implements the interface for basic CRUD operations
@@ -18,7 +17,7 @@ namespace DietAndFitness.Controls
     /// Class that implements the interface for basic CRUD operations
     /// Keeps the Model specific implementations separate from ViewModels for future database migrations
     /// </summary>
-    public class DataAccessLayer : IDataAccessService 
+    public class DataAccessLayer  
     {
         private SQLiteAsyncConnection databaseAsync;
         private SQLiteConnection databaseSync;
@@ -37,7 +36,7 @@ namespace DietAndFitness.Controls
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<int> Delete<T>(T entity)
+        public async Task<int> Delete<T>(T entity) where T : class
         {
             return await databaseAsync.DeleteAsync(entity);
         }
@@ -207,11 +206,5 @@ namespace DietAndFitness.Controls
             return result.FirstOrDefault();
         }
 
-
-        public List<CompleteFoodItem> TestView()
-        {
-            var result = databaseSync.Table<CompleteFoodItem>().ToList();
-            return result;
-        }
     }
 }

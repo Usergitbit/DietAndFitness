@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,6 +12,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\**" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Validators\**" />
+    <Compile Remove="ViewModels\Secondary\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Validators\**" />
+    <EmbeddedResource Remove="ViewModels\Secondary\**" />
+    <None Remove="Entities\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Validators\**" />
+    <None Remove="ViewModels\Secondary\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\DataAccessLayer.cs" />
+    <Compile Remove="Controls\InputPair.xaml.cs" />
     <Compile Remove="ViewModels\EditDailyFoodItemViewModel.cs" />
     <Compile Remove="ViewModels\EditFoodItemDBViewModel.cs" />
     <Compile Remove="Views\EditDailyFoodItem.xaml.cs" />
@@ -19,31 +36,54 @@
     <Compile Remove="Views\Page1.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Remove="Controls\InputPair.xaml" />
     <EmbeddedResource Remove="Views\EditDailyFoodItem.xaml" />
     <EmbeddedResource Remove="Views\EditFoodItemDB.xaml" />
     <EmbeddedResource Remove="Views\Page1.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Databases\LocalDatabase.db" />
+    <None Remove="Resources\Databases\LocalDatabaseEF.db" />
     <None Remove="Resources\Databases\LocalFoodItemsDB.db" />
+    <None Remove="Resources\license.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Databases\LocalDatabaseEF.db" />
     <EmbeddedResource Include="Resources\Databases\LocalDatabase.db" />
     <EmbeddedResource Include="Resources\Databases\LocalFoodItemsDB.db" />
+    <EmbeddedResource Include="Resources\license.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiveXAML" Version="2.1.72" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
-    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="17.2.0.36" />
-    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="17.2.0.36" />
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="EFCore.BulkExtensions" Version="3.2.5" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MvvmLightStd10" Version="5.4.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="18.3.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="18.3.0.42" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,15 +109,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
     <Folder Include="Styles\" />
     <Folder Include="Resources\Icons\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\InputPair.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <ProjectReference Include="..\..\DietAndFitness.Core\DietAndFitness.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\ChangeDailyFoodItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

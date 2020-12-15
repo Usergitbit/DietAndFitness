@@ -1,26 +1,23 @@
-﻿using DietAndFitness.Core;
-using DietAndFitness.Entities;
-using DietAndFitness.Extensions;
-using DietAndFitness.Services;
+﻿using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Composite;
+using DietAndFitness.Interfaces;
+using DietAndFitness.Services.Repositories;
 using DietAndFitness.ViewModels.Base;
-using DietAndFitness.ViewModels.Secondary;
-using DietAndFitness.Views;
+using GalaSoft.MvvmLight.Ioc;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietAndFitness.ViewModels
 {
-    public class DailyFoodListViewModel : ListBaseViewModel<CompleteFoodItem, ChangeDailyFoodItem>
+    public class DailyFoodListViewModel : ListBaseViewModel<CompleteFoodItem>
     {
         private DateTime date;
         private Sum currentValues;
         private Sum targetValues;
         private Sum maximumValues;
-        private double errorMargin;
         private Profile currentProfile;
         public Profile CurrentProfile
         {
@@ -39,12 +36,21 @@ namespace DietAndFitness.ViewModels
 
         public string CaloriesValuesInfo
         {
-            get { return "Calories Left "
-                    + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy"))) 
-                    + ": " 
-                    + Math.Round((TargetValues?.Calories - CurrentValues?.Calories) ?? 0); }
+            get
+            {
+                if (currentProfile != null)
+                    return "Calories Left "
+                      + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy")))
+                      + ": "
+                      + Math.Round((TargetValues?.Calories - CurrentValues?.Calories) ?? 0);
+                else
+                    return "Calories "
+                        + (Date == DateTime.Today ? "Today" : ("on " + Date.ToString("dd MMM yyyy")))
+                        +": "
+                        + Math.Round(CurrentValues?.Calories ?? 0);
+            }
             set
-            { 
+            {
 
             }
         }
@@ -62,31 +68,11 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-        public Color ColorIndicator
+        public CurrentValuesState? ColorIndicator
         {
             get
             {
-                switch(currentProfile?.ProfileTypesId)
-                {
-                    case 1:
-                        if (CurrentValues.Calories <= TargetValues.Calories + ErrorMargin && CurrentValues.Calories >= TargetValues.Calories - ErrorMargin)
-                            return Color.Green;
-                        else
-                            return Color.Red;
-                    case 2:
-                        if (CurrentValues.Calories <= TargetValues.Calories)
-                            return Color.Green;
-                        else
-                            return Color.Red;
-                    case 3:
-                        if (CurrentValues.Calories < TargetValues.Calories)
-                            return Color.Red;
-                        if (CurrentValues.Calories > TargetValues.Calories + ErrorMargin)
-                            return Color.Red;
-                        return Color.Green;
-                    default:
-                        return Color.Gray;
-                }
+                return CurrentProfile?.GetCurrentValuesState(CurrentValues);
             }
             set
             {
@@ -108,20 +94,8 @@ namespace DietAndFitness.ViewModels
                 OnPropertyChanged();
             }
         }
-        public double ErrorMargin
-        {
-            get
-            {
-                return errorMargin;
-            }
-            set
-            {
-                if (errorMargin == value)
-                    return;
-                errorMargin = value;
-                OnPropertyChanged();
-            }
-        }
+
+
         public DateTime Date
         {
             get
@@ -160,46 +134,47 @@ namespace DietAndFitness.ViewModels
             {
                 if (targetValues == value)
                     return;
+
+                if (targetValues != null)
+                    targetValues.PropertyChanged -= UpdateCaloriesValuesInfo;
+
                 targetValues = value;
+
+                if (targetValues != null)
+                    targetValues.PropertyChanged += UpdateCaloriesValuesInfo;
                 OnPropertyChanged();
             }
         }
-        public DailyFoodListViewModel() : base()
-        {
-            Initialize();
-            Date = DateTime.Today;
-        }
-        public DailyFoodListViewModel(DateTime date) : base()
-        {
-            Initialize();
-            Date = date;
-            SelectedItem.CreatedAt = date;
-            SelectedItem.ModifiedAt = date;
-        }
-        private void Initialize()
+
+        public DailyFoodListViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
         {
             CurrentValues = new Sum("Current: ");
             TargetValues = new Sum("Target: ");
             MaximumValues = new Sum("Maximum: ");
-            ErrorMargin = 200;
-            CurrentValues.PropertyChanged += UpdateCaloriesValuesInfo;
-            TargetValues.PropertyChanged += UpdateCaloriesValuesInfo;
+
+            Date = DateTime.Today;
+        }
+
+        public override Task InitializeAsync(params object[] parameters)
+        {
+            var date = (DateTime)parameters.ElementAtOrDefault(0);
+            Date = date;
+            return Task.CompletedTask;
         }
 
         private void UpdateCaloriesValuesInfo(object sender, PropertyChangedEventArgs e)
         {
-            
+
         }
 
         public async override Task LoadList()
         {
-            var todayFoodItems = await DBLocalAccess.GetCompleteItemAsync(Date);
+            var todayFoodItems = await DBLocalAccess.DailyFoodItems.GetCompleteFoodItems(Date);
             Items.Clear();
             CurrentValues.Reset();
-            //TODO: GET PROFILE BY DATE
-            currentProfile = await DBLocalAccess.GetCurrentProfile();
-            TargetValues = currentProfile.GetTargetValues();
-            MaximumValues = currentProfile.GetMaximumValues();
+
+            TargetValues = await GetTargetValues();
+            MaximumValues = await GetMaximumValues();
             foreach (var item in todayFoodItems)
             {
                 Items.Add(item);
@@ -209,12 +184,28 @@ namespace DietAndFitness.ViewModels
             OnPropertyChanged(nameof(ColorIndicatorProteins));
             OnPropertyChanged(nameof(CaloriesValuesInfo));
             //increase gauge size so the current values don't go outside the page
-            if (CurrentValues.Calories > MaximumValues.Calories)
+            if (CurrentValues.Calories > MaximumValues.Calories && currentProfile != null)
                 MaximumValues.Calories = CurrentValues.Calories + 100;
         }
-        protected override void OpenAddPageFunction(object[] date)
+
+        public async Task<Sum> GetTargetValues()
         {
-            base.OpenAddPageFunction(new object[] { Date });
+            currentProfile = await DBLocalAccess.UserProfiles.GetAsync(x => x.StartDate <= Date && x.EndDate >= Date);
+            if (currentProfile == null)
+                return CurrentValues;
+            return currentProfile.GetTargetValues();
+        }
+
+        public async Task<Sum> GetMaximumValues()
+        {
+            currentProfile = await DBLocalAccess.UserProfiles.GetAsync(x => x.StartDate <= Date && x.EndDate >= Date);
+            if (currentProfile == null)
+                return CurrentValues;
+            return currentProfile.GetMaximumValues();
+        }
+        protected override async Task OpenAddPageFunction()
+        {
+            await navigationService.PushModal("ChangeDailyFoodItem", null, Date);
         }
         protected async override Task ExecuteDelete(bool result)
         {
@@ -222,7 +213,7 @@ namespace DietAndFitness.ViewModels
             {
                 try
                 {
-                    await DBLocalAccess.Delete(SelectedItem.DailyFoodItem);
+                    await DBLocalAccess.DailyFoodItems.DeleteAsync(SelectedItem.DailyFoodItem);
                     //await LoadList();
                     Items.Remove(SelectedItem);
                     CurrentValues.Remove(SelectedItem);
@@ -236,5 +227,12 @@ namespace DietAndFitness.ViewModels
                 }
             };
         }
+
+        protected override async Task OpenEditPageFunction(CompleteFoodItem parameter)
+        {
+            await navigationService.PushModal("ChangeDailyFoodItem", SelectedItem.DailyFoodItem.ID, Date);
+        }
+
+
     }
 }

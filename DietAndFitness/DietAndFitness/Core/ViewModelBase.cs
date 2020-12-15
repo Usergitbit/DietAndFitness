@@ -1,18 +1,16 @@
-﻿using DietAndFitness.Controls;
-using DietAndFitness.Interfaces;
-using DietAndFitness.Services;
+﻿using DietAndFitness.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
+using System.Threading.Tasks;
+
 namespace DietAndFitness.Core
 {
     /// <summary>
     /// Base ViewModel class that the rest derive from
     /// </summary>
     [Serializable]
-    public class ViewModelBase : INotifyPropertyChanged, IDisposable
+    public class ViewModelBase : INotifyPropertyChanged, IDisposable, IInitializable
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected INavigationService navigationService;
@@ -20,11 +18,11 @@ namespace DietAndFitness.Core
         protected IDataAccessService DBLocalAccess { get; set; }
 
 
-        public ViewModelBase()
+        public ViewModelBase(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService)
         {
-            navigationService = IOC.IOC.GetNavigationService();
-            dialogService = IOC.IOC.GetDialogService();
-            DBLocalAccess = IOC.IOC.GetDataAccessService();
+            this.navigationService = navigationService;
+            this.DBLocalAccess = dataAccessService;
+            this.dialogService = dialogService;
         }
         protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
         {
@@ -38,6 +36,16 @@ namespace DietAndFitness.Core
         public virtual void Dispose()
         {
             
+        }
+
+        public virtual void Initialize(params object[] parameters)
+        {
+
+        }
+
+        public virtual Task InitializeAsync(params object[] parameters)
+        {
+            return Task.CompletedTask;
         }
     }
 }

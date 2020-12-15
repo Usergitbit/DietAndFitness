@@ -15,6 +15,12 @@
         </Size>
     </windows:TabbedPage.HeaderIconsSize>
     <!--  Pages can be added as references or inline  -->
-    <local:CaloriesStatisticsPage Title="Calories" IconImageSource="calories_icon.png" />
-    <local:MacrosStatisticsPage Title="Macros" IconImageSource="macros_icon.png" />
+    <local:CaloriesStatisticsPage
+        Title="Calories"
+        BindingContext="{Binding CaloriesStatisticsViewModel}"
+        IconImageSource="calories_icon.png" />
+    <local:MacrosStatisticsPage
+        Title="Macros"
+        BindingContext="{Binding MacroStatisticsViewModel}"
+        IconImageSource="macros_icon.png" />
 </TabbedPage>

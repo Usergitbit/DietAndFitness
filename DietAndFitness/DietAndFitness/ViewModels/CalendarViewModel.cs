@@ -1,9 +1,8 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.Services;
+using DietAndFitness.Interfaces;
 using DietAndFitness.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -27,16 +26,15 @@ namespace DietAndFitness.ViewModels
             }
         }
         public ICommand ViewCommand { get; private set; }
-        public CalendarViewModel()
+        public CalendarViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
         {
             SelectedDate = DateTime.Today;
-            ViewCommand = new Command(OpenDailyFoodListPage);
+            ViewCommand = new Command(OpenDailyFoodListPage);  
         }
 
         private async void OpenDailyFoodListPage()
         {
-            var page = new DailyFoodListPage(SelectedDate);
-            await navigationService.NavigateToAsync(page);
+            await navigationService.PushModal("DailyFoodListPage", SelectedDate);
         }
 
 

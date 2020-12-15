@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,16 +10,22 @@ namespace DietAndFitness.Views
     public partial class HomePageMaster : ContentPage
     {
         public ListView ListView;
+        public Grid LoadingLabel
+        {
+            get
+            {
+                return loadingLabel;
+            }
+        }
 
         public HomePageMaster()
         {
             InitializeComponent();
-            
             BindingContext = new HomePageMasterViewModel();
             ListView = MenuItemsListView;
         }
 
-        class HomePageMasterViewModel : INotifyPropertyChanged
+        class HomePageMasterViewModel 
         {
             public ObservableCollection<HomePageMenuItem> MenuItems { get; set; }
             
@@ -41,16 +41,6 @@ namespace DietAndFitness.Views
                 });
             }
             
-            #region INotifyPropertyChanged Implementation
-            public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                if (PropertyChanged == null)
-                    return;
-
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-            #endregion
         }
     }
 }

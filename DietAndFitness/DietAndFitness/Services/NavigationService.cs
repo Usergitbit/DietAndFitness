@@ -1,52 +1,91 @@
-﻿using DietAndFitness.Interfaces;
+﻿using DietAndFitness.Core;
+using DietAndFitness.Extensions;
+using DietAndFitness.Interfaces;
+using DietAndFitness.ViewModels;
 using DietAndFitness.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietAndFitness.Services
 {
-    /// <summary>
-    /// Class used for navigating from the ViewModel
-    /// </summary>
     public class NavigationService : INavigationService
     {
-        private NavigationPage navigationPage;
-        public NavigationService(NavigationPage navigationPage)
+        private readonly Dictionary<string, Type> pages;
+
+        private readonly IViewModelFactory viewModelFactory;
+        private readonly IPageViewModelResolver pageViewModelResolver;
+
+        public NavigationService(IViewModelFactory viewModelFactory, IPageViewModelResolver pageViewModelResolver)
         {
-            this.navigationPage = navigationPage;
+            pages = new Dictionary<string, Type>();
+            this.viewModelFactory = viewModelFactory;
+            this.pageViewModelResolver = pageViewModelResolver;
         }
-        public async Task GoBackAsync()
+        public Task GoBackAsync()
         {
-            await navigationPage.PopAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task NavigateToAsync(Page page)
+        public Task NavigateToAsync(Page page)
         {
-            await navigationPage.PushAsync(page);
+            throw new NotImplementedException();
         }
 
-        public async Task PushModal(Page page)
+        public Task NavigateToAsync(string page, params object[] parameters)
         {
-            await App.Current.MainPage.Navigation.PushModalAsync(page);
+            throw new NotImplementedException();
         }
+
         public async Task PopModal()
         {
-            await App.Current.MainPage.Navigation.PopModalAsync();
+            await ((App.Current.MainPage as HomePage).Detail as NavigationPage).PopAsync();
         }
 
-        /// <summary>
-        /// Used to set the normal MasterDetailPage as MainPage when coming from the CreateUserProfilePage
-        /// </summary>
+        public Task PushModal(string page)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task PushModal(string page, params object[] parameters)
+        {
+            var pageType = pages[page];
+            ViewModelBase vm = null;
+            var task = Task.Run(async () =>
+            {
+                vm = (ViewModelBase)await viewModelFactory.CreateAsync(pageViewModelResolver.Resolve(pageType), parameters);
+            });
+            var pageObject = (Page)FastActivator.GetActivator(pageType)();
+            await task;
+            pageObject.BindingContext = vm;
+            await ((App.Current.MainPage as HomePage).Detail as NavigationPage).PushAsync(pageObject);
+        }
+
+        public void Register<TPage>(string pageKey = null)
+        {
+            if (!pages.ContainsKey(pageKey ?? typeof(TPage).Name))
+                pages.Add(pageKey ?? typeof(TPage).Name, typeof(TPage));
+            else
+                throw new Exception("Page was "+ typeof(TPage) + " regsitered twice.");
+               
+        }
+
         public void SetMainPage()
         {
-            var navigationPage = new NavigationPage(new DailyFoodListPage());
-            App.NavigationService = new NavigationService(navigationPage);
-            var homePage = new HomePage();
-            homePage.Detail = navigationPage;
-            App.Current.MainPage = homePage;
+            var daily = new DailyFoodListPage();
+            var navigationPage = new NavigationPage(daily);
+            var vm = viewModelFactory.Create(typeof(DailyFoodListViewModel));
+            daily.BindingContext = vm;
+            var homePage = new HomePage
+            {
+                Detail = navigationPage
+            };
+            Application.Current.MainPage = homePage;
         }
+
+
     }
 }

@@ -23,4 +23,6 @@
       </uap:VisualElements>
     </Application>
   </Applications>
+  <Capabilities>
+    <uap:Capability Name="musicLibrary"/></Capabilities>
 </Package>

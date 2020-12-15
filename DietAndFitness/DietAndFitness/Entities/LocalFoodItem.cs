@@ -13,6 +13,7 @@ namespace DietAndFitness.Entities
     [Table("LocalFoodItem")]
     public class LocalFoodItem : DatabaseEntity
     {
+
         private double? calories;
         public double? Calories
         {

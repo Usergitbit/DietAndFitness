@@ -1,46 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietAndFitness.Views.CaloriesStatisticsPage"
-             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
-             xmlns:sys="clr-namespace:System;assembly=netstandard">
+<ContentPage
+    x:Class="DietAndFitness.Views.CaloriesStatisticsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+    xmlns:sys="clr-namespace:System;assembly=netstandard">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <Grid>
+            <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Label Text="Period" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="0" Date="{Binding StartDate}" DateSelected="OnStartDateChanged"/>
-                <DatePicker x:Name="endDatePicker" Grid.Column="2" Grid.Row="0" Date="{Binding EndDate}" DateSelected="OnEndDateChanged" MaximumDate="{Binding sys:DateTime.Today}"/>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Profile"
+                    VerticalTextAlignment="Center" />
+                <Picker
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding UserProfiles}"
+                    SelectedItem="{Binding SelectedProfile}"
+                    WidthRequest="100" />
             </Grid>
-                <chart:SfChart VerticalOptions="FillAndExpand">
+            <chart:SfChart VerticalOptions="FillAndExpand">
                 <chart:SfChart.Title>
-                    <chart:ChartTitle Text = "{Binding AverageCalories, StringFormat='Average calories over period: {0}'}"/>
+                    <chart:ChartTitle Text="{Binding AverageCalories, StringFormat='Average calories over period: {0}'}" />
                 </chart:SfChart.Title>
-                <chart:SfChart.PrimaryAxis >
+                <chart:SfChart.PrimaryAxis>
                     <chart:DateTimeAxis EdgeLabelsDrawingMode="Shift">
                         <chart:DateTimeAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="dd-MMM-yyyy"/>
+                            <chart:ChartAxisLabelStyle LabelFormat="dd-MMM-yyyy" />
                         </chart:DateTimeAxis.LabelStyle>
                     </chart:DateTimeAxis>
                 </chart:SfChart.PrimaryAxis>
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis Maximum="5000" Minimum="0">
                         <chart:NumericalAxis.StripLines>
-                            <chart:NumericalStripLine Start="{Binding TargetCalories}" StrokeColor="Green" StrokeWidth="10" Width="10"/>
+                            <chart:NumericalStripLine
+                                Width="10"
+                                Start="{Binding TargetCalories}"
+                                StrokeColor="Green" 
+                                StrokeWidth="10" />
                         </chart:NumericalAxis.StripLines>
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
                 <chart:SfChart.ChartBehaviors>
-                    <chart:ChartZoomPanBehavior EnableSelectionZooming="False" ZoomMode="X" MaximumZoomLevel="200" />
+                    <chart:ChartZoomPanBehavior
+                        EnableSelectionZooming="False"
+                        MaximumZoomLevel="200"
+                        ZoomMode="X" />
                 </chart:SfChart.ChartBehaviors>
-                <chart:LineSeries EnableAnimation="True" ItemsSource ="{Binding MonthlyCalories}" XBindingPath="CreatedAt"	YBindingPath="Calories"/>
+                <chart:LineSeries
+                    EnableAnimation="True"
+                    ItemsSource="{Binding MonthlyCalories}"
+                    XBindingPath="CreatedAt"
+                    YBindingPath="Calories" />
             </chart:SfChart>
         </StackLayout>
     </ContentPage.Content>

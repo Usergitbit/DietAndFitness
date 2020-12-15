@@ -2,21 +2,31 @@
 <ContentPage
     x:Class="DietAndFitness.Views.ChangeDailyFoodItem"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms">
+
     <ContentPage.Content>
         <StackLayout>
             <SearchBar
-                x:Name="searchBar"
+                x:Name="autoCompleteSearchBar"
                 Placeholder="Find some food"
                 SearchCommand="{Binding SearchCommand}"
-                SearchCommandParameter="{Binding SearchBarText}"
                 Text="{Binding SearchBarText}" />
+            <!--<autocomplete:SfAutoComplete
+                x:Name="autoCompleteSearchBar"
+                AutoCompleteMode="Suggest"
+                DataSource="{Binding FoodItems}"
+                DisplayMemberPath="Name"
+                FilterCollectionChanged="AutoCompleteSearchBar_FilterCollectionChanged"
+                FilteredItems="{Binding FilteredItems, Mode=TwoWay}"
+                SuggestionBoxPlacement="None"
+                SuggestionMode="Contains" />-->
             <ListView
                 x:Name="myLlistView"
                 HasUnevenRows="True"
                 ItemSelected="OnItemSelected"
-                ItemsSource="{Binding FoodItems}"
-                SelectedItem="{Binding SelectedFoodItem, Mode=TwoWay}">
+                ItemsSource="{Binding FilteredItems}"
+                SelectedItem="{Binding CurrentItem.FoodItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -99,7 +109,7 @@
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 Placeholder="Quantity"
-                Text="{Binding CurrentItem.Quantity, Converter={StaticResource StringToNullableDouble }" />
+                Text="{Binding CurrentItem.Quantity, Converter={StaticResource StringToNullableDouble}}" />
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

@@ -1,0 +1,2 @@
+bundle assemblies to native code - images disappear
+AOT - breaks efcore

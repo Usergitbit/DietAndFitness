@@ -1,73 +1,159 @@
-﻿using SQLite;
+﻿using DietAndFitness.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace DietAndFitness.Core
 {
-    /// <summary>
-    /// Base model class that others derive from
-    /// </summary>
-    [Serializable]
-    public class ModelBase : INotifyPropertyChanged,
-                             INotifyCollectionChanged,
-                             IDisposable
+    public class DailyFoodObservableCollection : ObservableCollection<DailyFoodItem>, INotifyPropertyChanged
     {
-        
-        private bool isDirty;
-        [Ignore] //Ignores this property when adding to the database, not needed for local database at the time of creation
-        public bool IsDirty
+
+        private double _TotalCalories;
+        public double TotalCalories
         {
-            get
+            get { return _TotalCalories; }
+            private set
             {
-                return isDirty;
-            }
-            set
-            {
-                if (isDirty == value)
+                if (_TotalCalories == value)
                     return;
-                isDirty = value;
+                _TotalCalories = value;
+                RaisePropertyChanged();
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-        public ModelBase()
+
+        private double _TotalProteins;
+        public double TotalProteins
         {
-            //required for serialization
+            get { return _TotalProteins; }
+            private set
+            {
+                if (_TotalProteins == value)
+                    return;
+                _TotalProteins = value;
+                RaisePropertyChanged();
+            }
         }
 
-        public void Dispose()
+
+        private double _TotalFats;
+        public double TotalFats
         {
-            //throw new NotImplementedException();
-           
+            get { return _TotalFats; }
+            private set
+            {
+                if (_TotalFats == value)
+                    return;
+                _TotalFats = value;
+                RaisePropertyChanged();
+            }
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler == null)
-                return;
-            IsDirty = true;
-            Debug.WriteLine("PropertyChanged called from" + ToString() + " " + IsDirty);
-            handler?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
+        private double _TotalCarbohydrates;
+        public double TotalCarbohydrates
+        {
+            get { return _TotalCarbohydrates; }
+            private set
+            {
+                if (_TotalCarbohydrates == value)
+                    return;
+                _TotalCarbohydrates = value;
+                RaisePropertyChanged();
+            }
+        }
+        public DailyFoodObservableCollection() : base()
+        {
+            Initialize();
         }
 
-        protected virtual void OnCollectionChanged ()
+        public DailyFoodObservableCollection(List<DailyFoodItem> items) : base(items)
         {
-            var handler = CollectionChanged;
-            handler?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            Initialize(items);
         }
+
+        public DailyFoodObservableCollection(IEnumerable<DailyFoodItem> items) : base(items)
+        {
+            Initialize(items);
+        }
+
+        private void Initialize(IEnumerable<DailyFoodItem> items = null)
+        {
+            if (items?.Any(x => x.FoodItem == null) ?? false)
+                throw new Exception("FoodItem prop can't be null for the collection to work");
+
+            CollectionChanged += OnFoodItemsChanged;
+        }
+        private void OnFoodItemsChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            double totalCalories = 0, totalCarbohydrates = 0, totalProteins = 0, totalFats = 0;
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    foreach (var item in e.NewItems)
+                    {
+                        var dailyFoodItem = item as DailyFoodItem;
+                        totalCalories += (dailyFoodItem.FoodItem.Calories ?? 0) * dailyFoodItem.Quantity;
+                        totalCarbohydrates += (dailyFoodItem.FoodItem.Carbohydrates ?? 0) * dailyFoodItem.Quantity;
+                        totalProteins += (dailyFoodItem.FoodItem.Proteins ?? 0) * dailyFoodItem.Quantity;
+                        totalFats += (dailyFoodItem.FoodItem.Fats ?? 0) * dailyFoodItem.Quantity;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    foreach(var item in e.OldItems)
+                    {
+                        var dailyFoodItem = item as DailyFoodItem;
+                        totalCalories -= (dailyFoodItem.FoodItem.Calories ?? 0) * dailyFoodItem.Quantity;
+                        totalCarbohydrates -= (dailyFoodItem.FoodItem.Carbohydrates ?? 0) * dailyFoodItem.Quantity;
+                        totalProteins -= (dailyFoodItem.FoodItem.Proteins ?? 0) * dailyFoodItem.Quantity;
+                        totalFats -= (dailyFoodItem.FoodItem.Fats ?? 0) * dailyFoodItem.Quantity;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Replace:
+                    foreach (var item in e.OldItems)
+                    {
+                        var dailyFoodItem = item as DailyFoodItem;
+                        totalCalories -= (dailyFoodItem.FoodItem.Calories ?? 0) * dailyFoodItem.Quantity;
+                        totalCarbohydrates -= (dailyFoodItem.FoodItem.Carbohydrates ?? 0) * dailyFoodItem.Quantity;
+                        totalProteins -= (dailyFoodItem.FoodItem.Proteins ?? 0) * dailyFoodItem.Quantity;
+                        totalFats -= (dailyFoodItem.FoodItem.Fats ?? 0) * dailyFoodItem.Quantity;
+                    }
+                    foreach (var item in e.NewItems)
+                    {
+                        var dailyFoodItem = item as DailyFoodItem;
+                        totalCalories += (dailyFoodItem.FoodItem.Calories ?? 0) * dailyFoodItem.Quantity;
+                        totalCarbohydrates += (dailyFoodItem.FoodItem.Carbohydrates ?? 0) * dailyFoodItem.Quantity;
+                        totalProteins += (dailyFoodItem.FoodItem.Proteins ?? 0) * dailyFoodItem.Quantity;
+                        totalFats += (dailyFoodItem.FoodItem.Fats ?? 0) * dailyFoodItem.Quantity;
+                    }
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    TotalCalories = 0;
+                    TotalCarbohydrates = 0;
+                    TotalProteins = 0;
+                    TotalFats = 0;
+                    break;
+
+            }
+
+            TotalCalories = totalCalories;
+            TotalCarbohydrates = totalCarbohydrates;
+            TotalProteins = totalProteins;
+            TotalFats = totalFats;
+        }
+
+        private void RaisePropertyChanged([CallerMemberName] string property = null)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(nameof(property)));
+        }
+
         
-        public void Clean()
-        {
-            isDirty = false;
-            Debug.WriteLine("I was cleaned");
-        }
+
+
     }
 }

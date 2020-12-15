@@ -1,9 +1,7 @@
-﻿using DietAndFitness.Entities;
-using DietAndFitness.ViewModels;
+﻿using DietAndFitness.ViewModels;
 using DietAndFitness.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DietAndFitness.Services
 {

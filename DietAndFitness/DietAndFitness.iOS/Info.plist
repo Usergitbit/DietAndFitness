@@ -52,5 +52,7 @@
 	<string>DietAndFitness</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
+  <key>UIFileSharingEnabled</key>
+  <true/>
 </dict>
 </plist>

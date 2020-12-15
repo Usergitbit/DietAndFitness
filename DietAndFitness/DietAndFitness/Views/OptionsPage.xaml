@@ -15,6 +15,12 @@
         </Size>
     </windows:TabbedPage.HeaderIconsSize>
     <!--  Pages can be added as references or inline  -->
-    <local:CreateUserProfilePage Title="Profile" IconImageSource="profile_icon.png" />
-    <local:UploadDbPage Title="Backup" IconImageSource="backup_icon.png" />
+    <local:CreateUserProfilePage
+        Title="Profile"
+        BindingContext="{Binding CreateUserProfileViewModel}"
+        IconImageSource="profile_icon.png" />
+    <local:UploadDbPage
+        Title="Backup"
+        BindingContext="{Binding UploadDbViewModel}"
+        IconImageSource="backup_icon.png" />
 </TabbedPage>

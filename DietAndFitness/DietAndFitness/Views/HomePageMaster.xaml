@@ -7,7 +7,7 @@
     <StackLayout>
         <ListView
             x:Name="MenuItemsListView"
-            HasUnevenRows="true"
+            HasUnevenRows="True"
             ItemsSource="{Binding MenuItems}"
             SeparatorVisibility="None">
             <ListView.Header>
@@ -44,22 +44,44 @@
                                         <ColumnDefinition Width="30" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding IconSource}" />
+                                    <Image
+                                        HeightRequest="50"
+                                        Source="{Binding IconSource}"
+                                        WidthRequest="50" />
                                     <Label
                                         Grid.Column="1"
                                         FontSize="24"
-                                        Text="{Binding Title}" />
+                                        Text="{Binding Title}"
+                                        VerticalOptions="Center" />
                                 </Grid>
-                                <!--<Label
-                                    FontSize="24"
-                                    Text="{Binding Title}"
-                                    VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Center" />-->
                             </StackLayout>
                         </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Grid
+            x:Name="loadingLabel"
+            HorizontalOptions="CenterAndExpand"
+            IsVisible="False"
+            VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image
+                HeightRequest="50"
+                Source="loading_icon.png"
+                VerticalOptions="Center"
+                WidthRequest="50" />
+            <Label
+                Grid.Column="1"
+                FontSize="Medium"
+                Text="Loading..."
+                VerticalOptions="Center" />
+        </Grid>
     </StackLayout>
 </ContentPage>
