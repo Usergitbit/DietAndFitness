@@ -1,7 +1,5 @@
 ﻿using DietAndFitness.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -22,10 +20,7 @@ namespace DietAndFitness.Services
                 message,
                 buttonText);
 
-            if (afterHideCallback != null)
-            {
-                afterHideCallback();
-            }
+            afterHideCallback?.Invoke();
         }
 
         public async Task ShowError(
@@ -39,10 +34,7 @@ namespace DietAndFitness.Services
                 error.Message,
                 buttonText);
 
-            if (afterHideCallback != null)
-            {
-                afterHideCallback();
-            }
+            afterHideCallback?.Invoke();
         }
 
         public async Task ShowMessage(
@@ -66,10 +58,7 @@ namespace DietAndFitness.Services
                 message,
                 buttonText);
 
-            if (afterHideCallback != null)
-            {
-                afterHideCallback();
-            }
+            afterHideCallback?.Invoke();
         }
 
         public async Task<bool> ShowMessage(
@@ -85,10 +74,7 @@ namespace DietAndFitness.Services
                 buttonConfirmText,
                 buttonCancelText);
 
-            if (afterHideCallback != null)
-            {
-                afterHideCallback(result);
-            }
+            afterHideCallback?.Invoke(result);
             return result;
         }
 

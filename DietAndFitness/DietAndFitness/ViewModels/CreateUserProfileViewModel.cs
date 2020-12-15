@@ -1,14 +1,13 @@
 ﻿using DietAndFitness.Controls;
 using DietAndFitness.Core;
+using DietAndFitness.Core.Models;
 using DietAndFitness.Extensions;
-using DietAndFitness.Entities;
-using DietAndFitness.Services;
+using DietAndFitness.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -129,7 +128,13 @@ namespace DietAndFitness.ViewModels
             {
                 if (userProfile == value)
                     return;
+                if(userProfile != null)
+                    userProfile.PropertyChanged -= OnUserProfileChanged;
+
                 userProfile = value;
+
+                if (userProfile != null)
+                    userProfile.PropertyChanged += OnUserProfileChanged;
                 OnPropertyChanged();
             }
         }
@@ -164,22 +169,25 @@ namespace DietAndFitness.ViewModels
             }
         }
 
-        public CreateUserProfileViewModel() : base()
+        public CreateUserProfileViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
         {
             DietFormulas = new ObservableCollection<DietFormula>();
             ProfileTypes = new ObservableCollection<ProfileType>();
             UserProfile = new Profile();
             SelectedDietFormula = new DietFormula();
             SelectedProfileType = new ProfileType();
-            DBLocalAccess = new DataAccessLayer(GlobalSQLiteConnection.LocalDatabase);
-            CreateProfileCommand = new Command<Profile>(execute: CreateUserProfile, canExecute: ValidateCreateButon);
+            CreateProfileCommand = new Command<Profile>(async (param) => { await CreateUserProfile(param); }, canExecute: ValidateCreateButon);
             CalculateBodyFatCommand = new Command(execute: OpenCalculateBodyFatDialog);
             PopUpAcceptCommand = new Command(execute: AcceptBodyFatCalculation, canExecute: ValidateAcceptBodyFatCalculationButton);
             FormulaHelpCommand = new Command(execute: ShowFormulaHelpDialog);
             ActivityLevelHelpCommand = new Command(execute: ShowActivityHelpDialog);
-            PropertyChanged += OnSelectionChangedIDSolver;
-            UserProfile.PropertyChanged += OnUserProfileChanged;
+            PropertyChanged += OnPropertyChanged;
             ButtonText = "Create Profile";
+        }
+
+        private void OnUserPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            OnPropertyChanged(nameof(UserProfile));
         }
 
         private async void ShowActivityHelpDialog()
@@ -225,19 +233,28 @@ namespace DietAndFitness.ViewModels
                     IsFemale = false;
             }
             (CreateProfileCommand as Command).ChangeCanExecute();
+            OnPropertyChanged(nameof(UserProfile));
+
+
         }
 
-        private void OnSelectionChangedIDSolver(object sender, PropertyChangedEventArgs e)
+        /// <summary>
+        /// TODO: Should use converter instead, too much jumping aroudn and onprop change hooking results in wierd errors
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula))
-                UserProfile.DietFormula = SelectedDietFormula?.ID;
-            if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType))
+            if (e.PropertyName == this.GetPropertyName(x => x.SelectedDietFormula) && SelectedDietFormula != null)
+                UserProfile.DietFormulaId = SelectedDietFormula.ID;
+            if (e.PropertyName == this.GetPropertyName(x => x.SelectedProfileType) && SelectedProfileType != null)
                 UserProfile.ProfileTypesId = SelectedProfileType?.ID;
             if (e.PropertyName == nameof(WaistLenght) || e.PropertyName == nameof(NeckLength) || e.PropertyName == nameof(HipLength))
             {
                 RecalculateBodyFat();
                 (PopUpAcceptCommand as Command).ChangeCanExecute();
             }
+
         }
 
         private void RecalculateBodyFat()
@@ -255,35 +272,34 @@ namespace DietAndFitness.ViewModels
                     CalculatedBodyFat = Math.Round(495 / (1.29579 - .35004 * Math.Log10(WaistLenght + HipLength - NeckLength) + .22100 * Math.Log10(UserProfile.Height)) - 450);
                     break;
             }
+            if (!double.IsNaN(CalculatedBodyFat))
+                UserProfile.BodyFat = CalculatedBodyFat;
         }
 
         public async Task LoadData()
         {
             DietFormulas.Clear();
-            List<DietFormula> dietFormulas = await DBLocalAccess.GetAllAsync<DietFormula>();
+            List<DietFormula> dietFormulas = await DBLocalAccess.DietFormulas.GetAllAsync();
             dietFormulas.ForEach(x => DietFormulas.Add(x));
             ProfileTypes.Clear();
-            List<ProfileType> profileTypes = await DBLocalAccess.GetAllAsync<ProfileType>();
+            List<ProfileType> profileTypes = await DBLocalAccess.ProfileTypes.GetAllAsync();
             profileTypes.ForEach(x => ProfileTypes.Add(x));
-            if (new DataAccessLayer(GlobalSQLiteConnection.LocaDataBaseSync).HasProfiles())
+            if (DBLocalAccess.UserProfiles.HasProfiles())
             {
-                UserProfile = await DBLocalAccess.GetCurrentProfile();
-                SelectedDietFormula = dietFormulas.Find(x => x.ID == UserProfile.DietFormula);
+                UserProfile = await DBLocalAccess.UserProfiles.GetAsync(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today);
+                SelectedDietFormula = dietFormulas.Find(x => x.ID == UserProfile.DietFormulaId);
                 SelectedProfileType = profileTypes.Find(x => x.ID == UserProfile.ProfileTypesId);
-                ButtonText = "Edit Profile";
+                ButtonText = "Save Profile";
             }
-
         }
 
-
-
-        async void CreateUserProfile(Profile parameter)
+        private async Task CreateUserProfile(Profile parameter)
         {
             if (parameter.ID == null)
             {
                 try
                 {
-                    await DBLocalAccess.Insert<Profile>(UserProfile);
+                    await DBLocalAccess.UserProfiles.InsertAsync(UserProfile);
                 }
                 catch (Exception ex)
                 {
@@ -295,7 +311,7 @@ namespace DietAndFitness.ViewModels
             {
                 try
                 {
-                    await DBLocalAccess.Update<Profile>(UserProfile);
+                    await DBLocalAccess.UserProfiles.UpdateAsync(UserProfile);
                     await dialogService.ShowMessage("Profile updated successfully", "Success");
                 }
                 catch (Exception ex)
@@ -309,6 +325,13 @@ namespace DietAndFitness.ViewModels
             if (UserProfile.IsValid())
                 return true;
             return false;
+        }
+
+        public override void Dispose()
+        {
+            PropertyChanged -= OnPropertyChanged;
+            UserProfile.PropertyChanged -= OnUserProfileChanged;
+            base.Dispose();
         }
 
 

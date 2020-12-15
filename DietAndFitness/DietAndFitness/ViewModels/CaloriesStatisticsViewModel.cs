@@ -1,19 +1,15 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.ViewModels.Secondary;
+using DietAndFitness.Core.Models;
+using DietAndFitness.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Linq;
-using DietAndFitness.Entities;
 using System.Threading.Tasks;
 
 namespace DietAndFitness.ViewModels
 {
     public class CaloriesStatisticsViewModel : ViewModelBase
     {
-        private DateTime startDate;
-        private DateTime endDate;
         private ObservableCollection<DailyCalories> monthlyCalories;
         private double? targetCalories;
         private double? averageCalories;
@@ -55,48 +51,53 @@ namespace DietAndFitness.ViewModels
             }
 
         }
-        public DateTime StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-            set
-            {
-                if (startDate == value)
-                    return;
-                startDate = value;
-                OnPropertyChanged();
-            }
 
-        }
-        public DateTime EndDate
+        private ObservableCollection<Profile> userProfiles;
+        public ObservableCollection<Profile> UserProfiles
         {
-            get
-            {
-                return endDate;
-            }
+            get { return userProfiles; }
             set
             {
-                if (endDate == value)
+                if (userProfiles == value)
                     return;
-                endDate = value;
+                userProfiles = value;
                 OnPropertyChanged();
             }
         }
 
-        public CaloriesStatisticsViewModel() : base()
+
+        private Profile _SelectedProfile;
+        public Profile SelectedProfile
         {
-            EndDate = DateTime.Today;
-            StartDate = (DateTime.Today).AddMonths(-1);
+            get { return _SelectedProfile; }
+            set
+            {
+                if (_SelectedProfile == value)
+                    return;
+                _SelectedProfile = value;
+                OnPropertyChanged();
+                CalculateCalories();
+            }
+        }
+
+        public CaloriesStatisticsViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
+        {
             MonthlyCalories = new ObservableCollection<DailyCalories>();
         }
 
         public async Task LoadData()
         {
-            var compelteFoodItems = await DBLocalAccess.GetCompleteItemAsync(StartDate, EndDate);
-            MonthlyCalories = new ObservableCollection<DailyCalories>(compelteFoodItems?.GroupBy(x => x.DailyFoodItem.CreatedAt)?.Select(x => new DailyCalories { Calories = x?.Sum(s => s.Calories), CreatedAt = x.Key}));
-            TargetCalories = (await DBLocalAccess.GetCurrentProfile()).GetTargetValues().Calories;
+            var profiles = await DBLocalAccess.UserProfiles.GetAllAsync();
+            UserProfiles = new ObservableCollection<Profile>(profiles);
+            SelectedProfile = UserProfiles.LastOrDefault();
+            await CalculateCalories();
+        }
+
+        private async Task CalculateCalories()
+        {
+            var compelteFoodItems = await DBLocalAccess.DailyFoodItems.GetCompleteItemAsync(SelectedProfile.StartDate, SelectedProfile.EndDate);
+            MonthlyCalories = new ObservableCollection<DailyCalories>(compelteFoodItems?.GroupBy(x => x.DailyFoodItem.CreatedAt)?.Select(x => new DailyCalories { Calories = x?.Sum(s => s.Calories), CreatedAt = x.Key }));
+            TargetCalories = SelectedProfile.GetTargetValues().Calories;
             AverageCalories = Math.Round(MonthlyCalories.Sum(mc => mc.Calories) / (MonthlyCalories.Count == 0 ? 1 : MonthlyCalories.Count) ?? 0);
         }
 

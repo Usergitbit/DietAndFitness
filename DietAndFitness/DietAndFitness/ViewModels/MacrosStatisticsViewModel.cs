@@ -1,46 +1,19 @@
 ﻿using DietAndFitness.Core;
-using DietAndFitness.ViewModels.Secondary;
+using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Base;
+using DietAndFitness.Interfaces;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using static DietAndFitness.ViewModels.MacrosStatisticsViewModel.Macro;
 
 namespace DietAndFitness.ViewModels
 {
     public class MacrosStatisticsViewModel : ViewModelBase
     {
-        private DateTime startDate;
-        private DateTime endDate;
         private ObservableCollection<Macro> macros;
 
-        public DateTime StartDate
-        {
-            get
-            {
-                return startDate;
-            }
-            set
-            {
-                if (startDate == value)
-                    return;
-                startDate = value;
-                OnPropertyChanged();
-            }
-        }
-        public DateTime EndDate
-        {
-            get
-            {
-                return endDate;
-            }
-            set
-            {
-                if (endDate == value)
-                    return;
-                endDate = value;
-                OnPropertyChanged();
-            }
-        }
         public ObservableCollection<Macro> Macros
         {
             get
@@ -56,21 +29,58 @@ namespace DietAndFitness.ViewModels
             }
         }
 
-        public MacrosStatisticsViewModel()
+        private ObservableCollection<Profile> userProfiles;
+        public ObservableCollection<Profile> UserProfiles
+        {
+            get { return userProfiles; }
+            set
+            {
+                if (userProfiles == value)
+                    return;
+                userProfiles = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private Profile _SelectedProfile;
+        public Profile SelectedProfile
+        {
+            get { return _SelectedProfile; }
+            set
+            {
+                if (_SelectedProfile == value)
+                    return;
+                _SelectedProfile = value;
+                OnPropertyChanged();
+                CalculateMacros();
+            }
+        }
+
+        public MacrosStatisticsViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
         {
             Macros = new ObservableCollection<Macro>();
-            EndDate = DateTime.Today;
-            StartDate = EndDate.AddMonths(-1);
         }
         
-        public async void LoadData()
+        public async Task LoadData()
         {
-            var items = await DBLocalAccess.GetCompleteItemAsync(StartDate, EndDate);
+            var profiles = await DBLocalAccess.UserProfiles.GetAllAsync();
+            UserProfiles = new ObservableCollection<Profile>(profiles);
+            SelectedProfile = UserProfiles.LastOrDefault();
+        }
+
+        private async Task CalculateMacros()
+        {
+            var items = await DBLocalAccess.DailyFoodItems.GetCompleteItemAsync(SelectedProfile.StartDate, SelectedProfile.EndDate);
+            var endDate = SelectedProfile.EndDate < DateTime.Today ? SelectedProfile.EndDate : DateTime.Today;
+            var startDate = SelectedProfile.StartDate;
+            var days = endDate.Subtract(startDate).TotalDays;
+
             Macros = new ObservableCollection<Macro>()
             {
-                new Macro { Type = MacroType.Carbohydrates, Value = items.Sum(i => i.Carbohydrates)},
-                new Macro { Type = MacroType.Proteins, Value = items.Sum(i => i.Proteins)},
-                new Macro { Type = MacroType.Fats, Value = items.Sum(i => i.Fats )}
+                new Macro { Type = MacroType.Carbohydrates, Value = items.Sum(i => i.Carbohydrates) / (days == 0 ? 1 : days)},
+                new Macro { Type = MacroType.Proteins, Value = items.Sum(i => i.Proteins) / (days == 0 ? 1 : days)},
+                new Macro { Type = MacroType.Fats, Value = items.Sum(i => i.Fats ) / (days == 0 ? 1 : days) }
             };
         }
 
@@ -119,7 +129,7 @@ namespace DietAndFitness.ViewModels
                     if (this.value == value)
                         return;
                     this.value = value;
-                  
+
                     OnPropertyChanged();
                 }
             }
@@ -131,7 +141,7 @@ namespace DietAndFitness.ViewModels
                 Proteins,
                 Fats
             }
-            
+
         }
     }
 }

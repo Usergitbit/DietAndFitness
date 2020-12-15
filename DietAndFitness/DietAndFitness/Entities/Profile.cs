@@ -19,6 +19,7 @@ namespace DietAndFitness.Entities
         private DateTime startDate;
         private DateTime endDate;
         private int? profileTypesId;
+        private ProfileType profileTypes;
         public double Height
         {
             get { return height; }
@@ -139,6 +140,7 @@ namespace DietAndFitness.Entities
                 OnPropertyChanged();
             }
         }
+
         public override bool IsValid()
        {
             if (Height <= 0 || Weight <= 0 || String.IsNullOrWhiteSpace(Sex) || String.IsNullOrWhiteSpace(Name) || DietFormula < 0 || StartDate > EndDate || ProfileTypesId == null || DietFormula == null)
@@ -217,7 +219,17 @@ namespace DietAndFitness.Entities
                     return new Sum("Target: ");
             }
         }
-
+        public ProfileType ProfileTypes
+        {
+            get { return profileTypes; }
+            set
+            {
+                if (profileTypes == value)
+                    return;
+                profileTypes = value;
+                OnCollectionChanged();
+            }
+        }
         public Sum GetMaximumValues()
         {
             var targeValues = GetTargetValues();

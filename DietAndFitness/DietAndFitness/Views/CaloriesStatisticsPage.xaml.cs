@@ -1,41 +1,48 @@
 ﻿using DietAndFitness.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace DietAndFitness.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CaloriesStatisticsPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CaloriesStatisticsPage : ContentPage
+    {
         public CaloriesStatisticsViewModel StatisticsViewModel { get; set; }
 
-        public CaloriesStatisticsPage ()
-		{
-			InitializeComponent ();
-            StatisticsViewModel = new CaloriesStatisticsViewModel();
-            BindingContext = StatisticsViewModel;
-		}
+        public CaloriesStatisticsPage()
+        {
+            InitializeComponent();
+        }
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            await StatisticsViewModel.LoadData();
+            try
+            {
+                base.OnAppearing();
+                StatisticsViewModel = (BindingContext as CaloriesStatisticsViewModel);
+                await StatisticsViewModel.LoadData();
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+              "Error",
+              ex.Message,
+              "Ok");
+            }
+            
         }
 
         private async void OnStartDateChanged(object sender, DateChangedEventArgs e)
         {
-            await StatisticsViewModel.LoadData();
+            if (StatisticsViewModel != null)
+                await StatisticsViewModel?.LoadData();
         }
 
         private async void OnEndDateChanged(object sender, DateChangedEventArgs e)
         {
-            await StatisticsViewModel.LoadData();
+            if (StatisticsViewModel != null)
+                await StatisticsViewModel?.LoadData();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DietAndFitness.iOS.CustomRenderers
             base.OnElementChanged(e);
             if (Control != null)
             {
-                var nativeTextField = (UITextField)Control;
+                var nativeTextField = Control;
                 nativeTextField.EditingDidBegin += (object sender, EventArgs eIos) =>
                 {
                     nativeTextField.PerformSelector(new ObjCRuntime.Selector("selectAll"), null, 0.0f);

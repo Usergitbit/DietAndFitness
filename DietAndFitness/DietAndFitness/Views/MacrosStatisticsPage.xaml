@@ -1,40 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietAndFitness.Views.MacrosStatisticsPage"
-             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
-             xmlns:sys="clr-namespace:System;assembly=netstandard">
+<ContentPage
+    x:Class="DietAndFitness.Views.MacrosStatisticsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+    xmlns:sys="clr-namespace:System;assembly=netstandard">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout VerticalOptions="FillAndExpand">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Label Text="Period" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                    <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="0" Date="{Binding StartDate}" DateSelected="OnStartDateChanged"/>
-                    <DatePicker x:Name="endDatePicker" Grid.Column="2" Grid.Row="0" Date="{Binding EndDate}" DateSelected="OnEndDateChanged" MaximumDate="{Binding sys:DateTime.Today}"/>
-                </Grid>
-                <chart:SfChart VerticalOptions="FillAndExpand" >
-                    <chart:SfChart.Title>
-                        <chart:ChartTitle Text = "Macros over time"/>
-                    </chart:SfChart.Title>
-                    <chart:SfChart.Legend>
-                        <chart:ChartLegend DockPosition="Bottom"/>
-                    </chart:SfChart.Legend>
-                    <chart:PieSeries ItemsSource ="{Binding Macros}" XBindingPath="TypeString" YBindingPath="Value" CircularCoefficient="0.5" ExplodeOnTouch="True">
-                        <chart:PieSeries.DataMarker>
-                            <chart:ChartDataMarker LabelContent="Percentage" >
-                            </chart:ChartDataMarker>
-                        </chart:PieSeries.DataMarker>
-                    </chart:PieSeries>
-                </chart:SfChart>
-            </StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Profile"
+                    VerticalTextAlignment="Center" />
+                <Picker
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    ItemDisplayBinding="{Binding Name}"
+                    ItemsSource="{Binding UserProfiles}"
+                    SelectedItem="{Binding SelectedProfile}"
+                    WidthRequest="100" />
+            </Grid>
+            <chart:SfChart VerticalOptions="FillAndExpand">
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="Average daily macros" />
+                </chart:SfChart.Title>
+                <chart:SfChart.Legend>
+                    <chart:ChartLegend DockPosition="Bottom" />
+                </chart:SfChart.Legend>
+                <chart:PieSeries
+                    CircularCoefficient="0.5"
+                    ExplodeOnTouch="True"
+                    ItemsSource="{Binding Macros}"
+                    XBindingPath="TypeString"
+                    YBindingPath="Value">
+                    <chart:PieSeries.DataMarker>
+                        <chart:ChartDataMarker LabelContent="YValue" />
+                    </chart:PieSeries.DataMarker>
+                </chart:PieSeries>
+            </chart:SfChart>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

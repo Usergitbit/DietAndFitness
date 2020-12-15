@@ -1,7 +1,5 @@
 ﻿using DietAndFitness.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DietAndFitness.Validators
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietAndFitness.Interfaces
@@ -12,9 +9,11 @@ namespace DietAndFitness.Interfaces
     public interface INavigationService
     {
         Task NavigateToAsync(Page page);
+        Task NavigateToAsync(string page, params object[] parameters);
         Task GoBackAsync();
-        Task PushModal(Page page);
+        Task PushModal(string page, params object[] parameters);
         Task PopModal();
         void SetMainPage();
+        void Register<TPage>(string pageKey = null);
     }
 }

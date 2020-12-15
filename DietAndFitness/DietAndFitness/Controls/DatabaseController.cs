@@ -1,10 +1,8 @@
 ﻿using DietAndFitness.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using Xamarin.Forms;
 namespace DietAndFitness.Controls
 {
@@ -21,7 +19,7 @@ namespace DietAndFitness.Controls
             DatabaseName = _DatabaseName;
             try
             {
-                DestinationPath = DependencyService.Get<IFilePath>().GetLocalFilePath(DatabaseName);
+                DestinationPath = DependencyService.Get<IFileOperations>().GetLocalFilePath(DatabaseName);
             }
             catch (Exception e)
             {
@@ -33,19 +31,11 @@ namespace DietAndFitness.Controls
         {
             try
             {
-                
-                using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.Databases." + DatabaseName))
-                {
-                    if (File.Exists(DestinationPath))
-                        return;
-                    else
-                    {
-                        using (var destination = File.Create(DestinationPath))
-                        {
-                            source.CopyTo(destination);
-                        }
-                    }
-                }
+                if (File.Exists(DestinationPath))
+                    return;
+                using Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.Databases." + DatabaseName);
+                using var destination = File.Create(DestinationPath);
+                source.CopyTo(destination);
 
             }
             catch (Exception e)

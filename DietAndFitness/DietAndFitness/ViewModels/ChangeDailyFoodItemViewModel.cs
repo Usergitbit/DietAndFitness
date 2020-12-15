@@ -1,14 +1,17 @@
-﻿using DietAndFitness.Controls;
-using DietAndFitness.Entities;
-using DietAndFitness.Services;
+﻿using DietAndFitness.Core.Models;
+using DietAndFitness.Core.Models.Composite;
+using DietAndFitness.Extensions;
+using DietAndFitness.Interfaces;
+using DietAndFitness.Services.Repositories;
 using DietAndFitness.ViewModels.Base;
-using DietAndFitness.ViewModels.Secondary;
+using GalaSoft.MvvmLight.Ioc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -16,7 +19,8 @@ namespace DietAndFitness.ViewModels
 {
     public class ChangeDailyFoodItemViewModel : ChangeBaseViewModel<DailyFoodItem>
     {
-        private ObservableCollection<LocalFoodItem> foodItems;
+        private readonly DebounceDispatcher debounceDispatcher;
+        private List<LocalFoodItem> foodItems;
         private string searchBarText;
         public string SearchBarText
         {
@@ -29,6 +33,10 @@ namespace DietAndFitness.ViewModels
                 if (searchBarText == value)
                     return;
                 searchBarText = value;
+                debounceDispatcher.Debounce(500, async () =>
+                {
+                    await FilterItems();
+                });
                 OnPropertyChanged();
             }
         }
@@ -44,10 +52,11 @@ namespace DietAndFitness.ViewModels
                 if (value == selectedFoodItem)
                     return;
                 selectedFoodItem = value;
+                CurrentItem.Name = SelectedFoodItem?.Name;
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<LocalFoodItem> FoodItems
+        public List<LocalFoodItem> FoodItems
         {
             get
             {
@@ -55,87 +64,161 @@ namespace DietAndFitness.ViewModels
             }
             set
             {
+                if (foodItems == value)
+                    return;
                 foodItems = value;
                 OnPropertyChanged();
             }
         }
+
+        private ObservableCollection<LocalFoodItem> _filteredItems;
+        public ObservableCollection<LocalFoodItem> FilteredItems
+        {
+            get { return _filteredItems; }
+            set
+            {
+                if (_filteredItems == value)
+                    return;
+                _filteredItems = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand SearchCommand { get; private set; }
-        public ChangeDailyFoodItemViewModel( ) : base()
+
+        private DateTime currentDate;
+        public ChangeDailyFoodItemViewModel(INavigationService navigationService, IDataAccessService dataAccessService, IDialogService dialogService) : base(navigationService, dataAccessService, dialogService)
         {
-            Initialize();
-        }
-        public ChangeDailyFoodItemViewModel(DateTime date) : base(date)
-        {
-            Initialize();
-        }
-        public ChangeDailyFoodItemViewModel(CompleteFoodItem selectedItem) : base(selectedItem.DailyFoodItem)
-        {
-            Initialize();
-            FoodItems.Add(selectedItem.LocalFoodItem);
-            //Using the field instead of the property prevents the OnPropertyChanged event from firing and making the Edit button available from the start
-            selectedFoodItem = selectedItem.LocalFoodItem;
-        }
-        private void Initialize()
-        {
-            FoodItems = new ObservableCollection<LocalFoodItem>();
-            SearchCommand = new Command<string>(execute: RefreshListItems);
+            FoodItems = new List<LocalFoodItem>();
+            FilteredItems = new ObservableCollection<LocalFoodItem>();
             PropertyChanged += OnSelectedItemChanged;
+            debounceDispatcher = new DebounceDispatcher();
+        }
+        private LocalFoodItem _selectedFilterItem;
+        public LocalFoodItem SelectedFilterItem
+        {
+            get { return _selectedFilterItem; }
+            set
+            {
+                if (_selectedFilterItem == value)
+                    return;
+                _selectedFilterItem = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public override async Task InitializeAsync(params object[] parameters)
+        {
+            var currentItemId = (int?)parameters.ElementAtOrDefault(0);
+            currentDate = (DateTime)parameters.ElementAtOrDefault(1);
+            if (currentItemId != null)
+            {
+                CurrentItem = await DBLocalAccess.DailyFoodItems.GetAsync(dfi => dfi.ID == currentItemId);
+                OperationInfo = "Edit";
+            }
+        }
+
+
+        private async Task<IEnumerable<LocalFoodItem>> RecentlyAddedItems()
+        {
+            var recentlyAddedItems = await DBLocalAccess.LocalFoodItems.GetRecentlyAddedItems();
+            return recentlyAddedItems;
+        }
+        public async Task LoadList()
+        {
+            FoodItems = await DBLocalAccess.LocalFoodItems.GetAllAsync();
+            await FilterItems();
         }
         private void OnSelectedItemChanged(object sender, PropertyChangedEventArgs e)
         {
             (ExecuteOperationCommand as Command).ChangeCanExecute();
             //This is so the Edit button will become available when the SelectedFoodItem changes
-            CurrentItem.IsDirty = true;
+            if (CurrentItem != null)
+                CurrentItem.IsDirty = true;
+        }
+        public async Task FilterItems()
+        {
+            IEnumerable<LocalFoodItem> filteredItems = null;
+            await Task.Run(async () =>
+            {
+                if (string.IsNullOrWhiteSpace(SearchBarText))
+                    filteredItems = await RecentlyAddedItems();
+                else
+                    filteredItems = FoodItems.Where(fi => fi.Name.ToLower().Contains(SearchBarText.ToLower()));
+            });
+            FilteredItems = new ObservableCollection<LocalFoodItem>(filteredItems);
         }
         /// <summary>
         /// Override to set the selected LocalFoodItemID and Name and reset the selected LocalFoodItem
         /// </summary>
         /// <param name="parameter"></param>
-        protected override void Operation(DailyFoodItem parameter)
+        protected override async Task Operation(DailyFoodItem parameter)
         {
-            CurrentItem.FoodItemID = SelectedFoodItem.ID;
-            CurrentItem.Name = SelectedFoodItem.Name;
-            base.Operation(parameter);
-            SelectedFoodItem = null;
-        }
-        /// <summary>
-        /// Search method for finding an item to add. Highly inefficient as each serach selects the whole database
-        /// TODO: Cache whole database? Custom selects?
-        /// TODO: Create Behavior that can bind event to command for creating dynamically updated list
-        /// </summary>
-        /// <param name="parameter"></param>
-        async void RefreshListItems(string parameter)
-        {
-            if (parameter != null)
+            if (CurrentItem.ID == null)
+                CurrentItem.CreatedAt = currentDate;
+            else
+                CurrentItem.ModifiedAt = currentDate;
+            //await base.Operation(parameter);
+            if (parameter.ID == null)
             {
-                List<LocalFoodItem> localFoodItems = new List<LocalFoodItem>();
-                try
-                {
-                    localFoodItems = await DBLocalAccess.GetAllAsync<LocalFoodItem>();
-                }
-                catch (Exception ex)
-                {
-                    await dialogService.ShowError(ex, "Error", "Ok", null);
-                }
-                FoodItems = new ObservableCollection<LocalFoodItem>();
-                localFoodItems = localFoodItems.FindAll(delegate (LocalFoodItem item)
-                {
-                    return item.Name.ToLower().Contains(parameter.ToLower());
-                });
-                foreach (var item in localFoodItems)
-                    FoodItems.Add(item);
-                SelectedFoodItem = null;
+
+                if (parameter.IsValid())
+                    try
+                    {
+                        var dailyFoodItem = parameter;
+                        await DBLocalAccess.DailyFoodItems.InsertAsync(parameter);
+                        //if program stays here the insert date will be incorrect
+                        // we lose the reference when we make a new item so we have to unsubscribe here to prevent memory leaks
+                        CurrentItem.PropertyChanged -= OnCurrentItemPropertyChanged;
+                        CurrentItem = new DailyFoodItem(currentDate);
+                        //resubscribe for the new item
+                        CurrentItem.PropertyChanged += OnCurrentItemPropertyChanged;
+                        OnOperationSuccess();
+                    }
+                    catch (Exception ex)
+                    {
+                        await dialogService.ShowError(ex, "Error", "Ok", null);
+                        OnOperationFailiure();
+                    }
+            }
+            else
+            {
+                if (parameter.IsValid())
+                    try
+                    {
+                        await DBLocalAccess.DailyFoodItems.UpdateAsync(parameter);
+                        //if program stays here the insert date will be incorrect
+                        CurrentItem.Clean();
+                        (ExecuteOperationCommand as Command).ChangeCanExecute();
+                        OnOperationSuccess();
+                    }
+                    catch (Exception ex)
+                    {
+                        await dialogService.ShowError(ex, "Error", "Ok", null);
+                        OnOperationFailiure();
+                    }
             }
         }
+
+        private void OnCurrentItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            (ExecuteOperationCommand as Command).ChangeCanExecute();
+        }
+
         protected override bool ValidateExecuteOperationButton(DailyFoodItem parameter)
         {
 
-            if (parameter == null || parameter.Quantity == 0 || SelectedFoodItem == null)
+            if (parameter == null || parameter.Quantity == 0 || CurrentItem.FoodItem == null)
                 return false;
             else
                 if (parameter.ID != null && !parameter.IsDirty)
-                    return false;
+                return false;
             return true;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
         }
     }
 }

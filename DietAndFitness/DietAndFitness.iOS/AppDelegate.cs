@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
+using Syncfusion.SfBusyIndicator.XForms.iOS;
 using Syncfusion.SfChart.XForms.iOS.Renderers;
 using Syncfusion.SfGauge.XForms.iOS;
 using Syncfusion.SfNumericTextBox.XForms.iOS;
@@ -36,7 +36,8 @@ namespace DietAndFitness.iOS
             SfPickerRenderer.Init();
             SfGaugeRenderer.Init();
             SfChartRenderer.Init();
-            Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+            new SfBusyIndicatorRenderer();
             IQKeyboardManager.SharedManager.Enable = true;
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);

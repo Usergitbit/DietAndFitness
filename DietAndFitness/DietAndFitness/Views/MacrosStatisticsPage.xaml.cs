@@ -1,10 +1,5 @@
 ﻿using DietAndFitness.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,23 +13,34 @@ namespace DietAndFitness.Views
         public MacrosStatisticsPage ()
 		{
 			InitializeComponent ();
-            MacrosStatisticsViewModel = new MacrosStatisticsViewModel();
-            BindingContext = MacrosStatisticsViewModel;
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            MacrosStatisticsViewModel.LoadData();
+            try
+            {
+                base.OnAppearing();
+                MacrosStatisticsViewModel = (BindingContext as MacrosStatisticsViewModel);
+                await MacrosStatisticsViewModel.LoadData();
+            }
+            catch(Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    ex.Message,
+                    "Ok");
+            }
         }
-        private void OnStartDateChanged(object sender, DateChangedEventArgs e)
+        private async void OnStartDateChanged(object sender, DateChangedEventArgs e)
         {
-            MacrosStatisticsViewModel.LoadData();
+            if (MacrosStatisticsViewModel != null)
+                await MacrosStatisticsViewModel?.LoadData();
         }
 
-        private void OnEndDateChanged(object sender, DateChangedEventArgs e)
+        private async void OnEndDateChanged(object sender, DateChangedEventArgs e)
         {
-            MacrosStatisticsViewModel.LoadData();
+            if (MacrosStatisticsViewModel != null)
+                await MacrosStatisticsViewModel?.LoadData();
         }
     }
 }

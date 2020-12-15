@@ -1,11 +1,5 @@
 ﻿using DietAndFitness.ViewModels;
 using Syncfusion.SfSchedule.XForms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +12,7 @@ namespace DietAndFitness.Views
 		public CalendarPage ()
 		{
 			InitializeComponent ();
-            CalendarViewModel = new CalendarViewModel();
+            //CalendarViewModel = new CalendarViewModel();
             BindingContext = CalendarViewModel;
 		}
         protected override void OnAppearing()

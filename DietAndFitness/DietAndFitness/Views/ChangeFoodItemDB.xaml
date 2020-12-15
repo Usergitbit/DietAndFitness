@@ -112,7 +112,7 @@
                         Command="{Binding ExecuteOperationCommand}"
                         CommandParameter="{Binding CurrentItem}"
                         HorizontalOptions="Center"
-                        Text="{Binding OperationInfo}" />
+                        Text="Save" />
                     <Button
                         Grid.Row="0"
                         Grid.Column="1"
