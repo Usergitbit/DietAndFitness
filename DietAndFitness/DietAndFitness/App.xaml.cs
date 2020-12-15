@@ -28,15 +28,22 @@ namespace DietAndFitness
         public static DefaultIoc Ioc { get; } = new DefaultIoc();
         public App()
         {
-            string license = "";
-            using (var source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.license.txt"))
+            try
             {
-                using (var streamReader = new StreamReader(source))
+                string license = "";
+                using (var source = Assembly.GetExecutingAssembly().GetManifestResourceStream("DietAndFitness.Resources.license.txt"))
                 {
-                    license = streamReader.ReadToEnd();
+                    using (var streamReader = new StreamReader(source))
+                    {
+                        license = streamReader.ReadToEnd();
+                    }
                 }
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(license);
             }
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(license);
+            catch(Exception)
+            {
+                Debug.Write("No license file found.");
+            }
             InitializeComponent();
         }
 
